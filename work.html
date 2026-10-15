@@ -1,0 +1,134 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work | Patrick Hancock</title>
+  <link rel="preload" href="styles/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Patrick Hancock</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <span class="icons">
+        <a class="icon" href="https://github.com/p-Hank" aria-label="GitHub" title="GitHub"><span aria-hidden="true">GH</span></a>
+        <a class="icon" href="https://www.linkedin.com/in/pahancock89/" aria-label="LinkedIn" title="LinkedIn"><span aria-hidden="true">in</span></a>
+        <a class="icon" href="mailto:phancock.portfolio@gmail.com" aria-label="Email" title="Email"><span aria-hidden="true">@</span></a>
+        <a class="icon" href="resume.html" aria-label="Resume" title="Resume"><span aria-hidden="true">CV</span></a>
+      </span>
+    </nav>
+  </header>
+  <main class="page">
+    
+<div class="page-intro">
+  <h1>Work</h1>
+  <p class="muted">A governed data and AI system on public US rental housing data, a security test bench for an AI assistant, and the frameworks that keep them accurate, safe and on budget.</p>
+</div>
+
+    <div class="with-jump">
+      <nav class="jump-nav" data-jump aria-label="On this page">
+        <a href="#featured">Featured</a>
+        <a href="#projects">Projects</a>
+        <a href="#apps">Small apps</a>
+      </nav>
+      <div class="page-body">
+<section id="featured" aria-labelledby="featured-h">
+  <h2 id="featured-h">Featured</h2>
+  <article class="card card--featured">
+  <div class="card__cover">
+    <div class="card__cover-placeholder" aria-hidden="true">Cover image</div>
+  </div>
+  <div class="card__body">
+    <p class="card__tagline">A governed data and AI system on public US rental data</p>
+    <h3 class="card__title">Rental Insights</h3>
+    <p class="card__summary">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
+    <ul class="skills" aria-label="Skills">
+      <li class="chip chip--data"><span class="chip__kind">Data</span> dbt</li>
+      <li class="chip chip--data"><span class="chip__kind">Data</span> BigQuery</li>
+      <li class="chip chip--data"><span class="chip__kind">Data</span> Data quality checks</li>
+      <li class="chip chip--ai"><span class="chip__kind">AI</span> MCP server</li>
+      <li class="chip chip--ai"><span class="chip__kind">AI</span> SQL guardrails</li>
+      <li class="chip chip--ai"><span class="chip__kind">AI</span> LLM evaluation</li>
+    </ul>
+  </div>
+</article>
+</section>
+<section id="projects" class="section-gap" aria-labelledby="projects-h">
+  <h2 id="projects-h">Projects</h2>
+  <div class="card-grid">
+    <article class="card">
+  <div class="card__cover">
+    <div class="card__cover-placeholder" aria-hidden="true">Cover image</div>
+  </div>
+  <div class="card__body">
+    <p class="card__tagline">Security testing for an AI assistant, decided by evidence</p>
+    <h3 class="card__title">AI Control Testing</h3>
+    <p class="status">Demo video coming soon</p>
+    <p class="card__summary">A small case assistant for a fictional advisory firm, built with ten realistic flaws behind one switch each, plus the harness that attacks it. Each flaw has a vulnerable run, a one-commit fix and a replay that proves the fix. Results come from canary markers, tool-call traces and database side effects, never from an AI grader.</p>
+    <ul class="skills" aria-label="Skills">
+      <li class="chip chip--ai"><span class="chip__kind">AI</span> Threat modeling</li>
+      <li class="chip chip--ai"><span class="chip__kind">AI</span> MCP tools</li>
+      <li class="chip chip--ai"><span class="chip__kind">AI</span> Prompt injection testing</li>
+      <li class="chip chip--data"><span class="chip__kind">Data</span> Python test harness</li>
+      <li class="chip chip--data"><span class="chip__kind">Data</span> SQLite evidence</li>
+    </ul>
+  </div>
+</article>
+  </div>
+</section>
+<section id="apps" class="section-gap" aria-labelledby="apps-h">
+  <h2 id="apps-h">Small apps</h2>
+  <div class="card-grid">
+    <article class="tile">
+      <h3>AI Cost Governance</h3>
+      <p class="status">Live dashboard coming soon</p>
+      <p class="muted">Every build task carries a token forecast, actual use is measured against it, and a hard cap stops the run and hands the decision to a person.</p>
+    </article>
+    <article class="tile">
+      <h3>Data Quality Framework</h3>
+      <p class="status">Live monitor coming soon</p>
+      <p class="muted">A report script profiles every gold table for row counts, duplicate keys and null rates and fails when it goes stale, and 7 automated data tests guard the pipeline.</p>
+    </article>
+    <article class="tile">
+      <h3>SQL Guardrails and Threat Model</h3>
+      <p class="status">Interactive explorer coming soon</p>
+      <p class="muted">The AI can run only read-only queries on four gold tables, under a 1 GB scan cap, a 30-second timeout and a 200-row limit; 19 mapped threats, including prompt injection, each name the code that stops them.</p>
+    </article>
+    <article class="tile">
+      <h3>Golden-Set Evaluation</h3>
+      <p class="status">Score tracker coming soon</p>
+      <p class="muted">40 questions with expected answers, run blind against the live tools (33 of 40 correct), and every failure becomes a named regression case before a fix ships.</p>
+    </article>
+    <article class="tile">
+      <h3>Affordability explorer</h3>
+      <p class="muted">How much of their income renters spend on rent across 393 metro areas (Census ACS 2024), and how market rent compares with the HUD 2-bedroom Fair Market Rent.</p>
+    </article>
+    <article class="tile">
+      <h3>Q&amp;A gallery</h3>
+      <p class="muted">Questions from the eval pack with the answers the MCP server gave, each citing its source or refusing.</p>
+    </article>
+  </div>
+</section>
+</div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p class="sign-off">Patrick Hancock</p>
+    <nav aria-label="Contact">
+      <ul class="footer-links">
+        <li><a href="https://github.com/p-Hank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/pahancock89/">LinkedIn</a></li>
+        <li><a href="mailto:phancock.portfolio@gmail.com">Email</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </nav>
+  </footer>
+  <script src="js/jump-nav.js" defer></script>
+</body>
+</html>

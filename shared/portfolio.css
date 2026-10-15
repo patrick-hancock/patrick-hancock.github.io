@@ -1,0 +1,8 @@
+/* Shared stylesheet for other projects (C1.T5): rental-insights links this one file to match the portfolio site.
+   build.py copies it into dist/shared/ next to tokens.css, base.css, card.css and fonts/ (D-003);
+   the sources live in src/styles/, so the shared copy is always the site's own.
+   Gives: colour, type and spacing tokens, self-hosted fonts, base element styles, buttons and the Work card.
+   Leaves out the portfolio page layout (header, footer, jump nav, view transitions). */
+@import url("tokens.css");
+@import url("base.css");
+@import url("card.css");

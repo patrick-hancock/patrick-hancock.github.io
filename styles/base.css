@@ -1,0 +1,45 @@
+/* Base element styles, utilities and buttons (C1.T5). Shared with rental-insights through dist/shared/,
+   so nothing here depends on the portfolio-site page layout. Needs tokens.css first. */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--fg-default);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0 0 var(--space-3);
+}
+h1 { font-size: var(--text-3xl); line-height: var(--leading-3xl); }
+h2 { font-size: var(--text-2xl); line-height: var(--leading-2xl); }
+h3 { font-size: var(--text-xl); line-height: var(--leading-xl); }
+p { margin: 0 0 var(--space-3); max-width: var(--measure); }
+strong { font-weight: 600; }
+
+a { color: var(--fg-accent); text-underline-offset: 0.2em; }
+a:hover { color: var(--fg-accent-hover); }
+:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; border-radius: 2px; }
+
+.muted { color: var(--fg-muted); }
+.accent { color: var(--fg-accent); }
+.mono { font-family: var(--font-mono); font-weight: 500; }
+
+.button {
+  display: inline-block;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius);
+  border: 1px solid var(--ui-border-strong);
+  color: var(--fg-default);
+  text-decoration: none;
+  line-height: 26px; /* 44px target minus 2x8px padding and 2px border */
+}
+.button:hover { color: var(--fg-default); background: var(--bg-raised); }
+.button--primary { background: var(--fill-accent); border-color: var(--fill-accent); color: var(--fg-on-accent); font-weight: 600; }
+.button--primary:hover { background: var(--fill-accent-hover); border-color: var(--fill-accent-hover); color: var(--fg-on-accent); }
