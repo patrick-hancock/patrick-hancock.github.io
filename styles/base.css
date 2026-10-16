@@ -13,14 +13,15 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
   margin: 0 0 var(--space-3);
 }
 h1 { font-size: var(--text-3xl); line-height: var(--leading-3xl); }
 h2 { font-size: var(--text-2xl); line-height: var(--leading-2xl); }
 h3 { font-size: var(--text-xl); line-height: var(--leading-xl); }
 p { margin: 0 0 var(--space-3); max-width: var(--measure); }
-strong { font-weight: 600; }
+strong { font-weight: 600; color: var(--fg-default); }
 
 a { color: var(--fg-accent); text-underline-offset: 0.2em; }
 a:hover { color: var(--fg-accent-hover); }

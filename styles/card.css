@@ -28,10 +28,9 @@
 
 /* Skills line (PC-14): each chip names its kind in text, so the tag never relies on colour alone. */
 .skills { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; padding: 0; list-style: none; font-size: var(--text-sm); line-height: var(--leading-sm); }
-.chip { padding: 2px 10px; border: 1px solid var(--border-subtle); border-radius: 999px; color: var(--fg-muted); }
+.chip { padding: 2px 10px; border: 1px solid var(--border-subtle); border-radius: var(--radius); color: var(--fg-muted); font-family: var(--font-mono); font-weight: 500; }
 .chip__kind { margin-right: var(--space-1); font-weight: 600; color: var(--fg-default); }
-.chip--ai { border-color: var(--fg-accent); }
-.chip--ai .chip__kind { color: var(--fg-accent); }
+.chip--ai { border-color: var(--ui-border-strong); } /* D-013: sky is for links only; the kind word carries the meaning */
 
 .card__buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
 .card__buttons .button { padding-inline: var(--space-3); }

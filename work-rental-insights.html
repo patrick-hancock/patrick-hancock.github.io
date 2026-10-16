@@ -1,0 +1,179 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rental Insights | Patrick Hancock</title>
+  <link rel="preload" href="styles/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="index.html">Patrick Hancock</a>
+      <nav class="main-nav" aria-label="Main">
+        <span class="nav-links">
+          <a href="index.html">Overview</a>
+          <a href="index.html#approach">Operating Framework</a>
+          <a href="work.html">Systems (Work)</a>
+          <a href="about.html">Background</a>
+        </span>
+        <span class="icons">
+          <a class="icon" href="https://github.com/patrick-hancock" aria-label="GitHub" title="GitHub"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+</svg></a>
+          <a class="icon" href="https://www.linkedin.com/in/pahancock89/" aria-label="LinkedIn" title="LinkedIn"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg></a>
+          <a class="icon" href="mailto:phancock.portfolio@gmail.com" aria-label="Email" title="Email"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g>
+</svg></a>
+          <a class="icon" href="resume.html" aria-label="Resume" title="Resume"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5M9 12h7M9 16h7"/></g>
+</svg></a>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+    
+    
+<p class="back"><a href="work.html"><span aria-hidden="true">&larr;</span> Back to Systems (Work)</a></p>
+<header class="system-header">
+  <p class="kicker">Data and AI system</p>
+  <h1>Rental Insights</h1>
+  <p class="system-subtitle">A governed data and AI system on public US rental data</p>
+  <dl class="meta-line">
+    <div><dt>Role</dt><dd>System design, specification and validation</dd></div>
+    <div><dt>Stack</dt><dd>BigQuery, dbt, Python, MCP server</dd></div>
+    <div><dt>Status</dt><dd>Built and tested; code not yet public</dd></div>
+  </dl>
+</header>
+
+<ul class="kpis section-gap-sm" aria-label="Key figures">
+  <li class="kpi">
+    <span class="kpi-value">33 of 40</span>
+    <span class="kpi-note">blind eval questions answered correctly</span>
+  </li>
+  <li class="kpi">
+    <span class="kpi-value">40</span>
+    <span class="kpi-note">questions in the eval pack</span>
+  </li>
+  <li class="kpi">
+    <span class="kpi-value">7</span>
+    <span class="kpi-note">automated data tests</span>
+  </li>
+  <li class="kpi">
+    <span class="kpi-value">393</span>
+    <span class="kpi-note">metro areas with HUD Fair Market Rent</span>
+  </li>
+</ul>
+
+<div class="split section-gap">
+  <div class="split__main">
+    <section class="report" aria-labelledby="flow-h">
+      <h2 id="flow-h">How the data flows</h2>
+      <p class="muted">dbt builds each layer, and tests run at every step before the next layer reads it.</p>
+      <ol class="flow">
+        <li class="flow-stage">
+          <span class="flow-step">Sources</span>
+          <span class="flow-name">Public rental data</span>
+          <span class="flow-detail">Zillow rent indexes, HUD Fair Market Rents and Census ACS</span>
+        </li>
+        <li class="flow-stage">
+          <span class="flow-step">Bronze</span>
+          <span class="flow-name">Raw rows in BigQuery</span>
+          <span class="flow-detail">Loaded as published and counted against the source files</span>
+        </li>
+        <li class="flow-stage">
+          <span class="flow-step">Silver</span>
+          <span class="flow-name">Typed and cleaned</span>
+          <span class="flow-detail">Zillow metros matched to Census areas by name, plus a seed of overrides</span>
+        </li>
+        <li class="flow-stage">
+          <span class="flow-step">Gold</span>
+          <span class="flow-name">Two facts and two dimensions</span>
+          <span class="flow-detail">Key and relationship tests on every table</span>
+        </li>
+        <li class="flow-stage">
+          <span class="flow-step">MCP server</span>
+          <span class="flow-name">Questions answered from gold</span>
+          <span class="flow-detail">Three tools return a cited source or a refusal</span>
+        </li>
+      </ol>
+    </section>
+    <section class="report">
+      <h2 id="panel-h">Affordability by metro area</h2>
+      <p class="muted">Metro-level affordability figures from the gold tables.</p>
+      <p class="status">Data table coming soon</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-labelledby="panel-h">
+        <table class="data-table">
+          <thead><tr><th scope="col">Metro area</th><th scope="col">HUD 2-bedroom Fair Market Rent</th><th scope="col">Median household income</th><th scope="col">Rent-burdened share</th></tr></thead>
+          <tbody>
+            <tr class="empty-row" data-placeholder><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td><td><span class="dash" aria-hidden="true"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="report" aria-labelledby="checks-h">
+      <h2 id="checks-h">Data quality checks</h2>
+      <p class="muted">dbt runs these tests on every build; all 48 passed in the last run on 2026-10-13.</p>
+      <ul class="check-list">
+        <li>
+          <span class="check-name">Unique, non-null keys</span>
+          <span class="muted">Every gold table&#39;s key is tested unique and not null.</span>
+          <span class="pass">Pass</span>
+        </li>
+        <li>
+          <span class="check-name">Relationships</span>
+          <span class="muted">Every monthly fact row must join to a metro and a month in the dimensions.</span>
+          <span class="pass">Pass</span>
+        </li>
+        <li>
+          <span class="check-name">HUD coverage</span>
+          <span class="muted">Every metro area must carry a HUD Fair Market Rent.</span>
+          <span class="pass">Pass</span>
+        </li>
+        <li>
+          <span class="check-name">Match-rate floor</span>
+          <span class="muted">The build fails if fewer than 95% of Zillow metros match a Census area, or if any top-100 metro is unmatched.</span>
+          <span class="pass">Pass</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <aside class="split__side" aria-label="Evidence">
+    <section class="exhibit" aria-labelledby="exhibit-h">
+      <h2 class="box-title" id="exhibit-h">Exhibit A: SQL guardrails</h2>
+      <dl class="spec spec--rows">
+        <div><dt>Scan cap</dt><dd>1 GB per query</dd></div>
+        <div><dt>Timeout</dt><dd>30 seconds</dd></div>
+        <div><dt>Row limit</dt><dd>200 rows</dd></div>
+        <div><dt>Tables</dt><dd>4 gold tables, read-only</dd></div>
+        <div><dt>Statements</dt><dd>One SELECT; no writes, scripts or SELECT *</dd></div>
+        <div><dt>Answers</dt><dd>A cited source or a refusal</dd></div>
+      </dl>
+      <p class="note">A second wall sits under the guardrail: the query identity can read gold and nothing else, and a live test denied CREATE TABLE in 5 of 5 attempts.</p>
+    </section>
+    <section class="exhibit" aria-labelledby="matrix-h">
+      <h2 class="box-title" id="matrix-h">Evaluation and threat model</h2>
+      <p class="muted small">40 questions with expected answers ran blind against the live tools on 2026-10-13.</p>
+      <dl class="spec spec--rows">
+        <div><dt>Answered correctly</dt><dd class="tone-good">33 of 40</dd></div>
+        <div><dt>Failed</dt><dd>7 of 40</dd></div>
+        <div><dt>Threats mapped</dt><dd>19, each with a named control and test</dd></div>
+      </dl>
+      <p class="note">Four failures came from a guessed join key that returned an error with no usable reason. The server now returns that error as a retryable hint, tested offline; a fresh blind run is still to come.</p>
+    </section>
+  </aside>
+</div>
+
+  </main>
+  <footer class="site-footer">
+    <p class="footer-line">
+      <span>© 2026 Patrick Hancock</span>
+      <span>Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
+      <a href="mailto:phancock.portfolio@gmail.com">phancock.portfolio@gmail.com</a>
+    </p>
+  </footer>
+</body>
+</html>
