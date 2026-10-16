@@ -89,44 +89,6 @@
   </div>
 </section>
 
-<section class="mb-14" aria-labelledby="teaser-h">
-  <div class="p-6 sm:p-8 bg-app-900 border border-app-border rounded">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-app-border mb-6">
-      <div>
-        <div class="flex flex-wrap items-center gap-2 mb-1.5 font-mono text-xs">
-          <span class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-app-accent font-semibold">Featured system</span>
-          <span class="text-app-muted">dbt • BigQuery • MCP server</span>
-        </div>
-        <h2 id="teaser-h" class="font-heading text-2xl font-bold text-white">Rental Insights</h2>
-        <p class="text-sm text-app-muted mt-1">A governed data and AI system on public US rental data</p>
-      </div>
-      <div class="flex items-center gap-3">
-        <a href="work-rental-insights.html" class="px-3.5 py-2 rounded bg-app-accent text-app-950 hover:bg-sky-300 text-xs font-mono font-bold transition-colors">Open system details →</a>
-      </div>
-    </div>
-    <p class="text-sm text-app-muted leading-relaxed mb-6 max-w-3xl">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
-    <div class="p-5 bg-app-950 border border-app-border rounded">
-      <div class="flex items-center justify-between pb-3 border-b border-app-border mb-4 font-mono text-xs">
-        <span class="text-app-accent font-bold">Exhibit A: SQL guardrails</span>
-      </div>
-      <dl class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs font-mono">
-        <div class="p-3 bg-app-900 border border-app-border rounded">
-          <dt class="text-app-accent block mb-1">Scan cap</dt>
-          <dd class="text-white font-medium">1 GB per query</dd>
-        </div>
-        <div class="p-3 bg-app-900 border border-app-border rounded">
-          <dt class="text-app-emerald block mb-1">Tables</dt>
-          <dd class="text-white font-medium">4 gold tables, read-only</dd>
-        </div>
-        <div class="p-3 bg-app-900 border border-app-border rounded">
-          <dt class="text-app-amber block mb-1">Answers</dt>
-          <dd class="text-white font-medium">A cited source or a refusal</dd>
-        </div>
-      </dl>
-    </div>
-  </div>
-</section>
-
 <section id="approach" class="mb-14 scroll-mt-20" aria-labelledby="approach-h">
   <div class="max-w-2xl mb-8">
     <p class="font-mono text-xs text-app-accent uppercase tracking-wider font-semibold">Operating doctrine</p>

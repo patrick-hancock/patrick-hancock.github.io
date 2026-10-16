@@ -60,6 +60,26 @@
     <span class="hidden sm:block" aria-hidden="true">•</span>
     <span>Status: <span class="text-app-emerald font-semibold">In production</span></span>
   </p>
+  <p class="text-sm text-app-muted leading-relaxed mt-6 mb-6 max-w-3xl">A production question-answering service that replaced searching three separate places: a domain dictionary, process documents and the data warehouse. Every answer traces to a cited source, whether a dictionary entry, a document passage or an executed SQL statement, and when the evidence is weak the service says it has no data instead of guessing. Generated SQL passes a read-only guardrail and a personal-data block before it runs.</p>
+  <div class="p-5 bg-app-900 border border-app-border rounded">
+    <div class="flex items-center justify-between pb-3 border-b border-app-border mb-4 font-mono text-xs">
+      <span class="text-app-accent font-bold">Exhibit C: Grounding rules</span>
+    </div>
+    <dl class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs font-mono">
+      <div class="p-3 bg-app-950 border border-app-border rounded">
+        <dt class="text-app-accent block mb-1">Sources</dt>
+        <dd class="text-white font-medium">Dictionary entries, document passages, executed SQL</dd>
+      </div>
+      <div class="p-3 bg-app-950 border border-app-border rounded">
+        <dt class="text-app-emerald block mb-1">Weak evidence</dt>
+        <dd class="text-white font-medium">No data, not a guess</dd>
+      </div>
+      <div class="p-3 bg-app-950 border border-app-border rounded">
+        <dt class="text-app-amber block mb-1">Personal data</dt>
+        <dd class="text-white font-medium">Blocked before connecting</dd>
+      </div>
+    </dl>
+  </div>
 </div>
 
 <ul class="grid grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-4 gap-4 mb-12" aria-label="Key figures">
