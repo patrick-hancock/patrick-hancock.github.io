@@ -6,39 +6,26 @@
      such as text on the accent fill.
    Theme: dark only (U-027 PC-04). */
 
-/* Fonts: self-hosted woff2, latin subset, SIL Open Font License (src/styles/fonts/LICENSE-*). D-013. */
+/* Fonts: self-hosted variable woff2 (every weight in one file), latin subset, SIL Open Font License
+   (src/styles/fonts/LICENSE-*). D-013. */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/plus-jakarta-sans-600.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("fonts/plus-jakarta-sans-700.woff2") format("woff2");
-  font-weight: 700;
+  src: url("fonts/plus-jakarta-sans-latin-wght.woff2") format("woff2-variations"), url("fonts/plus-jakarta-sans-latin-wght.woff2") format("woff2");
+  font-weight: 200 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Inter";
-  src: url("fonts/inter-400.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("fonts/inter-600.woff2") format("woff2");
-  font-weight: 600;
+  src: url("fonts/inter-latin-wght.woff2") format("woff2-variations"), url("fonts/inter-latin-wght.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("fonts/jetbrains-mono-500.woff2") format("woff2");
-  font-weight: 500;
+  src: url("fonts/jetbrains-mono-latin-wght.woff2") format("woff2-variations"), url("fonts/jetbrains-mono-latin-wght.woff2") format("woff2");
+  font-weight: 100 800;
   font-style: normal;
   font-display: swap;
 }

@@ -1,154 +1,257 @@
 
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Overview | Patrick Hancock</title>
-  <link rel="preload" href="styles/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles/site.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="logo" href="index.html">Patrick Hancock</a>
-      <nav class="main-nav" aria-label="Main">
-        <span class="nav-links">
-          <a href="index.html" aria-current="page">Overview</a>
-          <a href="index.html#approach">Operating Framework</a>
-          <a href="work.html">Systems (Work)</a>
-          <a href="about.html">Background</a>
+<body class="bg-app-950 text-app-text font-sans antialiased selection:bg-app-accent selection:text-app-950 min-h-screen flex flex-col">
+  <header class="site-header sticky top-0 z-50 backdrop-blur-md bg-app-950/90 border-b border-app-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 group min-w-0">
+        <span class="w-8 h-8 shrink-0 rounded bg-app-850 border border-app-border flex items-center justify-center font-mono font-bold text-xs text-white group-hover:border-app-accent transition-colors" aria-hidden="true">PH</span>
+        <span class="flex flex-col min-w-0">
+          <span class="font-heading font-bold text-sm tracking-tight text-white group-hover:text-app-accent transition-colors">Patrick Hancock</span>
+          <span class="hidden sm:block text-[11px] font-mono text-app-muted -mt-0.5">Business intelligence, data and AI systems</span>
         </span>
-        <span class="icons">
-          <a class="icon" href="https://github.com/patrick-hancock" aria-label="GitHub" title="GitHub"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-</svg></a>
-          <a class="icon" href="https://www.linkedin.com/in/pahancock89/" aria-label="LinkedIn" title="LinkedIn"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-</svg></a>
-          <a class="icon" href="mailto:phancock.portfolio@gmail.com" aria-label="Email" title="Email"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g>
-</svg></a>
-          <a class="icon" href="resume.html" aria-label="Resume" title="Resume"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5M9 12h7M9 16h7"/></g>
-</svg></a>
-        </span>
+      </a>
+      <nav class="main-nav hidden md:flex items-center gap-1 bg-app-900 p-1 rounded border border-app-border text-xs font-medium" aria-label="Main">
+        <a href="index.html" aria-current="page" class="px-3.5 py-1.5 text-white bg-app-800 rounded font-semibold">Overview</a>
+        <a href="index.html#approach" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Operating Framework</a>
+        <a href="work.html" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Systems (Work)</a>
+        <a href="about.html" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Background</a>
       </nav>
+      <div class="flex items-center gap-2.5 shrink-0">
+        <a class="icon w-8 h-8 rounded bg-app-900 hover:bg-app-850 border border-app-border flex items-center justify-center text-app-muted hover:text-white transition-colors" href="https://github.com/patrick-hancock" aria-label="GitHub" title="GitHub"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+</svg></a>
+        <a class="icon w-8 h-8 rounded bg-app-900 hover:bg-app-850 border border-app-border flex items-center justify-center text-app-muted hover:text-white transition-colors" href="https://www.linkedin.com/in/pahancock89/" aria-label="LinkedIn" title="LinkedIn"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg></a>
+        <a class="contact px-3 py-1.5 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-medium transition-colors" href="mailto:phancock.portfolio@gmail.com">Contact</a>
+      </div>
     </div>
+    <nav class="mobile-nav md:hidden border-t border-app-border" aria-label="Main, small screens">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-1 overflow-x-auto text-xs font-medium">
+        <a href="index.html" aria-current="page" class="shrink-0 px-3 py-1.5 text-white bg-app-800 rounded font-semibold">Overview</a>
+        <a href="index.html#approach" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Operating Framework</a>
+        <a href="work.html" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Systems (Work)</a>
+        <a href="about.html" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Background</a>
+      </div>
+    </nav>
   </header>
-  <main class="page">
+
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-12 w-full">
     
-    
-<section class="hero" aria-labelledby="hero-h">
-  <div class="hero-text">
-    <p class="open-to">Open to leadership roles in BI, data and AI · Remote, or on-site in the Charlottesville and Shenandoah Valley area</p>
-    <p class="kicker">Business intelligence, data and AI systems</p>
-    <h1 class="headline" id="hero-h">I turn scattered operational data into systems people <span class="accent">trust</span>.</h1>
-    <p class="muted">I design the path from raw data to decisions: governed data platforms, reporting leaders rely on, and automation that takes manual work off people&#39;s desks. As Business Intelligence Manager at masLabor, I architected an enterprise platform in Microsoft Fabric that brought finance, case-management and operations data into role-based, access-controlled models, then built AI-assisted workflows on top of it.</p>
-    <p class="muted">I came to data from operations: years running residential properties, and records and knowledge programs in the U.S. Air Force. I direct the system design, specification and validation, so what ships is auditable. Routine work flows through automatically, and anything that needs judgment goes to a person.</p>
-    <div class="buttons">
-      <a class="button button--primary" href="work.html">View projects</a>
-      <a class="button" href="#approach">My approach</a>
-    </div>
+<section class="border-b border-app-border pb-12 mb-12" aria-labelledby="hero-h">
+  <div class="flex items-start gap-2 mb-6 font-mono text-xs text-app-muted">
+    <span class="w-2 h-2 mt-1 shrink-0 rounded-full bg-app-emerald" aria-hidden="true"></span>
+    <span class="text-white font-medium">Open to leadership roles in BI, data and AI · Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
   </div>
-  <div class="context-box">
-    <h2 class="box-title" id="context-h">Platforms and background</h2>
-    <dl class="spec">
-      <div><dt>Data platforms</dt><dd>Microsoft Fabric, BigQuery, dbt</dd></div>
-      <div><dt>BI and reporting</dt><dd>Power BI, Tableau</dd></div>
-      <div><dt>AI tooling</dt><dd>MCP servers, SQL guardrails, golden-set evaluation</dd></div>
-      <div><dt>Background</dt><dd>Business Intelligence Manager at masLabor; U.S. Air Force records and knowledge programs</dd></div>
-    </dl>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <div class="lg:col-span-8">
+      <h1 id="hero-h" class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white leading-[1.15] mb-5">I turn scattered operational data into systems people <span class="text-app-accent">trust</span>.</h1>
+      <p class="text-base sm:text-lg text-app-muted leading-relaxed font-normal mb-4 max-w-2xl">I design the path from raw data to decisions: governed data platforms, reporting leaders rely on, and automation that takes manual work off people&#39;s desks. As Business Intelligence Manager at masLabor, I architected an enterprise platform in Microsoft Fabric that brought finance, case-management and operations data into role-based, access-controlled models, then built AI-assisted workflows on top of it.</p>
+      <p class="text-base sm:text-lg text-app-muted leading-relaxed font-normal mb-4 max-w-2xl">I came to data from operations: years running residential properties, and records and knowledge programs in the U.S. Air Force. I direct the system design, specification and validation, so what ships is auditable. Routine work flows through automatically, and anything that needs judgment goes to a person.</p>
+      <div class="flex flex-wrap items-center gap-3 mt-8">
+        <a href="work.html" class="px-5 py-2.5 rounded bg-app-accent text-app-950 hover:bg-sky-300 font-mono text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2">
+          <span>View projects</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+        <a href="#approach" class="px-5 py-2.5 rounded bg-app-900 hover:bg-app-850 border border-app-border text-white font-mono text-xs font-medium transition-colors">My approach</a>
+        <a href="resume.html" class="px-4 py-2.5 text-app-muted hover:text-white font-mono text-xs transition-colors">Resume →</a>
+      </div>
+    </div>
+    <div class="lg:col-span-4 bg-app-900 border border-app-border rounded p-5 font-mono text-xs">
+      <div class="flex items-center justify-between gap-3 pb-3 border-b border-app-border mb-4 text-app-muted">
+        <h2 class="text-xs font-normal">Platforms and background</h2>
+        <span class="text-app-accent">Enterprise BI</span>
+      </div>
+      <dl class="space-y-3">
+        <div>
+          <dt class="text-app-muted block text-[11px]">Data platforms</dt>
+          <dd class="text-white font-medium">Microsoft Fabric, BigQuery, dbt</dd>
+        </div>
+        <div>
+          <dt class="text-app-muted block text-[11px]">BI and reporting</dt>
+          <dd class="text-white font-medium">Power BI, Tableau</dd>
+        </div>
+        <div>
+          <dt class="text-app-muted block text-[11px]">AI tooling</dt>
+          <dd class="text-white font-medium">MCP servers, SQL guardrails, golden-set evaluation</dd>
+        </div>
+        <div>
+          <dt class="text-app-muted block text-[11px]">Background</dt>
+          <dd class="text-white font-medium">Business Intelligence Manager at masLabor; U.S. Air Force records and knowledge programs</dd>
+        </div>
+      </dl>
+    </div>
   </div>
 </section>
 
-<section class="section-gap" aria-labelledby="scores-h">
-  <div class="section-head">
-    <h2 class="kicker" id="scores-h">Rental Insights, measured</h2>
-    <a class="mono-link" href="work-rental-insights.html">Open system details</a>
+<section class="mb-14" aria-labelledby="scores-h">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-app-border">
+    <h2 id="scores-h" class="font-mono text-xs text-app-accent uppercase tracking-wider font-semibold">Rental Insights, measured</h2>
+    <a href="work-rental-insights.html" class="font-mono text-xs text-app-muted hover:text-white transition-colors">Open system details →</a>
   </div>
-  <ul class="kpis">
-    <li class="kpi"><span class="kpi-value">33 of 40</span> <span class="kpi-note">blind eval questions answered correctly</span></li>
-    <li class="kpi"><span class="kpi-value">40</span> <span class="kpi-note">questions in the eval pack</span></li>
-    <li class="kpi"><span class="kpi-value">7</span> <span class="kpi-note">automated data tests</span></li>
-    <li class="kpi"><span class="kpi-value">393</span> <span class="kpi-note">metro areas with HUD Fair Market Rent</span></li>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <li class="kpi p-4 bg-app-900 border border-app-border rounded">
+      <div class="flex items-center justify-between gap-2 text-app-muted text-xs font-mono mb-2">
+        <span>Blind eval accuracy</span>
+        <span class="text-app-emerald font-semibold">82.5%</span>
+      </div>
+      <div class="text-3xl font-mono font-bold text-white tracking-tight">33 of 40</div>
+      <p class="text-xs text-app-muted mt-2 leading-relaxed">blind eval questions answered correctly</p>
+    </li>
+    <li class="kpi p-4 bg-app-900 border border-app-border rounded">
+      <div class="flex items-center justify-between gap-2 text-app-muted text-xs font-mono mb-2">
+        <span>Golden set</span>
+        <span class="text-app-accent font-semibold">Blind run</span>
+      </div>
+      <div class="text-3xl font-mono font-bold text-white tracking-tight">40</div>
+      <p class="text-xs text-app-muted mt-2 leading-relaxed">questions in the eval pack</p>
+    </li>
+    <li class="kpi p-4 bg-app-900 border border-app-border rounded">
+      <div class="flex items-center justify-between gap-2 text-app-muted text-xs font-mono mb-2">
+        <span>Automated tests</span>
+        <span class="text-app-muted font-semibold">dbt</span>
+      </div>
+      <div class="text-3xl font-mono font-bold text-white tracking-tight">7</div>
+      <p class="text-xs text-app-muted mt-2 leading-relaxed">automated data tests</p>
+    </li>
+    <li class="kpi p-4 bg-app-900 border border-app-border rounded">
+      <div class="flex items-center justify-between gap-2 text-app-muted text-xs font-mono mb-2">
+        <span>US metro scope</span>
+        <span class="text-app-amber font-semibold">Census &amp; HUD</span>
+      </div>
+      <div class="text-3xl font-mono font-bold text-white tracking-tight">393</div>
+      <p class="text-xs text-app-muted mt-2 leading-relaxed">metro areas with HUD Fair Market Rent</p>
+    </li>
   </ul>
 </section>
 
-<section class="section-gap panel teaser" aria-labelledby="teaser-h">
-  <div class="teaser-head">
-    <div>
-      <p class="kicker">Featured system</p>
-      <h2 id="teaser-h">Rental Insights</h2>
-      <p class="muted">A governed data and AI system on public US rental data</p>
+<section class="mb-14" aria-labelledby="teaser-h">
+  <div class="p-6 sm:p-8 bg-app-900 border border-app-border rounded">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-app-border mb-6">
+      <div>
+        <div class="flex flex-wrap items-center gap-2 mb-1.5 font-mono text-xs">
+          <span class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-app-accent font-semibold">Featured system</span>
+          <span class="text-app-muted">dbt • BigQuery • MCP server</span>
+        </div>
+        <h2 id="teaser-h" class="font-heading text-2xl font-bold text-white">Rental Insights</h2>
+        <p class="text-sm text-app-muted mt-1">A governed data and AI system on public US rental data</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="work-rental-insights.html" class="px-3.5 py-2 rounded bg-app-accent text-app-950 hover:bg-sky-300 text-xs font-mono font-bold transition-colors">Open system details →</a>
+      </div>
     </div>
-    <a class="button button--primary" href="work-rental-insights.html">Open system details</a>
+    <p class="text-sm text-app-muted leading-relaxed mb-6 max-w-3xl">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
+    <div class="p-5 bg-app-950 border border-app-border rounded">
+      <div class="flex items-center justify-between pb-3 border-b border-app-border mb-4 font-mono text-xs">
+        <span class="text-app-accent font-bold">Exhibit A: SQL guardrails</span>
+      </div>
+      <dl class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs font-mono">
+        <div class="p-3 bg-app-900 border border-app-border rounded">
+          <dt class="text-app-accent block mb-1">Scan cap</dt>
+          <dd class="text-white font-medium">1 GB per query</dd>
+        </div>
+        <div class="p-3 bg-app-900 border border-app-border rounded">
+          <dt class="text-app-emerald block mb-1">Tables</dt>
+          <dd class="text-white font-medium">4 gold tables, read-only</dd>
+        </div>
+        <div class="p-3 bg-app-900 border border-app-border rounded">
+          <dt class="text-app-amber block mb-1">Answers</dt>
+          <dd class="text-white font-medium">A cited source or a refusal</dd>
+        </div>
+      </dl>
+    </div>
   </div>
-  <p class="muted">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
-  <dl class="fact-row">
-    <div><dt>Scan cap</dt><dd>1 GB per query</dd></div>
-    <div><dt>Tables</dt><dd>4 gold tables, read-only</dd></div>
-    <div><dt>Answers</dt><dd>A cited source or a refusal</dd></div>
-  </dl>
 </section>
 
-<section id="approach" class="section-gap" aria-labelledby="approach-h">
-  <p class="kicker">How I work</p>
-  <h2 id="approach-h">Design it, specify it, prove it</h2>
-  <ol class="steps">
-    <li class="step">
-      <span class="step-n" aria-hidden="true">01</span>
-      <h3>Start with the Decision</h3>
-      <p class="muted">Every project begins with who owns the key business choices and what intelligence they require. Aligning stakeholders on standardized definitions before development begins means the solution directly drives executive strategy.</p>
-      <p class="step-output">Decision matrix</p>
+<section id="approach" class="mb-14 scroll-mt-20" aria-labelledby="approach-h">
+  <div class="max-w-2xl mb-8">
+    <p class="font-mono text-xs text-app-accent uppercase tracking-wider font-semibold">How I work</p>
+    <h2 id="approach-h" class="font-heading text-2xl font-bold text-white mt-1">Design it, specify it, prove it</h2>
+  </div>
+  <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <li class="p-5 bg-app-900 border border-app-border rounded flex flex-col justify-between">
+      <div>
+        <div class="w-7 h-7 rounded bg-app-850 border border-app-border text-app-accent font-mono font-bold text-xs flex items-center justify-center mb-4" aria-hidden="true">01</div>
+        <h3 class="font-heading text-sm font-bold text-white mb-2">Start with the Decision</h3>
+        <p class="text-xs text-app-muted leading-relaxed font-normal">Every project begins with who owns the key business choices and what intelligence they require. Aligning stakeholders on standardized definitions before development begins means the solution directly drives executive strategy.</p>
+      </div>
+      <p class="mt-4 pt-3 border-t border-app-border/60 text-[11px] font-mono text-app-accent">Decision matrix</p>
     </li>
-    <li class="step">
-      <span class="step-n" aria-hidden="true">02</span>
-      <h3>Design the System</h3>
-      <p class="muted">I architect the data models, system integrations and access frameworks, then map the entire workflow to determine exactly where automation optimizes throughput and where human oversight safeguards quality.</p>
-      <p class="step-output">Architecture map</p>
+    <li class="p-5 bg-app-900 border border-app-border rounded flex flex-col justify-between">
+      <div>
+        <div class="w-7 h-7 rounded bg-app-850 border border-app-border text-app-accent font-mono font-bold text-xs flex items-center justify-center mb-4" aria-hidden="true">02</div>
+        <h3 class="font-heading text-sm font-bold text-white mb-2">Design the System</h3>
+        <p class="text-xs text-app-muted leading-relaxed font-normal">I architect the data models, system integrations and access frameworks, then map the entire workflow to determine exactly where automation optimizes throughput and where human oversight safeguards quality.</p>
+      </div>
+      <p class="mt-4 pt-3 border-t border-app-border/60 text-[11px] font-mono text-app-accent">Architecture map</p>
     </li>
-    <li class="step">
-      <span class="step-n" aria-hidden="true">03</span>
-      <h3>Specify the Build</h3>
-      <p class="muted">Comprehensive functional specifications guide every build, leveraging modern enterprise orchestration platforms and agile, AI-assisted development so the technical execution mirrors the business intent without platform lock-in.</p>
-      <p class="step-output">Functional spec and tests</p>
+    <li class="p-5 bg-app-900 border border-app-border rounded flex flex-col justify-between">
+      <div>
+        <div class="w-7 h-7 rounded bg-app-850 border border-app-border text-app-accent font-mono font-bold text-xs flex items-center justify-center mb-4" aria-hidden="true">03</div>
+        <h3 class="font-heading text-sm font-bold text-white mb-2">Specify the Build</h3>
+        <p class="text-xs text-app-muted leading-relaxed font-normal">Comprehensive functional specifications guide every build, leveraging modern enterprise orchestration platforms and agile, AI-assisted development so the technical execution mirrors the business intent without platform lock-in.</p>
+      </div>
+      <p class="mt-4 pt-3 border-t border-app-border/60 text-[11px] font-mono text-app-accent">Functional spec and tests</p>
     </li>
-    <li class="step">
-      <span class="step-n" aria-hidden="true">04</span>
-      <h3>Prove It Works</h3>
-      <p class="muted">Validation against primary sources confirms data accuracy before launch. After launch, I proactively mitigate open implementation risks and continuously monitor platform adoption, system performance and cost-efficiency.</p>
-      <p class="step-output">Verification audit</p>
+    <li class="p-5 bg-app-900 border border-app-border rounded flex flex-col justify-between">
+      <div>
+        <div class="w-7 h-7 rounded bg-app-850 border border-app-border text-app-emerald font-mono font-bold text-xs flex items-center justify-center mb-4" aria-hidden="true">04</div>
+        <h3 class="font-heading text-sm font-bold text-white mb-2">Prove It Works</h3>
+        <p class="text-xs text-app-muted leading-relaxed font-normal">Validation against primary sources confirms data accuracy before launch. After launch, I proactively mitigate open implementation risks and continuously monitor platform adoption, system performance and cost-efficiency.</p>
+      </div>
+      <p class="mt-4 pt-3 border-t border-app-border/60 text-[11px] font-mono text-app-emerald">Verification audit</p>
     </li>
   </ol>
 </section>
 
-<section class="section-gap" aria-labelledby="practices-h">
-  <h2 class="kicker" id="practices-h">Things I do at depth</h2>
-  <div class="practice-grid">
-    <div class="practice">
-      <h3>Enterprise Data Governance</h3>
-      <p class="muted">Every corporate function works from one standardized data platform that unifies disparate financial and operational systems. Strict role-based access and automated audit controls mitigate risk while keeping data secure and democratized.</p>
+<section class="mb-14 border-t border-app-border pt-12" aria-labelledby="practices-h">
+  <div class="max-w-2xl mb-8">
+    <h2 id="practices-h" class="font-mono text-xs text-app-accent uppercase tracking-wider font-semibold">Things I do at depth</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="p-5 bg-app-900 border border-app-border rounded">
+      <h3 class="font-heading text-sm font-bold text-white mb-2">Enterprise Data Governance</h3>
+      <p class="text-xs text-app-muted leading-relaxed font-normal">Every corporate function works from one standardized data platform that unifies disparate financial and operational systems. Strict role-based access and automated audit controls mitigate risk while keeping data secure and democratized.</p>
     </div>
-    <div class="practice">
-      <h3>Decision-Ready Reporting</h3>
-      <p class="muted">Shared metrics, agreed across cross-functional leadership, establish a single version of truth. My dashboards turn complex data into clear operational stories, so everyone from executives to frontline teams makes rapid, high-confidence decisions.</p>
+    <div class="p-5 bg-app-900 border border-app-border rounded">
+      <h3 class="font-heading text-sm font-bold text-white mb-2">Decision-Ready Reporting</h3>
+      <p class="text-xs text-app-muted leading-relaxed font-normal">Shared metrics, agreed across cross-functional leadership, establish a single version of truth. My dashboards turn complex data into clear operational stories, so everyone from executives to frontline teams makes rapid, high-confidence decisions.</p>
     </div>
-    <div class="practice">
-      <h3>Human-in-the-Loop Orchestration</h3>
-      <p class="muted">Workflows that blend automation with human oversight scale operational throughput. Confidence-score thresholds let systems process routine tasks autonomously and route edge cases to specialists, safeguarding quality and protecting revenue recognition.</p>
+    <div class="p-5 bg-app-900 border border-app-border rounded">
+      <h3 class="font-heading text-sm font-bold text-white mb-2">Human-in-the-Loop Orchestration</h3>
+      <p class="text-xs text-app-muted leading-relaxed font-normal">Workflows that blend automation with human oversight scale operational throughput. Confidence-score thresholds let systems process routine tasks autonomously and route edge cases to specialists, safeguarding quality and protecting revenue recognition.</p>
     </div>
-    <div class="practice">
-      <h3>Semantic Intelligence Architecture</h3>
-      <p class="muted">Translating cross-departmental business logic into standardized semantic models allows me to engineer context-aware AI ecosystems. By anchoring generative models to a single, verified data dictionary, the infrastructure delivers definition-backed answers that eliminate hallucinations and guarantee trusted operational results.</p>
+    <div class="p-5 bg-app-900 border border-app-border rounded">
+      <h3 class="font-heading text-sm font-bold text-white mb-2">Semantic Intelligence Architecture</h3>
+      <p class="text-xs text-app-muted leading-relaxed font-normal">Translating cross-departmental business logic into standardized semantic models allows me to engineer context-aware AI ecosystems. By anchoring generative models to a single, verified data dictionary, the infrastructure delivers definition-backed answers that eliminate hallucinations and guarantee trusted operational results.</p>
     </div>
   </div>
 </section>
 
   </main>
-  <footer class="site-footer">
-    <p class="footer-line">
-      <span>© 2026 Patrick Hancock</span>
-      <span>Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
-      <a href="mailto:phancock.portfolio@gmail.com">phancock.portfolio@gmail.com</a>
-    </p>
+
+  <footer class="site-footer border-t border-app-border bg-app-950 py-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 font-mono text-xs text-app-muted">
+      <div class="text-center lg:text-left">
+        <span>© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <a href="index.html" class="hover:text-white transition-colors">Overview</a>
+        <a href="index.html#approach" class="hover:text-white transition-colors">Operating Framework</a>
+        <a href="work.html" class="hover:text-white transition-colors">Systems (Work)</a>
+        <a href="https://github.com/patrick-hancock" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/pahancock89/" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="mailto:phancock.portfolio@gmail.com" class="text-app-accent hover:underline">phancock.portfolio@gmail.com</a>
+        <a href="resume.html" class="hover:text-white transition-colors">Resume</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

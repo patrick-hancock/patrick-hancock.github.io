@@ -1,155 +1,215 @@
 
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>masLabor Data Platform | Patrick Hancock</title>
-  <link rel="preload" href="styles/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles/site.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="logo" href="index.html">Patrick Hancock</a>
-      <nav class="main-nav" aria-label="Main">
-        <span class="nav-links">
-          <a href="index.html">Overview</a>
-          <a href="index.html#approach">Operating Framework</a>
-          <a href="work.html">Systems (Work)</a>
-          <a href="about.html">Background</a>
+<body class="bg-app-950 text-app-text font-sans antialiased selection:bg-app-accent selection:text-app-950 min-h-screen flex flex-col">
+  <header class="site-header sticky top-0 z-50 backdrop-blur-md bg-app-950/90 border-b border-app-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 group min-w-0">
+        <span class="w-8 h-8 shrink-0 rounded bg-app-850 border border-app-border flex items-center justify-center font-mono font-bold text-xs text-white group-hover:border-app-accent transition-colors" aria-hidden="true">PH</span>
+        <span class="flex flex-col min-w-0">
+          <span class="font-heading font-bold text-sm tracking-tight text-white group-hover:text-app-accent transition-colors">Patrick Hancock</span>
+          <span class="hidden sm:block text-[11px] font-mono text-app-muted -mt-0.5">Business intelligence, data and AI systems</span>
         </span>
-        <span class="icons">
-          <a class="icon" href="https://github.com/patrick-hancock" aria-label="GitHub" title="GitHub"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-</svg></a>
-          <a class="icon" href="https://www.linkedin.com/in/pahancock89/" aria-label="LinkedIn" title="LinkedIn"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-</svg></a>
-          <a class="icon" href="mailto:phancock.portfolio@gmail.com" aria-label="Email" title="Email"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g>
-</svg></a>
-          <a class="icon" href="resume.html" aria-label="Resume" title="Resume"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5M9 12h7M9 16h7"/></g>
-</svg></a>
-        </span>
+      </a>
+      <nav class="main-nav hidden md:flex items-center gap-1 bg-app-900 p-1 rounded border border-app-border text-xs font-medium" aria-label="Main">
+        <a href="index.html" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Overview</a>
+        <a href="index.html#approach" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Operating Framework</a>
+        <a href="work.html" class="px-3.5 py-1.5 text-white bg-app-800 rounded font-semibold">Systems (Work)</a>
+        <a href="about.html" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Background</a>
       </nav>
+      <div class="flex items-center gap-2.5 shrink-0">
+        <a class="icon w-8 h-8 rounded bg-app-900 hover:bg-app-850 border border-app-border flex items-center justify-center text-app-muted hover:text-white transition-colors" href="https://github.com/patrick-hancock" aria-label="GitHub" title="GitHub"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+</svg></a>
+        <a class="icon w-8 h-8 rounded bg-app-900 hover:bg-app-850 border border-app-border flex items-center justify-center text-app-muted hover:text-white transition-colors" href="https://www.linkedin.com/in/pahancock89/" aria-label="LinkedIn" title="LinkedIn"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg></a>
+        <a class="contact px-3 py-1.5 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-medium transition-colors" href="mailto:phancock.portfolio@gmail.com">Contact</a>
+      </div>
     </div>
+    <nav class="mobile-nav md:hidden border-t border-app-border" aria-label="Main, small screens">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-1 overflow-x-auto text-xs font-medium">
+        <a href="index.html" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Overview</a>
+        <a href="index.html#approach" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Operating Framework</a>
+        <a href="work.html" class="shrink-0 px-3 py-1.5 text-white bg-app-800 rounded font-semibold">Systems (Work)</a>
+        <a href="about.html" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Background</a>
+      </div>
+    </nav>
   </header>
-  <main class="page">
-    
-    
-<p class="back"><a href="work.html"><span aria-hidden="true">&larr;</span> Back to Systems (Work)</a></p>
-<header class="system-header">
-  <p class="kicker">Enterprise platform</p>
-  <h1>masLabor Data Platform</h1>
-  <p class="system-subtitle">The company&#39;s new enterprise data platform in Microsoft Fabric</p>
-  <dl class="meta-line">
-    <div><dt>Role</dt><dd>Business Intelligence Manager; sole architect and builder</dd></div>
-    <div><dt>Stack</dt><dd>Microsoft Fabric</dd></div>
-    <div><dt>Status</dt><dd>Built for every department&#39;s daily operations</dd></div>
-  </dl>
-</header>
 
-<ul class="kpis section-gap-sm" aria-label="Key figures">
-  <li class="kpi">
-    <span class="kpi-label">Platform</span>
-    <span class="kpi-value">Microsoft Fabric</span>
-    <span class="kpi-note">Enterprise data platform</span>
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-12 w-full">
+    
+<div class="mb-6">
+  <p class="back"><a href="work.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-app-muted hover:text-white transition-colors"><span aria-hidden="true">←</span> Back to Systems (Work)</a></p>
+</div>
+
+<div class="border-b border-app-border pb-8 mb-8">
+  <div class="flex flex-wrap items-center gap-2 font-mono text-xs text-app-accent mb-2">
+    <span class="px-2 py-0.5 rounded bg-app-900 border border-app-border font-semibold">Enterprise platform</span>
+  </div>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">masLabor Data Platform</h1>
+  <p class="text-base text-app-muted leading-relaxed max-w-3xl font-normal">The company&#39;s new enterprise data platform in Microsoft Fabric</p>
+  <p class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-6 pt-4 border-t border-app-border/60 text-xs font-mono text-app-muted">
+    <span>Role: <span class="text-white">Business Intelligence Manager; sole architect and builder</span></span>
+    <span class="hidden sm:block" aria-hidden="true">•</span>
+    <span>Stack: <span class="text-white">Microsoft Fabric</span></span>
+    <span class="hidden sm:block" aria-hidden="true">•</span>
+    <span>Status: <span class="text-app-emerald font-semibold">Built for every department&#39;s daily operations</span></span>
+  </p>
+</div>
+
+<ul class="grid grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-4 gap-4 mb-12" aria-label="Key figures">
+  <li class="kpi p-4 bg-app-900 border border-app-border rounded min-w-0">
+    <span class="text-xs font-mono text-app-muted block mb-1">Platform</span>
+    <span class="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight block break-words">Microsoft Fabric</span>
+    <span class="text-[11px] font-mono text-app-muted mt-1 block">Enterprise data platform</span>
   </li>
-  <li class="kpi">
-    <span class="kpi-label">Governance</span>
-    <span class="kpi-value">Role-based access</span>
-    <span class="kpi-note">Access-controlled models</span>
+  <li class="kpi p-4 bg-app-900 border border-app-border rounded min-w-0">
+    <span class="text-xs font-mono text-app-muted block mb-1">Governance</span>
+    <span class="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight block break-words">Role-based access</span>
+    <span class="text-[11px] font-mono text-app-muted mt-1 block">Access-controlled models</span>
   </li>
-  <li class="kpi">
-    <span class="kpi-label">Workflow</span>
-    <span class="kpi-value">Case routing</span>
-    <span class="kpi-note">Workload-optimized</span>
+  <li class="kpi p-4 bg-app-900 border border-app-border rounded min-w-0">
+    <span class="text-xs font-mono text-app-muted block mb-1">Workflow</span>
+    <span class="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight block break-words">Case routing</span>
+    <span class="text-[11px] font-mono text-app-muted mt-1 block">Workload-optimized</span>
   </li>
-  <li class="kpi">
-    <span class="kpi-label">AI</span>
-    <span class="kpi-value">Knowledge assistant</span>
-    <span class="kpi-note">Proprietary and agentic</span>
+  <li class="kpi p-4 bg-app-900 border border-app-border rounded min-w-0">
+    <span class="text-xs font-mono text-app-muted block mb-1">AI</span>
+    <span class="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight block break-words">Knowledge assistant</span>
+    <span class="text-[11px] font-mono text-app-muted mt-1 block">Proprietary and agentic</span>
   </li>
 </ul>
 
-<div class="split section-gap">
-  <div class="split__main">
-    <section class="report" aria-labelledby="flow-h">
-      <h2 id="flow-h">How the platform fits together</h2>
-      <p class="muted">One platform brings the company&#39;s data together, and the operational tools are built on top of it.</p>
-      <ol class="flow">
-        <li class="flow-stage">
-          <span class="flow-step">Sources</span>
-          <span class="flow-name">Company data</span>
-          <span class="flow-detail">Finance, case-management and operations data</span>
+<div class="split grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+  <div class="split__main lg:col-span-7 space-y-8 min-w-0">
+    <section class="bg-app-900 border border-app-border rounded p-6" aria-labelledby="flow-h">
+      <h2 id="flow-h" class="font-heading text-lg font-bold text-white mb-2">1. How the platform fits together</h2>
+      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">One platform brings the company&#39;s data together, and the operational tools are built on top of it.</p>
+      <ol class="space-y-3 font-mono text-xs">
+        <li class="p-3 bg-app-950 border border-app-border rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-app-muted text-[10px] uppercase block">01 · Sources</span>
+            <span class="text-white font-medium">Company data</span>
+          </div>
+          <span class="text-xs text-app-muted sm:text-right sm:max-w-[50%]">Finance, case-management and operations data</span>
         </li>
-        <li class="flow-stage">
-          <span class="flow-step">Platform</span>
-          <span class="flow-name">Microsoft Fabric</span>
-          <span class="flow-detail">The company&#39;s enterprise data platform</span>
+        <li class="flex justify-center text-app-muted text-xs" aria-hidden="true">↓</li>
+        <li class="p-3 bg-app-950 border border-app-border rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-app-muted text-[10px] uppercase block">02 · Platform</span>
+            <span class="text-white font-medium">Microsoft Fabric</span>
+          </div>
+          <span class="text-xs text-app-muted sm:text-right sm:max-w-[50%]">The company&#39;s enterprise data platform</span>
         </li>
-        <li class="flow-stage">
-          <span class="flow-step">Models</span>
-          <span class="flow-name">Role-based, access-controlled models</span>
-          <span class="flow-detail">Each role sees only the data it is permitted to see</span>
+        <li class="flex justify-center text-app-muted text-xs" aria-hidden="true">↓</li>
+        <li class="p-3 bg-app-950 border border-app-border rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-app-muted text-[10px] uppercase block">03 · Models</span>
+            <span class="text-white font-medium">Role-based, access-controlled models</span>
+          </div>
+          <span class="text-xs text-app-muted sm:text-right sm:max-w-[50%]">Each role sees only the data it is permitted to see</span>
         </li>
-        <li class="flow-stage">
-          <span class="flow-step">Tools</span>
-          <span class="flow-name">Reporting and AI-assisted workflows</span>
-          <span class="flow-detail">Daily operational tools for every department</span>
+        <li class="flex justify-center text-app-muted text-xs" aria-hidden="true">↓</li>
+        <li class="p-3 bg-app-950 border border-app-accent/40 rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-app-accent font-semibold text-[10px] uppercase block">04 · Tools</span>
+            <span class="text-white font-medium">Reporting and AI-assisted workflows</span>
+          </div>
+          <span class="text-xs text-app-emerald sm:text-right sm:max-w-[50%]">Daily operational tools for every department</span>
         </li>
       </ol>
     </section>
-    <section class="report">
-      <h2 id="panel-h">Operational tools</h2>
-      <p class="muted">Working with every department, I engineered the tools their daily work runs on.</p>
-      <div class="table-wrap" tabindex="0" role="region" aria-labelledby="panel-h">
-        <table class="data-table">
-          <thead><tr><th scope="col">Tool</th><th scope="col">What it does</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Case routing</th><td>Assigns cases with workloads in mind</td></tr>
-            <tr><th scope="row">Document ingestion</th><td>Automated pipelines bring documents in</td></tr>
-            <tr><th scope="row">Knowledge assistant</th><td>A proprietary, agentic AI assistant</td></tr>
+    <section class="bg-app-900 border border-app-border rounded p-6">
+      <h2 id="panel-h" class="font-heading text-lg font-bold text-white mb-2">2. Operational tools</h2>
+      <p class="text-xs text-app-muted leading-relaxed mb-4 font-normal">Working with every department, I engineered the tools their daily work runs on.</p>
+      <div class="overflow-x-auto" tabindex="0" role="region" aria-labelledby="panel-h">
+        <table class="w-full text-left font-mono text-xs border border-app-border">
+          <thead class="bg-app-950 text-white">
+            <tr><th scope="col" class="p-2.5 border-b border-app-border font-medium">Tool</th><th scope="col" class="p-2.5 border-b border-app-border font-medium">What it does</th></tr>
+          </thead>
+          <tbody class="divide-y divide-app-border text-app-muted text-[11px]">
+            <tr><th scope="row" class="p-2.5 text-white font-medium">Case routing</th><td class="p-2.5">Assigns cases with workloads in mind</td></tr>
+            <tr><th scope="row" class="p-2.5 text-white font-medium">Document ingestion</th><td class="p-2.5">Automated pipelines bring documents in</td></tr>
+            <tr><th scope="row" class="p-2.5 text-white font-medium">Knowledge assistant</th><td class="p-2.5">A proprietary, agentic AI assistant</td></tr>
           </tbody>
         </table>
       </div>
     </section>
-    <section class="report" aria-labelledby="checks-h">
-      <h2 id="checks-h">How the platform came about</h2>
-      <p class="muted">I advanced from Business Manager of the H-2A visa program to Business Intelligence Manager by using data diagnostics to solve operational friction.</p>
-      <ul class="check-list">
-        <li>
-          <span class="check-name">Executive buy-in</span>
-          <span class="muted">I secured executive buy-in to modernize the enterprise infrastructure.</span>
+    <section class="bg-app-900 border border-app-border rounded p-6" aria-labelledby="checks-h">
+      <h2 id="checks-h" class="font-heading text-lg font-bold text-white mb-2">3. How the platform came about</h2>
+      <p class="text-xs text-app-muted leading-relaxed mb-4 font-normal">I advanced from Business Manager of the H-2A visa program to Business Intelligence Manager by using data diagnostics to solve operational friction.</p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+        <li class="p-3 bg-app-950 border border-app-border rounded ">
+          <span class="flex items-start justify-between gap-2">
+            <span class="text-white font-medium block">Executive buy-in</span>
+          </span>
+          <span class="text-app-muted text-[11px] block mt-0.5">I secured executive buy-in to modernize the enterprise infrastructure.</span>
         </li>
-        <li>
-          <span class="check-name">Sole architect</span>
-          <span class="muted">I became the sole architect and builder of the company&#39;s new data platform.</span>
+        <li class="p-3 bg-app-950 border border-app-border rounded ">
+          <span class="flex items-start justify-between gap-2">
+            <span class="text-white font-medium block">Sole architect</span>
+          </span>
+          <span class="text-app-muted text-[11px] block mt-0.5">I became the sole architect and builder of the company&#39;s new data platform.</span>
         </li>
       </ul>
     </section>
   </div>
 
-  <aside class="split__side" aria-label="Evidence">
-    <section class="exhibit" aria-labelledby="exhibit-h">
-      <h2 class="box-title" id="exhibit-h">Exhibit C: Delivery record</h2>
-      <dl class="spec spec--rows">
-        <div><dt>Role</dt><dd>Business Intelligence Manager</dd></div>
-        <div><dt>Ownership</dt><dd>Sole architect and builder</dd></div>
-        <div><dt>Platform</dt><dd>Microsoft Fabric</dd></div>
-        <div><dt>Data</dt><dd>Finance, case management, operations</dd></div>
-        <div><dt>Access</dt><dd>Role-based, access-controlled models</dd></div>
+  <aside class="split__side lg:col-span-5 space-y-6 min-w-0" aria-label="Evidence">
+    <section class="exhibit bg-app-900 border border-app-border rounded p-6 space-y-5" aria-labelledby="exhibit-h">
+      <div class="flex items-center justify-between pb-3 border-b border-app-border font-mono text-xs">
+        <h2 id="exhibit-h" class="text-app-accent font-bold text-xs">Exhibit C: Delivery record</h2>
+      </div>
+      <dl class="space-y-2 text-xs font-mono text-app-muted">
+        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
+          <dt>Role:</dt>
+          <dd class="text-white font-medium text-right">Business Intelligence Manager</dd>
+        </div>
+        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
+          <dt>Ownership:</dt>
+          <dd class="text-white font-medium text-right">Sole architect and builder</dd>
+        </div>
+        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
+          <dt>Platform:</dt>
+          <dd class="text-white font-medium text-right">Microsoft Fabric</dd>
+        </div>
+        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
+          <dt>Data:</dt>
+          <dd class="text-white font-medium text-right">Finance, case management, operations</dd>
+        </div>
+        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
+          <dt>Access:</dt>
+          <dd class="text-white font-medium text-right">Role-based, access-controlled models</dd>
+        </div>
       </dl>
     </section>
   </aside>
 </div>
 
   </main>
-  <footer class="site-footer">
-    <p class="footer-line">
-      <span>© 2026 Patrick Hancock</span>
-      <span>Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
-      <a href="mailto:phancock.portfolio@gmail.com">phancock.portfolio@gmail.com</a>
-    </p>
+
+  <footer class="site-footer border-t border-app-border bg-app-950 py-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 font-mono text-xs text-app-muted">
+      <div class="text-center lg:text-left">
+        <span>© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <a href="index.html" class="hover:text-white transition-colors">Overview</a>
+        <a href="index.html#approach" class="hover:text-white transition-colors">Operating Framework</a>
+        <a href="work.html" class="hover:text-white transition-colors">Systems (Work)</a>
+        <a href="https://github.com/patrick-hancock" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/pahancock89/" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="mailto:phancock.portfolio@gmail.com" class="text-app-accent hover:underline">phancock.portfolio@gmail.com</a>
+        <a href="resume.html" class="hover:text-white transition-colors">Resume</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

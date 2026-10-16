@@ -1,135 +1,177 @@
 
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Systems (Work) | Patrick Hancock</title>
-  <link rel="preload" href="styles/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles/site.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="logo" href="index.html">Patrick Hancock</a>
-      <nav class="main-nav" aria-label="Main">
-        <span class="nav-links">
-          <a href="index.html">Overview</a>
-          <a href="index.html#approach">Operating Framework</a>
-          <a href="work.html" aria-current="page">Systems (Work)</a>
-          <a href="about.html">Background</a>
+<body class="bg-app-950 text-app-text font-sans antialiased selection:bg-app-accent selection:text-app-950 min-h-screen flex flex-col">
+  <header class="site-header sticky top-0 z-50 backdrop-blur-md bg-app-950/90 border-b border-app-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 group min-w-0">
+        <span class="w-8 h-8 shrink-0 rounded bg-app-850 border border-app-border flex items-center justify-center font-mono font-bold text-xs text-white group-hover:border-app-accent transition-colors" aria-hidden="true">PH</span>
+        <span class="flex flex-col min-w-0">
+          <span class="font-heading font-bold text-sm tracking-tight text-white group-hover:text-app-accent transition-colors">Patrick Hancock</span>
+          <span class="hidden sm:block text-[11px] font-mono text-app-muted -mt-0.5">Business intelligence, data and AI systems</span>
         </span>
-        <span class="icons">
-          <a class="icon" href="https://github.com/patrick-hancock" aria-label="GitHub" title="GitHub"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-</svg></a>
-          <a class="icon" href="https://www.linkedin.com/in/pahancock89/" aria-label="LinkedIn" title="LinkedIn"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-</svg></a>
-          <a class="icon" href="mailto:phancock.portfolio@gmail.com" aria-label="Email" title="Email"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g>
-</svg></a>
-          <a class="icon" href="resume.html" aria-label="Resume" title="Resume"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5M9 12h7M9 16h7"/></g>
-</svg></a>
-        </span>
+      </a>
+      <nav class="main-nav hidden md:flex items-center gap-1 bg-app-900 p-1 rounded border border-app-border text-xs font-medium" aria-label="Main">
+        <a href="index.html" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Overview</a>
+        <a href="index.html#approach" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Operating Framework</a>
+        <a href="work.html" aria-current="page" class="px-3.5 py-1.5 text-white bg-app-800 rounded font-semibold">Systems (Work)</a>
+        <a href="about.html" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Background</a>
       </nav>
+      <div class="flex items-center gap-2.5 shrink-0">
+        <a class="icon w-8 h-8 rounded bg-app-900 hover:bg-app-850 border border-app-border flex items-center justify-center text-app-muted hover:text-white transition-colors" href="https://github.com/patrick-hancock" aria-label="GitHub" title="GitHub"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+</svg></a>
+        <a class="icon w-8 h-8 rounded bg-app-900 hover:bg-app-850 border border-app-border flex items-center justify-center text-app-muted hover:text-white transition-colors" href="https://www.linkedin.com/in/pahancock89/" aria-label="LinkedIn" title="LinkedIn"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg></a>
+        <a class="contact px-3 py-1.5 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-medium transition-colors" href="mailto:phancock.portfolio@gmail.com">Contact</a>
+      </div>
     </div>
+    <nav class="mobile-nav md:hidden border-t border-app-border" aria-label="Main, small screens">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-1 overflow-x-auto text-xs font-medium">
+        <a href="index.html" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Overview</a>
+        <a href="index.html#approach" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Operating Framework</a>
+        <a href="work.html" aria-current="page" class="shrink-0 px-3 py-1.5 text-white bg-app-800 rounded font-semibold">Systems (Work)</a>
+        <a href="about.html" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Background</a>
+      </div>
+    </nav>
   </header>
-  <main class="page">
+
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-12 w-full">
     
-    
-<div class="page-intro">
-  <h1>Systems (Work)</h1>
-  <p class="muted">A governed data and AI system on public US rental housing data, a security test bench for an AI assistant, and the frameworks that keep them accurate, safe and on budget.</p>
+<div class="border-b border-app-border pb-8 mb-10">
+  <p class="font-mono text-xs text-app-accent font-semibold tracking-wider uppercase mb-2">Systems</p>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">Systems (Work)</h1>
+  <p class="text-sm sm:text-base text-app-muted leading-relaxed max-w-2xl font-normal">A governed data and AI system on public US rental housing data, a security test bench for an AI assistant, and the frameworks that keep them accurate, safe and on budget.</p>
 </div>
-<section aria-labelledby="systems-h">
-  <h2 class="kicker" id="systems-h">Systems</h2>
-  <div class="system-grid">
-    <article class="system-card">
-      <p class="system-card__kind">Data and AI system</p>
-      <h3 class="system-card__title"><a href="work-rental-insights.html">Rental Insights</a></h3>
-      <p class="system-card__tagline">A governed data and AI system on public US rental data</p>
-      <p class="muted">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
-      <ul class="skills" aria-label="Skills">
-        <li class="chip chip--data"><span class="chip__kind">Data</span> dbt</li>
-        <li class="chip chip--data"><span class="chip__kind">Data</span> BigQuery</li>
-        <li class="chip chip--data"><span class="chip__kind">Data</span> Data quality checks</li>
-        <li class="chip chip--ai"><span class="chip__kind">AI</span> MCP server</li>
-        <li class="chip chip--ai"><span class="chip__kind">AI</span> SQL guardrails</li>
-        <li class="chip chip--ai"><span class="chip__kind">AI</span> LLM evaluation</li>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+  <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
+    <div>
+      <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
+        <span>Data and AI system</span>
+      </div>
+      <h2 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2">Rental Insights</h2>
+      <p class="text-xs font-medium text-app-muted mb-4 font-mono">A governed data and AI system on public US rental data</p>
+      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
+      <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>dbt</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>BigQuery</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Data quality checks</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>MCP server</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>SQL guardrails</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>LLM evaluation</li>
       </ul>
-      <a class="mono-link system-card__link" href="work-rental-insights.html" aria-label="Open system details: Rental Insights">Open system details</a>
-    </article>
-    <article class="system-card">
-      <p class="system-card__kind">Security test bench</p>
-      <h3 class="system-card__title"><a href="work-control-testing.html">AI Control Testing</a></h3>
-      <p class="system-card__tagline">Security testing for an AI assistant, decided by evidence</p>
-      <p class="status">Demo video coming soon</p>
-      <p class="muted">A small case assistant for a fictional advisory firm, built with ten realistic flaws behind one switch each, plus the harness that attacks it. Each flaw has a vulnerable run, a one-commit fix and a replay that proves the fix. Results come from canary markers, tool-call traces and database side effects, never from an AI grader.</p>
-      <ul class="skills" aria-label="Skills">
-        <li class="chip chip--ai"><span class="chip__kind">AI</span> Threat modeling</li>
-        <li class="chip chip--ai"><span class="chip__kind">AI</span> MCP tools</li>
-        <li class="chip chip--ai"><span class="chip__kind">AI</span> Prompt injection testing</li>
-        <li class="chip chip--data"><span class="chip__kind">Data</span> Python test harness</li>
-        <li class="chip chip--data"><span class="chip__kind">Data</span> SQLite evidence</li>
+    </div>
+    <a href="work-rental-insights.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: Rental Insights">
+      <span>Open system details</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </article>
+  <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
+    <div>
+      <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
+        <span>Security test bench</span>
+        <span class="status text-white text-right">Demo video coming soon</span>
+      </div>
+      <h2 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2">AI Control Testing</h2>
+      <p class="text-xs font-medium text-app-muted mb-4 font-mono">Security testing for an AI assistant, decided by evidence</p>
+      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">A small case assistant for a fictional advisory firm, built with ten realistic flaws behind one switch each, plus the harness that attacks it. Each flaw has a vulnerable run, a one-commit fix and a replay that proves the fix. Results come from canary markers, tool-call traces and database side effects, never from an AI grader.</p>
+      <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Threat modeling</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>MCP tools</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Prompt injection testing</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Python test harness</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>SQLite evidence</li>
       </ul>
-      <a class="mono-link system-card__link" href="work-control-testing.html" aria-label="Open system details: AI Control Testing">Open system details</a>
-    </article>
-    <article class="system-card">
-      <p class="system-card__kind">Enterprise platform</p>
-      <h3 class="system-card__title"><a href="work-maslabor-fabric.html">masLabor Data Platform</a></h3>
-      <p class="system-card__tagline">The company&#39;s new enterprise data platform in Microsoft Fabric</p>
-      <p class="muted">As sole architect and builder, I designed masLabor&#39;s enterprise platform in Microsoft Fabric, bringing finance, case-management and operations data into role-based, access-controlled models. Working with every department, I then engineered their daily operational tools, including workload-optimized case routing, automated document ingestion pipelines and a proprietary, agentic AI knowledge assistant.</p>
-      <ul class="skills" aria-label="Skills">
-        <li class="chip chip--data"><span class="chip__kind">Data</span> Microsoft Fabric</li>
-        <li class="chip chip--data"><span class="chip__kind">Data</span> Role-based access</li>
-        <li class="chip chip--data"><span class="chip__kind">Data</span> Case routing</li>
-        <li class="chip chip--data"><span class="chip__kind">Data</span> Document ingestion</li>
-        <li class="chip chip--ai"><span class="chip__kind">AI</span> AI knowledge assistant</li>
+    </div>
+    <a href="work-control-testing.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: AI Control Testing">
+      <span>Open system details</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </article>
+  <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
+    <div>
+      <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
+        <span>Enterprise platform</span>
+      </div>
+      <h2 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2">masLabor Data Platform</h2>
+      <p class="text-xs font-medium text-app-muted mb-4 font-mono">The company&#39;s new enterprise data platform in Microsoft Fabric</p>
+      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">As sole architect and builder, I designed masLabor&#39;s enterprise platform in Microsoft Fabric, bringing finance, case-management and operations data into role-based, access-controlled models. Working with every department, I then engineered their daily operational tools, including workload-optimized case routing, automated document ingestion pipelines and a proprietary, agentic AI knowledge assistant.</p>
+      <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Microsoft Fabric</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Role-based access</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Case routing</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Document ingestion</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>AI knowledge assistant</li>
       </ul>
-      <a class="mono-link system-card__link" href="work-maslabor-fabric.html" aria-label="Open system details: masLabor Data Platform">Open system details</a>
-    </article>
+    </div>
+    <a href="work-maslabor-fabric.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: masLabor Data Platform">
+      <span>Open system details</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </article>
+</div>
+
+<section class="border-t border-app-border pt-10" aria-labelledby="frameworks-h">
+  <div class="mb-6">
+    <h2 id="frameworks-h" class="font-heading text-lg font-bold text-white">Supporting frameworks</h2>
   </div>
-</section>
-<section class="section-gap" aria-labelledby="frameworks-h">
-  <h2 class="kicker" id="frameworks-h">Supporting frameworks</h2>
-  <div class="tile-grid">
-    <article class="tile">
-      <h3>AI Cost Governance</h3>
-      <p class="status">Live dashboard coming soon</p>
-      <p class="muted">Every build task carries a token forecast, actual use is measured against it, and a hard cap stops the run and hands the decision to a person.</p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <article class="tile p-4 bg-app-900 border border-app-border rounded">
+      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">AI Cost Governance</h3>
+      <p class="status text-[11px] font-mono text-white mb-1.5">Live dashboard coming soon</p>
+      <p class="text-xs text-app-muted leading-relaxed">Every build task carries a token forecast, actual use is measured against it, and a hard cap stops the run and hands the decision to a person.</p>
     </article>
-    <article class="tile">
-      <h3>Data Quality Framework</h3>
-      <p class="status">Live monitor coming soon</p>
-      <p class="muted">A report script profiles every gold table for row counts, duplicate keys and null rates and fails when it goes stale, and 7 automated data tests guard the pipeline.</p>
+    <article class="tile p-4 bg-app-900 border border-app-border rounded">
+      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">Data Quality Framework</h3>
+      <p class="status text-[11px] font-mono text-white mb-1.5">Live monitor coming soon</p>
+      <p class="text-xs text-app-muted leading-relaxed">A report script profiles every gold table for row counts, duplicate keys and null rates and fails when it goes stale, and 7 automated data tests guard the pipeline.</p>
     </article>
-    <article class="tile">
-      <h3>SQL Guardrails and Threat Model</h3>
-      <p class="status">Interactive explorer coming soon</p>
-      <p class="muted">The AI can run only read-only queries on four gold tables, under a 1 GB scan cap, a 30-second timeout and a 200-row limit; 19 mapped threats, including prompt injection, each name the code that stops them.</p>
+    <article class="tile p-4 bg-app-900 border border-app-border rounded">
+      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">SQL Guardrails and Threat Model</h3>
+      <p class="status text-[11px] font-mono text-white mb-1.5">Interactive explorer coming soon</p>
+      <p class="text-xs text-app-muted leading-relaxed">The AI can run only read-only queries on four gold tables, under a 1 GB scan cap, a 30-second timeout and a 200-row limit; 19 mapped threats, including prompt injection, each name the code that stops them.</p>
     </article>
-    <article class="tile">
-      <h3>Golden-Set Evaluation</h3>
-      <p class="status">Score tracker coming soon</p>
-      <p class="muted">40 questions with expected answers, run blind against the live tools (33 of 40 correct), and every failure becomes a named regression case before a fix ships.</p>
+    <article class="tile p-4 bg-app-900 border border-app-border rounded">
+      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">Golden-Set Evaluation</h3>
+      <p class="status text-[11px] font-mono text-white mb-1.5">Score tracker coming soon</p>
+      <p class="text-xs text-app-muted leading-relaxed">40 questions with expected answers, run blind against the live tools (33 of 40 correct), and every failure becomes a named regression case before a fix ships.</p>
     </article>
-    <article class="tile">
-      <h3>Affordability explorer</h3>
-      <p class="muted">How much of their income renters spend on rent across 393 metro areas (Census ACS 2024), and how market rent compares with the HUD 2-bedroom Fair Market Rent.</p>
+    <article class="tile p-4 bg-app-900 border border-app-border rounded">
+      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">Affordability explorer</h3>
+      <p class="text-xs text-app-muted leading-relaxed">How much of their income renters spend on rent across 393 metro areas (Census ACS 2024), and how market rent compares with the HUD 2-bedroom Fair Market Rent.</p>
     </article>
-    <article class="tile">
-      <h3>Q&amp;A gallery</h3>
-      <p class="muted">Questions from the eval pack with the answers the MCP server gave, each citing its source or refusing.</p>
+    <article class="tile p-4 bg-app-900 border border-app-border rounded">
+      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">Q&amp;A gallery</h3>
+      <p class="text-xs text-app-muted leading-relaxed">Questions from the eval pack with the answers the MCP server gave, each citing its source or refusing.</p>
     </article>
   </div>
 </section>
 
   </main>
-  <footer class="site-footer">
-    <p class="footer-line">
-      <span>© 2026 Patrick Hancock</span>
-      <span>Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
-      <a href="mailto:phancock.portfolio@gmail.com">phancock.portfolio@gmail.com</a>
-    </p>
+
+  <footer class="site-footer border-t border-app-border bg-app-950 py-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 font-mono text-xs text-app-muted">
+      <div class="text-center lg:text-left">
+        <span>© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <a href="index.html" class="hover:text-white transition-colors">Overview</a>
+        <a href="index.html#approach" class="hover:text-white transition-colors">Operating Framework</a>
+        <a href="work.html" class="hover:text-white transition-colors">Systems (Work)</a>
+        <a href="https://github.com/patrick-hancock" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/pahancock89/" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="mailto:phancock.portfolio@gmail.com" class="text-app-accent hover:underline">phancock.portfolio@gmail.com</a>
+        <a href="resume.html" class="hover:text-white transition-colors">Resume</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
