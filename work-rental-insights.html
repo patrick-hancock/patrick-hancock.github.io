@@ -58,7 +58,7 @@
     <span class="hidden sm:block" aria-hidden="true">•</span>
     <span>Stack: <span class="text-white">BigQuery, dbt, Python, MCP server</span></span>
     <span class="hidden sm:block" aria-hidden="true">•</span>
-    <span>Status: <span class="text-app-emerald font-semibold">Built and tested; code not yet public</span></span>
+    <span>Status: <span class="text-app-emerald font-semibold">Built and tested; code public on GitHub</span></span>
   </p>
   <p class="text-sm text-app-muted leading-relaxed mt-6 mb-6 max-w-3xl">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
   <div class="p-5 bg-app-900 border border-app-border rounded">
@@ -204,6 +204,12 @@
   </div>
 
   <aside class="split__side lg:col-span-5 space-y-6 min-w-0" aria-label="Evidence">
+    <div class="bg-app-900 border border-app-border rounded p-5 space-y-3">
+      <div class="flex flex-col gap-2">
+        <a href="https://patrick-hancock.github.io/rental-insights/" class="w-full py-2.5 px-4 rounded bg-app-accent hover:bg-sky-400 text-app-950 text-xs font-mono font-bold flex items-center justify-center gap-2 transition-colors">View the live project page</a>
+        <a href="https://github.com/patrick-hancock/rental-insights" class="w-full py-2.5 px-4 rounded bg-app-accent hover:bg-sky-400 text-app-950 text-xs font-mono font-bold flex items-center justify-center gap-2 transition-colors">Read the source code on GitHub</a>
+      </div>
+    </div>
     <section class="exhibit bg-app-900 border border-app-border rounded p-6 space-y-5" aria-labelledby="exhibit-h">
       <div class="flex items-center justify-between pb-3 border-b border-app-border font-mono text-xs">
         <h2 id="exhibit-h" class="text-app-accent font-bold text-xs">Exhibit A: SQL guardrails</h2>
