@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q&amp;A Eval Gallery | Rental Insights</title>
+<meta name="description" content="Each of the 40 eval questions for the rental Q&amp;A tools, with the status and grade from two eval runs.">
+<link rel="stylesheet" href="https://patrick-hancock.github.io/shared/portfolio.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Status colours are shared tokens; the status word on each chip carries the meaning, so colour is never the only cue. */
+  .status { display: inline-block; font-family: var(--font-mono); font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 600; padding: 0 var(--space-2); border-radius: var(--radius); border: 1px solid currentColor; white-space: nowrap; color: var(--fg-default); }
+  .status.st-answered { color: var(--fg-good); }
+  .status.st-no-data { color: var(--fg-muted); }
+  .status.st-error { color: var(--fg-critical); }
+  .filters { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-3); }
+  .filters label { display: flex; flex-direction: column; gap: var(--space-1); color: var(--fg-muted); font-size: var(--text-sm); }
+  .filters select { font: inherit; min-height: 44px; color: var(--fg-default); background: var(--bg-raised); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); padding: var(--space-1) var(--space-2); }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--space-3); }
+  .qa { background: var(--bg-raised); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+  .qa .top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+  .qa .qid { font-family: var(--font-mono); font-weight: 700; }
+  .qa .run { color: var(--fg-muted); font-size: var(--text-sm); margin-left: auto; }
+  .qa h3 { font-size: var(--text-base); line-height: var(--leading-base); margin: 0; }
+  .qa p { margin: 0; overflow-wrap: anywhere; }
+  .qa .answer { color: var(--fg-muted); font-size: var(--text-sm); line-height: var(--leading-sm); }
+  .qa .meta { color: var(--fg-muted); font-size: var(--text-sm); line-height: var(--leading-sm); }
+  .grade { font-family: var(--font-mono); font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 600; padding: 0 var(--space-2); border-radius: var(--radius); background: var(--bg-page); color: var(--fg-muted); }
+  .grade.g-fail { color: var(--fg-critical); }
+  .count { color: var(--fg-muted); font-size: var(--text-sm); margin: 0 0 var(--space-2); }
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="back" href="https://patrick-hancock.github.io">&larr; Patrick Hancock</a>
+  <a class="brand" href="index.html">Rental Insights</a>
+  <nav class="jump" aria-label="Pages">
+    <ul>
+      <li><a href="index.html#trends">Rent trends</a></li>
+      <li><a href="index.html#affordability">Affordability</a></li>
+      <li><a href="index.html#geography">Geography</a></li>
+      <li><a href="qa.html" aria-current="page">Q&amp;A evals</a></li>
+    </ul>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Q&amp;A eval gallery</h1>
+  <p class="lede">Forty test questions put to the project's question-answering tools, which may answer only from the project's own tables and definitions. Each card shows how one run handled one question: its status (answered, refused, needs clarification, no data or error) and whether that matched the expected answer. A card passes only when the status and every number match.</p>
+  <div class="tiles" id="tiles"></div>
+
+  <section class="panel" aria-label="Eval results">
+    <div class="filters">
+      <label>Run<select id="f-run"></select></label>
+      <label>Status<select id="f-status"></select></label>
+      <label>Grade<select id="f-grade"></select></label>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="gallery" id="gallery"></div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <p>Data Provided by Zillow Group</p>
+  <p>Answers that quote typical rent (ZORI) or home value (ZHVI) use Zillow figures; affordability figures come from the Census Bureau's American Community Survey and HUD Fair Market Rents. Built from the project's eval results; not investment advice.</p>
+</div></footer>
+
+<script>
+(function () {
+  "use strict";
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function slug(s) { return s.replace(/\s+/g, "-"); }
+  function fill(sel, opts) {
+    opts.forEach(function (o) { var op = el("option", null, o[1]); op.value = o[0]; sel.append(op); });
+  }
+
+  var main = document.querySelector("main");
+  fetch("data/qa.json").then(function (res) {
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    return res.json();
+  }).then(function (d) {
+    var tiles = document.getElementById("tiles");
+    d.runs.forEach(function (r) {
+      var c = r.counted, t = el("div", "tile");
+      t.append(el("div", "label", r.label + ", " + r.date));
+      t.append(el("div", "value", c.pass + " of " + (c.rows - c.not_run)));
+      t.append(el("div", "note", (c.not_run ? c.not_run + " not run; " : "") + c.fail + " failed. " + r.about));
+      tiles.append(t);
+    });
+
+    var fRun = document.getElementById("f-run"), fStatus = document.getElementById("f-status"), fGrade = document.getElementById("f-grade");
+    fill(fRun, d.runs.map(function (r) { return [String(r.run), r.label + " (" + r.date + ")"]; }).concat([["all", "Both runs"]]));
+    fill(fStatus, [["all", "All statuses"]].concat(d.statuses.map(function (s) { return [s, s]; })));
+    fill(fGrade, [["all", "All grades"], ["pass", "pass"], ["fail", "fail"], ["not run", "not run"]]);
+
+    var gallery = document.getElementById("gallery"), count = document.getElementById("count");
+    function draw() {
+      var rows = d.rows.filter(function (r) {
+        return (fRun.value === "all" || String(r.run) === fRun.value) &&
+          (fStatus.value === "all" || r.status === fStatus.value) &&
+          (fGrade.value === "all" || r.result === fGrade.value);
+      });
+      gallery.replaceChildren();
+      count.textContent = rows.length + (rows.length === 1 ? " card" : " cards");
+      rows.forEach(function (r) {
+        var card = el("article", "qa");
+        var top = el("div", "top");
+        top.append(el("span", "qid", r.id));
+        top.append(el("span", "status st-" + slug(r.status), r.status));
+        top.append(el("span", "grade g-" + slug(r.result), r.result));
+        top.append(el("span", "run", r.run_label + ", " + r.run_date));
+        card.append(top);
+        card.append(el("h3", null, r.question));
+        card.append(el("p", "answer", r.answer));
+        card.append(el("p", "meta", "Expected status: " + r.expected_status + (r.note ? ". " + r.note : "")));
+        gallery.append(card);
+      });
+    }
+    [fRun, fStatus, fGrade].forEach(function (s) { s.addEventListener("change", draw); });
+    draw();
+  }).catch(function (err) {
+    main.append(el("p", "error", "The data for this page could not be loaded. If you opened the file directly, serve the folder instead (python -m http.server in site/)."));
+    console.error(err);
+  });
+})();
+</script>
+</body>
+</html>

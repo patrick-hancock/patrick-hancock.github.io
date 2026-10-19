@@ -1,0 +1,1024 @@
+{
+ "kpis": [
+  "K1",
+  "K2",
+  "K3"
+ ],
+ "source_keys": [
+  "gold.fct_metro_month",
+  "gold.dim_metro"
+ ],
+ "latest": {
+  "month_end": "2026-08-31",
+  "metros": 749,
+  "metros_with_yoy": 602,
+  "median_zori": 1387.79276,
+  "median_zori_yoy": 0.033569,
+  "median_gross_rent_yield": 0.05921,
+  "metros_falling": 27
+ },
+ "series": [
+  {
+   "month_end": "2015-01-31",
+   "median_zori": 933.264985,
+   "median_zori_yoy": null,
+   "metros": 211
+  },
+  {
+   "month_end": "2015-02-28",
+   "median_zori": 935.761558,
+   "median_zori_yoy": null,
+   "metros": 212
+  },
+  {
+   "month_end": "2015-03-31",
+   "median_zori": 943.41516,
+   "median_zori_yoy": null,
+   "metros": 216
+  },
+  {
+   "month_end": "2015-04-30",
+   "median_zori": 944.482132,
+   "median_zori_yoy": null,
+   "metros": 221
+  },
+  {
+   "month_end": "2015-05-31",
+   "median_zori": 950.367353,
+   "median_zori_yoy": null,
+   "metros": 221
+  },
+  {
+   "month_end": "2015-06-30",
+   "median_zori": 952.76051,
+   "median_zori_yoy": null,
+   "metros": 223
+  },
+  {
+   "month_end": "2015-07-31",
+   "median_zori": 956.957173,
+   "median_zori_yoy": null,
+   "metros": 222
+  },
+  {
+   "month_end": "2015-08-31",
+   "median_zori": 958.428452,
+   "median_zori_yoy": null,
+   "metros": 223
+  },
+  {
+   "month_end": "2015-09-30",
+   "median_zori": 957.227792,
+   "median_zori_yoy": null,
+   "metros": 224
+  },
+  {
+   "month_end": "2015-10-31",
+   "median_zori": 952.810036,
+   "median_zori_yoy": null,
+   "metros": 225
+  },
+  {
+   "month_end": "2015-11-30",
+   "median_zori": 951.763786,
+   "median_zori_yoy": null,
+   "metros": 226
+  },
+  {
+   "month_end": "2015-12-31",
+   "median_zori": 956.051272,
+   "median_zori_yoy": null,
+   "metros": 232
+  },
+  {
+   "month_end": "2016-01-31",
+   "median_zori": 957.794135,
+   "median_zori_yoy": 0.038806,
+   "metros": 235
+  },
+  {
+   "month_end": "2016-02-29",
+   "median_zori": 958.638611,
+   "median_zori_yoy": 0.035674,
+   "metros": 234
+  },
+  {
+   "month_end": "2016-03-31",
+   "median_zori": 969.44306,
+   "median_zori_yoy": 0.03461,
+   "metros": 238
+  },
+  {
+   "month_end": "2016-04-30",
+   "median_zori": 970.019896,
+   "median_zori_yoy": 0.034252,
+   "metros": 241
+  },
+  {
+   "month_end": "2016-05-31",
+   "median_zori": 973.167981,
+   "median_zori_yoy": 0.033958,
+   "metros": 255
+  },
+  {
+   "month_end": "2016-06-30",
+   "median_zori": 977.04357,
+   "median_zori_yoy": 0.035871,
+   "metros": 257
+  },
+  {
+   "month_end": "2016-07-31",
+   "median_zori": 974.424571,
+   "median_zori_yoy": 0.033939,
+   "metros": 259
+  },
+  {
+   "month_end": "2016-08-31",
+   "median_zori": 982.899191,
+   "median_zori_yoy": 0.033828,
+   "metros": 261
+  },
+  {
+   "month_end": "2016-09-30",
+   "median_zori": 979.261141,
+   "median_zori_yoy": 0.03312,
+   "metros": 261
+  },
+  {
+   "month_end": "2016-10-31",
+   "median_zori": 976.065335,
+   "median_zori_yoy": 0.032353,
+   "metros": 260
+  },
+  {
+   "month_end": "2016-11-30",
+   "median_zori": 973.36129,
+   "median_zori_yoy": 0.029799,
+   "metros": 261
+  },
+  {
+   "month_end": "2016-12-31",
+   "median_zori": 971.13184,
+   "median_zori_yoy": 0.029752,
+   "metros": 265
+  },
+  {
+   "month_end": "2017-01-31",
+   "median_zori": 974.910392,
+   "median_zori_yoy": 0.031657,
+   "metros": 268
+  },
+  {
+   "month_end": "2017-02-28",
+   "median_zori": 984.605309,
+   "median_zori_yoy": 0.034521,
+   "metros": 268
+  },
+  {
+   "month_end": "2017-03-31",
+   "median_zori": 987.228048,
+   "median_zori_yoy": 0.036452,
+   "metros": 268
+  },
+  {
+   "month_end": "2017-04-30",
+   "median_zori": 994.233545,
+   "median_zori_yoy": 0.038395,
+   "metros": 270
+  },
+  {
+   "month_end": "2017-05-31",
+   "median_zori": 998.656826,
+   "median_zori_yoy": 0.038695,
+   "metros": 271
+  },
+  {
+   "month_end": "2017-06-30",
+   "median_zori": 1001.384656,
+   "median_zori_yoy": 0.038269,
+   "metros": 273
+  },
+  {
+   "month_end": "2017-07-31",
+   "median_zori": 1001.999798,
+   "median_zori_yoy": 0.038743,
+   "metros": 274
+  },
+  {
+   "month_end": "2017-08-31",
+   "median_zori": 1002.847352,
+   "median_zori_yoy": 0.037329,
+   "metros": 273
+  },
+  {
+   "month_end": "2017-09-30",
+   "median_zori": 1001.248113,
+   "median_zori_yoy": 0.037327,
+   "metros": 276
+  },
+  {
+   "month_end": "2017-10-31",
+   "median_zori": 997.617771,
+   "median_zori_yoy": 0.039915,
+   "metros": 281
+  },
+  {
+   "month_end": "2017-11-30",
+   "median_zori": 1002.113241,
+   "median_zori_yoy": 0.041409,
+   "metros": 281
+  },
+  {
+   "month_end": "2017-12-31",
+   "median_zori": 1008.418819,
+   "median_zori_yoy": 0.040564,
+   "metros": 283
+  },
+  {
+   "month_end": "2018-01-31",
+   "median_zori": 1003.847709,
+   "median_zori_yoy": 0.042461,
+   "metros": 284
+  },
+  {
+   "month_end": "2018-02-28",
+   "median_zori": 1009.695485,
+   "median_zori_yoy": 0.040399,
+   "metros": 286
+  },
+  {
+   "month_end": "2018-03-31",
+   "median_zori": 1015.432837,
+   "median_zori_yoy": 0.039129,
+   "metros": 287
+  },
+  {
+   "month_end": "2018-04-30",
+   "median_zori": 1023.368898,
+   "median_zori_yoy": 0.039092,
+   "metros": 288
+  },
+  {
+   "month_end": "2018-05-31",
+   "median_zori": 1022.000908,
+   "median_zori_yoy": 0.037091,
+   "metros": 292
+  },
+  {
+   "month_end": "2018-06-30",
+   "median_zori": 1023.767205,
+   "median_zori_yoy": 0.038226,
+   "metros": 291
+  },
+  {
+   "month_end": "2018-07-31",
+   "median_zori": 1023.722718,
+   "median_zori_yoy": 0.037353,
+   "metros": 293
+  },
+  {
+   "month_end": "2018-08-31",
+   "median_zori": 1027.998451,
+   "median_zori_yoy": 0.038809,
+   "metros": 293
+  },
+  {
+   "month_end": "2018-09-30",
+   "median_zori": 1026.862814,
+   "median_zori_yoy": 0.039323,
+   "metros": 293
+  },
+  {
+   "month_end": "2018-10-31",
+   "median_zori": 1026.782608,
+   "median_zori_yoy": 0.038094,
+   "metros": 294
+  },
+  {
+   "month_end": "2018-11-30",
+   "median_zori": 1027.158919,
+   "median_zori_yoy": 0.039085,
+   "metros": 293
+  },
+  {
+   "month_end": "2018-12-31",
+   "median_zori": 1024.73359,
+   "median_zori_yoy": 0.038675,
+   "metros": 293
+  },
+  {
+   "month_end": "2019-01-31",
+   "median_zori": 1029.010059,
+   "median_zori_yoy": 0.039504,
+   "metros": 299
+  },
+  {
+   "month_end": "2019-02-28",
+   "median_zori": 1035.631686,
+   "median_zori_yoy": 0.038686,
+   "metros": 299
+  },
+  {
+   "month_end": "2019-03-31",
+   "median_zori": 1045.865609,
+   "median_zori_yoy": 0.039936,
+   "metros": 301
+  },
+  {
+   "month_end": "2019-04-30",
+   "median_zori": 1049.718665,
+   "median_zori_yoy": 0.039642,
+   "metros": 302
+  },
+  {
+   "month_end": "2019-05-31",
+   "median_zori": 1059.075709,
+   "median_zori_yoy": 0.0408,
+   "metros": 302
+  },
+  {
+   "month_end": "2019-06-30",
+   "median_zori": 1061.568742,
+   "median_zori_yoy": 0.040309,
+   "metros": 302
+  },
+  {
+   "month_end": "2019-07-31",
+   "median_zori": 1062.276349,
+   "median_zori_yoy": 0.041352,
+   "metros": 302
+  },
+  {
+   "month_end": "2019-08-31",
+   "median_zori": 1061.425067,
+   "median_zori_yoy": 0.040623,
+   "metros": 301
+  },
+  {
+   "month_end": "2019-09-30",
+   "median_zori": 1064.41416,
+   "median_zori_yoy": 0.041881,
+   "metros": 302
+  },
+  {
+   "month_end": "2019-10-31",
+   "median_zori": 1067.159616,
+   "median_zori_yoy": 0.039653,
+   "metros": 302
+  },
+  {
+   "month_end": "2019-11-30",
+   "median_zori": 1065.044585,
+   "median_zori_yoy": 0.038811,
+   "metros": 301
+  },
+  {
+   "month_end": "2019-12-31",
+   "median_zori": 1073.219193,
+   "median_zori_yoy": 0.038659,
+   "metros": 302
+  },
+  {
+   "month_end": "2020-01-31",
+   "median_zori": 1078.507644,
+   "median_zori_yoy": 0.038642,
+   "metros": 302
+  },
+  {
+   "month_end": "2020-02-29",
+   "median_zori": 1080.430967,
+   "median_zori_yoy": 0.040381,
+   "metros": 302
+  },
+  {
+   "month_end": "2020-03-31",
+   "median_zori": 1086.957567,
+   "median_zori_yoy": 0.039433,
+   "metros": 302
+  },
+  {
+   "month_end": "2020-04-30",
+   "median_zori": 1090.297675,
+   "median_zori_yoy": 0.036836,
+   "metros": 303
+  },
+  {
+   "month_end": "2020-05-31",
+   "median_zori": 1095.683555,
+   "median_zori_yoy": 0.033149,
+   "metros": 304
+  },
+  {
+   "month_end": "2020-06-30",
+   "median_zori": 1099.414216,
+   "median_zori_yoy": 0.033034,
+   "metros": 304
+  },
+  {
+   "month_end": "2020-07-31",
+   "median_zori": 1106.02635,
+   "median_zori_yoy": 0.037695,
+   "metros": 303
+  },
+  {
+   "month_end": "2020-08-31",
+   "median_zori": 1106.434656,
+   "median_zori_yoy": 0.042823,
+   "metros": 304
+  },
+  {
+   "month_end": "2020-09-30",
+   "median_zori": 1113.612084,
+   "median_zori_yoy": 0.049083,
+   "metros": 305
+  },
+  {
+   "month_end": "2020-10-31",
+   "median_zori": 1118.203014,
+   "median_zori_yoy": 0.055542,
+   "metros": 305
+  },
+  {
+   "month_end": "2020-11-30",
+   "median_zori": 1124.054218,
+   "median_zori_yoy": 0.057128,
+   "metros": 307
+  },
+  {
+   "month_end": "2020-12-31",
+   "median_zori": 1121.69433,
+   "median_zori_yoy": 0.061015,
+   "metros": 310
+  },
+  {
+   "month_end": "2021-01-31",
+   "median_zori": 1126.21626,
+   "median_zori_yoy": 0.061415,
+   "metros": 315
+  },
+  {
+   "month_end": "2021-02-28",
+   "median_zori": 1138.214317,
+   "median_zori_yoy": 0.062138,
+   "metros": 317
+  },
+  {
+   "month_end": "2021-03-31",
+   "median_zori": 1153.39205,
+   "median_zori_yoy": 0.067157,
+   "metros": 322
+  },
+  {
+   "month_end": "2021-04-30",
+   "median_zori": 1162.545308,
+   "median_zori_yoy": 0.073153,
+   "metros": 321
+  },
+  {
+   "month_end": "2021-05-31",
+   "median_zori": 1179.422614,
+   "median_zori_yoy": 0.083898,
+   "metros": 325
+  },
+  {
+   "month_end": "2021-06-30",
+   "median_zori": 1197.257807,
+   "median_zori_yoy": 0.095621,
+   "metros": 329
+  },
+  {
+   "month_end": "2021-07-31",
+   "median_zori": 1208.360332,
+   "median_zori_yoy": 0.101982,
+   "metros": 329
+  },
+  {
+   "month_end": "2021-08-31",
+   "median_zori": 1216.571178,
+   "median_zori_yoy": 0.113651,
+   "metros": 332
+  },
+  {
+   "month_end": "2021-09-30",
+   "median_zori": 1223.615024,
+   "median_zori_yoy": 0.118669,
+   "metros": 335
+  },
+  {
+   "month_end": "2021-10-31",
+   "median_zori": 1232.663232,
+   "median_zori_yoy": 0.11934,
+   "metros": 338
+  },
+  {
+   "month_end": "2021-11-30",
+   "median_zori": 1235.643497,
+   "median_zori_yoy": 0.120329,
+   "metros": 343
+  },
+  {
+   "month_end": "2021-12-31",
+   "median_zori": 1234.422786,
+   "median_zori_yoy": 0.121887,
+   "metros": 348
+  },
+  {
+   "month_end": "2022-01-31",
+   "median_zori": 1235.108586,
+   "median_zori_yoy": 0.124915,
+   "metros": 368
+  },
+  {
+   "month_end": "2022-02-28",
+   "median_zori": 1245.450616,
+   "median_zori_yoy": 0.124727,
+   "metros": 379
+  },
+  {
+   "month_end": "2022-03-31",
+   "median_zori": 1254.395779,
+   "median_zori_yoy": 0.124943,
+   "metros": 385
+  },
+  {
+   "month_end": "2022-04-30",
+   "median_zori": 1269.062447,
+   "median_zori_yoy": 0.126036,
+   "metros": 391
+  },
+  {
+   "month_end": "2022-05-31",
+   "median_zori": 1289.086052,
+   "median_zori_yoy": 0.123534,
+   "metros": 401
+  },
+  {
+   "month_end": "2022-06-30",
+   "median_zori": 1299.654429,
+   "median_zori_yoy": 0.117919,
+   "metros": 406
+  },
+  {
+   "month_end": "2022-07-31",
+   "median_zori": 1306.799236,
+   "median_zori_yoy": 0.109531,
+   "metros": 409
+  },
+  {
+   "month_end": "2022-08-31",
+   "median_zori": 1308.778921,
+   "median_zori_yoy": 0.100622,
+   "metros": 412
+  },
+  {
+   "month_end": "2022-09-30",
+   "median_zori": 1307.877802,
+   "median_zori_yoy": 0.091124,
+   "metros": 414
+  },
+  {
+   "month_end": "2022-10-31",
+   "median_zori": 1308.320762,
+   "median_zori_yoy": 0.084262,
+   "metros": 415
+  },
+  {
+   "month_end": "2022-11-30",
+   "median_zori": 1304.983638,
+   "median_zori_yoy": 0.078167,
+   "metros": 423
+  },
+  {
+   "month_end": "2022-12-31",
+   "median_zori": 1306.097916,
+   "median_zori_yoy": 0.073575,
+   "metros": 430
+  },
+  {
+   "month_end": "2023-01-31",
+   "median_zori": 1306.453899,
+   "median_zori_yoy": 0.069448,
+   "metros": 437
+  },
+  {
+   "month_end": "2023-02-28",
+   "median_zori": 1308.648069,
+   "median_zori_yoy": 0.069118,
+   "metros": 444
+  },
+  {
+   "month_end": "2023-03-31",
+   "median_zori": 1313.034532,
+   "median_zori_yoy": 0.065162,
+   "metros": 452
+  },
+  {
+   "month_end": "2023-04-30",
+   "median_zori": 1316.427177,
+   "median_zori_yoy": 0.060616,
+   "metros": 465
+  },
+  {
+   "month_end": "2023-05-31",
+   "median_zori": 1317.009542,
+   "median_zori_yoy": 0.054279,
+   "metros": 482
+  },
+  {
+   "month_end": "2023-06-30",
+   "median_zori": 1321.016241,
+   "median_zori_yoy": 0.047742,
+   "metros": 485
+  },
+  {
+   "month_end": "2023-07-31",
+   "median_zori": 1325.221064,
+   "median_zori_yoy": 0.045888,
+   "metros": 486
+  },
+  {
+   "month_end": "2023-08-31",
+   "median_zori": 1327.812861,
+   "median_zori_yoy": 0.043563,
+   "metros": 490
+  },
+  {
+   "month_end": "2023-09-30",
+   "median_zori": 1330.365133,
+   "median_zori_yoy": 0.043579,
+   "metros": 489
+  },
+  {
+   "month_end": "2023-10-31",
+   "median_zori": 1329.849512,
+   "median_zori_yoy": 0.043789,
+   "metros": 495
+  },
+  {
+   "month_end": "2023-11-30",
+   "median_zori": 1327.769219,
+   "median_zori_yoy": 0.044139,
+   "metros": 500
+  },
+  {
+   "month_end": "2023-12-31",
+   "median_zori": 1331.922028,
+   "median_zori_yoy": 0.043187,
+   "metros": 499
+  },
+  {
+   "month_end": "2024-01-31",
+   "median_zori": 1326.220938,
+   "median_zori_yoy": 0.043279,
+   "metros": 508
+  },
+  {
+   "month_end": "2024-02-29",
+   "median_zori": 1331.383137,
+   "median_zori_yoy": 0.042026,
+   "metros": 518
+  },
+  {
+   "month_end": "2024-03-31",
+   "median_zori": 1340.474818,
+   "median_zori_yoy": 0.04245,
+   "metros": 520
+  },
+  {
+   "month_end": "2024-04-30",
+   "median_zori": 1347.904619,
+   "median_zori_yoy": 0.0416,
+   "metros": 528
+  },
+  {
+   "month_end": "2024-05-31",
+   "median_zori": 1354.240068,
+   "median_zori_yoy": 0.042151,
+   "metros": 533
+  },
+  {
+   "month_end": "2024-06-30",
+   "median_zori": 1359.676174,
+   "median_zori_yoy": 0.04141,
+   "metros": 540
+  },
+  {
+   "month_end": "2024-07-31",
+   "median_zori": 1360.713936,
+   "median_zori_yoy": 0.042791,
+   "metros": 547
+  },
+  {
+   "month_end": "2024-08-31",
+   "median_zori": 1363.421187,
+   "median_zori_yoy": 0.041821,
+   "metros": 549
+  },
+  {
+   "month_end": "2024-09-30",
+   "median_zori": 1363.973218,
+   "median_zori_yoy": 0.040794,
+   "metros": 551
+  },
+  {
+   "month_end": "2024-10-31",
+   "median_zori": 1372.944051,
+   "median_zori_yoy": 0.041505,
+   "metros": 552
+  },
+  {
+   "month_end": "2024-11-30",
+   "median_zori": 1367.357106,
+   "median_zori_yoy": 0.042012,
+   "metros": 559
+  },
+  {
+   "month_end": "2024-12-31",
+   "median_zori": 1366.225862,
+   "median_zori_yoy": 0.042045,
+   "metros": 560
+  },
+  {
+   "month_end": "2025-01-31",
+   "median_zori": 1361.083309,
+   "median_zori_yoy": 0.041544,
+   "metros": 576
+  },
+  {
+   "month_end": "2025-02-28",
+   "median_zori": 1370.302585,
+   "median_zori_yoy": 0.04043,
+   "metros": 581
+  },
+  {
+   "month_end": "2025-03-31",
+   "median_zori": 1380.180939,
+   "median_zori_yoy": 0.039802,
+   "metros": 588
+  },
+  {
+   "month_end": "2025-04-30",
+   "median_zori": 1389.986292,
+   "median_zori_yoy": 0.038973,
+   "metros": 587
+  },
+  {
+   "month_end": "2025-05-31",
+   "median_zori": 1390.080457,
+   "median_zori_yoy": 0.038335,
+   "metros": 595
+  },
+  {
+   "month_end": "2025-06-30",
+   "median_zori": 1392.815011,
+   "median_zori_yoy": 0.036544,
+   "metros": 597
+  },
+  {
+   "month_end": "2025-07-31",
+   "median_zori": 1399.22019,
+   "median_zori_yoy": 0.034551,
+   "metros": 598
+  },
+  {
+   "month_end": "2025-08-31",
+   "median_zori": 1401.905166,
+   "median_zori_yoy": 0.033501,
+   "metros": 602
+  },
+  {
+   "month_end": "2025-09-30",
+   "median_zori": 1401.331816,
+   "median_zori_yoy": 0.033896,
+   "metros": 604
+  },
+  {
+   "month_end": "2025-10-31",
+   "median_zori": 1404.118376,
+   "median_zori_yoy": 0.034188,
+   "metros": 610
+  },
+  {
+   "month_end": "2025-11-30",
+   "median_zori": 1408.680717,
+   "median_zori_yoy": 0.033996,
+   "metros": 615
+  },
+  {
+   "month_end": "2025-12-31",
+   "median_zori": 1404.06403,
+   "median_zori_yoy": 0.03225,
+   "metros": 625
+  },
+  {
+   "month_end": "2026-01-31",
+   "median_zori": 1403.599458,
+   "median_zori_yoy": 0.031259,
+   "metros": 636
+  },
+  {
+   "month_end": "2026-02-28",
+   "median_zori": 1403.514467,
+   "median_zori_yoy": 0.032478,
+   "metros": 640
+  },
+  {
+   "month_end": "2026-03-31",
+   "median_zori": 1408.36102,
+   "median_zori_yoy": 0.031867,
+   "metros": 657
+  },
+  {
+   "month_end": "2026-04-30",
+   "median_zori": 1404.9169,
+   "median_zori_yoy": 0.032105,
+   "metros": 666
+  },
+  {
+   "month_end": "2026-05-31",
+   "median_zori": 1403.813704,
+   "median_zori_yoy": 0.032268,
+   "metros": 682
+  },
+  {
+   "month_end": "2026-06-30",
+   "median_zori": 1398.557363,
+   "median_zori_yoy": 0.032299,
+   "metros": 691
+  },
+  {
+   "month_end": "2026-07-31",
+   "median_zori": 1400.149624,
+   "median_zori_yoy": 0.031863,
+   "metros": 712
+  },
+  {
+   "month_end": "2026-08-31",
+   "median_zori": 1387.79276,
+   "median_zori_yoy": 0.033569,
+   "metros": 749
+  }
+ ],
+ "largest_metros": [
+  {
+   "metro_name": "New York, NY",
+   "state_code": "NY",
+   "size_rank": 1,
+   "zori": 3614.99907,
+   "zori_yoy": 0.041824,
+   "gross_rent_yield": 0.059014
+  },
+  {
+   "metro_name": "Los Angeles, CA",
+   "state_code": "CA",
+   "size_rank": 2,
+   "zori": 2940.545241,
+   "zori_yoy": 0.015928,
+   "gross_rent_yield": 0.037042
+  },
+  {
+   "metro_name": "Chicago, IL",
+   "state_code": "IL",
+   "size_rank": 3,
+   "zori": 2209.961721,
+   "zori_yoy": 0.048856,
+   "gross_rent_yield": 0.074229
+  },
+  {
+   "metro_name": "Dallas, TX",
+   "state_code": "TX",
+   "size_rank": 4,
+   "zori": 1659.487528,
+   "zori_yoy": 0.004315,
+   "gross_rent_yield": 0.055249
+  },
+  {
+   "metro_name": "Houston, TX",
+   "state_code": "TX",
+   "size_rank": 5,
+   "zori": 1642.821534,
+   "zori_yoy": 0.000391,
+   "gross_rent_yield": 0.064635
+  },
+  {
+   "metro_name": "Washington, DC",
+   "state_code": "VA",
+   "size_rank": 6,
+   "zori": 2432.510021,
+   "zori_yoy": 0.007533,
+   "gross_rent_yield": 0.050913
+  },
+  {
+   "metro_name": "Philadelphia, PA",
+   "state_code": "PA",
+   "size_rank": 7,
+   "zori": 1911.102601,
+   "zori_yoy": 0.035531,
+   "gross_rent_yield": 0.058875
+  },
+  {
+   "metro_name": "Miami, FL",
+   "state_code": "FL",
+   "size_rank": 8,
+   "zori": 2666.040122,
+   "zori_yoy": 0.016008,
+   "gross_rent_yield": 0.067235
+  },
+  {
+   "metro_name": "Atlanta, GA",
+   "state_code": "GA",
+   "size_rank": 9,
+   "zori": 1852.985271,
+   "zori_yoy": 0.020226,
+   "gross_rent_yield": 0.058914
+  },
+  {
+   "metro_name": "Boston, MA",
+   "state_code": "MA",
+   "size_rank": 10,
+   "zori": 3073.538749,
+   "zori_yoy": 0.023574,
+   "gross_rent_yield": 0.050278
+  },
+  {
+   "metro_name": "Phoenix, AZ",
+   "state_code": "AZ",
+   "size_rank": 11,
+   "zori": 1721.969817,
+   "zori_yoy": 0.007212,
+   "gross_rent_yield": 0.046742
+  },
+  {
+   "metro_name": "San Francisco, CA",
+   "state_code": "CA",
+   "size_rank": 12,
+   "zori": 3408.784257,
+   "zori_yoy": 0.108484,
+   "gross_rent_yield": 0.036419
+  },
+  {
+   "metro_name": "Riverside, CA",
+   "state_code": "CA",
+   "size_rank": 13,
+   "zori": 2540.840196,
+   "zori_yoy": 0.027871,
+   "gross_rent_yield": 0.052438
+  },
+  {
+   "metro_name": "Detroit, MI",
+   "state_code": "MI",
+   "size_rank": 14,
+   "zori": 1523.72815,
+   "zori_yoy": 0.037745,
+   "gross_rent_yield": 0.068439
+  },
+  {
+   "metro_name": "Seattle, WA",
+   "state_code": "WA",
+   "size_rank": 15,
+   "zori": 2277.59636,
+   "zori_yoy": 0.01664,
+   "gross_rent_yield": 0.037576
+  },
+  {
+   "metro_name": "Minneapolis, MN",
+   "state_code": "MN",
+   "size_rank": 16,
+   "zori": 1719.202993,
+   "zori_yoy": 0.035136,
+   "gross_rent_yield": 0.053053
+  },
+  {
+   "metro_name": "San Diego, CA",
+   "state_code": "CA",
+   "size_rank": 17,
+   "zori": 2993.6316,
+   "zori_yoy": 0.019784,
+   "gross_rent_yield": 0.038595
+  },
+  {
+   "metro_name": "Tampa, FL",
+   "state_code": "FL",
+   "size_rank": 18,
+   "zori": 2001.342193,
+   "zori_yoy": -0.001479,
+   "gross_rent_yield": 0.066952
+  },
+  {
+   "metro_name": "Denver, CO",
+   "state_code": "CO",
+   "size_rank": 19,
+   "zori": 1922.403367,
+   "zori_yoy": -0.005509,
+   "gross_rent_yield": 0.041216
+  },
+  {
+   "metro_name": "Baltimore, MD",
+   "state_code": "MD",
+   "size_rank": 20,
+   "zori": 1947.82105,
+   "zori_yoy": 0.026064,
+   "gross_rent_yield": 0.058396
+  }
+ ]
+}

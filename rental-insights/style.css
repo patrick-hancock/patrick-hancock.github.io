@@ -1,0 +1,85 @@
+/* Rental Insights page layout and charts. Colour, type, spacing, base elements and buttons come from the
+   portfolio's shared stylesheet (https://patrick-hancock.github.io/shared/portfolio.css, linked first);
+   this file keeps only what that file leaves out: page layout, header, jump nav, footer, KPI tiles,
+   chart marks and tables. Every colour is a shared token. The shared tokens are dark only (U-027 PC-04),
+   so the page has no theme toggle. */
+:root {
+  /* Chart roles mapped onto shared tokens. Sky is kept for links (D-013), so the default series is
+     the text colour; rent-burden charts switch to amber, the portfolio's colour for rent burden. */
+  --series: var(--fg-default);
+  --series-hover: var(--fg-muted);
+  --grid: var(--border-subtle);
+  --reference: var(--ui-border-strong);
+}
+.burden-series { --series: var(--fg-warning); --series-hover: var(--fg-default); }
+
+.wrap { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* Header: back link to the portfolio, project name, jump nav. Sticky so the jump nav stays in reach. */
+header.site { position: sticky; top: 0; z-index: 5; background: var(--bg-surface); border-bottom: 1px solid var(--border-subtle); }
+header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; column-gap: var(--space-4); row-gap: var(--space-1); padding-block: var(--space-2); }
+header.site .back { font-size: var(--text-sm); color: var(--fg-muted); text-decoration: none; }
+header.site .back:hover { color: var(--fg-accent-hover); }
+header.site .brand { font-family: var(--font-display); font-weight: 700; color: var(--fg-default); text-decoration: none; margin-right: auto; }
+nav.jump ul { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); margin: 0; padding: 0; list-style: none; font-size: var(--text-sm); }
+nav.jump a { display: inline-block; padding: var(--space-1) var(--space-2); color: var(--fg-muted); text-decoration: none; border-radius: var(--radius); }
+nav.jump a:hover { color: var(--fg-default); background: var(--bg-raised); }
+nav.jump a[aria-current="page"] { color: var(--fg-default); background: var(--bg-raised); font-weight: 600; }
+/* Anchored sections land below the sticky header. */
+section[id] { scroll-margin-top: 112px; }
+
+main { padding-block: var(--space-5) var(--space-6); }
+.lede { color: var(--fg-muted); font-size: var(--text-lg); line-height: var(--leading-lg); margin-bottom: var(--space-4); }
+.links { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0 0 var(--space-4); }
+
+.kpi-section { padding-top: var(--space-5); margin-top: var(--space-5); border-top: 1px solid var(--border-subtle); }
+.kpi-section > p { color: var(--fg-muted); }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: var(--space-3); margin-bottom: var(--space-4); }
+.tile { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: var(--space-3); min-width: 0; }
+.tile .label { color: var(--fg-muted); font-size: var(--text-sm); line-height: var(--leading-sm); }
+.tile .value { font-family: var(--font-mono); font-size: var(--text-2xl); line-height: var(--leading-2xl); font-weight: 700; font-variant-numeric: tabular-nums; }
+.tile .note { color: var(--fg-muted); font-size: var(--text-sm); line-height: var(--leading-sm); }
+
+/* Chart panel. Not the shared .card, which is the portfolio's Work card. */
+.panel { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: var(--space-3); margin-bottom: var(--space-4); min-width: 0; }
+.panel h3 { font-size: var(--text-lg); line-height: var(--leading-lg); margin-bottom: var(--space-1); }
+.panel .sub { color: var(--fg-muted); font-size: var(--text-sm); line-height: var(--leading-sm); margin: 0 0 var(--space-2); }
+
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { fill: var(--fg-muted); font-family: var(--font-mono); font-size: 12px; font-variant-numeric: tabular-nums; }
+.chart .grid line { stroke: var(--grid); }
+.chart .axis line, .chart .baseline { stroke: var(--ui-border-strong); }
+.chart .ref { stroke: var(--reference); stroke-dasharray: 4 4; pointer-events: none; }
+.chart .mark { fill: var(--series); }
+.chart .mark.hot { fill: var(--series-hover); }
+.chart .line { fill: none; stroke: var(--series); stroke-width: 2; }
+.chart .dot { fill: var(--series); stroke: var(--bg-surface); stroke-width: 2; }
+.chart .cross { stroke: var(--fg-muted); }
+.tip { position: absolute; pointer-events: none; background: var(--bg-raised); color: var(--fg-default); border: 1px solid var(--ui-border-strong);
+  border-radius: var(--radius); padding: var(--space-1) var(--space-2); font-size: var(--text-sm); line-height: var(--leading-sm); box-shadow: var(--shadow-2); white-space: nowrap; display: none; z-index: 2; }
+.tip b { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+details { margin-top: var(--space-2); }
+summary { cursor: pointer; color: var(--fg-muted); font-size: var(--text-sm); }
+summary:hover { color: var(--fg-default); }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: var(--text-sm); line-height: var(--leading-sm); }
+th, td { text-align: left; padding: var(--space-2); border-bottom: 1px solid var(--border-subtle); }
+td { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+th { color: var(--fg-muted); font-weight: 600; }
+td.num, th.num { text-align: right; }
+.caveat { color: var(--fg-muted); font-size: var(--text-sm); line-height: var(--leading-sm); border-left: 3px solid var(--reference); padding-left: var(--space-2); margin: var(--space-2) 0 0; }
+
+footer { border-top: 1px solid var(--border-subtle); color: var(--fg-muted); font-size: var(--text-sm); line-height: var(--leading-sm); padding-block: var(--space-3) var(--space-5); }
+footer p { margin-bottom: var(--space-2); }
+.error { color: var(--fg-default); background: var(--bg-surface); border: 1px solid var(--fg-critical); padding: var(--space-3); border-radius: var(--radius); }
+
+@media (max-width: 560px) {
+  h1 { font-size: var(--text-2xl); line-height: var(--leading-2xl); }
+  h2 { font-size: var(--text-xl); line-height: var(--leading-xl); }
+  .lede { font-size: var(--text-base); line-height: var(--leading-base); }
+  .tile .value { font-size: var(--text-xl); line-height: var(--leading-xl); }
+  section[id] { scroll-margin-top: 140px; }
+}

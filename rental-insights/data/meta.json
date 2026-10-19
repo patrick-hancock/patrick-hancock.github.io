@@ -1,0 +1,10 @@
+{
+ "exported_at": "2026-10-13T16:50:25+00:00",
+ "gold_as_of": {
+  "fct_metro_month": "2026-10-13T14:15:30.345000+00:00",
+  "fct_cbsa_affordability": "2026-10-13T14:15:37.377000+00:00",
+  "dim_metro": "2026-10-13T14:15:33.899000+00:00"
+ },
+ "sources": "Zillow ZORI and ZHVI (metro, monthly), Census ACS 2024 5-year, HUD FY2027 Fair Market Rents",
+ "definitions": "wiki/kpis.md (K1-K8)"
+}

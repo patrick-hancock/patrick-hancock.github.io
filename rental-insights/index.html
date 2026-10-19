@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Insights | Patrick Hancock</title>
+<meta name="description" content="Rental Insights: US metro rent trends, rent affordability and where most renters are rent-burdened, from Zillow, Census ACS and HUD data.">
+<link rel="stylesheet" href="https://patrick-hancock.github.io/shared/portfolio.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="back" href="https://patrick-hancock.github.io">&larr; Patrick Hancock</a>
+  <a class="brand" href="#top">Rental Insights</a>
+  <nav class="jump" aria-label="On this page">
+    <ul>
+      <li><a href="#trends">Rent trends</a></li>
+      <li><a href="#affordability">Affordability</a></li>
+      <li><a href="#geography">Geography</a></li>
+      <li><a href="qa.html">Q&amp;A evals</a></li>
+    </ul>
+  </nav>
+</div></header>
+
+<main class="wrap" id="top">
+  <h1>Rental Insights</h1>
+  <p class="lede">Rental Insights turns public rent, income and housing-cost data into eight defined measures for US metro and micro areas. This page reports how typical rent has moved since 2015, how affordable rent is against income and the HUD Fair Market Rent, and where most renters are rent-burdened. Every figure is exported from the project's own tables, and a spot check recomputes a sample of them with independent SQL.</p>
+  <p class="links">
+    <a class="button" href="qa.html">Q&amp;A eval gallery</a>
+    <a class="button" href="https://github.com/patrick-hancock/rental-insights/blob/master/wiki/system_card.md">System card</a>
+    <a class="button" href="https://github.com/patrick-hancock/rental-insights">Code on GitHub</a>
+  </p>
+
+  <section class="kpi-section" id="trends" aria-labelledby="trends-h">
+    <h2 id="trends-h">Rent trends</h2>
+    <p>Typical asking rent across US metro areas, from Zillow's Observed Rent Index (ZORI). Each month shows the median across all metros with a value, so a few very large or very small metros cannot pull it around.</p>
+    <div class="tiles" id="tiles-trends"></div>
+
+    <div class="panel" id="trend">
+      <h3>Median typical rent across metros, by month</h3>
+      <p class="sub">US dollars per month. Hover for a month's value.</p>
+    </div>
+
+    <div class="panel" id="largest">
+      <h3>The 20 largest metros, latest month</h3>
+      <p class="sub">Ranked by Zillow's metro size.</p>
+    </div>
+  </section>
+  <section class="kpi-section" id="affordability" aria-labelledby="affordability-h">
+    <h2 id="affordability-h">Affordability</h2>
+    <p>How much of their income renters spend on rent (Census ACS 2024), and how typical market rent compares with the HUD Fair Market Rent that housing vouchers are based on. Areas are Census metro and micro areas (CBSAs).</p>
+    <div class="tiles" id="tiles-affordability"></div>
+
+    <div class="panel burden-series" id="burden">
+      <h3>Metros with the highest share of rent-burdened renters</h3>
+      <p class="sub">Share of renter households paying 30% or more of income on rent (K4). Top 15 of 393 metro areas; the dashed line is 50%.</p>
+    </div>
+
+    <div class="panel" id="fmr">
+      <h3>Typical market rent against the 2-bedroom Fair Market Rent</h3>
+      <p class="sub">Number of metro areas by ratio of Zillow typical rent to HUD FY2027 2-bedroom FMR (K7). Right of the dashed line, market rent is above the FMR.</p>
+    </div>
+  </section>
+  <section class="kpi-section" id="geography" aria-labelledby="geography-h">
+    <h2 id="geography-h">Geography</h2>
+    <p>Areas where at least half of renter households pay 30% or more of their income on rent (K8), counted by state. Census metro and micro areas (CBSAs), ACS 2024.</p>
+    <div class="tiles" id="tiles-geography"></div>
+
+    <div class="panel burden-series" id="states">
+      <h3>Share of each state's areas where most renters are rent-burdened</h3>
+      <p class="sub">States with at least 5 metro or micro areas, highest share first. Hover for counts.</p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <p id="asof">Loading data date…</p>
+  <p>Data Provided by Zillow Group</p>
+  <p>KPI definitions: K1 typical rent, K2 rent change year over year, K3 gross rent yield, K4 rent-burdened share, K5 severely rent-burdened share, K6 rent to income K7 market rent versus Fair Market Rent and K8 areas where most renters are rent-burdened are defined in the project's <a href="https://github.com/patrick-hancock/rental-insights/blob/master/wiki/kpis.md">KPI reference</a>. Built from public data; not investment advice.</p>
+</div></footer>
+
+<script src="site.js"></script>
+<script>
+(async () => {
+  const section = document.getElementById("trends");
+  try {
+    const d = await loadJSON("trends.json");
+    const L = d.latest, tiles = document.getElementById("tiles-trends");
+    tile(tiles, "Median typical rent (K1)", fmt.usd(L.median_zori), `${fmt.month(L.month_end)}, ${fmt.int(L.metros)} metros`);
+    tile(tiles, "Median change, year over year (K2)", fmt.signedPct(L.median_zori_yoy), `${fmt.int(L.metros_with_yoy)} metros with a year of history; ${L.metros_falling} fell`);
+    tile(tiles, "Median gross rent yield (K3)", fmt.pct(L.median_gross_rent_yield), "A year of rent / home value; ignores costs");
+
+    const pts = d.series.map((s) => ({ x: new Date(s.month_end + "T00:00:00Z"), y: s.median_zori, label: `${fmt.month(s.month_end)} · ${fmt.int(s.metros)} metros` }));
+    const trend = document.getElementById("trend");
+    lineChart(trend, pts, { yFmt: fmt.usd, ariaLabel: `Median typical rent rose from ${fmt.usd(pts[0].y)} in ${fmt.month(d.series[0].month_end)} to ${fmt.usd(L.median_zori)} in ${fmt.month(L.month_end)}.` });
+    table(trend, [
+      { key: "month_end", label: "Month", fmt: fmt.month },
+      { key: "median_zori", label: "Median rent", num: true, fmt: fmt.usd },
+      { key: "median_zori_yoy", label: "Median change, YoY", num: true, fmt: (v) => (v == null ? "n/a" : fmt.signedPct(v)) },
+      { key: "metros", label: "Metros", num: true, fmt: fmt.int },
+    ], [...d.series].reverse());
+    trend.append(el("p", { class: "caveat" }, "The set of metros grows over time (Zillow adds series), so early months cover fewer, mostly larger metros. Read the line as a broad trend, not a like-for-like index."));
+
+    const largest = document.getElementById("largest");
+    table(largest, [
+      { key: "size_rank", label: "Size rank", num: true },
+      { key: "metro_name", label: "Metro" },
+      { key: "zori", label: "Typical rent", num: true, fmt: fmt.usd },
+      { key: "zori_yoy", label: "Change, YoY", num: true, fmt: (v) => (v == null ? "n/a" : fmt.signedPct(v)) },
+      { key: "gross_rent_yield", label: "Gross yield", num: true, fmt: (v) => (v == null ? "n/a" : fmt.pct(v)) },
+    ], d.largest_metros, "Show the 20 largest metros");
+    largest.querySelector("details").open = true;
+  } catch (e) { fail(section, e); }
+})();
+</script>
+<script>
+(async () => {
+  const section = document.getElementById("affordability");
+  try {
+    const d = await loadJSON("affordability.json");
+    const h = d.headline, tiles = document.getElementById("tiles-affordability");
+    tile(tiles, "Median rent-burdened share (K4)", fmt.pct(h.median_rent_burdened_share), `Across ${fmt.int(h.cbsas)} metro and micro areas`);
+    tile(tiles, "Median severely burdened (K5)", fmt.pct(h.median_severely_rent_burdened_share), "Paying 50% or more of income on rent");
+    tile(tiles, "Median rent to income (K6)", fmt.pct(h.median_rent_to_income), "Median rent × 12 / median household income");
+    tile(tiles, "Market rent above FMR (K7)", `${fmt.int(h.cbsas_zori_above_fmr)} of ${fmt.int(h.cbsas_with_zori_fmr)}`, `Metro areas; median ratio ${fmt.ratio(h.median_zori_to_fmr_2br)}`);
+
+    const burden = document.getElementById("burden");
+    const short = (n) => n.replace(/ (Metro|Micro) Area$/, "");
+    barChart(burden, d.top_burdened_metros.map((r) => ({
+      label: short(r.cbsa_name), value: r.rent_burdened_share,
+      tip: `${short(r.cbsa_name)}<br><b>${fmt.pct(r.rent_burdened_share)}</b> rent-burdened<br>${fmt.pct(r.severely_rent_burdened_share)} severely`,
+    })), { xFmt: (v) => fmt.pct(v, 0), xMax: 0.8, ref: 0.5, ariaLabel: `Top 15 metros by rent-burdened share, led by ${short(d.top_burdened_metros[0].cbsa_name)} at ${fmt.pct(d.top_burdened_metros[0].rent_burdened_share)}.` });
+    table(burden, [
+      { key: "cbsa_name", label: "Metro area", fmt: short },
+      { key: "rent_burdened_share", label: "Rent-burdened", num: true, fmt: fmt.pct },
+      { key: "severely_rent_burdened_share", label: "Severely", num: true, fmt: fmt.pct },
+      { key: "rent_to_income", label: "Rent to income", num: true, fmt: fmt.pct },
+      { key: "population", label: "Population", num: true, fmt: fmt.int },
+    ], d.top_burdened_metros);
+
+    const fmr = document.getElementById("fmr");
+    const bins = d.zori_to_fmr_histogram.map((b) => ({
+      label: b.bin_start >= 2 ? "2.0+" : b.bin_start.toFixed(1), value: b.cbsas,
+      tip: `Ratio ${b.bin_start.toFixed(1)}–${(b.bin_start + 0.1).toFixed(1)}<br><b>${b.cbsas}</b> metro areas`,
+    }));
+    histogram(fmr, bins, { yFmt: fmt.int, refIndex: d.zori_to_fmr_histogram.findIndex((b) => b.bin_start >= 1), refLabel: "1.0 = equal", ariaLabel: `${h.cbsas_zori_above_fmr} of ${h.cbsas_with_zori_fmr} metro areas have typical market rent above the 2-bedroom FMR.` });
+    table(fmr, [
+      { key: "cbsa_name", label: "Largest metro areas", fmt: short },
+      { key: "latest_zori", label: "Typical rent", num: true, fmt: fmt.usd },
+      { key: "hud_fmr_2br_weighted", label: "2-bed FMR", num: true, fmt: fmt.usd },
+      { key: "zori_to_fmr_2br", label: "Ratio", num: true, fmt: fmt.ratio },
+    ], d.largest_metros_zori_vs_fmr, "Show the 20 largest metro areas");
+    fmr.append(el("p", { class: "caveat" }, "ZORI covers all unit sizes and FMR is for 2 bedrooms, so the ratio compares close but not identical things. Micro areas have no FMR in this data and are left out."));
+  } catch (e) { fail(section, e); }
+})();
+</script>
+<script>
+(async () => {
+  const section = document.getElementById("geography");
+  try {
+    const d = await loadJSON("geography.json");
+    const tiles = document.getElementById("tiles-geography");
+    tile(tiles, "Areas where most renters are burdened (K8)", `${fmt.int(d.total.burdened_cbsas)} of ${fmt.int(d.total.cbsas)}`, fmt.pct(d.total.burdened_cbsas / d.total.cbsas) + " of all CBSAs");
+    for (const t of d.by_type) {
+      tile(tiles, t.cbsa_type === "metro" ? "Metro areas" : "Micro areas", `${fmt.int(t.burdened_cbsas)} of ${fmt.int(t.cbsas)}`, fmt.pct(t.burdened_cbsas / t.cbsas));
+    }
+
+    const states = document.getElementById("states");
+    const rows = d.by_state.filter((s) => s.cbsas >= 5)
+      .map((s) => ({ ...s, share: s.burdened_cbsas / s.cbsas }))
+      .sort((a, b) => b.share - a.share || b.cbsas - a.cbsas);
+    barChart(states, rows.map((s) => ({
+      label: s.state, value: s.share,
+      tip: `${s.state}<br><b>${s.burdened_cbsas} of ${s.cbsas}</b> areas (${fmt.pct(s.share, 0)})`,
+    })), { xFmt: (v) => fmt.pct(v, 0), xMax: 1, ariaLabel: `${rows[0].state} has the highest share: ${rows[0].burdened_cbsas} of ${rows[0].cbsas} areas.` });
+    table(states, [
+      { key: "state", label: "State" },
+      { key: "burdened_cbsas", label: "Areas ≥ 50% burdened", num: true },
+      { key: "cbsas", label: "All areas", num: true },
+      { key: "share", label: "Share", num: true, fmt: (v) => fmt.pct(v, 0) },
+    ], d.by_state.map((s) => ({ ...s, share: s.burdened_cbsas / s.cbsas })), "Show every state");
+    states.append(el("p", { class: "caveat" }, d.state_rule + " States with fewer than 5 areas are in the table but not the chart, because one area swings their share."));
+  } catch (e) { fail(section, e); }
+})();
+</script>
+</body>
+</html>

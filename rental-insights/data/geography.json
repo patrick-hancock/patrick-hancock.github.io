@@ -1,0 +1,288 @@
+{
+ "kpis": [
+  "K8"
+ ],
+ "source_keys": [
+  "gold.fct_cbsa_affordability"
+ ],
+ "threshold": 0.5,
+ "total": {
+  "cbsas": 935,
+  "burdened_cbsas": 323
+ },
+ "by_type": [
+  {
+   "cbsa_type": "metro",
+   "cbsas": 393,
+   "burdened_cbsas": 190
+  },
+  {
+   "cbsa_type": "micro",
+   "cbsas": 542,
+   "burdened_cbsas": 133
+  }
+ ],
+ "by_state": [
+  {
+   "state": "TX",
+   "cbsas": 67,
+   "burdened_cbsas": 29
+  },
+  {
+   "state": "CA",
+   "cbsas": 34,
+   "burdened_cbsas": 29
+  },
+  {
+   "state": "FL",
+   "cbsas": 28,
+   "burdened_cbsas": 25
+  },
+  {
+   "state": "GA",
+   "cbsas": 37,
+   "burdened_cbsas": 17
+  },
+  {
+   "state": "LA",
+   "cbsas": 18,
+   "burdened_cbsas": 16
+  },
+  {
+   "state": "NC",
+   "cbsas": 38,
+   "burdened_cbsas": 15
+  },
+  {
+   "state": "MI",
+   "cbsas": 33,
+   "burdened_cbsas": 15
+  },
+  {
+   "state": "OR",
+   "cbsas": 20,
+   "burdened_cbsas": 13
+  },
+  {
+   "state": "NY",
+   "cbsas": 27,
+   "burdened_cbsas": 12
+  },
+  {
+   "state": "WA",
+   "cbsas": 21,
+   "burdened_cbsas": 11
+  },
+  {
+   "state": "MS",
+   "cbsas": 20,
+   "burdened_cbsas": 10
+  },
+  {
+   "state": "CO",
+   "cbsas": 17,
+   "burdened_cbsas": 10
+  },
+  {
+   "state": "SC",
+   "cbsas": 14,
+   "burdened_cbsas": 9
+  },
+  {
+   "state": "IN",
+   "cbsas": 37,
+   "burdened_cbsas": 8
+  },
+  {
+   "state": "MA",
+   "cbsas": 9,
+   "burdened_cbsas": 8
+  },
+  {
+   "state": "AL",
+   "cbsas": 24,
+   "burdened_cbsas": 7
+  },
+  {
+   "state": "NM",
+   "cbsas": 17,
+   "burdened_cbsas": 7
+  },
+  {
+   "state": "PA",
+   "cbsas": 36,
+   "burdened_cbsas": 6
+  },
+  {
+   "state": "MN",
+   "cbsas": 23,
+   "burdened_cbsas": 5
+  },
+  {
+   "state": "PR",
+   "cbsas": 10,
+   "burdened_cbsas": 5
+  },
+  {
+   "state": "CT",
+   "cbsas": 7,
+   "burdened_cbsas": 5
+  },
+  {
+   "state": "AR",
+   "cbsas": 19,
+   "burdened_cbsas": 4
+  },
+  {
+   "state": "KS",
+   "cbsas": 17,
+   "burdened_cbsas": 4
+  },
+  {
+   "state": "MD",
+   "cbsas": 8,
+   "burdened_cbsas": 4
+  },
+  {
+   "state": "NV",
+   "cbsas": 8,
+   "burdened_cbsas": 4
+  },
+  {
+   "state": "HI",
+   "cbsas": 4,
+   "burdened_cbsas": 4
+  },
+  {
+   "state": "IL",
+   "cbsas": 28,
+   "burdened_cbsas": 3
+  },
+  {
+   "state": "VA",
+   "cbsas": 12,
+   "burdened_cbsas": 3
+  },
+  {
+   "state": "AZ",
+   "cbsas": 11,
+   "burdened_cbsas": 3
+  },
+  {
+   "state": "WV",
+   "cbsas": 11,
+   "burdened_cbsas": 3
+  },
+  {
+   "state": "UT",
+   "cbsas": 10,
+   "burdened_cbsas": 3
+  },
+  {
+   "state": "VT",
+   "cbsas": 5,
+   "burdened_cbsas": 3
+  },
+  {
+   "state": "NJ",
+   "cbsas": 3,
+   "burdened_cbsas": 3
+  },
+  {
+   "state": "OH",
+   "cbsas": 41,
+   "burdened_cbsas": 2
+  },
+  {
+   "state": "TN",
+   "cbsas": 27,
+   "burdened_cbsas": 2
+  },
+  {
+   "state": "MO",
+   "cbsas": 25,
+   "burdened_cbsas": 2
+  },
+  {
+   "state": "KY",
+   "cbsas": 21,
+   "burdened_cbsas": 2
+  },
+  {
+   "state": "OK",
+   "cbsas": 21,
+   "burdened_cbsas": 2
+  },
+  {
+   "state": "ID",
+   "cbsas": 13,
+   "burdened_cbsas": 2
+  },
+  {
+   "state": "ME",
+   "cbsas": 4,
+   "burdened_cbsas": 2
+  },
+  {
+   "state": "DE",
+   "cbsas": 2,
+   "burdened_cbsas": 2
+  },
+  {
+   "state": "IA",
+   "cbsas": 23,
+   "burdened_cbsas": 1
+  },
+  {
+   "state": "WY",
+   "cbsas": 10,
+   "burdened_cbsas": 1
+  },
+  {
+   "state": "ND",
+   "cbsas": 8,
+   "burdened_cbsas": 1
+  },
+  {
+   "state": "MT",
+   "cbsas": 7,
+   "burdened_cbsas": 1
+  },
+  {
+   "state": "WI",
+   "cbsas": 26,
+   "burdened_cbsas": 0
+  },
+  {
+   "state": "NE",
+   "cbsas": 12,
+   "burdened_cbsas": 0
+  },
+  {
+   "state": "SD",
+   "cbsas": 11,
+   "burdened_cbsas": 0
+  },
+  {
+   "state": "NH",
+   "cbsas": 5,
+   "burdened_cbsas": 0
+  },
+  {
+   "state": "AK",
+   "cbsas": 4,
+   "burdened_cbsas": 0
+  },
+  {
+   "state": "DC",
+   "cbsas": 1,
+   "burdened_cbsas": 0
+  },
+  {
+   "state": "RI",
+   "cbsas": 1,
+   "burdened_cbsas": 0
+  }
+ ],
+ "state_rule": "First state named in the CBSA name; 59 CBSAs cross state lines and count once."
+}
