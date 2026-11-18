@@ -49,7 +49,7 @@
   <p class="text-sm sm:text-base text-app-muted leading-relaxed max-w-2xl font-normal">A governed data and AI system on public US rental housing data, a security test bench for an AI assistant, and the frameworks that keep them accurate, safe and on budget.</p>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
   <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
     <div>
       <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
@@ -97,10 +97,10 @@
   <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
     <div>
       <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
-        <span>Grounded Q&amp;A service</span>
+        <span>AI knowledge assistant</span>
       </div>
-      <h2 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-domain-qa.html">Domain Q&amp;A Service</a></h2>
-      <p class="text-xs font-medium text-app-muted mb-4 font-mono">A production AI assistant that answers from the team&#39;s own sources or says it cannot</p>
+      <h2 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-cited-answers.html">Cite-or-Refuse Assistant</a></h2>
+      <p class="text-xs font-medium text-app-muted mb-4 font-mono">A production AI assistant that answers from a team&#39;s own sources, or says it cannot</p>
       <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">Staff answering regulatory and process questions used to search three places: a domain dictionary, process documents and the data warehouse. I designed one question service that answers across all three, in a web page or inside a chat client, and treats every answer as a claim it must prove. A sentence without a source is rejected in code before anyone sees it, weak evidence returns &#34;no data&#34; instead of a guess, and generated SQL is checked before it runs. When someone flags a wrong answer, it is routed as a content correction or a software defect.</p>
       <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
         <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Retrieval with citations</li>
@@ -110,7 +110,28 @@
         <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Data warehouse</li>
       </ul>
     </div>
-    <a href="work-domain-qa.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: Domain Q&amp;A Service">
+    <a href="work-cited-answers.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: Cite-or-Refuse Assistant">
+      <span>Open system details</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </article>
+  <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
+    <div>
+      <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
+        <span>BI and analytics system</span>
+      </div>
+      <h2 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-summit.html">Summit Automotive Intelligence</a></h2>
+      <p class="text-xs font-medium text-app-muted mb-4 font-mono">A governed BI system for an eight-store car dealer group, checked figure by figure</p>
+      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">Summit is a fictional eight-store dealer group built on synthetic data, so every planted problem has a known answer. I designed one governed data foundation in Databricks, from raw files to a tested serving layer, that feeds four applications: a group dashboard, an inventory profitability queue, a service revenue recovery queue and a knowledge assistant that cites its sources. A Power BI report reads the same layer, and every figure on the report pages is reconciled against answers prepared in advance before the pages are built.</p>
+      <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Databricks</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Dimensional modeling</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Power BI and DAX</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Data quality checks</li>
+        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Cited knowledge assistant</li>
+      </ul>
+    </div>
+    <a href="work-summit.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: Summit Automotive Intelligence">
       <span>Open system details</span>
       <span aria-hidden="true">→</span>
     </a>

@@ -54,11 +54,11 @@
   <h1 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">Rental Insights</h1>
   <p class="text-base text-app-muted leading-relaxed max-w-3xl font-normal">A governed data and AI system on public US rental data</p>
   <p class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-6 pt-4 border-t border-app-border/60 text-xs font-mono text-app-muted">
-    <span>Role: <span class="text-white">System design, specification and validation</span></span>
+    <span>Role: <span class="text-white">Architect &amp; Validator</span></span>
     <span class="hidden sm:block" aria-hidden="true">•</span>
-    <span>Stack: <span class="text-white">BigQuery, dbt, Python, MCP server</span></span>
+    <span>Stack: <span class="text-white">BigQuery, dbt, Python, MCP</span></span>
     <span class="hidden sm:block" aria-hidden="true">•</span>
-    <span>Status: <span class="text-app-emerald font-semibold">Built and tested; code public on GitHub</span></span>
+    <span>Status: <span class="text-app-emerald font-semibold">Complete. The code is public on GitHub.</span></span>
   </p>
   <p class="text-sm text-app-muted leading-relaxed mt-6 mb-6 max-w-3xl">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
   <div class="p-5 bg-app-900 border border-app-border rounded">
