@@ -51,6 +51,7 @@ main p:not(.back) a { text-decoration: underline; text-underline-offset: 0.2em; 
 .sp-shot--lead { grid-column: 1; grid-row: 1 / span 3; position: sticky; top: 5rem; }  /* lead left, the other three stacked on its right (Patrick, 2026-11-18) */
 .sp-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--border-subtle); border-radius: 6px; background: var(--bg-surface); }
 .sp-shot figcaption { color: var(--fg-muted); font-size: var(--text-sm); }
+.sp-shots--row { grid-template-columns: repeat(3, minmax(0, 1fr)); }  /* property-ops case study: three equal screenshots in a row */
 
 .sp-sec { display: grid; gap: 0.75rem; min-width: 0; align-content: start; }
 .sp-h2 { margin: 0; font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; color: var(--fg-default); text-wrap: balance; }
@@ -95,7 +96,7 @@ main p:not(.back) a { text-decoration: underline; text-underline-offset: 0.2em; 
 .sp-limits dd { margin: 0; color: var(--fg-default); font-size: var(--text-sm); }
 
 @media (max-width: 1023px) { .sp-grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 767px) { .sp-shots, .sp-grid2 { grid-template-columns: 1fr; } .sp-shot--lead { grid-row: auto; position: static; } }
+@media (max-width: 767px) { .sp-shots, .sp-shots--row, .sp-grid2 { grid-template-columns: 1fr; } .sp-shot--lead { grid-row: auto; position: static; } }
 @media (max-width: 479px) { .sp-grid4 { grid-template-columns: 1fr; } }
 
 /* Card screenshot on the Systems page (Patrick, 2026-11-18): cropped to 16:9 from the top of the page image */

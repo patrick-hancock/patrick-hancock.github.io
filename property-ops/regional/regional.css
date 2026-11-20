@@ -1,0 +1,27 @@
+/* Regional manager view: rules added on top of ../ledger.css (D-043). Colors are ledger tokens only. */
+nav.views.sub { background: var(--paper); font-size: 13px; }
+nav.views a { padding: 4px 0; min-height: 24px; }
+.synthetic-top { background: var(--paper-2); border-bottom: 1px solid var(--rule); color: var(--ink-2); font-size: 12px; padding: 6px 16px; }
+.qid { font-family: var(--mono); font-size: 12px; color: var(--ink-2); }
+section.q { border-top: 1px solid var(--rule); margin-top: 20px; padding-top: 4px; }
+section.q h2 { margin-top: 12px; }
+.lede { margin: 0 0 8px; }
+.muted { color: var(--ink-2); }
+.state.error { border-style: solid; border-color: var(--flag); color: var(--flag); }
+.state.partial { border-color: var(--note); color: var(--note); }
+td.na { color: var(--ink-2); }
+.gapbar { display: block; width: 100%; min-width: 120px; height: 14px; }
+.themes { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.theme { margin: 0; padding: 0 6px; border: 1px solid var(--rule); border-radius: 999px; font-size: 12px; background: var(--paper-2); white-space: nowrap; }
+.cc header { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+.cc .claim { margin: 8px 0; }
+.cc details { margin: 6px 0; font-size: 13px; }
+.cc summary { cursor: pointer; padding: 4px 0; color: var(--ink-2); }
+.cc table.ledger { font-size: 12px; }
+.cc ol { margin: 4px 0; padding-left: 20px; }
+.cc .meta { font-size: 12px; color: var(--ink-2); }
+.badge.band { background: #fff; }
+.tight td, .tight th { padding-top: 4px; padding-bottom: 4px; }
+.pill-flag { color: var(--flag); font-weight: 600; }
+@media (max-width: 600px) { table.ledger { font-size: 13px; } }
+.badge { background: #fff; } /* rust on paper-2 is 4.27:1; on white 4.95:1 (contrast-check.ps1) */

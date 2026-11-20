@@ -1,0 +1,223 @@
+
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kestrel Valley Property Operations | Patrick Hancock</title>
+  <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body class="bg-app-950 text-app-text font-sans antialiased selection:bg-app-accent selection:text-app-950 min-h-screen flex flex-col">
+  <header class="site-header sticky top-0 z-50 backdrop-blur-md bg-app-950/90 border-b border-app-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 group min-w-0">
+        <span class="w-8 h-8 shrink-0 rounded bg-app-850 border border-app-border flex items-center justify-center font-mono font-bold text-xs text-white group-hover:border-app-accent transition-colors" aria-hidden="true">PH</span>
+        <span class="flex flex-col min-w-0">
+          <span class="font-heading font-bold text-sm tracking-tight text-white group-hover:text-app-accent transition-colors">Patrick Hancock</span>
+          <span class="hidden sm:block text-[11px] font-mono text-app-muted -mt-0.5">Business intelligence, data and AI systems</span>
+        </span>
+      </a>
+      <nav class="main-nav hidden md:flex items-center gap-1 bg-app-900 p-1 rounded border border-app-border text-xs font-medium" aria-label="Main">
+        <a href="index.html" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Overview</a>
+        <a href="work.html" class="px-3.5 py-1.5 text-white bg-app-800 rounded font-semibold">Systems (Work)</a>
+        <a href="resume.html" class="px-3.5 py-1.5 text-app-muted hover:text-white transition-colors">Resume</a>
+      </nav>
+      <div class="flex items-center gap-2.5 shrink-0">
+        <a class="icon w-8 h-8 rounded bg-app-900 hover:bg-app-850 border border-app-border flex items-center justify-center text-app-muted hover:text-white transition-colors" href="https://github.com/patrick-hancock" aria-label="GitHub" title="GitHub"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+</svg></a>
+        <a class="icon w-8 h-8 rounded bg-app-900 hover:bg-app-850 border border-app-border flex items-center justify-center text-app-muted hover:text-white transition-colors" href="https://www.linkedin.com/in/pahancock89/" aria-label="LinkedIn" title="LinkedIn"><svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg></a>
+        <a class="contact px-3 py-1.5 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-medium transition-colors" href="mailto:phancock.portfolio@gmail.com">Contact</a>
+      </div>
+    </div>
+    <nav class="mobile-nav md:hidden border-t border-app-border" aria-label="Main, small screens">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-1 overflow-x-auto text-xs font-medium">
+        <a href="index.html" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Overview</a>
+        <a href="work.html" class="shrink-0 px-3 py-1.5 text-white bg-app-800 rounded font-semibold">Systems (Work)</a>
+        <a href="resume.html" class="shrink-0 px-3 py-1.5 text-app-muted hover:text-white transition-colors">Resume</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-12 w-full">
+    
+<div class="mb-6">
+  <p class="back"><a href="work.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-app-muted hover:text-white transition-colors"><span aria-hidden="true">←</span> Back to Systems (Work)</a></p>
+</div>
+
+<div class="sp">
+  <header class="sp-head">
+    <span class="sp-eyebrow">BI and analytics system</span>
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white">Kestrel Valley Property Operations</h1>
+    <p class="sp-tagline">A claim-checked BI system for a regional property manager, with the misses shown</p>
+    <div class="sp-btns">
+      <a href="property-ops/regional/index.html" class="sp-btn sp-btn--primary">Open the regional manager view</a>
+      <a href="property-ops/asset/index.html" class="sp-btn">Open the asset manager view</a>
+      <a href="property-ops/owner/index.html" class="sp-btn">Open the owner view</a>
+      <a href="#eval-h" class="sp-btn">Jump to the evaluation</a>
+    </div>
+    <p class="sp-facts">
+      <span>Role <b>Architect &amp; Validator</b></span>
+      <span>Stack <b>Databricks, SQL and Python</b></span>
+      <span>Status <b class="sp-good">Complete. Built on synthetic data.</b></span>
+    </p>
+  </header>
+
+  <section class="sp-shots sp-shots--row" aria-label="Screenshots">
+    <figure class="sp-shot" id="regional">
+      <img src="files/property-ops/regional-index.webp" alt="The regional manager view, market position page: communities compared with their market on occupancy and renewals" width="1280" height="800" loading="eager" decoding="async">
+      <figcaption>Regional manager: which communities sit below their market, and by how much.</figcaption>
+    </figure>
+    <figure class="sp-shot" id="asset">
+      <img src="files/property-ops/asset-index.webp" alt="The asset manager view, first page: one asset&#39;s occupancy, costs and plan figures in a table" width="1280" height="800" loading="lazy" decoding="async">
+      <figcaption>Asset manager: one asset against its plan.</figcaption>
+    </figure>
+    <figure class="sp-shot" id="owner">
+      <img src="files/property-ops/owner-index.webp" alt="The owner view, first page: the portfolio&#39;s assets, capital and debt at a glance" width="1280" height="800" loading="lazy" decoding="async">
+      <figcaption>Owner: the portfolio in the owner&#39;s terms.</figcaption>
+    </figure>
+  </section>
+
+  <section class="sp-sec" aria-labelledby="story-h">
+    <h2 id="story-h" class="sp-h2">Why a property&#39;s results move, and how to tell what caused it</h2>
+    <p class="sp-lede">Kestrel Valley Residential is a made-up company that manages residential communities across a region. This system is the reporting and analysis built for it, on realistic made-up records. Seven real causes were hidden in the data on purpose, along with three look-alikes that are not causes, so every finding the system makes can be checked against a known answer.</p>
+    <ul class="sp-grid4">
+      <li class="sp-box"><b>Regional manager</b><span>Five pages on market position, repairs and service, staffing, leasing and what residents are saying.</span></li>
+      <li class="sp-box"><b>Asset manager</b><span>Six pages on occupancy, costs, the plan, capital and debt for one asset.</span></li>
+      <li class="sp-box"><b>Owner</b><span>Four pages on the assets, capital and debt, in the owner&#39;s terms.</span></li>
+      <li class="sp-box"><b>Grounded assistant</b><span>Answers from the handbook, a measure or a claim card, and refuses when none of them supports an answer.</span></li>
+    </ul>
+    <div class="sp-grid2">
+      <div><h3 class="sp-h3">What the system does</h3><p class="sp-text">For each community, it compares results with the local market and with the community&#39;s own past, then tests possible explanations against the evidence. It writes a finding card for each, called a claim card. A card either names a cause, rules a suspect out, or says the evidence is not enough.</p></div>
+      <div><h3 class="sp-h3">Why it can be trusted</h3><p class="sp-text">Every card carries the query behind each number, and a card that cannot name a cause says so instead of guessing. The sections below say what was found, what was missed and what the testing did and did not show.</p></div>
+    </div>
+  </section>
+
+  <section class="sp-sec" aria-labelledby="cards-h">
+    <h2 id="cards-h" class="sp-h2">What a claim card looks like</h2>
+    <p class="sp-text">Each card is a finding about one community. A card can name a cause, rule a suspect out, or say the evidence is not enough. Of 59 cards, 6 name a cause, 8 rule one out and 45 say the evidence is not enough. Each example below is explained in plain words, with the card&#39;s stored wording underneath.</p>
+    <ul class="sp-grid4" aria-label="Claim card examples">
+      <li class="sp-box"><b>A cause is named</b><span>From September 2025 to June 2026, Sumac Hollow&#39;s residents renewed their leases 6.4 percentage points less often than in its market. The card ties this to maintenance jobs that sat vacant, which slowed repairs from 1.8 days to 6.4 days.</span><span class="sp-kpi__note">As stored: Sumac Hollow renewed 6.4 points below its market from 2025-09 to 2026-06 because maintenance positions sat vacant and repair times rose from 1.8 to 6.4 days.</span><span class="sp-kpi__note">Card CC-000018</span></li>
+      <li class="sp-box"><b>A cause is named</b><span>By October 2026, Kettle Ridge&#39;s occupancy was 5.6 points above its market. The card ties this to buildings with new roofs and new heating and cooling: residents there renewed 15.2 points more often than in buildings still waiting for the work.</span><span class="sp-kpi__note">As stored: Kettle Ridge occupancy ran 5.6 points above its market by 2026-10 because buildings with new roofs and HVAC renewed 15.2 points better than buildings still waiting.</span><span class="sp-kpi__note">Card CC-000041</span></li>
+      <li class="sp-box"><b>A suspect is ruled out</b><span>Repair requests at Harrow Glen jumped between June and July 2024. The card rules this out as a problem: the jump matched the number of people moving in, and resident ratings, survey scores and repair times did not change.</span><span class="sp-kpi__note">As stored: The wo count jump at Harrow Glen from 2024-06 to 2024-07 is move-in volume: per move-in it matches its references, and stars, surveys and repair times are unchanged.</span><span class="sp-kpi__note">Card CC-000006</span></li>
+      <li class="sp-box"><b>The evidence is not enough</b><span>From October 2024 to April 2025, Ridgeback Lofts&#39; operating income ran 7.9 percent below its budget. The card does not name a cause: the closest explanation, higher costs on site, scored 0.33, too low to claim.</span><span class="sp-kpi__note">As stored: Something moved at Ridgeback Lofts from 2024-10 to 2025-04 (noi vs budget pct -7.9) but the evidence does not name a cause, the closest reading, site cost overrun, scored 0.33.</span><span class="sp-kpi__note">Card CC-000001</span></li>
+    </ul>
+  </section>
+
+  <section class="sp-sec" aria-labelledby="proof-h">
+    <h2 id="proof-h" class="sp-h2">What was tested</h2>
+    <p class="sp-text">Each figure is a result from the latest full test. Open a figure&#39;s note to see what was tested and what it does not show.</p>
+    <ul class="sp-grid4" aria-label="Key figures">
+      <li class="kpi sp-box sp-kpi">
+        <span class="sp-kpi__label">Hidden causes found</span>
+        <span class="sp-kpi__value">4 of 7</span>
+        <span class="sp-kpi__note">After one round of fixes, with the answers known</span>
+        <details class="sp-note">
+          <summary aria-label="What was tested: Hidden causes found"><span aria-hidden="true">i</span></summary>
+          <div class="sp-note__body">
+            <p>Seven causes were hidden in the data on purpose. The checker found four after one round of fixes, and the answer key was known while the fixes were made. Before the fixes it found 3 of 7.</p>
+            <ul><li>It missed three. They were not tuned further, and the reasons are written down.</li><li>None of the 3 look-alikes was wrongly blamed.</li><li>Reference numbers: found CH01, CH08, CH09 and CH11; missed CH02, CH04 and CH06.</li></ul>
+            <p class="sp-note__src">Claim checker, 20 Nov 2026</p>
+          </div>
+        </details>
+      </li>
+      <li class="kpi sp-box sp-kpi">
+        <span class="sp-kpi__label">Card numbers rechecked</span>
+        <span class="sp-kpi__value">895 of 895</span>
+        <span class="sp-kpi__note">Every number on a card matches the source records</span>
+        <details class="sp-note">
+          <summary aria-label="What was tested: Card numbers rechecked"><span aria-hidden="true">i</span></summary>
+          <div class="sp-note__body">
+            <p>Every number printed on a claim card was recalculated from the original records, and none was wrong. 137 of them are matched within a range, not to the exact digit.</p>
+            <ul><li>This shows the numbers are right. It does not show the system picked the right cause; the first figure covers that.</li></ul>
+            <p class="sp-note__src">Claim checker, 20 Nov 2026</p>
+          </div>
+        </details>
+      </li>
+      <li class="kpi sp-box sp-kpi">
+        <span class="sp-kpi__label">Assistant questions passed</span>
+        <span class="sp-kpi__value">38 of 58</span>
+        <span class="sp-kpi__note">First test of the question-answering assistant</span>
+        <details class="sp-note">
+          <summary aria-label="What was tested: Assistant questions passed"><span aria-hidden="true">i</span></summary>
+          <div class="sp-note__body">
+            <p>The assistant answered 60 prepared questions, and 58 count toward the score. A question passes when the answer comes from the right source, or the assistant correctly declines to answer. 38 of 58 is the first result and the lowest score a later version may have. It is not a target.</p>
+            <ul><li>Questions that should be answered: 25 of 41 passed. Questions that should be declined: 13 of 17 passed.</li><li>By where the answer comes from: handbook 13 of 17, business measures 10 of 11, claim cards 2 of 13.</li><li>Two questions wait on handbook policy numbers and are left out of the 58.</li></ul>
+            <p class="sp-note__src">Assistant test, 20 Nov 2026</p>
+          </div>
+        </details>
+      </li>
+      <li class="kpi sp-box sp-kpi">
+        <span class="sp-kpi__label">Same answer every time</span>
+        <span class="sp-kpi__value">20 of 20</span>
+        <span class="sp-kpi__note">Repeatable, which is not the same as reliable</span>
+        <details class="sp-note">
+          <summary aria-label="What was tested: Same answer every time"><span aria-hidden="true">i</span></summary>
+          <div class="sp-note__body">
+            <p>The 20 hardest questions were each asked 3 times and gave exactly the same answer every time.</p>
+            <ul><li>The assistant follows fixed rules and does not use a language model, so identical answers were expected.</li><li>This does not show how it would do with a language model writing the answers, or with new questions.</li></ul>
+            <p class="sp-note__src">Assistant test, 20 Nov 2026</p>
+          </div>
+        </details>
+      </li>
+    </ul>
+  </section>
+
+  <section class="sp-sec" aria-labelledby="flow-h">
+    <h2 id="flow-h" class="sp-h2">How it is built</h2>
+    <p class="sp-text">Each layer is built by generated SQL or script and checked before the next layer reads it.</p>
+    <div class="sp-flow-wrap" tabindex="0" role="region" aria-labelledby="flow-h">
+      <ol class="sp-flow">
+        <li class="sp-stage"><span class="sp-stage__step">Sources</span><b>Synthetic records</b><span>Seven planted causes, three decoys</span></li>
+        <li class="sp-stage"><span class="sp-stage__step">Marts</span><b>Databricks marts</b><span>One governed model</span></li>
+        <li class="sp-stage"><span class="sp-stage__step">Insight</span><b>Claim cards</b><span>59 cards, 895 values recomputed</span></li>
+        <li class="sp-stage"><span class="sp-stage__step">Measures</span><b>Shared definitions</b><span>19 measures behind every view</span></li>
+        <li class="sp-stage"><span class="sp-stage__step">Views</span><b>Three views</b><span>15 pages</span></li>
+        <li class="sp-stage"><span class="sp-stage__step">Assistant</span><b>Cited answers</b><span>Card, measure or handbook, or a refusal</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="sp-grid2">
+    <section class="sp-sec sp-panel" aria-labelledby="eval-h">
+      <h2 id="eval-h" class="sp-h2">Evaluation results</h2>
+      <p class="sp-text">The 60 prepared questions were run automatically through the assistant, without a language model. Questions it declined are counted separately from questions it answered.</p>
+      <dl class="sp-limits">
+        <div><dt>Questions passed</dt><dd>38 of 58 (65.5%) on the first run. A later version must score at least this.</dd></div>
+        <div><dt>Should be answered</dt><dd>25 of 41 passed. 9 were wrongly declined.</dd></div>
+        <div><dt>Should be declined</dt><dd>13 of 17 passed. 1 was answered when it should have been declined.</dd></div>
+        <div><dt>Known misses</dt><dd>5 questions depend on the three causes the checker missed, so they fail by design.</dd></div>
+        <div><dt>Repeat runs</dt><dd>20 of 20 gave the same answer each time. That shows it is repeatable, not that it is reliable.</dd></div>
+        <div><dt>On hold</dt><dd>2 questions wait on handbook policy numbers and are not counted in the 58.</dd></div>
+      </dl>
+      <p class="sp-text">The other failures are mostly questions sent to the wrong source, or answers missing a key word. One example is a question about why residents are leaving, which is wrongly declined. None is fixed yet.</p>
+    </section>
+    <section class="sp-sec sp-panel" aria-labelledby="limits-h">
+      <h2 id="limits-h" class="sp-h2">Honest limits</h2>
+      <p class="sp-text">The pages say plainly what the evidence does not yet support.</p>
+      <dl class="sp-limits">
+        <div><dt>Data</dt><dd>Made up, with no real company&#39;s figures</dd></div>
+        <div><dt>Hidden causes</dt><dd>4 of 7 found after one round of fixes with the answers known, and none of the 3 look-alikes wrongly blamed</dd></div>
+        <div><dt>Loan maturity outlook (owner view)</dt><dd>Shown as debt coverage, debt yield and months until the loan is due, not as a forecast</dd></div>
+        <div><dt>Market growth (asset view)</dt><dd>Shows the market&#39;s growth only</dd></div>
+        <div><dt>Return on capital (asset view)</dt><dd>There is no claim-card type for capital return, so none is shown</dd></div>
+        <div><dt>Repair wait times (regional view)</dt><dd>The typical wait is the lower of the two middle values when the count is even</dd></div>
+        <div><dt>Loans past their due date</dt><dd>Show refinanced instead of a negative number of months</dd></div>
+      </dl>
+      <p class="sp-text">These limits were decided and recorded as the system was built, and each is shown on the page it affects.</p>
+    </section>
+  </div>
+</div>
+
+  </main>
+  <footer class="site-footer border-t border-app-border bg-app-950 py-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 font-mono text-xs text-app-muted">
+      <div class="text-center lg:text-left">
+        <span>© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
