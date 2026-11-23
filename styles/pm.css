@@ -1,25 +1,47 @@
-/* Property Management page (R3.T11). Selectors sit under .theme-pm and use tags and data-section hooks, so no new
-   class names are added (check_classes reads only tw.css, site.css and card.css). Theme tokens only. */
-.theme-pm [data-section="hero"] figure { margin-top: var(--space-5); }
-.theme-pm [data-section="hero"] img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
-.theme-pm [data-section="hero"] figcaption { margin-top: var(--space-2); font-size: var(--text-sm); color: var(--fg-muted); }
-.theme-pm [data-section="hero"] > p { max-width: 68ch; font-size: var(--text-lg); line-height: var(--leading-lg); }
-.theme-pm [data-section="hero"] > h1 { max-width: 24ch; }
+/* Property Management pages (property-management.html and resume-property-management.html). Selectors sit under .theme-pm
+   and use tags and data-section / data-roles hooks, so few class names are needed. Theme tokens only.
+   2026-11-23 redesign (spec section 6): text-first hero, maps (map.css), experience, results, Kestrel Valley bridge and
+   resume download. */
 .theme-pm main a { color: var(--fg-accent); text-underline-offset: 0.2em; } /* main only: the header Contact button keeps its own colours (axe, R5.T15) */
 .theme-pm main a:hover { color: var(--fg-accent-hover); }
-.theme-pm [data-section="hero"] figcaption a { text-decoration: underline; } /* links in text need more than colour (axe link-in-text-block) */
-.theme-pm [data-section="timeline"] h3,
-.theme-pm [data-section="leadership"] h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); line-height: var(--leading-lg); }
-.theme-pm [data-section="timeline"] li > p:nth-of-type(1) { color: var(--fg-muted); }
-.theme-pm [data-section="timeline"] li p { max-width: 68ch; }
-.theme-pm [data-section="leadership"] li,
-.theme-pm [data-section="accomplishments"] li { padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
-.theme-pm [data-section="accomplishments"] strong { font-family: var(--font-display); font-size: var(--text-xl); color: var(--fg-default); }
-.theme-pm [data-section="bi-link"] > a { display: block; padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); color: var(--fg-default); text-decoration: none; }
-.theme-pm [data-section="bi-link"] > a:hover { border-color: var(--fg-accent); }
-.theme-pm [data-section="bi-link"] .section__title { margin-bottom: var(--space-2); }
-.theme-pm [data-section="resume"] p:last-child a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); background: var(--fill-accent); color: var(--fg-on-accent); border-radius: var(--radius); font-weight: 600; text-decoration: none; }
-.theme-pm [data-section="resume"] p:last-child a:hover { background: var(--fill-accent-hover); color: var(--fg-on-accent); }
+
+/* Hero: compact and text-only. */
+.theme-pm [data-section="hero"] > h1 { max-width: 30ch; text-wrap: balance; }
+.theme-pm [data-section="hero"] > p { max-width: 64ch; font-size: var(--text-lg); line-height: var(--leading-lg); }
+.theme-pm [data-section="hero"] { padding-bottom: var(--space-5); }
+
+/* Experience: three featured roles with the strongest hierarchy, then compact earlier rows. */
+.theme-pm [data-section="experience"] h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); line-height: var(--leading-lg); }
+.theme-pm [data-roles="featured"] { display: grid; gap: var(--space-4); grid-template-columns: minmax(0, 1fr); margin-bottom: var(--space-5); }
+@media (min-width: 900px) { .theme-pm [data-roles="featured"] { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.theme-pm [data-roles="featured"] > li { padding-top: var(--space-3); border-top: 2px solid var(--fg-default); }
+.theme-pm [data-roles="featured"] > li > p:nth-of-type(1) { margin-bottom: var(--space-2); font-size: var(--text-sm); color: var(--fg-muted); }
+.theme-pm [data-roles="featured"] > li > p:nth-of-type(2) { max-width: 60ch; }
+.theme-pm [data-section="experience"] > h3 { font-size: var(--text-base); line-height: var(--leading-base); margin-bottom: var(--space-2); }
+.theme-pm [data-roles="earlier"] > li { display: grid; gap: var(--space-1) var(--space-4); grid-template-columns: minmax(0, 1fr); padding-block: var(--space-2); border-top: 1px solid var(--border-subtle); font-size: var(--text-sm); line-height: var(--leading-sm); }
+@media (min-width: 768px) { .theme-pm [data-roles="earlier"] > li { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); } }
+.theme-pm [data-roles="earlier"] > li:last-child { border-bottom: 1px solid var(--border-subtle); }
+.theme-pm [data-roles="earlier"] strong { display: block; font-size: var(--text-base); line-height: var(--leading-base); color: var(--fg-default); }
+.theme-pm [data-roles="earlier"] > li > p:first-child { color: var(--fg-muted); }
+
+/* Selected results: four compact blocks, figure first. */
+.theme-pm [data-section="results"] ul { display: grid; gap: var(--space-3); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 600px) { .theme-pm [data-section="results"] ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .theme-pm [data-section="results"] ul { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.theme-pm [data-section="results"] li { padding: var(--space-3) var(--space-4) var(--space-4); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
+.theme-pm [data-section="results"] h3 span { display: block; }
+.theme-pm [data-section="results"] h3 span:first-child { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); line-height: var(--leading-xl); color: var(--fg-default); }
+.theme-pm [data-section="results"] h3 span:last-child { margin-top: var(--space-1); font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 600; color: var(--fg-default); }
+.theme-pm [data-section="results"] li > p { margin-top: var(--space-1); font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); }
+
+/* Kestrel Valley bridge and resume download. */
+.theme-pm [data-section="next"] > div { padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); }
+.theme-pm [data-section="next"] > div .section__title { font-size: var(--text-xl); line-height: var(--leading-xl); margin-bottom: var(--space-2); }
+.theme-pm [data-section="next"] > div > p:first-of-type { max-width: 68ch; margin-bottom: var(--space-2); }
+.theme-pm [data-section="next"] > div a { font-weight: 600; text-decoration: underline; }
+.theme-pm [data-section="next"] > p { margin-top: var(--space-4); }
+.theme-pm [data-section="next"] > p a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); background: var(--fill-accent); color: var(--fg-on-accent); border-radius: var(--radius); font-weight: 600; text-decoration: none; }
+.theme-pm [data-section="next"] > p a:hover { background: var(--fill-accent-hover); color: var(--fg-on-accent); }
 
 /* Property management resume page (resume-property-management.html, D-043): heading and Download PDF button on one line
    (they wrap when narrow), then the one-page preview, as on the BI resume page. */
