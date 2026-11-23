@@ -20,3 +20,11 @@
 .theme-pm [data-section="bi-link"] .section__title { margin-bottom: var(--space-2); }
 .theme-pm [data-section="resume"] p:last-child a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); background: var(--fill-accent); color: var(--fg-on-accent); border-radius: var(--radius); font-weight: 600; text-decoration: none; }
 .theme-pm [data-section="resume"] p:last-child a:hover { background: var(--fill-accent-hover); color: var(--fg-on-accent); }
+
+/* Property management resume page (resume-property-management.html, D-043): heading and Download PDF button on one line
+   (they wrap when narrow), then the one-page preview, as on the BI resume page. */
+.theme-pm [data-section="resume-page"] > div { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); padding-bottom: var(--space-5); margin-bottom: var(--space-6); border-bottom: 1px solid var(--border-subtle); }
+.theme-pm [data-section="resume-page"] h1 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-3xl); line-height: var(--leading-3xl); }
+.theme-pm [data-section="resume-page"] > div a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); background: var(--fill-accent); color: var(--fg-on-accent); border-radius: var(--radius); font-weight: 600; text-decoration: none; }
+.theme-pm [data-section="resume-page"] > div a:hover { background: var(--fill-accent-hover); color: var(--fg-on-accent); }
+.theme-pm [data-section="resume-page"] img { display: block; width: 100%; max-width: 48rem; height: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius); }
