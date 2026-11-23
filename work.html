@@ -15,7 +15,8 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles/data.css">
+  <link rel="stylesheet" href="styles/data.css?v=20261123d">
+  <script src="js/work.js?v=20261123d" defer></script>
 
   <link rel="stylesheet" href="styles/site.css">
 </head>
@@ -42,169 +43,697 @@
   </ol>
 </nav>
     
-<section class="border-b border-app-border pb-8 mb-10" data-section="hero">
-  <h1 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3 max-w-3xl">I design governed data platforms and the AI that answers from them.</h1>
-  <p class="text-sm sm:text-base text-app-muted leading-relaxed max-w-2xl font-normal">Every system here shows how it was built and how it was checked, so the results can be judged on evidence.</p>
+<nav class="dx-subnav" aria-labelledby="subnav-label">
+  <span id="subnav-label" class="sr-only">On this page</span>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#intelligence">Intelligence</a></li>
+    <li><a href="#data-platforms">Data Platforms</a></li>
+    <li><a href="#applied-ai">Applied AI</a></li>
+    <li><a href="#projects">More work</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+  </ul>
+</nav>
+<section class="dx-hero" id="overview" data-section="hero">
+  <div class="dx-hero__text">
+    <p class="dx-eyebrow">Data engineering / Business intelligence / Applied AI</p>
+    <h1 class="dx-hero__title">Building the systems between data and decisions.</h1>
+    <p class="dx-hero__sub">I build the data foundations, analytical products and intelligent workflows that turn fragmented operational information into trusted insight and action.</p>
+    <p class="dx-hero__actions">
+      <a class="dx-btn dx-btn--primary" href="#featured">Explore the work</a>
+      <a class="dx-btn" href="#architecture">How I build</a>
+      <a class="dx-btn" href="files/patrick-hancock-resume.pdf">Download the resume (PDF)</a>
+    </p>
+  </div>
+  <figure class="dx-life" aria-labelledby="life-cap">
+    <figcaption id="life-cap" class="dx-life__label">The intelligence lifecycle</figcaption>
+    <ol class="dx-life__list">
+      <li class="dx-life__stage dx-life__stage--sources">
+        <span class="dx-life__idx" aria-hidden="true">01</span>
+        <span class="dx-life__name">Source systems</span>
+        <span class="dx-life__text">Operational systems, documents and mail, as they arrive.</span>
+      </li>
+      <li class="dx-life__stage dx-life__stage--foundation">
+        <span class="dx-life__idx" aria-hidden="true">02</span>
+        <span class="dx-life__name">Data foundation</span>
+        <span class="dx-life__text">Ingestion, layering, history and audit.</span>
+      </li>
+      <li class="dx-life__stage dx-life__stage--semantics">
+        <span class="dx-life__idx" aria-hidden="true">03</span>
+        <span class="dx-life__name">Business semantics</span>
+        <span class="dx-life__text">Shared definitions, metrics and rules.</span>
+      </li>
+      <li class="dx-life__stage dx-life__stage--analytics">
+        <span class="dx-life__idx" aria-hidden="true">04</span>
+        <span class="dx-life__name">Analytics and intelligence</span>
+        <span class="dx-life__text">Reports, models and cited answers.</span>
+      </li>
+      <li class="dx-life__stage dx-life__stage--action">
+        <span class="dx-life__idx" aria-hidden="true">05</span>
+        <span class="dx-life__name">AI, workflow and action</span>
+        <span class="dx-life__text">Routing, review and the next step taken.</span>
+      </li>
+    </ol>
+    <p class="dx-life__note">The flow every system here sits on. Not every project covers every stage.</p>
+  </figure>
 </section>
-
-<section class="mb-16" data-section="pathways">
-  <section class="pathway-group" data-pathway="intelligence" aria-labelledby="pw-intelligence">
-    <h2 id="pw-intelligence" class="pathway-group__title">Intelligence</h2>
-    <p class="pathway-group__line">Reporting systems in which every figure is checked against its source before a leader sees it.</p>
-    <p class="pathway-group__intro">These are reporting systems built for the people who run the business. Each one checks its figures against answers prepared in advance before a leader sees them, and each page states what the testing did not show. Summit covers a car dealer group and Kestrel Valley a property management company, both fictional and built on synthetic data.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-  <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
-    <div>
-      <a href="work-summit.html" tabindex="-1" aria-hidden="true" class="system-card__shot block mb-4 rounded border border-app-border"><img src="files/summit/overview.webp" alt="" width="1280" height="800" class="w-full" loading="eager" decoding="async"></a>
-      <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
-        <span>BI and analytics system</span>
-      </div>
-      <h3 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-summit.html">Summit Automotive Intelligence</a></h3>
-      <p class="text-xs font-medium text-app-muted mb-4 font-mono">A governed BI system for an eight-store car dealer group, checked figure by figure</p>
-      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">Summit is a fictional eight-store dealer group built on synthetic data, so every planted problem has a known answer. I designed one governed data foundation in Databricks, from raw files to a tested serving layer, that feeds four applications: a group dashboard, an inventory profitability queue, a service revenue recovery queue and a knowledge assistant that cites its sources. A Power BI report reads the same layer, and every figure on the report pages is reconciled against answers prepared in advance before the pages are built.</p>
-      <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Databricks</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Dimensional modeling</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Power BI and DAX</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Data quality checks</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Cited knowledge assistant</li>
+<section class="dx-section" data-section="pillars" aria-labelledby="pillars-title">
+  <h2 id="pillars-title" class="dx-h2">Three connected capabilities</h2>
+  <p class="dx-lede">Each capability depends on the one before it. Reporting is only as trustworthy as the platform under it, and AI is only safe to act on when the data and definitions it reads are governed.</p>
+  <div class="dx-pillars">
+    <article class="dx-pillar dx-pillar--intelligence">
+      <p class="dx-pillar__num">01 <span>Intelligence</span></p>
+      <h3 class="dx-pillar__heading">Turning information into decisions.</h3>
+      <p class="dx-pillar__text">Business intelligence, analytical products, semantic models and decision support for the people who run the business.</p>
+      <ul class="dx-pillar__caps"><li>Executive and operational reporting</li><li>KPI design and governed definitions</li><li>Semantic models and business logic</li><li>Drill-down analysis for each audience</li>
       </ul>
-    </div>
-    <a href="work-summit.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: Summit Automotive Intelligence">
-      <span>Open system details</span>
-      <span aria-hidden="true">→</span>
-    </a>
-  </article>
-
-      
-  <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
-    <div>
-      <a href="work-property-ops.html" tabindex="-1" aria-hidden="true" class="system-card__shot block mb-4 rounded border border-app-border"><img src="files/property-ops/card-chart.webp" alt="" width="1152" height="648" class="w-full" loading="eager" decoding="async"></a>
-      <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
-        <span>BI and analytics system</span>
-      </div>
-      <h3 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-property-ops.html">Kestrel Valley Property Operations</a></h3>
-      <p class="text-xs font-medium text-app-muted mb-4 font-mono">A claim-checked BI system for a property management company, with the misses shown</p>
-      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">Kestrel Valley is a fictional property management company built on synthetic data. All 895 numbers on its claim cards were rechecked against the source records, and none of the 3 look-alike decoys was blamed for a problem. The system found 4 of its 7 planted causes and passed 38 of 58 assistant questions, up from 32 on the first run, with every miss listed. I designed the Databricks marts, the claim cards, three views and a grounded assistant.</p>
-      <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Databricks</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Dimensional modeling</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Data quality checks</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Claim-checked analysis</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Cited knowledge assistant</li>
+      <a class="dx-pillar__link" href="#case-bi">Read the BI function case study <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="dx-pillar dx-pillar--data-platforms">
+      <p class="dx-pillar__num">02 <span>Data Platforms</span></p>
+      <h3 class="dx-pillar__heading">Building the foundations that make intelligence possible.</h3>
+      <p class="dx-pillar__text">Data architecture, ingestion, transformation, history and quality, designed so every downstream number can be traced.</p>
+      <ul class="dx-pillar__caps"><li>Layered ingestion, raw to reporting</li><li>Full and incremental loads</li><li>History kept as row versions</li><li>Audit, reconciliation and tests</li>
       </ul>
-    </div>
-    <a href="work-property-ops.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: Kestrel Valley Property Operations">
-      <span>Open system details</span>
-      <span aria-hidden="true">→</span>
-    </a>
-  </article>
-
-    </div>
-  </section>
-  <section class="pathway-group" data-pathway="data-platforms" aria-labelledby="pw-data-platforms">
-    <h2 id="pw-data-platforms" class="pathway-group__title">Data Platforms</h2>
-    <p class="pathway-group__line">Governed pipelines carry raw data through tested layers to a serving model that reports and AI share.</p>
-    <p class="pathway-group__intro">A report or an assistant is only as reliable as the layers beneath it. Rental Insights carries public rental data from raw files through tested bronze, silver and gold layers to the tables an AI assistant reads, and no layer is read until its tests pass. Summit&#39;s Databricks foundation follows the same pattern on synthetic dealer records.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-  <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
-    <div>
-      <div class="preview-diagram" data-diagram="rental-insights" data-form="pipeline">
-        <div class="dg-wrap dg-wrap--preview" aria-hidden="false"><svg class="dg dg--v" xmlns="http://www.w3.org/2000/svg" width="264" height="430" viewBox="0 0 264 430" role="img" aria-labelledby="dg-rental-insights-v-t" focusable="false"><title id="dg-rental-insights-v-t">Rental Insights pipeline</title><rect class="dg-box" x="2" y="2" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="30.0" text-anchor="middle">Sources</text><line class="dg-edge" x1="132" y1="51" x2="132" y2="68"/><polygon class="dg-head" points="132,75 127,66 137,66"/><rect class="dg-box" x="2" y="78" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="106.0" text-anchor="middle">Bronze</text><line class="dg-edge" x1="132" y1="127" x2="132" y2="144"/><polygon class="dg-head" points="132,151 127,142 137,142"/><rect class="dg-box" x="2" y="154" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="182.0" text-anchor="middle">Silver</text><line class="dg-edge" x1="132" y1="203" x2="132" y2="220"/><polygon class="dg-head" points="132,227 127,218 137,218"/><rect class="dg-box" x="2" y="230" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="258.0" text-anchor="middle">Gold</text><line class="dg-edge" x1="132" y1="279" x2="132" y2="296"/><polygon class="dg-head" points="132,303 127,294 137,294"/><rect class="dg-box" x="2" y="306" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="334.0" text-anchor="middle">Serving</text><line class="dg-edge" x1="132" y1="355" x2="132" y2="372"/><polygon class="dg-head" points="132,379 127,370 137,370"/><rect class="dg-box" x="2" y="382" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="410.0" text-anchor="middle">MCP</text></svg><ol class="dg-steps"><li>Sources</li><li>Bronze</li><li>Silver</li><li>Gold</li><li>Serving</li><li>MCP</li></ol></div>
-      </div>
-      <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
-        <span>Data and AI system</span>
-      </div>
-      <h3 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-rental-insights.html">Rental Insights</a></h3>
-      <p class="text-xs font-medium text-app-muted mb-4 font-mono">A governed data and AI system on public US rental data</p>
-      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task is tracked against a token budget.</p>
-      <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>dbt</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>BigQuery</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Data quality checks</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>MCP server</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>SQL guardrails</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>LLM evaluation</li>
+      <a class="dx-pillar__link" href="#case-platform">Read the data platform case study <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="dx-pillar dx-pillar--applied-ai">
+      <p class="dx-pillar__num">03 <span>Applied AI</span></p>
+      <h3 class="dx-pillar__heading">Moving from insight to intelligent action.</h3>
+      <p class="dx-pillar__text">Document intelligence, agent orchestration and human-in-the-loop automation, with evaluation and security testing built in.</p>
+      <ul class="dx-pillar__caps"><li>Classification and extraction</li><li>Confidence-based routing to people</li><li>Cited answers or refusals</li><li>Adversarial testing with evidence</li>
       </ul>
-    </div>
-    <a href="work-rental-insights.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: Rental Insights">
-      <span>Open system details</span>
-      <span aria-hidden="true">→</span>
-    </a>
-  </article>
-
-      <a class="pathway-entry" href="work-summit.html">
-        <span class="pathway-entry__kind">Databricks</span>
-        <span class="pathway-entry__title">Summit Automotive Intelligence</span>
-        <span class="pathway-entry__go">Open system details <span aria-hidden="true">→</span></span>
-      </a>
-    </div>
-  </section>
-  <section class="pathway-group" data-pathway="applied-ai" aria-labelledby="pw-applied-ai">
-    <h2 id="pw-applied-ai" class="pathway-group__title">Applied AI</h2>
-    <p class="pathway-group__line">An assistant that cites a source or refuses, and a test bench that attacks an assistant and proves each fix with evidence.</p>
-    <p class="pathway-group__intro">Applied AI earns trust only when its answers can be checked. The Cite-or-Refuse Assistant, built and used in production at a former employer, answers from cited sources or says it cannot. AI Control Testing attacks an assistant on purpose and proves each fix with recorded evidence rather than an AI grader.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-  <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
-    <div>
-      <div class="preview-diagram" data-diagram="cite-or-refuse" data-form="flow">
-        <div class="dg-wrap dg-wrap--preview" aria-hidden="false"><svg class="dg dg--v" xmlns="http://www.w3.org/2000/svg" width="264" height="278" viewBox="0 0 264 278" role="img" aria-labelledby="dg-cite-or-refuse-v-t" focusable="false"><title id="dg-cite-or-refuse-v-t">Cite-or-Refuse Assistant flow</title><rect class="dg-box" x="2" y="2" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="30.0" text-anchor="middle">Question</text><line class="dg-edge" x1="132" y1="51" x2="132" y2="68"/><polygon class="dg-head" points="132,75 127,66 137,66"/><rect class="dg-box" x="2" y="78" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="106.0" text-anchor="middle">Retrieval and SQL</text><line class="dg-edge" x1="132" y1="127" x2="132" y2="144"/><polygon class="dg-head" points="132,151 127,142 137,142"/><rect class="dg-box" x="2" y="154" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="182.0" text-anchor="middle">Claim check</text><line class="dg-edge" x1="132" y1="203" x2="132" y2="220"/><polygon class="dg-head" points="132,227 127,218 137,218"/><rect class="dg-box" x="2" y="230" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="258.0" text-anchor="middle">Answer or refusal</text></svg><ol class="dg-steps"><li>Question</li><li>Retrieval and SQL</li><li>Claim check</li><li>Answer or refusal</li></ol></div>
-      </div>
-      <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
-        <span>AI knowledge assistant</span>
-      </div>
-      <h3 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-cited-answers.html">Cite-or-Refuse Assistant</a></h3>
-      <p class="text-xs font-medium text-app-muted mb-4 font-mono">A production AI assistant that answers from a team&#39;s own sources, or says it cannot</p>
-      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">Staff answering regulatory and process questions used to search three places: a domain dictionary, process documents and the data warehouse. I designed one question service that answers across all three, in a web page or inside a chat client, and treats every answer as a claim it must prove. A sentence without a source is rejected in code before anyone sees it, weak evidence returns &#34;no data&#34; instead of a guess, and generated SQL is checked before it runs. When someone flags a wrong answer, it is routed as a content correction or a software defect.</p>
-      <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Retrieval with citations</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Natural language to SQL</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>SQL guardrails</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Answer feedback loop</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Data warehouse</li>
-      </ul>
-    </div>
-    <a href="work-cited-answers.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: Cite-or-Refuse Assistant">
-      <span>Open system details</span>
-      <span aria-hidden="true">→</span>
-    </a>
-  </article>
-
-      
-  <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
-    <div>
-      <div class="preview-diagram" data-diagram="control-testing" data-form="flow">
-        <div class="dg-wrap dg-wrap--preview" aria-hidden="false"><svg class="dg dg--v" xmlns="http://www.w3.org/2000/svg" width="264" height="278" viewBox="0 0 264 278" role="img" aria-labelledby="dg-control-testing-v-t" focusable="false"><title id="dg-control-testing-v-t">AI Control Testing flow</title><rect class="dg-box" x="2" y="2" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="30.0" text-anchor="middle">Attack</text><line class="dg-edge" x1="132" y1="51" x2="132" y2="68"/><polygon class="dg-head" points="132,75 127,66 137,66"/><rect class="dg-box" x="2" y="78" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="106.0" text-anchor="middle">Vulnerable result</text><line class="dg-edge" x1="132" y1="127" x2="132" y2="144"/><polygon class="dg-head" points="132,151 127,142 137,142"/><rect class="dg-box" x="2" y="154" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="182.0" text-anchor="middle">Fix</text><line class="dg-edge" x1="132" y1="203" x2="132" y2="220"/><polygon class="dg-head" points="132,227 127,218 137,218"/><rect class="dg-box" x="2" y="230" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="258.0" text-anchor="middle">Replay</text></svg><ol class="dg-steps"><li>Attack</li><li>Vulnerable result</li><li>Fix</li><li>Replay</li></ol></div>
-      </div>
-      <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
-        <span>Security test bench</span>
-      </div>
-      <h3 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-control-testing.html">AI Control Testing</a></h3>
-      <p class="text-xs font-medium text-app-muted mb-4 font-mono">Security testing for an AI assistant, decided by evidence</p>
-      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">A small case assistant for a fictional advisory firm, built with ten realistic flaws behind one switch each, plus the harness that attacks it. Each flaw has a vulnerable run, a one-commit fix and a replay that proves the fix. Results come from canary markers, tool-call traces and database side effects, never from an AI grader.</p>
-      <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Threat modeling</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>MCP tools</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-accent"><span class="sr-only">AI: </span>Prompt injection testing</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Python test harness</li>
-        <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>SQLite evidence</li>
-      </ul>
-    </div>
-    <a href="work-control-testing.html" class="system-card__link w-full py-2.5 px-4 rounded bg-app-850 hover:bg-app-800 border border-app-border text-white text-xs font-mono font-semibold flex items-center justify-between transition-colors" aria-label="Open system details: AI Control Testing">
-      <span>Open system details</span>
-      <span aria-hidden="true">→</span>
-    </a>
-  </article>
-
-    </div>
-  </section>
+      <a class="dx-pillar__link" href="#case-notice">Read the notice workflow case study <span aria-hidden="true">→</span></a>
+    </article>
+  </div>
+  <aside class="dx-legend" aria-labelledby="legend-title">
+    <h3 id="legend-title" class="dx-legend__title">How to read the status labels</h3>
+    <dl class="dx-legend__list">
+      <div><dt><span class="dx-status dx-status--delivered">Delivered</span></dt><dd>Built and used in a real operation.</dd></div>
+      <div><dt><span class="dx-status dx-status--development">In development</span></dt><dd>Substantial work exists; parts remain.</dd></div>
+      <div><dt><span class="dx-status dx-status--independent">Independent build</span></dt><dd>Built and tested on my own time, not an employer deployment.</dd></div>
+      <div><dt><span class="dx-status dx-status--synthetic">Synthetic demonstration</span></dt><dd>A fictional organization on synthetic data; no real client or result.</dd></div>
+      <div><dt><span class="dx-status dx-status--concept">Architecture concept</span></dt><dd>A design I wrote; not an implemented system.</dd></div>
+    </dl>
+  </aside>
 </section>
-
-<section class="mb-16" data-section="roles">
-  <h2 class="pathway-group__title">Data roles</h2>
+<section class="dx-section" id="featured" data-section="featured" aria-labelledby="featured-title">
+  <h2 id="featured-title" class="sr-only">Featured case studies</h2>
+  <article class="dx-case dx-case--bi" id="intelligence" aria-labelledby="case-bi-title">
+    <span id="case-bi" class="dx-anchor"></span>
+    <div class="dx-case__grid">
+      <div class="dx-case__lead">
+        <header class="dx-case__head">
+  <p class="dx-case__meta"><span class="dx-case__num">01</span><span>Intelligence</span><span class="dx-status dx-status--delivered">Delivered</span></p>
+  <h3 class="dx-case__title" id="case-bi-title">Enterprise Business Intelligence</h3>
+  <p class="dx-case__headline">Building a centralized intelligence function.</p>
+  <p class="dx-case__summary">I established the business intelligence function, then connected seven source systems, shared business definitions and a portfolio of reporting products so executives, managers, frontline staff and sales could work from the same numbers.</p>
+  <p class="dx-case__role"><span class="dx-label">Role</span> Established and led the function as its sole builder; former employer, unnamed</p>
+</header>
+        <dl class="dx-facts">
+  <div class="dx-fact">
+    <dt class="dx-fact__label">Source systems unified</dt>
+    <dd class="dx-fact__value">7</dd>
+    <dd class="dx-fact__note">CRM, finance, operational databases and government data</dd>
+  </div>
+  <div class="dx-fact">
+    <dt class="dx-fact__label">Power BI dashboards</dt>
+    <dd class="dx-fact__value">6</dd>
+    <dd class="dx-fact__note">Each with 15 or more drill-down subreports</dd>
+  </div>
+  <div class="dx-fact">
+    <dt class="dx-fact__label">Audiences served</dt>
+    <dd class="dx-fact__value">4</dd>
+    <dd class="dx-fact__note">Executives, managers, frontline staff and sales</dd>
+  </div>
+</dl>
+      </div>
+      <div class="dx-case__visual">
+        <figure class="dx-figure">
+          <figcaption class="dx-figure__label">How a reporting product gets made</figcaption>
+          <ol class="dx-loop">
+            <li class="dx-loop__step"><span class="dx-loop__name">Question</span><span class="dx-loop__text">Stakeholder questions become written requirements, scope and a delivery plan.</span></li>
+            <li class="dx-loop__step"><span class="dx-loop__name">Source</span><span class="dx-loop__text">The data is brought onto the governed platform rather than queried in place.</span></li>
+            <li class="dx-loop__step"><span class="dx-loop__name">Define</span><span class="dx-loop__text">Each metric gets one authoritative rule, recorded in the data dictionary.</span></li>
+            <li class="dx-loop__step"><span class="dx-loop__name">Build</span><span class="dx-loop__text">Reports are shaped for one audience, with drill-down to the record.</span></li>
+            <li class="dx-loop__step"><span class="dx-loop__name">Control</span><span class="dx-loop__text">Validation flags entry errors and reconciles operating counts to finance.</span></li>
+          </ol>
+        </figure>
+        <figure class="dx-figure">
+          <figcaption class="dx-figure__label">The reporting portfolio</figcaption>
+          <ul class="dx-products">
+            <li><span class="dx-products__name">Client health and value</span><span class="dx-products__aud">Executives and sales</span></li>
+            <li><span class="dx-products__name">Workload balance</span><span class="dx-products__aud">Department managers</span></li>
+            <li><span class="dx-products__name">Delinquent-work detection and alerts</span><span class="dx-products__aud">Managers and frontline staff</span></li>
+            <li><span class="dx-products__name">Budget variance</span><span class="dx-products__aud">Executives and finance</span></li>
+            <li><span class="dx-products__name">Team performance</span><span class="dx-products__aud">Department managers</span></li>
+            <li><span class="dx-products__name">National market map from public disclosure data</span><span class="dx-products__aud">Sales</span></li>
+          </ul>
+        </figure>
+      </div>
+    </div>
+    <figure class="dx-gallery" aria-labelledby="gallery-label">
+      <figcaption id="gallery-label"><span class="dx-figure__label">Report design, shown on synthetic builds</span> <span class="dx-status dx-status--synthetic">Synthetic demonstration</span><span class="dx-gallery__note">Employer reports hold client and staff data and are not shown. These screens come from my synthetic builds and show the same design approach.</span></figcaption>
+      <ul class="dx-gallery__list">
+        <li class="dx-shot">
+          <a href="files/summit/powerbi-overview.webp" class="dx-shot__frame"><img src="files/summit/powerbi-overview.webp" alt="A Power BI report page with six headline figures, two store bar charts and the table of seeded scenarios found" width="1280" height="800" loading="lazy" decoding="async"></a>
+          <p class="dx-shot__cap">Executive view, Summit Automotive: six headline figures and store comparisons in a Power BI report, checked value by value against the data.</p>
+        </li>
+        <li class="dx-shot">
+          <a href="files/summit/service.webp" class="dx-shot__frame"><img src="files/summit/service.webp" alt="The Summit service recovery work list, ranked by store and record" width="1280" height="800" loading="lazy" decoding="async"></a>
+          <p class="dx-shot__cap">Operational view, Summit Automotive: the service recovery work list advisors would call from, ranked by store and record.</p>
+        </li>
+        <li class="dx-shot">
+          <a href="files/property-ops/hero.webp" class="dx-shot__frame"><img src="files/property-ops/hero.webp" alt="The regional manager view, market position page: the answer sentence, four key figures, a next step and this month&#39;s three calls" width="1920" height="1200" loading="lazy" decoding="async"></a>
+          <p class="dx-shot__cap">Manager view, Kestrel Valley: the answer comes first, then the figures, the next step and the three calls for the month.</p>
+        </li>
+      </ul>
+    </figure>
+    <details class="dx-case__more" id="case-bi-more">
+  <summary class="dx-case__toggle"><span class="dx-when-closed">Explore the case study</span><span class="dx-when-open">Collapse the case study</span><span aria-hidden="true" class="dx-case__chev">+</span></summary>
+  <div class="dx-case__sections">
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">The context</h4>
+      <p>The company had no business intelligence function, and departments applied conflicting logic to the same measures. After leading a 16-person operations team, I was promoted to build the function from the ground up.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">My role</h4>
+      <p>I was the function: I secured leadership buy-in for a governed data platform, gathered and scoped requirements with each department, designed the models and built every product, with no direct reports.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">What changed</h4>
+      <p>Departments aligned on one authoritative rule per measure, recorded in a governed data dictionary. Very wide, open-edit tables were retired and rebuilt as purpose-built data products with role-based access and row-level security, closing a data-integrity and access risk.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Quality</h4>
+      <p>Every major KPI and work-stage milestone has a data-quality control that flags entry errors, and operating counts reconcile to finance records, so a dashboard figure can be traced and challenged.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Connecting to AI</h4>
+      <p>The same semantic layer and data dictionary later grounded the company&#39;s natural-language assistant, so its answers came from audited business data rather than from the model&#39;s guesses.</p>
+    </section>
+  </div>
+</details>
+  </article>
+  <article class="dx-case dx-case--platform" id="data-platforms" aria-labelledby="case-platform-title">
+    <span id="case-platform" class="dx-anchor"></span>
+    <div class="dx-case__grid">
+      <div class="dx-case__lead">
+        <header class="dx-case__head">
+  <p class="dx-case__meta"><span class="dx-case__num">02</span><span>Data Platforms</span><span class="dx-status dx-status--development">In development</span></p>
+  <h3 class="dx-case__title" id="case-platform-title">Case-Management Data Platform</h3>
+  <p class="dx-case__headline">A governed data foundation built from operational source systems.</p>
+  <p class="dx-case__summary">A layered SQL warehouse that takes case-management API data from raw landing through typed, historized layers to reporting views, with an audit schema that records every batch, every failed row and every last successful load.</p>
+  <p class="dx-case__role"><span class="dx-label">Role</span> Architect and sole builder; former employer, unnamed</p>
+</header>
+        <dl class="dx-facts">
+  <div class="dx-fact">
+    <dt class="dx-fact__label">Source to reporting</dt>
+    <dd class="dx-fact__value">6 layers</dd>
+    <dd class="dx-fact__note">Each layer has one job and its own checks</dd>
+  </div>
+  <div class="dx-fact">
+    <dt class="dx-fact__label">Load pattern</dt>
+    <dd class="dx-fact__value">Full, then delta</dd>
+    <dd class="dx-fact__note">The first successful load is full; later loads take only changes</dd>
+  </div>
+  <div class="dx-fact">
+    <dt class="dx-fact__label">Audited</dt>
+    <dd class="dx-fact__value">Every batch</dd>
+    <dd class="dx-fact__note">Start, row errors, completion and the last successful load</dd>
+  </div>
+</dl>
+      </div>
+      <figure class="dx-case__visual dx-figure dx-diagram" data-diagram="layers">
+        <figcaption class="dx-figure__label">The layers, from source to report <span class="dx-hint">Select a layer to read its responsibility.</span></figcaption>
+        <ol class="dx-layers">
+          <li><button type="button" class="dx-node dx-node--layer dx-node--source" data-group="layers" data-node="source" aria-pressed="false" aria-controls="layers-detail">
+  <span class="dx-node__name">Source access</span>
+  <span class="dx-node__text">External tables read the case-management API. Reports never call the API directly, so source access and reporting stay separate.</span>
+</button></li>
+          <li><button type="button" class="dx-node dx-node--layer dx-node--landing" data-group="layers" data-node="landing" aria-pressed="false" aria-controls="layers-detail">
+  <span class="dx-node__name">Landing</span>
+  <span class="dx-node__text">Raw values are kept as received, with the load batch, the source operation and version, and the raw payload. Landing is the ingestion boundary.</span>
+</button></li>
+          <li><button type="button" class="dx-node dx-node--layer dx-node--staging" data-group="layers" data-node="staging" aria-pressed="false" aria-controls="layers-detail">
+  <span class="dx-node__name">Staging</span>
+  <span class="dx-node__text">Values are typed and normalized, each row gets a business hash for change detection, and duplicates are judged against the entity&#39;s real grain. Nothing is silently deleted.</span>
+</button></li>
+          <li><button type="button" class="dx-node dx-node--layer dx-node--bronze" data-group="layers" data-node="bronze" aria-pressed="false" aria-controls="layers-detail">
+  <span class="dx-node__name">Bronze</span>
+  <span class="dx-node__text">A typed copy of the source that keeps the original JSON. Nested fields are expanded into attributes or child tables where the entity needs them.</span>
+</button></li>
+          <li><button type="button" class="dx-node dx-node--layer dx-node--silver" data-group="layers" data-node="silver" aria-pressed="false" aria-controls="layers-detail">
+  <span class="dx-node__name">Silver</span>
+  <span class="dx-node__text">Business-ready entities with history kept as row versions: a start and end time for each version, a current-row flag and a rank that is tested, not assumed.</span>
+</button></li>
+          <li><button type="button" class="dx-node dx-node--layer dx-node--gold" data-group="layers" data-node="gold" aria-pressed="false" aria-controls="layers-detail">
+  <span class="dx-node__name">Gold</span>
+  <span class="dx-node__text">Reporting views shaped for each business use, behind role-based access and row-level security.</span>
+</button></li>
+        </ol>
+        <div class="dx-detail" id="layers-detail" aria-live="polite" hidden></div>
+      </figure>
+    </div>
+    <div class="dx-case__evidence">
+      <figure class="dx-figure">
+        <figcaption class="dx-figure__label">Audit lifecycle for every batch</figcaption>
+        <ol class="dx-audit">
+          <li><span class="dx-audit__name">Start batch</span><span class="dx-audit__text">A run-control row opens before any data moves.</span></li>
+          <li><span class="dx-audit__name">Log row errors</span><span class="dx-audit__text">A failed row is logged with its reason; the batch continues.</span></li>
+          <li><span class="dx-audit__name">Complete batch</span><span class="dx-audit__text">The run closes with its counts and status.</span></li>
+          <li><span class="dx-audit__name">Record last success</span><span class="dx-audit__text">The watermark for the next delta load moves only on success.</span></li>
+        </ol>
+      </figure>
+      <figure class="dx-figure">
+        <figcaption class="dx-figure__label">How history is kept: one record, three versions (illustrative values)</figcaption>
+        <div class="dx-table-wrap" tabindex="0" role="region" aria-label="How history is kept: one record, three versions (illustrative values)">
+          <table class="dx-table">
+            <thead><tr><th scope="col">Record</th><th scope="col">Status</th><th scope="col">Version start</th><th scope="col">Version end</th><th scope="col">Current</th></tr></thead>
+            <tbody>
+              <tr><td>Order 1042</td><td>Open</td><td>2025-03-02 09:14</td><td>2025-04-11 16:40</td><td>No</td></tr>
+              <tr><td>Order 1042</td><td>In review</td><td>2025-04-11 16:40</td><td>2025-05-20 08:05</td><td>No</td></tr>
+              <tr class="is-current"><td>Order 1042</td><td>Approved</td><td>2025-05-20 08:05</td><td>open</td><td>Yes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="dx-small">Invented values that show the pattern; no real record is shown.</p>
+      </figure>
+      <figure class="dx-figure">
+        <figcaption class="dx-figure__label">Checks in the test design</figcaption>
+        <ul class="dx-checks"><li>Each loader runs with a matching test, as a pair.</li><li>Row counts reconcile from bronze to silver at the entity&#39;s declared grain.</li><li>Exactly one current row per business key, and version windows never overlap.</li><li>A delta load moves the watermark only after a successful batch.</li><li>Audit history is never truncated; test resets clear only the tables under test.</li>
+        </ul>
+      </figure>
+    </div>
+    <details class="dx-case__more" id="case-platform-more">
+  <summary class="dx-case__toggle"><span class="dx-when-closed">Explore the case study</span><span class="dx-when-open">Collapse the case study</span><span aria-hidden="true" class="dx-case__chev">+</span></summary>
+  <div class="dx-case__sections">
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">The problem</h4>
+      <p>Case management, worker operations, finance and sales each applied their own logic to shared measures, and legacy sources carried conflicting versions of the same records. Reporting needed one governed foundation between the source systems and every report.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">My role</h4>
+      <p>I designed the layer model, the load and orchestration pattern and the audit schema, and I built the loaders and their tests myself, directing AI-assisted development and validating every result.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Architecture</h4>
+      <p>Six layers each do one job, from source access through landing, staging, bronze and silver to gold reporting views. An orchestrator runs each entity in turn, continues past an entity that fails, and logs the failure instead of stopping the whole batch.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Implementation</h4>
+      <p>Landing keeps raw payloads with their batch metadata. Staging types the values and hashes each row so changes are detected rather than guessed, and silver keeps every change as a new version. Gold views are built for a specific use and secured by role.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Validation</h4>
+      <p>Every loader has a paired test. Counts reconcile between layers at each entity&#39;s declared grain, because a row that looks duplicated can be legitimate source behavior. Current-row selection is tested directly, after an early run showed a rank that was always 1.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Status and next steps</h4>
+      <p>The core entities are loading and tested; the remaining entities and the full set of gold views are still in progress. Next comes late-arriving-change handling in the delta loads and a dated validation report per entity.</p>
+    </section>
+  </div>
+</details>
+  </article>
+  <article class="dx-case dx-case--notice" id="applied-ai" aria-labelledby="case-notice-title">
+    <span id="case-notice" class="dx-anchor"></span>
+    <div class="dx-case__grid">
+      <div class="dx-case__lead">
+        <header class="dx-case__head">
+  <p class="dx-case__meta"><span class="dx-case__num">03</span><span>Applied AI</span><span class="dx-status dx-status--delivered">Delivered</span></p>
+  <h3 class="dx-case__title" id="case-notice-title">Operational Notice Intelligence</h3>
+  <p class="dx-case__headline">From incoming government notices to operational workflows.</p>
+  <p class="dx-case__summary">A human-in-the-loop document-intelligence workflow that reads every incoming government notice, grades its confidence, and routes it either straight into the case workflow or to a person, ending in the revenue-recognition step.</p>
+  <p class="dx-case__role"><span class="dx-label">Role</span> Designed and built end to end; former employer, unnamed</p>
+</header>
+      </div>
+      <div class="dx-case__visual">
+        <dl class="dx-facts">
+  <div class="dx-fact">
+    <dt class="dx-fact__label">Government notices a week</dt>
+    <dd class="dx-fact__value">About 300</dd>
+    <dd class="dx-fact__note">Email from .gov senders and scanned paper mail</dd>
+  </div>
+  <div class="dx-fact">
+    <dt class="dx-fact__label">Processed automatically</dt>
+    <dd class="dx-fact__value">About 85%</dd>
+    <dd class="dx-fact__note">Share that passes at high confidence; a routing share, not an accuracy rate</dd>
+  </div>
+  <div class="dx-fact">
+    <dt class="dx-fact__label">Routed to a person</dt>
+    <dd class="dx-fact__value">About 15%</dd>
+    <dd class="dx-fact__note">Mid-confidence notices go to review before any action</dd>
+  </div>
+</dl>
+        <div class="dx-split" role="img" aria-label="About 85% processed automatically, about 15% routed to a person">
+          <span class="dx-split__auto" style="width:85%">85%</span><span class="dx-split__review" style="width:15%">15%</span>
+        </div>
+        <p class="dx-small">Figures are the operating estimates I reported for the live workflow. They are not a measured accuracy score.</p>
+      </div>
+    </div>
+    <figure class="dx-figure dx-diagram dx-flow" data-diagram="notice">
+      <figcaption class="dx-figure__label">How a notice moves through the workflow <span class="dx-hint">Select a step to read what it does.</span></figcaption>
+      <div class="dx-flow__grid">
+        <div class="dx-flow__col dx-flow__col--in"><button type="button" class="dx-node " data-group="notice" data-node="intake" aria-pressed="false" aria-controls="notice-detail">
+  <span class="dx-node__name">Intake</span>
+  <span class="dx-node__text">Two channels feed one queue: email from government senders, and paper mail scanned to a document. Every item is captured; none is triaged by hand first.</span>
+</button></div>
+        <div class="dx-flow__col"><button type="button" class="dx-node dx-node--ai" data-group="notice" data-node="interpret" aria-pressed="false" aria-controls="notice-detail">
+  <span class="dx-node__name">AI interpretation</span>
+  <span class="dx-node__text">A language model classifies the notice, extracts the fields the case workflow needs and scores its confidence. The model proposes; it does not act.</span>
+</button></div>
+        <div class="dx-flow__col"><button type="button" class="dx-node dx-node--gate" data-group="notice" data-node="gate" aria-pressed="false" aria-controls="notice-detail">
+  <span class="dx-node__name">Confidence gate</span>
+  <span class="dx-node__text">Deterministic rules, not the model, decide the route from the confidence grade. The thresholds sit in the workflow, where they can be reviewed and changed.</span>
+</button></div>
+        <div class="dx-flow__col dx-flow__col--branch">
+          <button type="button" class="dx-node dx-node--good" data-group="notice" data-node="auto" aria-pressed="false" aria-controls="notice-detail">
+  <span class="dx-node__name">Automatic route</span>
+  <span class="dx-node__text">High-confidence notices, about 85%, go straight into the matching case workflow with their extracted fields attached.</span>
+</button>
+          <button type="button" class="dx-node dx-node--human" data-group="notice" data-node="review" aria-pressed="false" aria-controls="notice-detail">
+  <span class="dx-node__name">Human review</span>
+  <span class="dx-node__text">Mid-confidence notices, about 15%, wait for a person, who confirms or corrects the reading before the workflow continues.</span>
+</button>
+          <button type="button" class="dx-node dx-node--muted" data-group="notice" data-node="set-aside" aria-pressed="false" aria-controls="notice-detail">
+  <span class="dx-node__name">Set aside</span>
+  <span class="dx-node__text">The low-confidence and rejected paths are for mail that is not operational, such as general correspondence, so it never enters a case.</span>
+</button>
+        </div>
+        <div class="dx-flow__col dx-flow__col--out">
+          <button type="button" class="dx-node " data-group="notice" data-node="workflow" aria-pressed="false" aria-controls="notice-detail">
+  <span class="dx-node__name">Case workflow</span>
+  <span class="dx-node__text">The notice lands on the right case with its deadline and owner, where staff act on it.</span>
+</button>
+          <button type="button" class="dx-node " data-group="notice" data-node="revenue" aria-pressed="false" aria-controls="notice-detail">
+  <span class="dx-node__name">Revenue recognition</span>
+  <span class="dx-node__text">Intake of a qualifying notice triggers the downstream revenue-recognition step, so billing follows the work without a separate hand-off.</span>
+</button>
+        </div>
+      </div>
+      <ul class="dx-key" aria-label="Diagram key">
+        <li><span class="dx-key__sw dx-key__sw--ai"></span>Model output</li>
+        <li><span class="dx-key__sw dx-key__sw--gate"></span>Deterministic rule</li>
+        <li><span class="dx-key__sw dx-key__sw--human"></span>Person decides</li>
+      </ul>
+      <div class="dx-detail" id="notice-detail" aria-live="polite" hidden></div>
+    </figure>
+    <p class="dx-small dx-evidence-note">No screenshot is shown. The interface and the notices hold client and government case details, so the diagram above is redrawn from the design.</p>
+    <details class="dx-case__more" id="case-notice-more">
+  <summary class="dx-case__toggle"><span class="dx-when-closed">Explore the case study</span><span class="dx-when-open">Collapse the case study</span><span aria-hidden="true" class="dx-case__chev">+</span></summary>
+  <div class="dx-case__sections">
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">The problem</h4>
+      <p>Government correspondence arrived through more than one channel, at a volume of about 300 items a week. Each item had to be read, judged for whether it mattered, matched to its case and started down the right process, so the review burden grew with the volume.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">My role</h4>
+      <p>I designed the workflow, built the intake, interpretation and routing, and set the review rules. It ran in production on a low-code automation platform at a former employer, connected to the case workflow and the revenue-recognition process.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Design choices</h4>
+      <p>Confidence decides the route, and a person sees every notice the model is unsure of. Rejection is reserved for mail that is not operational, so an uncertain reading is reviewed rather than discarded. The model reads and proposes, while deterministic rules route and act, which keeps every consequential step auditable.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Implementation</h4>
+      <p>Email and scanned-mail intake feed a single processing path. The model returns a classification, extracted fields and a confidence grade; workflow rules apply the thresholds, open or update the case, and hand qualifying notices to revenue recognition. Reviewers work from the same extracted fields, so a correction is a confirmation rather than a re-keying.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Results</h4>
+      <p>The workflow handles about 300 notices a week. About 85% pass at high confidence and are processed automatically, and about 15% are routed to a person. Missed captures were rare in operation. These are operating estimates, not a measured accuracy score.</p>
+    </section>
+    <section class="dx-case__section">
+      <h4 class="dx-case__section-title">Limits and next steps</h4>
+      <p>The figures are estimates from operation rather than a dated measurement. The next steps I would take are a labelled evaluation set to measure classification accuracy per notice type, analytics on review corrections to tune the thresholds, and monitoring that alerts when the review share drifts.</p>
+    </section>
+  </div>
+</details>
+  </article>
+</section>
+<section class="dx-section" id="projects" data-section="projects" aria-labelledby="projects-title">
+  <h2 id="projects-title" class="dx-h2">More work</h2>
+  <p class="dx-lede">Independent builds, synthetic demonstrations and architecture concepts that extend the three case studies. Each card states what kind of work it is.</p>
+  <div class="dx-filter" role="group" aria-labelledby="filter-label">
+    <span id="filter-label" class="sr-only">Filter projects by capability</span>
+    <button type="button" class="dx-filter__btn" data-filter="all" aria-pressed="true">All projects</button>
+    <button type="button" class="dx-filter__btn" data-filter="intelligence" aria-pressed="false">Intelligence</button>
+    <button type="button" class="dx-filter__btn" data-filter="data-platforms" aria-pressed="false">Data Platforms</button>
+    <button type="button" class="dx-filter__btn" data-filter="applied-ai" aria-pressed="false">Applied AI</button>
+    <p class="dx-filter__count" aria-live="polite"><span data-count>7</span> projects shown</p>
+  </div>
+  <div class="dx-intros">
+    <p class="dx-intro" data-intro="intelligence">These are reporting systems built for the people who run the business. Each one checks its figures against answers prepared in advance before a leader sees them, and each page states what the testing did not show. Summit covers a car dealer group and Kestrel Valley a property management company, both fictional and built on synthetic data.</p>
+    <p class="dx-intro" data-intro="data-platforms">A report or an assistant is only as reliable as the layers beneath it. Rental Insights carries public rental data from raw files through tested bronze, silver and gold layers to the tables an AI assistant reads, and no layer is read until its tests pass. Summit&#39;s Databricks foundation follows the same pattern on synthetic dealer records.</p>
+    <p class="dx-intro" data-intro="applied-ai">Applied AI earns trust only when its answers can be checked. The Cite-or-Refuse Assistant, built and used in production at a former employer, answers from cited sources or says it cannot. AI Control Testing attacks an assistant on purpose and proves each fix with recorded evidence rather than an AI grader.</p>
+  </div>
+  <ul class="dx-cards">
+    <li class="dx-card dx-card--wide" data-pillars="applied-ai">
+      <article class="dx-card__body system-card" aria-labelledby="card-control">
+        <div class="dx-card__text">
+          <p class="dx-card__meta"><span>Security test bench</span><span class="dx-status dx-status--independent">Independent build</span></p>
+          <h3 class="dx-card__title" id="card-control"><a href="work-control-testing.html">AI Control Testing</a></h3>
+          <p class="dx-card__tagline">Security testing for an AI assistant, decided by evidence</p>
+          <p class="dx-card__summary">A small case assistant for a fictional advisory firm, built with ten realistic flaws behind one switch each, plus the harness that attacks it. Each flaw has a vulnerable run, a one-commit fix and a replay that proves the fix. Results come from canary markers, tool-call traces and database side effects, never from an AI grader.</p>
+          <ol class="preview-steps" aria-label="How it works"><li class="preview-steps__item">Attack</li><li class="preview-steps__item">Vulnerable result</li><li class="preview-steps__item">Fix</li><li class="preview-steps__item">Replay</li>
+          </ol>
+          <p class="dx-card__pillars"><span class="sr-only">Capabilities: </span><span>Applied AI</span></p>
+          <ul class="dx-card__skills" aria-label="Skills"><li class="is-ai">Threat modeling</li><li class="is-ai">MCP tools</li><li class="is-ai">Prompt injection testing</li><li class="">Python test harness</li><li class="">SQLite evidence</li>
+          </ul>
+          <a class="dx-card__go system-card__link" href="work-control-testing.html" aria-label="Open system details: AI Control Testing">Open system details <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="dx-replay">
+          <figcaption class="dx-figure__label">Successful attacks as each fix is replayed</figcaption>
+          <svg class="dx-replay__svg" viewBox="0 0 330 150" role="img" aria-labelledby="replay-desc">
+            <desc id="replay-desc">Twelve scripted attacks, replayed after each one-commit fix: 12 succeed with every flaw open, 0 after the last fix. Legitimate-use pairs pass 9 of 12 with the flaws open and 12 of 12 with the fixes in place.</desc>
+            <rect x="8" y="10" width="20" height="108" class="dx-replay__bar"></rect>
+            <text x="18" y="4" class="dx-replay__val" text-anchor="middle">12</text>
+            <text x="18" y="134" class="dx-replay__tick" text-anchor="middle">0</text>
+            <rect x="37" y="28" width="20" height="90" class="dx-replay__bar"></rect>
+            <text x="47" y="22" class="dx-replay__val" text-anchor="middle">10</text>
+            <text x="47" y="134" class="dx-replay__tick" text-anchor="middle">1</text>
+            <rect x="66" y="46" width="20" height="72" class="dx-replay__bar"></rect>
+            <text x="76" y="40" class="dx-replay__val" text-anchor="middle">8</text>
+            <text x="76" y="134" class="dx-replay__tick" text-anchor="middle">2</text>
+            <rect x="95" y="46" width="20" height="72" class="dx-replay__bar"></rect>
+            <text x="105" y="40" class="dx-replay__val" text-anchor="middle">8</text>
+            <text x="105" y="134" class="dx-replay__tick" text-anchor="middle">3</text>
+            <rect x="124" y="55" width="20" height="63" class="dx-replay__bar"></rect>
+            <text x="134" y="49" class="dx-replay__val" text-anchor="middle">7</text>
+            <text x="134" y="134" class="dx-replay__tick" text-anchor="middle">4</text>
+            <rect x="153" y="64" width="20" height="54" class="dx-replay__bar"></rect>
+            <text x="163" y="58" class="dx-replay__val" text-anchor="middle">6</text>
+            <text x="163" y="134" class="dx-replay__tick" text-anchor="middle">5</text>
+            <rect x="182" y="91" width="20" height="27" class="dx-replay__bar"></rect>
+            <text x="192" y="85" class="dx-replay__val" text-anchor="middle">3</text>
+            <text x="192" y="134" class="dx-replay__tick" text-anchor="middle">6</text>
+            <rect x="211" y="91" width="20" height="27" class="dx-replay__bar"></rect>
+            <text x="221" y="85" class="dx-replay__val" text-anchor="middle">3</text>
+            <text x="221" y="134" class="dx-replay__tick" text-anchor="middle">7</text>
+            <rect x="240" y="100" width="20" height="18" class="dx-replay__bar"></rect>
+            <text x="250" y="94" class="dx-replay__val" text-anchor="middle">2</text>
+            <text x="250" y="134" class="dx-replay__tick" text-anchor="middle">8</text>
+            <rect x="269" y="109" width="20" height="9" class="dx-replay__bar"></rect>
+            <text x="279" y="103" class="dx-replay__val" text-anchor="middle">1</text>
+            <text x="279" y="134" class="dx-replay__tick" text-anchor="middle">9</text>
+            <rect x="298" y="118" width="20" height="1" class="dx-replay__bar is-zero"></rect>
+            <text x="308" y="112" class="dx-replay__val" text-anchor="middle">0</text>
+            <text x="308" y="134" class="dx-replay__tick" text-anchor="middle">10</text>
+            <text x="165" y="148" class="dx-replay__tick" text-anchor="middle">Fixes applied</text>
+          </svg>
+          <p class="dx-small">Twelve scripted attacks, replayed after each one-commit fix: 12 succeed with every flaw open, 0 after the last fix. Legitimate-use pairs pass 9 of 12 with the flaws open and 12 of 12 with the fixes in place.</p>
+        </figure>
+      </article>
+    </li>
+    <li class="dx-card" data-pillars="applied-ai">
+      <article class="dx-card__body system-card" aria-labelledby="card-cite">
+        <div class="dx-card__text">
+          <p class="dx-card__meta"><span>AI knowledge assistant</span><span class="dx-status dx-status--delivered">Delivered</span></p>
+          <h3 class="dx-card__title" id="card-cite"><a href="work-cited-answers.html">Cite-or-Refuse Assistant</a></h3>
+          <p class="dx-card__tagline">A production AI assistant that answers from a team&#39;s own sources, or says it cannot</p>
+          <p class="dx-card__summary">Staff answering regulatory and process questions used to search three places: a domain dictionary, process documents and the data warehouse. I designed one question service that answers across all three, in a web page or inside a chat client, and treats every answer as a claim it must prove. A sentence without a source is rejected in code before anyone sees it, weak evidence returns &#34;no data&#34; instead of a guess, and generated SQL is checked before it runs. When someone flags a wrong answer, it is routed as a content correction or a software defect.</p>
+          <ol class="preview-steps" aria-label="How it works"><li class="preview-steps__item">Question</li><li class="preview-steps__item">Retrieval and SQL</li><li class="preview-steps__item">Claim check</li><li class="preview-steps__item">Answer or refusal</li>
+          </ol>
+          <p class="dx-card__pillars"><span class="sr-only">Capabilities: </span><span>Applied AI</span></p>
+          <ul class="dx-card__skills" aria-label="Skills"><li class="is-ai">Retrieval with citations</li><li class="is-ai">Natural language to SQL</li><li class="is-ai">SQL guardrails</li><li class="is-ai">Answer feedback loop</li><li class="">Data warehouse</li>
+          </ul>
+          <a class="dx-card__go system-card__link" href="work-cited-answers.html" aria-label="Open system details: Cite-or-Refuse Assistant">Open system details <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </li>
+    <li class="dx-card" data-pillars="data-platforms applied-ai">
+      <article class="dx-card__body system-card" aria-labelledby="card-rental">
+        <div class="dx-card__text">
+          <p class="dx-card__meta"><span>Data and AI system</span><span class="dx-status dx-status--independent">Independent build</span></p>
+          <h3 class="dx-card__title" id="card-rental"><a href="work-rental-insights.html">Rental Insights</a></h3>
+          <p class="dx-card__tagline">A governed data and AI system on public US rental data</p>
+          <p class="dx-card__summary">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task is tracked against a token budget.</p>
+          <ol class="preview-steps" aria-label="How it works"><li class="preview-steps__item">Sources</li><li class="preview-steps__item">Bronze</li><li class="preview-steps__item">Silver</li><li class="preview-steps__item">Gold</li><li class="preview-steps__item">Serving</li><li class="preview-steps__item">MCP</li>
+          </ol>
+          <p class="dx-card__pillars"><span class="sr-only">Capabilities: </span><span>Data Platforms</span><span>Applied AI</span></p>
+          <ul class="dx-card__skills" aria-label="Skills"><li class="">dbt</li><li class="">BigQuery</li><li class="">Data quality checks</li><li class="is-ai">MCP server</li><li class="is-ai">SQL guardrails</li><li class="is-ai">LLM evaluation</li>
+          </ul>
+          <a class="dx-card__go system-card__link" href="work-rental-insights.html" aria-label="Open system details: Rental Insights">Open system details <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </li>
+    <li class="dx-card" data-pillars="intelligence data-platforms">
+      <article class="dx-card__body system-card" aria-labelledby="card-summit">
+        <a href="work-summit.html" tabindex="-1" aria-hidden="true" class="dx-card__shot"><img src="files/summit/overview.webp" alt="" width="1280" height="800" loading="lazy" decoding="async"></a>
+        <div class="dx-card__text">
+          <p class="dx-card__meta"><span>BI and analytics system</span><span class="dx-status dx-status--synthetic">Synthetic demonstration</span></p>
+          <h3 class="dx-card__title" id="card-summit"><a href="work-summit.html">Summit Automotive Intelligence</a></h3>
+          <p class="dx-card__tagline">A governed BI system for an eight-store car dealer group, checked figure by figure</p>
+          <p class="dx-card__summary">Summit is a fictional eight-store dealer group built on synthetic data, so every planted problem has a known answer. I designed one governed data foundation in Databricks, from raw files to a tested serving layer, that feeds four applications: a group dashboard, an inventory profitability queue, a service revenue recovery queue and a knowledge assistant that cites its sources. A Power BI report reads the same layer, and every figure on the report pages is reconciled against answers prepared in advance before the pages are built.</p>
+          <p class="dx-card__pillars"><span class="sr-only">Capabilities: </span><span>Intelligence</span><span>Data Platforms</span></p>
+          <ul class="dx-card__skills" aria-label="Skills"><li class="">Databricks</li><li class="">Dimensional modeling</li><li class="">Power BI and DAX</li><li class="">Data quality checks</li><li class="is-ai">Cited knowledge assistant</li>
+          </ul>
+          <a class="dx-card__go system-card__link" href="work-summit.html" aria-label="Open system details: Summit Automotive Intelligence">Open system details <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </li>
+    <li class="dx-card" data-pillars="intelligence">
+      <article class="dx-card__body system-card" aria-labelledby="card-kestrel">
+        <a href="work-property-ops.html" tabindex="-1" aria-hidden="true" class="dx-card__shot"><img src="files/property-ops/card-chart.webp" alt="" width="1152" height="648" loading="lazy" decoding="async"></a>
+        <div class="dx-card__text">
+          <p class="dx-card__meta"><span>BI and analytics system</span><span class="dx-status dx-status--synthetic">Synthetic demonstration</span></p>
+          <h3 class="dx-card__title" id="card-kestrel"><a href="work-property-ops.html">Kestrel Valley Property Operations</a></h3>
+          <p class="dx-card__tagline">A claim-checked BI system for a property management company, with the misses shown</p>
+          <p class="dx-card__summary">Kestrel Valley is a fictional property management company built on synthetic data. All 895 numbers on its claim cards were rechecked against the source records, and none of the 3 look-alike decoys was blamed for a problem. The system found 4 of its 7 planted causes and passed 38 of 58 assistant questions, up from 32 on the first run, with every miss listed. I designed the Databricks marts, the claim cards, three views and a grounded assistant.</p>
+          <p class="dx-card__pillars"><span class="sr-only">Capabilities: </span><span>Intelligence</span></p>
+          <ul class="dx-card__skills" aria-label="Skills"><li class="">Databricks</li><li class="">Dimensional modeling</li><li class="">Data quality checks</li><li class="">Claim-checked analysis</li><li class="is-ai">Cited knowledge assistant</li>
+          </ul>
+          <a class="dx-card__go system-card__link" href="work-property-ops.html" aria-label="Open system details: Kestrel Valley Property Operations">Open system details <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </li>
+    <li class="dx-card" data-pillars="intelligence applied-ai">
+      <article class="dx-card__body" aria-labelledby="card-builder">
+        <div class="dx-card__text">
+          <p class="dx-card__meta"><span>Product architecture</span><span class="dx-status dx-status--concept">Architecture concept</span></p>
+          <h3 class="dx-card__title" id="card-builder">AI-Native Report Builder</h3>
+          <p class="dx-card__tagline">A design for AI-assisted BI engineering under governed semantics</p>
+          <p class="dx-card__summary">A system that plans a report before building it: the business question, audience, metrics, grain and security come first. It builds from certified metrics in a semantic registry, validates schema, measures and security, sends each draft past an adversarial critic, and documents its own logic.</p>
+          <p class="dx-card__pillars"><span class="sr-only">Capabilities: </span><span>Intelligence</span><span>Applied AI</span></p>
+        </div>
+      </article>
+    </li>
+    <li class="dx-card" data-pillars="intelligence data-platforms applied-ai">
+      <article class="dx-card__body" aria-labelledby="card-eip">
+        <div class="dx-card__text">
+          <p class="dx-card__meta"><span>Operating model</span><span class="dx-status dx-status--concept">Architecture concept</span></p>
+          <h3 class="dx-card__title" id="card-eip">Enterprise Intelligence Architecture</h3>
+          <p class="dx-card__tagline">An eleven-pillar operating model for data, semantics, AI and governance</p>
+          <p class="dx-card__summary">My own operating model connecting trusted data, shared semantics, organizational knowledge, analytics, AI services, agents, decision intelligence, automation, governance and platform operations, with a maturity path from trusted data to approved autonomous operations.</p>
+          <p class="dx-card__pillars"><span class="sr-only">Capabilities: </span><span>Intelligence</span><span>Data Platforms</span><span>Applied AI</span></p>
+        </div>
+      </article>
+    </li>
+  </ul>
+</section>
+<section class="dx-section dx-arch" id="architecture" data-section="architecture" aria-labelledby="arch-title">
+  <h2 id="arch-title" class="dx-h2">How I build intelligence systems.</h2>
+  <p class="dx-lede">Five principles connect the case studies. They are what separates a report or a demo from a system an organization can rely on.</p>
+  <div class="dx-arch__grid">
+    <ol class="dx-principles">
+      <li><span class="dx-principles__name">Trusted data</span><span class="dx-principles__text">Reliable ingestion, typed transformation, preserved history and source traceability, so every figure can be followed back to where it came from.</span></li>
+      <li><span class="dx-principles__name">Shared business semantics</span><span class="dx-principles__text">One authoritative definition per measure, reused by every report and every AI answer instead of being rebuilt in each.</span></li>
+      <li><span class="dx-principles__name">Governed intelligence</span><span class="dx-principles__text">Role-based access, row-level security, lineage and stated assumptions, with clear boundaries on what each system may see and do.</span></li>
+      <li><span class="dx-principles__name">Human-centered automation</span><span class="dx-principles__text">Confidence thresholds, review queues and authorization limits, so automation handles the routine and people decide the consequential.</span></li>
+      <li><span class="dx-principles__name">Continuous evaluation</span><span class="dx-principles__text">Tests, reconciliations, regression replays and cost visibility, kept running after launch rather than performed once.</span></li>
+    </ol>
+    <figure class="dx-figure dx-diagram dx-plane" data-diagram="plane">
+      <figcaption class="dx-figure__label">The intelligence control plane <span class="dx-hint">A synthesis of how the pieces fit, not one deployed system. Select a layer to see what it does and where it is shown.</span></figcaption>
+      <div class="dx-plane__body">
+        <ol class="dx-plane__stack">
+          <li>
+            <button type="button" class="dx-node dx-node--plane" data-group="plane" data-node="action" aria-pressed="false" aria-controls="plane-detail">
+              <span class="dx-node__name">Workflow and action</span>
+              <span class="dx-node__text">Routes work to people and systems, and records what was done.</span>
+              <span class="dx-node__where"><span class="dx-label">Shown in</span> Operational Notice Intelligence <span class="dx-status dx-status--delivered">Delivered</span></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dx-node dx-node--plane" data-group="plane" data-node="ai" aria-pressed="false" aria-controls="plane-detail">
+              <span class="dx-node__name">AI and agent services</span>
+              <span class="dx-node__text">Classifies, extracts, answers with citations and calls tools within set limits.</span>
+              <span class="dx-node__where"><span class="dx-label">Shown in</span> Notice workflow, Cite-or-Refuse Assistant, AI Control Testing <span class="dx-status dx-status--delivered">Delivered</span></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dx-node dx-node--plane" data-group="plane" data-node="analytics" aria-pressed="false" aria-controls="plane-detail">
+              <span class="dx-node__name">Analytics and BI products</span>
+              <span class="dx-node__text">Reports and models built for one audience and one decision at a time.</span>
+              <span class="dx-node__where"><span class="dx-label">Shown in</span> Enterprise Business Intelligence, Summit, Kestrel Valley <span class="dx-status dx-status--delivered">Delivered</span></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dx-node dx-node--plane" data-group="plane" data-node="semantics" aria-pressed="false" aria-controls="plane-detail">
+              <span class="dx-node__name">Semantic and knowledge layer</span>
+              <span class="dx-node__text">Governed definitions, the data dictionary and the documents an assistant may cite.</span>
+              <span class="dx-node__where"><span class="dx-label">Shown in</span> Enterprise Business Intelligence, Cite-or-Refuse Assistant <span class="dx-status dx-status--delivered">Delivered</span></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dx-node dx-node--plane" data-group="plane" data-node="data" aria-pressed="false" aria-controls="plane-detail">
+              <span class="dx-node__name">Data infrastructure</span>
+              <span class="dx-node__text">Layered ingestion, history and audit, from raw landing to reporting views.</span>
+              <span class="dx-node__where"><span class="dx-label">Shown in</span> Case-Management Data Platform, Rental Insights <span class="dx-status dx-status--development">In development</span></span>
+            </button>
+          </li>
+        </ol>
+        <div class="dx-plane__rail">
+          <span class="dx-plane__rail-name">Governance, security, monitoring and evaluation</span>
+          <span class="dx-plane__rail-text">Cross-cutting controls on every layer: access and row-level security, audit logs, tests and reconciliations, cost tracking and adversarial testing.</span>
+        </div>
+      </div>
+      <div class="dx-detail" id="plane-detail" aria-live="polite" hidden></div>
+    </figure>
+  </div>
+</section>
+<section class="dx-section" data-section="leadership" aria-labelledby="lead-title">
+  <h2 id="lead-title" class="dx-h2">Building the intelligence function.</h2>
+  <p class="dx-lede">The reporting products are the visible part. Behind them sits the work of setting direction, delivering against it and governing what is built.</p>
+  <div class="dx-lead">
+    <section class="dx-lead__block">
+      <h3 class="dx-lead__name"><span aria-hidden="true">01</span> Direction</h3>
+      <ul><li>Secured leadership buy-in for a governed data platform, moving analytics beyond desktop data preparation.</li><li>Led requirement gathering and scoping with each department, turning questions into specifications, data models and delivery plans.</li><li>Set the standards the function works to: naming conventions, retired sources and one data dictionary.</li></ul>
+    </section>
+    <section class="dx-lead__block">
+      <h3 class="dx-lead__name"><span aria-hidden="true">02</span> Delivery</h3>
+      <ul><li>Unified seven source systems into a single source of truth.</li><li>Delivered six dashboards and the front-end applications each department works in.</li><li>Moved routine work into automated, human-reviewed workflows, starting with government notices.</li></ul>
+    </section>
+    <section class="dx-lead__block">
+      <h3 class="dx-lead__name"><span aria-hidden="true">03</span> Governance</h3>
+      <ul><li>Data-quality controls on every major KPI, reconciled to finance records.</li><li>Role-based access and row-level security on every data product.</li><li>Human review for uncertain AI output, and token-cost tracking for every AI application by department, model and user.</li></ul>
+    </section>
+    <figure class="dx-hub" aria-labelledby="hub-label">
+      <figcaption id="hub-label" class="dx-figure__label">One function, four domains</figcaption>
+      <div class="dx-hub__body">
+        <span class="dx-hub__center">Business intelligence</span>
+        <ul class="dx-hub__domains"><li>Case management</li><li>Worker operations</li><li>Finance</li><li>Sales</li></ul>
+      </div>
+    </figure>
+  </div>
+</section>
+<section class="dx-section" data-section="technology" aria-labelledby="tech-title">
+  <h2 id="tech-title" class="dx-h2">Technology, by the job it does</h2>
+  <p class="dx-lede">Tools are grouped by their role in the architecture and by where I have used them.</p>
+  <div class="dx-table-wrap" tabindex="0" role="region" aria-labelledby="tech-title">
+    <table class="dx-table dx-table--tech">
+      <thead><tr><th scope="col">Area</th><th scope="col">Delivered work</th><th scope="col">Independent builds</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Business intelligence</th><td>Power BI, DAX, Power Query</td><td>Power BI, DAX</td></tr>
+        <tr><th scope="row">Data engineering</th><td>SQL, layered warehouse design, row-version history</td><td>Databricks, dbt, BigQuery, SQL</td></tr>
+        <tr><th scope="row">Sources and integration</th><td>CRM, finance system, PostgreSQL, government data, APIs</td><td>Public rental data, synthetic source files</td></tr>
+        <tr><th scope="row">Automation</th><td>Low-code workflow orchestration, human review queues</td><td>Python test harnesses</td></tr>
+        <tr><th scope="row">Applied AI</th><td>Classification and extraction, agent orchestration, retrieval with citations, natural language to SQL</td><td>MCP servers and tools, SQL guardrails, golden-set evaluation, prompt injection testing</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="dx-section" data-section="career" aria-labelledby="career-title">
+  <h2 id="career-title" class="dx-h2">Career and contact</h2>
+  <p class="dx-lede dx-closing">My approach to intelligence combines business operations, data engineering, analytical design and applied AI. I build systems that are not only capable but reliable, explainable and useful to the people making decisions.</p>
   <ul class="roles-list">
     <li class="roles-list__item">
       <h3 class="roles-list__role">Business Intelligence Manager</h3>
@@ -227,11 +756,13 @@
       <p class="roles-list__text">Enforced metadata standards kept records searchable across offices, and continuous process improvement gave leaders decision-quality information.</p>
     </li>
   </ul>
-</section>
-
-<section class="mb-16" data-section="resume">
-  <p class="resume-line">My resume covers these data roles alongside the property operations career behind them.</p>
-  <a class="resume-button" href="files/patrick-hancock-resume.pdf">Download the resume (PDF)</a>
+  <div class="dx-contact">
+    <p class="resume-line">My resume covers these data roles alongside the property operations career behind them.</p>
+    <p class="dx-hero__actions">
+      <a class="resume-button" href="files/patrick-hancock-resume.pdf">Download the resume (PDF)</a>
+      <a class="dx-btn" href="property-management.html">See the property management career <span aria-hidden="true">→</span></a>
+    </p>
+  </div>
 </section>
 
   </main>
