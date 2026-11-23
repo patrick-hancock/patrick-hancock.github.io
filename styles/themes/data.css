@@ -1,0 +1,33 @@
+/* Theme Data / BI / AI (R1.T03, D-013): the dark blueprint look, values unchanged from tokens.css. Chosen by class
+   theme-data on <body>, which every system page, Resume and the Components page also carry. Fonts and the type and
+   spacing scales stay in tokens.css; this file repeats only the colour and font-stack tokens so the theme can be
+   tested on its own by scripts/check_contrast.py. If a value changes, change tokens.css and this file together. */
+body.theme-data {
+  color-scheme: dark;
+
+  --bg-page: #0c0d11;
+  --bg-surface: #12141a;
+  --bg-raised: #171a22;
+
+  --fg-default: #eceef4;
+  --fg-muted: #8e95a5;
+  --fg-accent: #38bdf8;
+  --fg-accent-hover: #7dd3fc;
+  --fg-good: #10b981;
+  --fg-warning: #f59e0b;
+  --fg-critical: #f87171;
+
+  --fill-accent: #38bdf8;
+  --fill-accent-hover: #7dd3fc;
+  --fg-on-accent: #0c0d11; /* contrast-pair: --fg-on-accent on --fill-accent */
+  /* contrast-pair: --fg-on-accent on --fill-accent-hover */
+
+  --ui-border-strong: #6b7385;
+  --ui-focus: #38bdf8;
+  --border-subtle: #262a36;
+
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}

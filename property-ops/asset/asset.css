@@ -1,41 +1,5 @@
-/* Asset manager view: extra rules on top of ../ledger.css (D-043). No new colours; only Ledger tokens. */
-.synbar { font-size: 12px; color: var(--ink-2); background: var(--paper); border-bottom: 1px solid var(--rule); padding: 4px 16px; }
-.synbar b { color: var(--ink); font-weight: 600; }
-.lede { max-width: 70ch; }
-.qsec { border-top: 1px solid var(--rule); padding-top: 4px; margin-top: 28px; }
-.qsec h2 { margin-top: 12px; }
-.qid { font-family: var(--mono); font-size: 12px; color: var(--ink-2); display: block; margin-bottom: 2px; }
-.kpiname { font-size: 13px; color: var(--ink-2); margin: 0 0 8px; }
+/* Asset manager view: small additions to ../ledger.css (D-043). Ledger tokens only, no new colours. */
+.alert { border: 1px solid var(--flag); border-left: 4px solid var(--flag); background: #fff; border-radius: var(--radius); padding: 8px 12px; margin: 0 0 12px; color: var(--flag); }
 .note { font-size: 13px; color: var(--ink-2); margin: 6px 0; max-width: 80ch; }
-.state.error { border: 1px solid var(--flag); border-style: solid; color: var(--flag); font-weight: 600; }
-.state.partial { color: var(--note); border-color: var(--note); }
-table.ledger td.name { white-space: nowrap; }
-table.ledger td.txt { max-width: 28ch; }
-table.ledger td small { display: block; color: var(--ink-2); font-size: 12px; }
-svg.dv { display: block; }
-svg.dv .trk { fill: var(--track); }
-svg.dv .mid, svg.dv .ref { stroke: var(--ink); stroke-width: 1; }
-svg.dv .fill-ok, svg.dv circle.fill-ok { fill: var(--ok); }
-svg.dv .fill-flag, svg.dv circle.fill-flag { fill: var(--flag); }
-svg.dv .fill-neutral { fill: var(--ink-2); }
-.scroll.tall { max-height: 420px; overflow-y: auto; }
-.cc { overflow-wrap: anywhere; }
-.cc h3 { font-size: 15px; margin: 0 0 4px; font-weight: 600; }
-.cc .meta { font-size: 12px; color: var(--ink-2); margin: 0 0 8px; }
-.cc .claimtext { margin: 6px 0 8px; }
-.cc details { margin: 6px 0; }
-.cc summary { cursor: pointer; font-size: 13px; font-weight: 600; }
-.cc ol, .cc ul { margin: 4px 0 4px 20px; padding: 0; font-size: 13px; }
-.cc table.ledger { font-size: 12px; }
-.cc .alt { border-top: 1px dotted var(--rule); padding: 6px 0; font-size: 13px; }
-.cc .known { font-size: 12px; color: var(--note); }
-.snap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 12px 0; }
-.snap > div { border: 1px solid var(--rule); border-radius: var(--radius); padding: 10px 12px; background: #fff; }
-.snap strong { font-size: 22px; display: block; }
-.qlist a { color: var(--ink); }
-.qlist li { margin: 4px 0; }
-@media (max-width: 600px) { table.ledger td.name { white-space: normal; } }
-/* badges: white fill so rust and ochre text keep AA contrast (4.95 and 4.90 on #FFFFFF; on paper-2 they were 4.27 and 4.23) */
-.badge { background: #fff; }
-/* touch targets of at least 24px for links */
-nav.views a, .qlist a, table.ledger a { display: block; padding: 4px 0; min-height: 24px; }
+.chartbox { overflow-x: auto; }
+table.stack td svg.chart { max-width: 100%; }

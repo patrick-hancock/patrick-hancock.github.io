@@ -5,9 +5,13 @@
 @import url("tokens.css");
 @import url("tw.css");
 @import url("card.css");
+@import url("layout.css");
+@import url("themes/data.css");
+@import url("themes/home.css");
+@import url("themes/pm.css");
 
 /* Visible keyboard focus on every interactive element (the reference sets none). */
-:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; border-radius: 2px; }
+:focus-visible { outline: var(--focus-width) solid var(--ui-focus); outline-offset: var(--focus-offset); border-radius: 2px; }
 
 /* Links inside running text are underlined, so colour is not the only cue (axe link-in-text-block). */
 main p:not(.back) a { text-decoration: underline; text-underline-offset: 0.2em; }
@@ -102,3 +106,124 @@ main p:not(.back) a { text-decoration: underline; text-underline-offset: 0.2em; 
 /* Card screenshot on the Systems page (Patrick, 2026-11-18): cropped to 16:9 from the top of the page image */
 .system-card__shot { overflow: hidden; }
 .system-card__shot img { display: block; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; }
+
+/* Property-ops case study (U3.T06): hero image, three finding panels, scorecard, limits table */
+.sp-hero { margin: 0; display: grid; gap: 0.5rem; }
+.sp-hero img { display: block; width: 100%; height: auto; border: 1px solid var(--border-subtle); border-radius: 6px; background: var(--bg-surface); }
+.sp-hero figcaption { color: var(--fg-muted); font-size: var(--text-sm); }
+.sp-panels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+.sp-pane { gap: 0.625rem; }
+.sp-pane img { display: block; width: 100%; height: auto; border: 1px solid var(--border-subtle); border-radius: 4px; background: var(--bg-page); }
+.sp-score { display: grid; gap: 0.625rem; margin: 0; padding: 0; list-style: none; }
+.sp-score__row { display: grid; grid-template-columns: 11rem 6rem minmax(0, 1fr); gap: 0.25rem 0.75rem; align-items: center; padding: 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 6px; }
+.sp-score__label { color: var(--fg-default); font-size: var(--text-sm); font-weight: 600; }
+.sp-score__value { color: var(--fg-default); font: 600 1rem var(--font-mono); }
+.sp-score__note { grid-column: 1 / -1; color: var(--fg-muted); font-size: 0.75rem; line-height: 1.5; }
+.sp-bar { display: flex; gap: 2px; height: 1.125rem; min-width: 0; }
+.sp-bar i, .sp-legend span { display: block; min-width: 0; }
+.sp-bar__ok { flex: 1 1 0; background: var(--fg-good); border: 1px solid var(--fg-good); }
+.sp-bar__miss { flex: 1 1 0; background: transparent; border: 1px solid var(--ui-border-strong); }
+.sp-legend { display: flex; align-items: center; gap: 0.5rem; color: var(--fg-muted); font-size: 0.75rem; }
+.sp-legend span { width: 1.25rem; height: 0.75rem; flex: none; }
+.sp-tablewrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: 6px; }
+.sp-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.sp-table th, .sp-table td { padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-subtle); }
+.sp-table thead th { color: var(--fg-muted); font: 0.75rem var(--font-mono); }
+.sp-table tbody th { width: 30%; color: var(--fg-default); font-weight: 600; }
+.sp-table td { color: var(--fg-muted); }
+.sp-table tr:last-child th, .sp-table tr:last-child td { border-bottom: 0; }
+@media (max-width: 767px) { .sp-panels { grid-template-columns: 1fr; } .sp-score__row { grid-template-columns: minmax(0, 1fr) auto; } .sp-score__row .sp-bar { grid-column: 1 / -1; } }
+
+/* ---- Reshape shell (R1.T03, SPEC-reshape sections 3 to 5, D-024, D-025) ----------------------------------------
+   Shared by the three themes through tokens (themes/*.css, layout.css). Every class used by the new header, footer,
+   breadcrumbs, components and skeleton pages is defined here, because scripts/check_classes.py reads only tw.css,
+   site.css and card.css. The fixed-colour Tailwind classes are gone from <body>, the header and the footer, so the
+   theme tokens reach the page (probe-r1t01.md section 1). */
+body.theme-home, body.theme-pm, body.theme-data {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-page);
+  color: var(--fg-default);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  -webkit-font-smoothing: antialiased;
+}
+body.theme-home ::selection, body.theme-pm ::selection, body.theme-data ::selection { background: var(--fill-accent); color: var(--fg-on-accent); }
+
+.container { width: 100%; max-width: var(--container-max); margin-inline: auto; padding-inline: var(--page-margin); }
+.page { flex: 1 1 auto; padding-block: var(--space-6); }
+.grid-12 { display: grid; grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); gap: var(--grid-gutter); }
+.grid-12 > * { grid-column: span 12; min-width: 0; }
+@media (min-width: 768px) { .grid-12 > .col-6 { grid-column: span 6; } }
+@media (min-width: 1024px) { .grid-12 > .col-4 { grid-column: span 4; } }
+
+/* Header: wordmark, nav, Contact button. Under 768px the nav is a second row inside the header and wraps rather than
+   scrolling, so all four links stay visible; the header is not sticky there (two rows would cover too much of a phone). */
+.site-header { background: var(--bg-page); border-bottom: 1px solid var(--border-subtle); }
+.site-header__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: var(--space-3); padding-block: var(--space-2); }
+.brand { order: 1; display: inline-flex; align-items: center; min-height: 44px; color: var(--fg-default); font-family: var(--font-display); font-weight: 700; font-size: var(--text-xl); letter-spacing: var(--tracking-display); text-decoration: none; }
+.brand:hover { color: var(--fg-accent); }
+.main-nav { order: 3; flex: 1 1 100%; display: flex; flex-wrap: wrap; gap: 0 var(--space-1); margin-inline: calc(var(--space-2) * -1); }
+.main-nav a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-2); color: var(--fg-muted); font-size: var(--text-sm); font-weight: 500; text-decoration: none; text-underline-offset: 0.5em; text-decoration-thickness: 2px; }
+.main-nav a:hover { color: var(--fg-default); }
+.main-nav a.is-current, .main-nav a.is-section { color: var(--fg-default); font-weight: 600; text-decoration: underline; text-decoration-color: var(--fg-accent); }
+.contact { order: 2; display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); border-radius: var(--radius); background: var(--fill-accent); color: var(--fg-on-accent); font-size: var(--text-sm); font-weight: 600; text-decoration: none; }
+.contact:hover { background: var(--fill-accent-hover); color: var(--fg-on-accent); }
+body.theme-data .contact { background: var(--bg-raised); border: 1px solid var(--ui-border-strong); color: var(--fg-default); font-family: var(--font-mono); font-size: 0.75rem; }
+body.theme-data .contact:hover { background: var(--bg-surface); color: var(--fg-default); }
+@media (min-width: 768px) {
+  .site-header { position: sticky; top: 0; z-index: 50; }
+  .site-header__bar { flex-wrap: nowrap; }
+  .main-nav { order: 2; flex: 1 1 auto; margin-inline: var(--space-5) 0; }
+  .main-nav a { padding-inline: var(--space-3); font-size: var(--text-base); }
+  .contact { order: 3; }
+}
+
+/* Breadcrumbs: nav, ordered list, last item is the current page. */
+.breadcrumbs { padding-top: var(--space-4); font-size: var(--text-sm); }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); }
+.breadcrumbs li + li::before { content: "/"; margin-right: var(--space-2); color: var(--fg-muted); }
+.breadcrumbs a { color: var(--fg-accent); }
+.breadcrumbs [aria-current="page"] { color: var(--fg-default); }
+
+/* Footer: copyright and location, the LinkedIn link, and a slot for the photo credit. */
+.site-footer { border-top: 1px solid var(--border-subtle); padding-block: var(--space-5); font-size: var(--text-sm); color: var(--fg-muted); }
+.site-footer__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); }
+.site-footer a { display: inline-block; min-height: 24px; color: var(--fg-accent); text-decoration: underline; text-underline-offset: 0.2em; }
+.site-footer__credit { flex: 1 1 100%; }
+
+/* Skeleton page blocks. */
+.section { padding-block: var(--space-6); border-top: 1px solid var(--border-subtle); }
+.section:first-child { border-top: 0; padding-top: 0; }
+.section__title { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking-display); font-size: var(--text-2xl); line-height: var(--leading-2xl); margin-bottom: var(--space-3); }
+.page-title { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking-display); font-size: var(--text-3xl); line-height: var(--leading-3xl); margin-bottom: var(--space-3); }
+@media (min-width: 768px) { .page-title { font-size: var(--text-4xl); line-height: var(--leading-4xl); } }
+.hero { padding-block: var(--space-6); }
+
+/* Placeholder block: visible dashed box naming the content key it waits for. scripts/check_structure.py counts
+   .ph-placeholder; it must fail the deploy once R5 sets ALLOW_PLACEHOLDERS to False. */
+.ph-placeholder { margin: 0 0 var(--space-3); padding: var(--space-3); border: 2px dashed var(--ui-border-strong); border-radius: var(--radius); color: var(--fg-muted); font-family: var(--font-mono); font-size: var(--text-sm); line-height: var(--leading-sm); overflow-wrap: anywhere; }
+.ph-placeholder__label { font-weight: 700; color: var(--fg-default); margin-right: var(--space-2); }
+
+/* Pathway: card on Home (the whole card is one link), group on the Data page. */
+.pathway { display: block; height: 100%; padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); color: var(--fg-default); text-decoration: none; }
+a.pathway:hover { border-color: var(--fg-accent); color: var(--fg-default); }
+.pathway__mark { display: block; width: 32px; height: 4px; margin-bottom: var(--space-3); background: var(--ui-border-strong); }
+.pathway__mark--pm { background: var(--mark-pm); }
+.pathway__mark--data { background: var(--mark-data); }
+.pathway-group { margin-bottom: var(--space-6); }
+
+/* Timeline: vertical list, newest first (proposed). */
+.timeline { border-left: 2px solid var(--ui-border-strong); margin-left: var(--space-2); }
+.timeline__item { position: relative; padding: 0 0 var(--space-4) var(--space-4); }
+.timeline__item::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg-page); border: 2px solid var(--fg-accent); }
+
+/* Map block stub (the real map is R3): two map areas and a legend whose swatches differ in hue and line style. */
+.map-block { display: grid; gap: var(--grid-gutter); }
+.map-block__area { min-height: 240px; }
+.map-key { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); align-items: center; }
+.map-key__line { display: inline-block; width: 40px; vertical-align: middle; border-top: 3px solid var(--ui-managed); }
+.map-key__line--relief { border-top: 3px dashed var(--ui-relief); }

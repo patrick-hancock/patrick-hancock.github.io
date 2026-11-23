@@ -1,0 +1,39 @@
+/* Theme Property Management (R1.T03, D-025, D-028): the Granite palette. Chosen by class theme-pm on <body>.
+   Tested alone by scripts/check_contrast.py (2 backgrounds, 3 text colours, 4 UI colours plus the pair comments).
+   Values are the D-028 picks; the hover step and border-subtle are Claude's proposals. The managed and relief outline
+   colours differ in hue and in line style (solid managed, dashed relief) so the map legend works without colour. */
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("../fonts/source-serif-4-latin-wght.woff2") format("woff2-variations"), url("../fonts/source-serif-4-latin-wght.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body.theme-pm {
+  color-scheme: light;
+
+  --bg-page: #E3E6E8;
+  --bg-surface: #EFF1F2;
+  --bg-raised: var(--bg-surface);
+
+  --fg-default: #0F1D31;   /* deep navy */
+  --fg-muted: #46505C;
+  --fg-accent: #735218;    /* brass, used as text */
+  --fg-accent-hover: #5A4010;
+
+  --fill-accent: #0F1D31;
+  --fill-accent-hover: #26354C;
+  --fg-on-accent: #EFF1F2; /* contrast-pair: --fg-on-accent on --fill-accent */
+  /* contrast-pair: --fg-on-accent on --fill-accent-hover */
+
+  --ui-border-strong: #6E747C;
+  --ui-focus: #0F1D31;
+  --ui-managed: #0F1D31;   /* map outline, managed properties: solid */
+  --ui-relief: #7E5E22;    /* map outline, relief coverage: dashed */
+  --border-subtle: #C5CACE; /* hairline, decorative only */
+
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --tracking-display: -0.01em;
+}

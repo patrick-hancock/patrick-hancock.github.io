@@ -1,0 +1,55 @@
+/* Property Management maps (R3.T09, SPEC-reshape section 6). Tokens only (theme-pm). Managed = solid --ui-managed,
+   relief = dashed --ui-relief (D-028), so the two differ by hue and line style. The legend swatches are in site.css. */
+.pmm { display: grid; gap: var(--space-4); }
+.pmm-intro { margin: 0; max-width: 60ch; color: var(--fg-muted); }
+.pmm-fig { margin: 0; display: grid; gap: var(--space-3); align-content: start; }
+.pmm-cap { margin: 0; font: 600 var(--text-base) var(--font-body); color: var(--fg-default); }
+.pmm-cap--inset { font-size: var(--text-sm); color: var(--fg-muted); }
+.pmm-view { position: relative; display: grid; gap: var(--space-2); }
+.pmm-view--inset { max-width: 420px; }
+.pmm-tools { display: flex; gap: var(--space-1); justify-content: flex-end; }
+.pmm-tool { min-width: 36px; min-height: 36px; padding: 0 var(--space-2); border: 1px solid var(--ui-border-strong); border-radius: 4px; background: var(--bg-surface); color: var(--fg-default); font: 600 var(--text-sm) var(--font-body); line-height: 1; }
+.pmm-tool:hover { background: var(--bg-page); }
+.pmm-tool[aria-disabled="true"] { opacity: 0.55; cursor: default; }
+
+/* Viewport clips the stage; the stage (outline, markers) is moved and scaled together by map.js. */
+.pmm-viewport { position: relative; width: 100%; overflow: hidden; overflow: clip; border: 1px solid var(--ui-border-strong); border-radius: 4px; background: var(--bg-surface); touch-action: pan-y pinch-zoom; }
+.pmm-viewport[data-zoomed="true"] { touch-action: none; cursor: grab; }
+.pmm-viewport[data-drag="true"] { cursor: grabbing; }
+.pmm-viewport--inset { background-image: linear-gradient(var(--border-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px); background-size: 25% 25%; }
+.pmm-stage { position: absolute; inset: 0; transform-origin: 0 0; --k: 1; transition: transform 150ms ease-out; }
+.pmm-viewport[data-drag="true"] .pmm-stage { transition: none; }
+.pmm-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pmm-outline { fill: var(--bg-page); stroke: var(--ui-border-strong); stroke-width: 1.5; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.pmm-denver { position: absolute; width: 14px; height: 14px; border: 2px solid var(--ui-managed); transform: translate(-50%, -50%) scale(calc(1 / var(--k))); pointer-events: none; }
+
+/* Marker button: a 28px target with a ring that is solid navy (managed) or dashed brass (relief). */
+.pmm-marker { position: absolute; width: 28px; height: 28px; padding: 0; border: 3px solid var(--ui-managed); border-radius: 50%; background: var(--bg-surface); transform: translate(-50%, -50%) scale(calc(1 / var(--k))); display: grid; place-items: center; }
+.pmm-marker[data-kind="relief"] { border: 3px dashed var(--ui-relief); }
+.pmm-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ui-managed); }
+.pmm-marker[data-kind="relief"] .pmm-dot { background: var(--ui-relief); }
+.pmm-marker:hover { background: var(--bg-page); }
+.pmm-marker[aria-expanded="true"] { background: var(--ui-managed); }
+.pmm-marker[aria-expanded="true"] .pmm-dot { background: var(--bg-surface); }
+.pmm-marker[data-kind="relief"][aria-expanded="true"] { background: var(--ui-relief); }
+.pmm-marker:focus-visible, .pmm-tool:focus-visible, .pmm-close:focus-visible { outline: var(--focus-width) solid var(--ui-focus); outline-offset: var(--focus-offset); }
+.pmm-marker:focus-visible { z-index: 2; box-shadow: 0 0 0 2px var(--bg-surface); }
+
+/* Preview panel (title, type, role, size, scope). */
+.pmm-preview { display: grid; gap: var(--space-2); }
+.pmm-card { position: relative; padding: var(--space-3) var(--space-5) var(--space-3) var(--space-3); border: 1px solid var(--ui-border-strong); border-left: 4px solid var(--ui-managed); border-radius: 4px; background: var(--bg-surface); }
+.pmm-card[data-kind="relief"] { border-left: 4px dashed var(--ui-relief); }
+.pmm-card[hidden] { display: none; }
+.pmm-card p { margin: 0; }
+.pmm-card__title { font: 600 var(--text-lg) var(--font-display); color: var(--fg-default); }
+.pmm-card__line { color: var(--fg-muted); font-size: var(--text-sm); }
+.pmm-card__scope { margin-top: var(--space-2); color: var(--fg-default); }
+.pmm-close { position: absolute; top: var(--space-1); right: var(--space-1); width: 32px; height: 32px; border: 0; background: transparent; color: var(--fg-default); font-size: 1.5rem; line-height: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pmm-stage { transition: none; }
+}
+
+/* Map point credit (round 9): small muted line under the legend; the link is underlined (axe link-in-text-block). */
+.map-credit { margin-top: var(--space-2); font-size: var(--text-sm); color: var(--fg-muted); }
+.map-credit a { text-decoration: underline; }

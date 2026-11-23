@@ -1,0 +1,41 @@
+/* Theme Home (R1.T03, D-024, D-028): ivory editorial. Chosen by class theme-home on <body>.
+   Colour tokens use the --bg-*, --fg-*, --ui-* names so scripts/check_contrast.py can test this file on its own:
+   every --fg-* on every --bg-* at 4.5:1, every --ui-* on every --bg-* at 3:1. Values from the brief and D-028;
+   bg-raised, border-subtle and the hover step are Claude's proposals (Patrick has not picked them). */
+@font-face {
+  font-family: "Lora";
+  src: url("../fonts/lora-latin-wght.woff2") format("woff2-variations"), url("../fonts/lora-latin-wght.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body.theme-home {
+  color-scheme: light;
+
+  --bg-page: #F5F2EC;      /* ivory, from the Home brief */
+  --bg-surface: #FBF9F5;   /* cards and panels */
+  --bg-raised: var(--bg-surface);
+
+  --fg-default: #30332F;   /* charcoal, from the Home brief */
+  --fg-muted: #5D605A;
+  --fg-accent: #1E5A57;    /* deep teal, D-028 */
+  --fg-accent-hover: #12403E;
+
+  --fill-accent: #1E5A57;
+  --fill-accent-hover: #12403E;
+  --fg-on-accent: #FBF9F5; /* contrast-pair: --fg-on-accent on --fill-accent */
+  /* contrast-pair: --fg-on-accent on --fill-accent-hover */
+
+  --ui-border-strong: #7A7E76;
+  --ui-focus: #1E5A57;
+  --border-subtle: #DDD8CE; /* hairline, decorative only */
+
+  /* Small marks on the two pathway cards, one per target theme, so the cards read differently (proposed). */
+  --mark-pm: #735218;
+  --mark-data: #0C0D11;
+
+  --font-display: "Lora", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --tracking-display: -0.01em;
+}

@@ -1,0 +1,15 @@
+/* Home page (reshape, SPEC-reshape section 5), theme-home. Loaded by index.html after site.css. Tokens only. */
+.theme-home .home-hero__headline { max-width: 22ch; }
+.theme-home .home-hero__subline { max-width: 62ch; font-size: var(--text-lg); color: var(--fg-muted); }
+.theme-home .pathway__title { display: block; font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); margin-bottom: var(--space-2); }
+.theme-home .pathway__line { display: block; color: var(--fg-muted); }
+.theme-home .home-intro { max-width: 68ch; }
+.theme-home .home-overview { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); }
+.theme-home .home-overview__item { display: flex; flex-direction: column; gap: var(--space-1); }
+.theme-home .home-overview__track { font-family: var(--font-display); font-weight: 600; }
+.theme-home .home-overview__years { color: var(--fg-muted); font-size: var(--text-sm); }
+.theme-home .home-contact__line { max-width: 62ch; }
+.theme-home .home-contact__links { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.theme-home .home-contact__links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--fg-accent); text-decoration: underline; text-underline-offset: 0.2em; }
+.theme-home .home-contact__open { color: var(--fg-muted); font-size: var(--text-sm); }
+.pathway-group__line { max-width: 68ch; margin-bottom: var(--space-4); color: var(--fg-muted); }

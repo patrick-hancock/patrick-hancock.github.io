@@ -44,3 +44,98 @@ table.ledger td.num, table.ledger th.num { text-align: right; font-variant-numer
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
 .grid > * { min-width: 0; }
 @media (max-width: 600px) { .page { padding: 16px; } }
+
+/* ---------------------------------------------------------------- Shell, layout A "Briefing" (D-053, U1.T02): views/shell.py, charts.py, findings.py.
+   One column: title and question, answer, 3 to 4 KPI tiles, next step, three calls, main table, findings, footnote. Ledger palette kept (D-043). */
+.synbar { font-size: 12px; color: var(--ink-2); background: var(--paper-2); border-bottom: 1px solid var(--rule); padding: 4px 16px; }
+header.shell { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+header.shell .brand { font-weight: 700; }
+header.shell nav.views { padding: 0; border: 0; background: none; gap: 4px 16px; }
+header.shell nav.views a, nav.pages a { color: var(--ink-2); text-decoration: none; padding: 4px 0; }
+header.shell nav.views a[aria-current="page"], nav.pages a[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--ok); }
+nav.pages { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+.lead { border-bottom: 1px solid var(--rule); padding-bottom: 4px; margin-bottom: 16px; }
+.lead .eyebrow { font-size: 13px; color: var(--ink-2); margin: 16px 0 0; }
+.lead h1 { font-size: 28px; line-height: 1.2; margin: 2px 0 4px; }
+.q { color: var(--ink-2); margin: 0 0 12px; }
+.answer { font-size: 20px; line-height: 1.45; margin: 8px 0 16px; max-width: 62ch; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 16px; }
+.kpis[data-kpis="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.kpi { background: #fff; border: 1px solid var(--rule); border-radius: var(--radius); padding: 12px; min-width: 0; }
+.kpi.flag { border-left: 4px solid var(--flag); }
+.kpi .kl, .kpi .ks { font-size: 13px; color: var(--ink-2); }
+.kpi .kv { font-size: 26px; font-weight: 700; line-height: 1.2; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.kpi.flag .kv { color: var(--flag); }
+.next { border: 1px solid var(--ink); border-radius: var(--radius); padding: 10px 12px; margin: 0 0 20px; background: #fff; }
+.who { font-size: 12px; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 999px; padding: 0 6px; margin-left: 4px; white-space: nowrap; }
+.calls { background: #fff; border: 1px solid var(--rule); border-radius: var(--radius); padding: 12px 16px; margin: 0 0 20px; }
+.calls h2 { font-size: 17px; margin: 0 0 8px; }
+.calls ol { margin: 0; padding-left: 20px; }
+.calls li { margin: 0 0 10px; }
+.calls .cw { font-weight: 600; }
+.calls .nx { margin-top: 2px; }
+.src { font-size: 12px; color: var(--ink-2); }
+section.sec h2 { font-size: 20px; margin: 28px 0 8px; }
+.tablewrap { overflow-x: auto; }
+table.stack { background: #fff; }
+table.stack caption { text-align: left; font-weight: 600; padding: 8px 0; }
+table.stack th, table.stack td { vertical-align: top; padding: 8px 10px 8px 0; }
+table.stack td.n, table.stack th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.stack td.key { font-weight: 700; }
+table.stack tr.tot td { border-top: 2px solid var(--ink); font-weight: 600; }
+.nm { display: block; }
+.ty { display: block; font-size: 13px; color: var(--ink-2); }
+.lnk { display: inline-block; border: 1px solid var(--ink-2); border-radius: var(--radius); padding: 2px 8px; font-size: 13px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.lnk:focus-visible, .close:focus-visible, nav a:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
+details.more { margin: 8px 0; }
+details.more summary { cursor: pointer; color: var(--ink-2); }
+ul.folded { padding-left: 20px; }
+ul.folded li { margin: 4px 0; }
+ul.folded .nm { display: inline; }
+.fn { margin-top: 32px; font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: 8px; }
+.fn .synthetic { border: 0; margin: 4px 0 0; padding: 0; }
+/* drawer: opened by a link to its id (CSS :target, no script), closed by its Close link back to the row */
+aside.drawer { display: none; position: fixed; inset: 0 0 0 auto; width: min(460px, 100%); background: #fff; border-left: 1px solid var(--ink);
+  box-shadow: -8px 0 24px rgba(43, 42, 39, .18); overflow: auto; padding: 16px; z-index: 10; font-size: 14px; }
+aside.drawer:target { display: block; }
+aside.drawer .close { display: inline-block; border: 1px solid var(--ink); border-radius: var(--radius); padding: 4px 10px; color: var(--ink); text-decoration: none; }
+aside.drawer h3 { font-size: 18px; margin: 8px 0 2px; }
+aside.drawer h4 { font-size: 14px; margin: 14px 0 4px; }
+aside.drawer ul { padding-left: 18px; margin: 0; }
+aside.drawer dt { font-weight: 600; }
+aside.drawer dd { margin: 0 0 8px; }
+aside.drawer .eyebrow, aside.drawer .meta { font-size: 13px; color: var(--ink-2); margin: 10px 0 0; }
+aside.drawer .id { font-size: 12px; color: var(--ink-2); margin-top: 16px; }
+/* charts (views/charts.py): every mark .mk has one value label .ml */
+svg.chart { display: block; height: auto; overflow: visible; font: 12px var(--font); }
+svg.chart .mk.ok { fill: var(--ok); stroke: var(--ok); }
+svg.chart .mk.flag { fill: var(--flag); stroke: var(--flag); }
+svg.chart .mk.neu { fill: var(--ink-2); stroke: var(--ink-2); }
+svg.chart rect.mk, svg.chart circle.mk { stroke: none; }
+svg.chart .mk.line, svg.chart line.mk { fill: none; stroke-width: 2; }
+svg.chart .mk.tick { stroke: var(--ink); stroke-width: 2; }
+svg.chart .mk.soft { fill-opacity: .08; stroke-width: 1; stroke-opacity: .5; }
+svg.chart .mk.s1 { fill-opacity: .25; } svg.chart .mk.s2 { fill-opacity: .55; } svg.chart .mk.s3 { fill-opacity: .9; }
+svg.chart .mk.neu.p0 { fill: var(--ink-2); } svg.chart .mk.neu.p1 { fill: #8C877B; } svg.chart .mk.neu.p2 { fill: #B4AE9F; } svg.chart .mk.neu.p3 { fill: var(--track); }
+svg.chart .ml { fill: var(--ink); font-variant-numeric: tabular-nums; }
+svg.chart .ml.in { fill: #fff; } svg.chart .ml.small { font-size: 11px; }
+svg.chart .ax { fill: var(--ink-2); font-size: 11px; } svg.chart .rl { fill: var(--ink); }
+svg.chart .zero { stroke: var(--ink-2); } svg.chart .trk { fill: var(--track); } svg.chart .panel { fill: #fff; stroke: var(--rule); }
+svg.chart .ref { stroke: var(--ink-2); stroke-dasharray: 3 3; }
+/* phone: KPI tiles two across; tables marked .stack become one card per row, each cell labelled from its column head */
+@media (max-width: 640px) {
+  .kpis, .kpis[data-kpis="3"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .answer { font-size: 18px; }
+  .lead h1 { font-size: 24px; }
+  .tablewrap { overflow: visible; }
+  table.stack thead { position: absolute; left: -9999px; }
+  table.stack caption { display: block; }
+  table.stack, table.stack tbody, table.stack tr, table.stack td { display: block; width: 100%; }
+  table.stack tr { border: 1px solid var(--rule); border-radius: var(--radius); margin: 0 0 8px; padding: 6px 10px; }
+  table.stack td { border: 0; padding: 2px 0; text-align: left; min-width: 0; }
+  table.stack td.n { text-align: left; white-space: normal; }
+  table.stack td[data-label]:not([data-label=""])::before { content: attr(data-label) " "; font-weight: 400; color: var(--ink-2); font-size: 13px; }
+  table.stack td[data-label]:first-child::before { content: none; }
+  table.stack td.opt, table.stack td:empty { display: none; }
+  aside.drawer { width: 100%; border-left: 0; }
+}

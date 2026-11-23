@@ -1,0 +1,20 @@
+/* Layout tokens shared by all three themes (R1.T03, SPEC-reshape section 3, D-025). No colours here.
+   Grid: 12 columns, content width 1,280px, gutter 24px. Side margin 20px under 768px, 24px from 768px up (proposed).
+   Breakpoints, written as media queries in site.css because custom properties cannot be used inside them:
+   640px, 768px, 1024px, 1280px. Spacing, radius and the type scale stay in tokens.css (spacing 4, 8, 16, 24, 32, 48, 64,
+   96px; radius 4px). */
+:root {
+  --grid-columns: 12;
+  --container-max: 1280px;
+  --grid-gutter: 24px;
+  --page-margin: 20px;
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --focus-width: 2px;
+  --focus-offset: 2px;
+}
+@media (min-width: 768px) {
+  :root { --page-margin: 24px; }
+}
