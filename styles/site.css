@@ -83,7 +83,7 @@ main p:not(.back) a { text-decoration: underline; text-underline-offset: 0.2em; 
 .sp-note__body .sp-note__src { color: var(--fg-muted); font: 0.75rem var(--font-mono); }
 
 .sp-flow-wrap { overflow-x: auto; padding-bottom: 0.25rem; }
-.sp-flow { display: grid; grid-template-columns: repeat(6, minmax(8.5rem, 1fr)); gap: 0.5rem; margin: 0; padding: 0; list-style: none; counter-reset: none; }
+.sp-flow { display: grid; grid-template-columns: repeat(var(--n, 6), minmax(8.5rem, 1fr)); gap: 0.5rem; margin: 0; padding: 0; list-style: none; counter-reset: none; }
 .sp-stage { position: relative; display: grid; gap: 0.125rem; align-content: start; padding: 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 6px; font-size: 0.75rem; color: var(--fg-muted); }
 .sp-stage b { color: var(--fg-default); font-size: 0.8125rem; font-weight: 600; }
 .sp-stage__step { color: var(--fg-accent); font: 600 0.6875rem var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; }
@@ -102,6 +102,25 @@ main p:not(.back) a { text-decoration: underline; text-underline-offset: 0.2em; 
 @media (max-width: 1023px) { .sp-grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 767px) { .sp-shots, .sp-shots--row, .sp-grid2 { grid-template-columns: 1fr; } .sp-shot--lead { grid-row: auto; position: static; } }
 @media (max-width: 479px) { .sp-grid4 { grid-template-columns: 1fr; } }
+
+/* Case-study layout (design revision V4.T05, spec section 6): header lines, section spacing, draft placeholders, and the
+   two empty slots that V4.T06 (diagram) and V4.T07 (method blocks) fill. Built from tokens.css like the sp- classes. */
+.case-ownership { margin: 0; max-width: 60ch; color: var(--fg-default); font-size: var(--text-base); font-weight: 600; }
+.case-badge { margin: 0; }
+.cs-badge { display: inline-block; padding: 0.125rem 0.625rem; border: 1px solid var(--ui-border-strong); border-radius: 999px; color: var(--fg-default); font: 600 0.75rem var(--font-mono); }
+.cs-sec { gap: 1rem; }
+.cs-sub { display: grid; gap: 0.75rem; min-width: 0; align-content: start; }
+.cs-draft { margin: 0; max-width: 70ch; padding: 0.625rem 0.75rem; border: 1px dashed var(--ui-border-strong); border-radius: 4px; color: var(--fg-muted); font: 0.8125rem var(--font-mono); }
+.cs-text { margin: 0; max-width: 70ch; color: var(--fg-muted); line-height: 1.65; } /* drafted section copy once written (V5.T08); .cs-draft stays for DRAFT placeholders */
+.cs-status { margin: 0; justify-self: start; padding: 0.125rem 0.5rem; border: 1px dashed var(--ui-border-strong); border-radius: 4px; font: 0.6875rem var(--font-mono); color: var(--fg-default); }
+.cs-kpi { padding-right: 0.875rem; }
+.cs-tag { color: var(--fg-accent); font-weight: 600; }
+.cs-series { display: flex; align-items: flex-end; gap: 0.25rem; height: 6rem; margin: 0; padding: 0.5rem; list-style: none; background: var(--bg-page); border: 1px solid var(--border-subtle); border-radius: 4px; }
+.cs-series li { flex: 1 1 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; min-width: 0; }
+.cs-series__bar { display: block; width: 100%; min-height: 2px; border-radius: 2px 2px 0 0; background: var(--ui-border-strong); }
+.cs-series__n { margin-top: 0.125rem; color: var(--fg-muted); font: 0.625rem var(--font-mono); }
+.case-diagram:empty, .method-blocks:empty { display: none; }
+.case-diagram, .method-blocks { min-width: 0; }
 
 /* Card screenshot on the Systems page (Patrick, 2026-11-18): cropped to 16:9 from the top of the page image */
 .system-card__shot { overflow: hidden; }
@@ -227,3 +246,23 @@ a.pathway:hover { border-color: var(--fg-accent); color: var(--fg-default); }
 .map-key { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); align-items: center; }
 .map-key__line { display: inline-block; width: 40px; vertical-align: middle; border-top: 3px solid var(--ui-managed); }
 .map-key__line--relief { border-top: 3px dashed var(--ui-relief); }
+
+/* Project diagrams (V4.T06): SVGs from scripts/make_diagram.py, inline so theme tokens apply. Horizontal from 768 px, vertical below. */
+.dg-wrap { display: grid; gap: 0.5rem; min-width: 0; padding: 1rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 6px; }
+.dg { display: block; max-width: 100%; height: auto; margin: 0 auto; font-family: var(--font-body); }
+.dg--v { display: none; max-width: 300px; width: 100%; }
+.dg-box { fill: var(--bg-raised); stroke: var(--ui-border-strong); stroke-width: 1.5; }
+.dg-label { font-size: 15px; font-weight: 600; fill: var(--fg-default); }
+.dg-sub { font-size: 14px; fill: var(--fg-muted); }
+.dg-edge { stroke: var(--ui-border-strong); stroke-width: 2; }
+.dg-head { fill: var(--ui-border-strong); }
+.dg-steps { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; list-style: decimal; }
+@media (max-width: 767px) { .dg--h { display: none; } .dg--v { display: block; } }
+.dg-wrap--preview { padding: 0.5rem; background: transparent; border: 0; }
+.dg-wrap--preview .dg--h { display: none; }
+.dg-wrap--preview .dg--v { display: block; }
+.mb-block { display: grid; gap: 0.5rem; min-width: 0; margin-top: 1rem; }
+.mb-list { display: grid; gap: 0.75rem; margin: 0; }
+.mb-list dt { color: var(--fg-muted); font: 600 0.75rem var(--font-mono); }
+.mb-list dd { margin: 0; color: var(--fg-default); font-size: var(--text-sm); max-width: 70ch; }
+.mb-list code { font-family: var(--font-mono); font-size: 0.8125rem; overflow-wrap: anywhere; }

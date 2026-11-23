@@ -1,6 +1,7 @@
 // Property Management maps (R3.T09, SPEC-reshape section 6). No library, no tiles, no third-party requests.
 // Zoom and pan: +, - and Reset buttons, drag when zoomed, Ctrl/Cmd + wheel (a plain wheel scrolls the page).
 // Markers are real buttons: Enter or Space (or a tap) toggles the preview, Escape closes it and returns focus to the marker.
+// A mouse hover opens the preview too; it closes 300 ms after the pointer leaves unless a click pinned it.
 // Tabbing to a marker that is out of view pans it into view. Without JS every preview card stays visible as a list.
 (() => {
   const MAX_K = 8;
@@ -97,23 +98,52 @@
     cards.forEach(c => { c.hidden = true; });
 
     const close = refocus => {
+      pinned = false;
       cards.forEach(c => { c.hidden = true; });
       markers.forEach(m => m.setAttribute('aria-expanded', 'false'));
       const o = opener; opener = null;
       if (refocus && o) o.focus();
     };
-    const open = marker => {
+    const open = (marker, scroll = true) => {
       close(false);
       const card = document.getElementById(marker.getAttribute('aria-controls'));
       if (!card) return;
       card.hidden = false;
       marker.setAttribute('aria-expanded', 'true');
       opener = marker;
-      card.scrollIntoView({ block: 'nearest', behavior: reduce.matches ? 'auto' : 'smooth' });
+      if (scroll) card.scrollIntoView({ block: 'nearest', behavior: reduce.matches ? 'auto' : 'smooth' });
     };
 
+    // Hover preview (SPEC-design-revision section 4): a mouse pointer entering a marker opens its preview without
+    // scrolling; leaving closes it after HOVER_CLOSE_MS unless the pointer is on the preview card; a click pins it.
+    // Touch and pen keep the tap behaviour (pointerType check), and keyboard behaviour is unchanged.
+    const HOVER_CLOSE_MS = 300; // from the spec (D-034 DETAIL plan): long enough to cross from marker to card
+    let pinned = false, timer = 0;
+    const cancelClose = () => { clearTimeout(timer); timer = 0; };
+    const scheduleClose = () => {
+      cancelClose();
+      if (!pinned) timer = setTimeout(() => { if (!pinned) close(false); }, HOVER_CLOSE_MS);
+    };
+    markers.forEach(m => {
+      m.addEventListener('pointerenter', e => {
+        if (e.pointerType !== 'mouse') return;
+        cancelClose();
+        if (pinned || m.getAttribute('aria-expanded') === 'true') return;
+        open(m, false);
+      });
+      m.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') scheduleClose(); });
+    });
+    cards.forEach(c => {
+      c.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') cancelClose(); });
+      c.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') scheduleClose(); });
+    });
+
     markers.forEach(m => m.addEventListener('click', () => {
-      if (m.getAttribute('aria-expanded') === 'true') close(false); else open(m);
+      cancelClose();
+      const isOpen = m.getAttribute('aria-expanded') === 'true';
+      if (isOpen && pinned) { pinned = false; close(false); return; }
+      if (!isOpen) open(m);
+      pinned = true;
     }));
     block.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => close(true)));
     block.addEventListener('keydown', e => {

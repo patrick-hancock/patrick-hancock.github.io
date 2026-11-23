@@ -6,6 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Data / BI / AI | Patrick Hancock</title>
+  <meta name="description" content="Data, BI and AI systems designed by Patrick Hancock, from governed data platforms to cited AI answers, each shown with its tests and its limits.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Data / BI / AI | Patrick Hancock">
+  <meta property="og:description" content="Data, BI and AI systems designed by Patrick Hancock, from governed data platforms to cited AI answers, each shown with its tests and its limits.">
+  <meta property="og:url" content="https://patrick-hancock.github.io/work.html">
+  <meta property="og:image" content="https://patrick-hancock.github.io/files/home/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles/data.css">
 
@@ -16,9 +24,8 @@
 
 <header class="site-header">
   <div class="container site-header__bar">
-    <a href="index.html" class="brand">PH.<span class="sr-only"> Patrick Hancock</span></a>
+    <a href="index.html" class="brand">PATRICK HANCOCK</a>
     <nav class="main-nav" aria-label="Main">
-      <a href="index.html">Home</a>
       <a href="property-management.html">Property Management</a>
       <a href="work.html" aria-current="page" class="is-current">Data / BI / AI</a>
       <a href="resume.html">Resume</a>
@@ -44,11 +51,12 @@
   <section class="pathway-group" data-pathway="intelligence" aria-labelledby="pw-intelligence">
     <h2 id="pw-intelligence" class="pathway-group__title">Intelligence</h2>
     <p class="pathway-group__line">Reporting systems in which every figure is checked against its source before a leader sees it.</p>
+    <p class="pathway-group__intro">These are reporting systems built for the people who run the business. Each one checks its figures against answers prepared in advance before a leader sees them, and each page states what the testing did not show. Summit covers a car dealer group and Kestrel Valley a property management company, both fictional and built on synthetic data.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
   <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
     <div>
-      <a href="work-summit.html" tabindex="-1" aria-hidden="true" class="system-card__shot block mb-4 rounded border border-app-border"><img src="files/summit/start-here.webp" alt="" width="1280" height="800" class="w-full" loading="eager" decoding="async"></a>
+      <a href="work-summit.html" tabindex="-1" aria-hidden="true" class="system-card__shot block mb-4 rounded border border-app-border"><img src="files/summit/overview.webp" alt="" width="1280" height="800" class="w-full" loading="eager" decoding="async"></a>
       <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
         <span>BI and analytics system</span>
       </div>
@@ -72,13 +80,13 @@
       
   <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
     <div>
-      <a href="work-property-ops.html" tabindex="-1" aria-hidden="true" class="system-card__shot block mb-4 rounded border border-app-border"><img src="files/property-ops/card-chart.webp" alt="" width="1280" height="800" class="w-full" loading="eager" decoding="async"></a>
+      <a href="work-property-ops.html" tabindex="-1" aria-hidden="true" class="system-card__shot block mb-4 rounded border border-app-border"><img src="files/property-ops/card-chart.webp" alt="" width="1152" height="648" class="w-full" loading="eager" decoding="async"></a>
       <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
         <span>BI and analytics system</span>
       </div>
       <h3 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-property-ops.html">Kestrel Valley Property Operations</a></h3>
       <p class="text-xs font-medium text-app-muted mb-4 font-mono">A claim-checked BI system for a property management company, with the misses shown</p>
-      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">Kestrel Valley is a fictional property management company built on synthetic data. All 895 numbers on its claim cards were rechecked against the source records, and none of the 3 look-alike decoys was blamed for a problem. The system found 4 of its 7 planted causes and passed 38 of 58 assistant questions on the first run, with every miss listed. I designed the Databricks marts, the claim cards, three views and a grounded assistant.</p>
+      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">Kestrel Valley is a fictional property management company built on synthetic data. All 895 numbers on its claim cards were rechecked against the source records, and none of the 3 look-alike decoys was blamed for a problem. The system found 4 of its 7 planted causes and passed 38 of 58 assistant questions, up from 32 on the first run, with every miss listed. I designed the Databricks marts, the claim cards, three views and a grounded assistant.</p>
       <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
         <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Databricks</li>
         <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>Dimensional modeling</li>
@@ -98,16 +106,20 @@
   <section class="pathway-group" data-pathway="data-platforms" aria-labelledby="pw-data-platforms">
     <h2 id="pw-data-platforms" class="pathway-group__title">Data Platforms</h2>
     <p class="pathway-group__line">Governed pipelines carry raw data through tested layers to a serving model that reports and AI share.</p>
+    <p class="pathway-group__intro">A report or an assistant is only as reliable as the layers beneath it. Rental Insights carries public rental data from raw files through tested bronze, silver and gold layers to the tables an AI assistant reads, and no layer is read until its tests pass. Summit&#39;s Databricks foundation follows the same pattern on synthetic dealer records.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
   <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
     <div>
+      <div class="preview-diagram" data-diagram="rental-insights" data-form="pipeline">
+        <div class="dg-wrap dg-wrap--preview" aria-hidden="false"><svg class="dg dg--v" xmlns="http://www.w3.org/2000/svg" width="264" height="430" viewBox="0 0 264 430" role="img" aria-labelledby="dg-rental-insights-v-t" focusable="false"><title id="dg-rental-insights-v-t">Rental Insights pipeline</title><rect class="dg-box" x="2" y="2" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="30.0" text-anchor="middle">Sources</text><line class="dg-edge" x1="132" y1="51" x2="132" y2="68"/><polygon class="dg-head" points="132,75 127,66 137,66"/><rect class="dg-box" x="2" y="78" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="106.0" text-anchor="middle">Bronze</text><line class="dg-edge" x1="132" y1="127" x2="132" y2="144"/><polygon class="dg-head" points="132,151 127,142 137,142"/><rect class="dg-box" x="2" y="154" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="182.0" text-anchor="middle">Silver</text><line class="dg-edge" x1="132" y1="203" x2="132" y2="220"/><polygon class="dg-head" points="132,227 127,218 137,218"/><rect class="dg-box" x="2" y="230" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="258.0" text-anchor="middle">Gold</text><line class="dg-edge" x1="132" y1="279" x2="132" y2="296"/><polygon class="dg-head" points="132,303 127,294 137,294"/><rect class="dg-box" x="2" y="306" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="334.0" text-anchor="middle">Serving</text><line class="dg-edge" x1="132" y1="355" x2="132" y2="372"/><polygon class="dg-head" points="132,379 127,370 137,370"/><rect class="dg-box" x="2" y="382" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="410.0" text-anchor="middle">MCP</text></svg><ol class="dg-steps"><li>Sources</li><li>Bronze</li><li>Silver</li><li>Gold</li><li>Serving</li><li>MCP</li></ol></div>
+      </div>
       <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
         <span>Data and AI system</span>
       </div>
       <h3 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-rental-insights.html">Rental Insights</a></h3>
       <p class="text-xs font-medium text-app-muted mb-4 font-mono">A governed data and AI system on public US rental data</p>
-      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
+      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task is tracked against a token budget.</p>
       <ul class="flex flex-wrap gap-1.5 mb-6" aria-label="Skills">
         <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>dbt</li>
         <li class="px-2 py-0.5 rounded bg-app-850 border border-app-border text-[11px] font-mono text-app-muted"><span class="sr-only">Data: </span>BigQuery</li>
@@ -133,10 +145,14 @@
   <section class="pathway-group" data-pathway="applied-ai" aria-labelledby="pw-applied-ai">
     <h2 id="pw-applied-ai" class="pathway-group__title">Applied AI</h2>
     <p class="pathway-group__line">An assistant that cites a source or refuses, and a test bench that attacks an assistant and proves each fix with evidence.</p>
+    <p class="pathway-group__intro">Applied AI earns trust only when its answers can be checked. The Cite-or-Refuse Assistant, built and used in production at a former employer, answers from cited sources or says it cannot. AI Control Testing attacks an assistant on purpose and proves each fix with recorded evidence rather than an AI grader.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
   <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
     <div>
+      <div class="preview-diagram" data-diagram="cite-or-refuse" data-form="flow">
+        <div class="dg-wrap dg-wrap--preview" aria-hidden="false"><svg class="dg dg--v" xmlns="http://www.w3.org/2000/svg" width="264" height="278" viewBox="0 0 264 278" role="img" aria-labelledby="dg-cite-or-refuse-v-t" focusable="false"><title id="dg-cite-or-refuse-v-t">Cite-or-Refuse Assistant flow</title><rect class="dg-box" x="2" y="2" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="30.0" text-anchor="middle">Question</text><line class="dg-edge" x1="132" y1="51" x2="132" y2="68"/><polygon class="dg-head" points="132,75 127,66 137,66"/><rect class="dg-box" x="2" y="78" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="106.0" text-anchor="middle">Retrieval and SQL</text><line class="dg-edge" x1="132" y1="127" x2="132" y2="144"/><polygon class="dg-head" points="132,151 127,142 137,142"/><rect class="dg-box" x="2" y="154" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="182.0" text-anchor="middle">Claim check</text><line class="dg-edge" x1="132" y1="203" x2="132" y2="220"/><polygon class="dg-head" points="132,227 127,218 137,218"/><rect class="dg-box" x="2" y="230" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="258.0" text-anchor="middle">Answer or refusal</text></svg><ol class="dg-steps"><li>Question</li><li>Retrieval and SQL</li><li>Claim check</li><li>Answer or refusal</li></ol></div>
+      </div>
       <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
         <span>AI knowledge assistant</span>
       </div>
@@ -160,9 +176,11 @@
       
   <article class="system-card bg-app-900 border border-app-border hover:border-app-accent/60 rounded-lg p-6 flex flex-col justify-between transition-colors group">
     <div>
+      <div class="preview-diagram" data-diagram="control-testing" data-form="flow">
+        <div class="dg-wrap dg-wrap--preview" aria-hidden="false"><svg class="dg dg--v" xmlns="http://www.w3.org/2000/svg" width="264" height="278" viewBox="0 0 264 278" role="img" aria-labelledby="dg-control-testing-v-t" focusable="false"><title id="dg-control-testing-v-t">AI Control Testing flow</title><rect class="dg-box" x="2" y="2" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="30.0" text-anchor="middle">Attack</text><line class="dg-edge" x1="132" y1="51" x2="132" y2="68"/><polygon class="dg-head" points="132,75 127,66 137,66"/><rect class="dg-box" x="2" y="78" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="106.0" text-anchor="middle">Vulnerable result</text><line class="dg-edge" x1="132" y1="127" x2="132" y2="144"/><polygon class="dg-head" points="132,151 127,142 137,142"/><rect class="dg-box" x="2" y="154" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="182.0" text-anchor="middle">Fix</text><line class="dg-edge" x1="132" y1="203" x2="132" y2="220"/><polygon class="dg-head" points="132,227 127,218 137,218"/><rect class="dg-box" x="2" y="230" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="258.0" text-anchor="middle">Replay</text></svg><ol class="dg-steps"><li>Attack</li><li>Vulnerable result</li><li>Fix</li><li>Replay</li></ol></div>
+      </div>
       <div class="flex items-center justify-between gap-2 text-xs font-mono text-app-muted mb-3">
         <span>Security test bench</span>
-        <span class="status text-white text-right">Demo video coming soon</span>
       </div>
       <h3 class="font-heading text-xl font-bold text-white group-hover:text-app-accent transition-colors mb-2"><a href="work-control-testing.html">AI Control Testing</a></h3>
       <p class="text-xs font-medium text-app-muted mb-4 font-mono">Security testing for an AI assistant, decided by evidence</p>
@@ -216,49 +234,21 @@
   <a class="resume-button" href="files/patrick-hancock-resume.pdf">Download the resume (PDF)</a>
 </section>
 
-<section class="border-t border-app-border pt-10" aria-labelledby="frameworks-h">
-  <div class="mb-6">
-    <h2 id="frameworks-h" class="font-heading text-lg font-bold text-white">Supporting frameworks</h2>
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    <article class="tile p-4 bg-app-900 border border-app-border rounded">
-      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">AI Cost Governance</h3>
-      <p class="status text-[11px] font-mono text-white mb-1.5">Live dashboard coming soon</p>
-      <p class="text-xs text-app-muted leading-relaxed">Every build task carries a token forecast, actual use is measured against it, and a hard cap stops the run and hands the decision to a person.</p>
-    </article>
-    <article class="tile p-4 bg-app-900 border border-app-border rounded">
-      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">Data Quality Framework</h3>
-      <p class="status text-[11px] font-mono text-white mb-1.5">Live monitor coming soon</p>
-      <p class="text-xs text-app-muted leading-relaxed">A report script profiles every gold table for row counts, duplicate keys and null rates and fails when it goes stale, and 7 automated data tests guard the pipeline.</p>
-    </article>
-    <article class="tile p-4 bg-app-900 border border-app-border rounded">
-      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">SQL Guardrails and Threat Model</h3>
-      <p class="status text-[11px] font-mono text-white mb-1.5">Interactive explorer coming soon</p>
-      <p class="text-xs text-app-muted leading-relaxed">The AI can run only read-only queries on four gold tables, under a 1 GB scan cap, a 30-second timeout and a 200-row limit; 19 mapped threats, including prompt injection, each name the code that stops them.</p>
-    </article>
-    <article class="tile p-4 bg-app-900 border border-app-border rounded">
-      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">Golden-Set Evaluation</h3>
-      <p class="status text-[11px] font-mono text-white mb-1.5">Score tracker coming soon</p>
-      <p class="text-xs text-app-muted leading-relaxed">40 questions with expected answers, run blind against the live tools (33 of 40 correct), and every failure becomes a named regression case before a fix ships.</p>
-    </article>
-    <article class="tile p-4 bg-app-900 border border-app-border rounded">
-      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">Affordability explorer</h3>
-      <p class="text-xs text-app-muted leading-relaxed">How much of their income renters spend on rent across 393 metro areas (Census ACS 2024), and how market rent compares with the HUD 2-bedroom Fair Market Rent.</p>
-    </article>
-    <article class="tile p-4 bg-app-900 border border-app-border rounded">
-      <h3 class="text-xs font-mono font-semibold text-white mb-1.5">Q&amp;A gallery</h3>
-      <p class="text-xs text-app-muted leading-relaxed">Questions from the eval pack with the answers the MCP server gave, each citing its source or refusing.</p>
-    </article>
-  </div>
-</section>
-
   </main>
   
 <footer class="site-footer">
-  <div class="container site-footer__row">
-    <span>© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
-    <a href="https://github.com/patrick-hancock">GitHub</a>
-    <a href="https://www.linkedin.com/in/pahancock89/">LinkedIn</a>
+  <div class="container">
+    <div class="site-footer__row">
+      <a href="index.html" class="site-footer__brand">PATRICK HANCOCK</a>
+      <p class="site-footer__tagline">Operations · Data · Applied Intelligence</p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="resume.html">Resume</a>
+        <a href="mailto:phancock.portfolio@gmail.com">Contact</a>
+        <a href="https://www.linkedin.com/in/pahancock89/">LinkedIn</a>
+        <a href="https://github.com/patrick-hancock">GitHub</a>
+      </nav>
+    </div>
+    <p class="site-footer__legal">© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</p>
   </div>
 </footer>
 </body>

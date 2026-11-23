@@ -6,6 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rental Insights | Patrick Hancock</title>
+  <meta name="description" content="A tested pipeline on public US rental data, with an MCP server that cites a source or refuses, scored 33 of 40 in a blind golden-set run.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rental Insights | Patrick Hancock">
+  <meta property="og:description" content="A tested pipeline on public US rental data, with an MCP server that cites a source or refuses, scored 33 of 40 in a blind golden-set run.">
+  <meta property="og:url" content="https://patrick-hancock.github.io/work-rental-insights.html">
+  <meta property="og:image" content="https://patrick-hancock.github.io/files/home/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles/site.css">
 </head>
@@ -14,9 +22,8 @@
 
 <header class="site-header">
   <div class="container site-header__bar">
-    <a href="index.html" class="brand">PH.<span class="sr-only"> Patrick Hancock</span></a>
+    <a href="index.html" class="brand">PATRICK HANCOCK</a>
     <nav class="main-nav" aria-label="Main">
-      <a href="index.html">Home</a>
       <a href="property-management.html">Property Management</a>
       <a href="work.html" class="is-section">Data / BI / AI</a>
       <a href="resume.html">Resume</a>
@@ -34,234 +41,235 @@
   </ol>
 </nav>
     
+
+
 <div class="mb-6">
-  <p class="back"><a href="work.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-app-muted hover:text-white transition-colors"><span aria-hidden="true">←</span> Back to Systems (Work)</a></p>
+  <p class="back"><a href="work.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-app-muted hover:text-white transition-colors"><span aria-hidden="true">←</span> Back to Data / BI / AI</a></p>
 </div>
 
-<div class="border-b border-app-border pb-8 mb-8">
-  <div class="flex flex-wrap items-center gap-2 font-mono text-xs text-app-accent mb-2">
-    <span class="px-2 py-0.5 rounded bg-app-900 border border-app-border font-semibold">Data and AI system</span>
-  </div>
-  <h1 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">Rental Insights</h1>
-  <p class="text-base text-app-muted leading-relaxed max-w-3xl font-normal">A governed data and AI system on public US rental data</p>
-  <p class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-6 pt-4 border-t border-app-border/60 text-xs font-mono text-app-muted">
-    <span>Role: <span class="text-white">Architect &amp; Validator</span></span>
-    <span class="hidden sm:block" aria-hidden="true">•</span>
-    <span>Stack: <span class="text-white">BigQuery, dbt, Python, MCP</span></span>
-    <span class="hidden sm:block" aria-hidden="true">•</span>
-    <span>Status: <span class="text-app-emerald font-semibold">Complete. The code is public on GitHub.</span></span>
-  </p>
-  <p class="text-sm text-app-muted leading-relaxed mt-6 mb-6 max-w-3xl">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task runs against a token budget with a hard cap.</p>
-  <div class="p-5 bg-app-900 border border-app-border rounded">
-    <div class="flex items-center justify-between pb-3 border-b border-app-border mb-4 font-mono text-xs">
-      <span class="text-app-accent font-bold">Exhibit A: SQL guardrails</span>
+<div class="sp">
+  <header class="sp-head">
+    <span class="sp-eyebrow">Data and AI system</span>
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white">Rental Insights</h1>
+    <p class="sp-tagline">A governed data and AI system on public US rental data</p>
+    <p class="case-ownership">Designed, specified and validated by me; built with AI-assisted development.</p>
+    <p class="case-badge"><span class="cs-badge">Public data</span></p>
+    <div class="sp-btns">
+      <a href="https://patrick-hancock.github.io/rental-insights/" class="sp-btn sp-btn--primary">View the live project page</a>
+      <a href="https://github.com/patrick-hancock/rental-insights" class="sp-btn">Read the source code on GitHub</a>
     </div>
-    <dl class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs font-mono">
-      <div class="p-3 bg-app-950 border border-app-border rounded">
-        <dt class="text-app-accent block mb-1">Scan cap</dt>
-        <dd class="text-white font-medium">1 GB per query</dd>
-      </div>
-      <div class="p-3 bg-app-950 border border-app-border rounded">
-        <dt class="text-app-emerald block mb-1">Tables</dt>
-        <dd class="text-white font-medium">4 gold tables, read-only</dd>
-      </div>
-      <div class="p-3 bg-app-950 border border-app-border rounded">
-        <dt class="text-app-amber block mb-1">Answers</dt>
-        <dd class="text-white font-medium">A cited source or a refusal</dd>
-      </div>
-    </dl>
+    <p class="sp-facts">
+      <span>Role <b>Architect &amp; Validator</b></span>
+      <span>Stack <b>BigQuery, dbt, Python, MCP</b></span>
+      <span>Status <b class="sp-good">Complete. The code is public on GitHub.</b></span>
+    </p>
+  </header>
+
+  <section class="sp-sec cs-sec" aria-labelledby="cs-overview-h" data-case="overview">
+    <h2 id="cs-overview-h" class="sp-h2">Overview</h2><p class="sp-lede">A tested pipeline loads public rental data (Zillow rent indexes, HUD Fair Market Rents and Census ACS) into BigQuery and models it in dbt from bronze to gold, with data-quality checks on every gold table. An MCP server answers questions with a citation or a refusal, behind read-only SQL guardrails and a 19-risk threat model. A 40-question golden set measures the answers (33 of 40 correct in a blind run), and every build task is tracked against a token budget.</p>
+    
+  </section>
+
+  <section class="sp-sec cs-sec" aria-labelledby="cs-problem-h" data-case="problem">
+    <h2 id="cs-problem-h" class="sp-h2">Problem</h2>
+
+    <p class="cs-text">Zillow, HUD and the Census each publish rental and income data, but they do not share a key for metro areas, so every metro has to be matched before the figures can be compared. Even once the data is joined, an assistant answering questions about it can still guess a column or a number, and a wrong answer delivered with confidence does more harm than no answer.</p>
+  </section>
+
+  <section class="sp-sec cs-sec" aria-labelledby="cs-why-h" data-case="why">
+    <h2 id="cs-why-h" class="sp-h2">Why it matters</h2>
+
+    <p class="cs-text">Rent burden and Fair Market Rents inform decisions by property owners, renters and housing agencies. A system that answers those questions needs to show where each number came from and to refuse when the data cannot support an answer, and the AI behind it must never be able to change the data it reads.</p>
+  </section>
+
+  <section class="sp-sec cs-sec" aria-labelledby="cs-solution-h" data-case="solution">
+    <h2 id="cs-solution-h" class="sp-h2">Solution and architecture</h2>
+    <div class="case-diagram" data-diagram="rental-insights"><div class="dg-wrap"><svg class="dg dg--h" xmlns="http://www.w3.org/2000/svg" width="828" height="56" viewBox="0 0 828 56" role="img" aria-labelledby="dg-rental-insights-h-t" focusable="false"><title id="dg-rental-insights-h-t">Rental Insights pipeline</title><rect class="dg-box" x="2" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="54.0" y="33.0" text-anchor="middle">Sources</text><line class="dg-edge" x1="110" y1="28" x2="135" y2="28"/><polygon class="dg-head" points="142,28 133,23 133,33"/><rect class="dg-box" x="146" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="198.0" y="33.0" text-anchor="middle">Bronze</text><line class="dg-edge" x1="254" y1="28" x2="279" y2="28"/><polygon class="dg-head" points="286,28 277,23 277,33"/><rect class="dg-box" x="290" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="342.0" y="33.0" text-anchor="middle">Silver</text><line class="dg-edge" x1="398" y1="28" x2="423" y2="28"/><polygon class="dg-head" points="430,28 421,23 421,33"/><rect class="dg-box" x="434" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="486.0" y="33.0" text-anchor="middle">Gold</text><line class="dg-edge" x1="542" y1="28" x2="567" y2="28"/><polygon class="dg-head" points="574,28 565,23 565,33"/><rect class="dg-box" x="578" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="630.0" y="33.0" text-anchor="middle">Serving</text><line class="dg-edge" x1="686" y1="28" x2="711" y2="28"/><polygon class="dg-head" points="718,28 709,23 709,33"/><rect class="dg-box" x="722" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="774.0" y="33.0" text-anchor="middle">MCP</text></svg><svg class="dg dg--v" xmlns="http://www.w3.org/2000/svg" width="264" height="430" viewBox="0 0 264 430" role="img" aria-labelledby="dg-rental-insights-v-t" focusable="false"><title id="dg-rental-insights-v-t">Rental Insights pipeline</title><rect class="dg-box" x="2" y="2" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="30.0" text-anchor="middle">Sources</text><line class="dg-edge" x1="132" y1="51" x2="132" y2="68"/><polygon class="dg-head" points="132,75 127,66 137,66"/><rect class="dg-box" x="2" y="78" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="106.0" text-anchor="middle">Bronze</text><line class="dg-edge" x1="132" y1="127" x2="132" y2="144"/><polygon class="dg-head" points="132,151 127,142 137,142"/><rect class="dg-box" x="2" y="154" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="182.0" text-anchor="middle">Silver</text><line class="dg-edge" x1="132" y1="203" x2="132" y2="220"/><polygon class="dg-head" points="132,227 127,218 137,218"/><rect class="dg-box" x="2" y="230" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="258.0" text-anchor="middle">Gold</text><line class="dg-edge" x1="132" y1="279" x2="132" y2="296"/><polygon class="dg-head" points="132,303 127,294 137,294"/><rect class="dg-box" x="2" y="306" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="334.0" text-anchor="middle">Serving</text><line class="dg-edge" x1="132" y1="355" x2="132" y2="372"/><polygon class="dg-head" points="132,379 127,370 137,370"/><rect class="dg-box" x="2" y="382" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="410.0" text-anchor="middle">MCP</text></svg><ol class="dg-steps"><li>Sources</li><li>Bronze</li><li>Silver</li><li>Gold</li><li>Serving</li><li>MCP</li></ol></div></div>
+<div class="cs-sub">
+  <h3 id="flow-h" class="sp-h3">How the data flows</h3>
+  <p class="sp-text">dbt builds each layer, and tests run at every step before the next layer reads it.</p>
+  <div class="sp-flow-wrap" tabindex="0" role="region" aria-labelledby="flow-h">
+    <ol class="sp-flow" style="--n: 5">
+      <li class="sp-stage"><span class="sp-stage__step">Sources</span><b>Public rental data</b><span>Zillow rent indexes, HUD Fair Market Rents and Census ACS</span></li>
+      <li class="sp-stage"><span class="sp-stage__step">Bronze</span><b>Raw rows in BigQuery</b><span>Loaded as published and counted against the source files</span></li>
+      <li class="sp-stage"><span class="sp-stage__step">Silver</span><b>Typed and cleaned</b><span>Zillow metros matched to Census areas by name, plus a seed of overrides</span></li>
+      <li class="sp-stage"><span class="sp-stage__step">Gold</span><b>Two facts and two dimensions</b><span>Key and relationship tests on every table</span></li>
+      <li class="sp-stage"><span class="sp-stage__step">MCP server</span><b>Questions answered from gold</b><span>Three tools return a cited source or a refusal</span></li>
+    </ol>
   </div>
 </div>
 
-<ul class="grid grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-4 gap-4 mb-12" aria-label="Key figures">
-  <li class="kpi p-4 bg-app-900 border border-app-border rounded min-w-0">
-    <span class="flex items-center justify-between gap-2 text-app-muted text-xs font-mono mb-1"><span>Blind eval accuracy</span><span class="text-app-emerald font-semibold">82.5%</span></span>
-    <span class="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight block break-words">33 of 40</span>
-    <span class="text-[11px] font-mono text-app-muted mt-1 block">blind eval questions answered correctly</span>
+
+    
+  </section>
+
+  <section class="sp-sec cs-sec" aria-labelledby="cs-implementation-h" data-case="implementation">
+    <h2 id="cs-implementation-h" class="sp-h2">Implementation</h2>
+<div class="cs-sub">
+  <h3 class="sp-h3">Exhibit A: SQL guardrails</h3>
+  <dl class="sp-limits">
+    <div><dt>Scan cap</dt><dd>1 GB per query</dd></div>
+    <div><dt>Timeout</dt><dd>30 seconds</dd></div>
+    <div><dt>Row limit</dt><dd>200 rows</dd></div>
+    <div><dt>Tables</dt><dd>4 gold tables, read-only</dd></div>
+    <div><dt>Statements</dt><dd>One SELECT; no writes, scripts or SELECT *</dd></div>
+    <div><dt>Answers</dt><dd>A cited source or a refusal</dd></div>
+  </dl>
+  <p class="sp-text">A second wall sits under the guardrail: the query identity can read gold and nothing else, and a live test denied CREATE TABLE in 5 of 5 attempts.</p>
+</div>
+
+
+    <p class="cs-text">The build was governed for cost as well as quality. Every build task carried a token forecast, actual use was measured against it, and a cap handed the decision to continue to me rather than letting a run carry on unattended.</p>
+  </section>
+
+  <section class="sp-sec cs-sec" aria-labelledby="cs-validation-h" data-case="validation">
+    <h2 id="cs-validation-h" class="sp-h2">Validation</h2>
+<div class="cs-sub">
+  <h3 class="sp-h3">Data quality checks</h3>
+  <p class="sp-text">dbt runs these tests on every build. The gold-table tests passed 33 of 33 on 2026-10-13, and a later run on the synthetic-company models passed 48 of 48 the same day.</p>
+  <ul class="sp-checks">
+    <li><span class="sp-checks__name">Unique, non-null keys <span class="pass sp-good">Pass</span></span><span class="sp-checks__text">Every gold table&#39;s key is tested unique and not null.</span></li>
+    <li><span class="sp-checks__name">Relationships <span class="pass sp-good">Pass</span></span><span class="sp-checks__text">Every monthly fact row must join to a metro and a month in the dimensions.</span></li>
+    <li><span class="sp-checks__name">HUD coverage <span class="pass sp-good">Pass</span></span><span class="sp-checks__text">Every metro area must carry a HUD Fair Market Rent.</span></li>
+    <li><span class="sp-checks__name">Match-rate floor <span class="pass sp-good">Pass</span></span><span class="sp-checks__text">The build fails if fewer than 95% of Zillow metros match a Census area, or if any top-100 metro is unmatched.</span></li>
+  </ul>
+</div>
+
+<div class="cs-sub">
+  <h3 class="sp-h3">Evaluation and threat model</h3>
+  <p class="sp-text">40 questions with expected answers ran blind against the live tools on 2026-10-13.</p>
+  <dl class="sp-limits">
+    <div><dt>Answered correctly</dt><dd class="sp-good">33 of 40</dd></div>
+    <div><dt>Failed</dt><dd>7 of 40</dd></div>
+    <div><dt>Threats mapped</dt><dd>19, each with a named control and test</dd></div>
+  </dl>
+  <p class="sp-text">Four answers ran into a guessed join key that returned an error with no usable reason. Three of them failed, and the fourth reached the right answer after a retry. The server now returns that error as a retryable hint, tested offline, and a fresh blind run is still to come.</p>
+</div>
+
+
+    <div class="method-blocks" data-project="rental-insights">
+<section class="mb-block" aria-labelledby="mb-1-h">
+  <h3 id="mb-1-h" class="sp-h3">33 of 40 golden-set questions answered correctly, blind</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>Forty questions with expected answers were answered blind on 13 October 2026 by four AI agents in batches of ten, using only the MCP tools and the answer rules, with no access to the expected answers. A separate grader compared each answer with the key without rerunning any query.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>I reviewed and approved all 40 questions and their exact expected numbers on 13 October 2026, measured against the gold tables built that day.</dd></div>
+    <div><dt>What counted as correct</dt><dd>The status and every number must match the key, and every cited source must exist. A number on a refusal, a wrong number, an error, or a request for clarification where an answer was expected counts as a fail.</dd></div>
+    <div><dt>What failed</dt><dd>Seven questions failed. Three ended in an error after the answerer guessed a join key, one asked for clarification where an answer was expected, and three had the right content under the wrong status label, because the answer rules never named the no-data status.</dd></div>
+    <div><dt>What changed after</dt><dd>Unknown-column errors now return a retryable hint that names the column and points to the definition tools, and an offline test covers it. The seven failed questions are still to be rerun blind.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>Ask each question in packs/eval/questions.md in a fresh chat with the packs/qa/PACK.md prompt; the offline fix test is python -m pytest mcp/tests/test_query_gold_errors.py</code></dd></div>
+  </dl>
+</section>
+<section class="mb-block" aria-labelledby="mb-2-h">
+  <h3 id="mb-2-h" class="sp-h3">33 of 33 gold-table tests and 48 of 48 synthetic-model tests</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>The dbt tests on the four gold tables, recorded as 33 of 33, and a separate selection on the synthetic-company models, 48 of 48, both on 13 October 2026.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>Each test states its own rule, such as unique and non-null keys, relationships to the dimensions, a HUD Fair Market Rent for every metro, and the match-rate floor.</dd></div>
+    <div><dt>What counted as correct</dt><dd>dbt reports the test as passing.</dd></div>
+    <div><dt>What failed</dt><dd>No test failed in either run.</dd></div>
+    <div><dt>What changed after</dt><dd>Nothing is recorded as changed after these runs.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>dbt test</code></dd></div>
+  </dl>
+</section>
+<section class="mb-block" aria-labelledby="mb-3-h">
+  <h3 id="mb-3-h" class="sp-h3">A 95% match-rate floor for Zillow metros</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>The share of Zillow metros matched to a Census area, and whether any of the 100 largest metros is unmatched.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>The floor was set from the measured match of 867 of 910 metros (95.3%) and 99 of 99 of the largest metros, and it leaves room for a few new small metros.</dd></div>
+    <div><dt>What counted as correct</dt><dd>At least 95% of metros matched and no top-100 metro unmatched.</dd></div>
+    <div><dt>What failed</dt><dd>No failure is recorded.</dd></div>
+    <div><dt>What changed after</dt><dd>Nothing is recorded as changed.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>dbt test --select assert_zillow_cbsa_match_rate</code></dd></div>
+  </dl>
+</section>
+<section class="mb-block" aria-labelledby="mb-4-h">
+  <h3 id="mb-4-h" class="sp-h3">Guardrail limits of 1 GB, 30 seconds and 200 rows</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>The SQL guard in offline tests, which send queries over each limit and queries outside the allowed statements and tables.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>Each limit was set for a stated reason. The 200-row cap keeps a response readable in a chat client, the 30-second timeout leaves room over gold queries that took a few seconds, and the 1 GB scan cap stops a runaway scan of gold tables that total a few tens of megabytes.</dd></div>
+    <div><dt>What counted as correct</dt><dd>The guard refuses every query over a limit or outside the allowed statements and tables.</dd></div>
+    <div><dt>What failed</dt><dd>No failure is recorded.</dd></div>
+    <div><dt>What changed after</dt><dd>Nothing is recorded as changed.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>python -m pytest mcp/tests</code></dd></div>
+  </dl>
+</section>
+<section class="mb-block" aria-labelledby="mb-5-h">
+  <h3 id="mb-5-h" class="sp-h3">CREATE TABLE denied in 5 of 5 live attempts</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>The query identity, live against BigQuery, reading gold, trying to create a table in gold and reading silver.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>Gold reads allowed, and every write and every silver read denied.</dd></div>
+    <div><dt>What counted as correct</dt><dd>Each attempt ends as expected, with no table left behind.</dd></div>
+    <div><dt>What failed</dt><dd>The first attempt failed before the permissions had propagated. After that, gold reads were allowed 5 of 5, CREATE TABLE was denied 5 of 5 and silver reads were denied 5 of 5, with no leftovers. A separate live write-bypass test was also denied 5 of 5.</dd></div>
+    <div><dt>What changed after</dt><dd>Nothing is recorded as changed.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>python scripts/probe_readonly.py (live BigQuery, with the project&#39;s own credentials)</code></dd></div>
+  </dl>
+</section></div>
+    
+  </section>
+
+  <section class="sp-sec cs-sec" aria-labelledby="cs-results-h" data-case="results">
+    <h2 id="cs-results-h" class="sp-h2">Results</h2>
+<ul class="sp-grid4" aria-label="Key figures">
+  <li class="kpi sp-box sp-kpi cs-kpi">
+    <span class="sp-kpi__label">Blind eval accuracy <b class="cs-tag">82.5%</b></span>
+    <span class="sp-kpi__value">33 of 40</span>
+    <span class="sp-kpi__note">blind eval questions answered correctly</span>
   </li>
-  <li class="kpi p-4 bg-app-900 border border-app-border rounded min-w-0">
-    <span class="flex items-center justify-between gap-2 text-app-muted text-xs font-mono mb-1"><span>Threat model</span><span class="text-app-accent font-semibold">Controls tested</span></span>
-    <span class="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight block break-words">19</span>
-    <span class="text-[11px] font-mono text-app-muted mt-1 block">mapped threats, each with a named control and test</span>
+  <li class="kpi sp-box sp-kpi cs-kpi">
+    <span class="sp-kpi__label">Threat model <b class="cs-tag">Controls tested</b></span>
+    <span class="sp-kpi__value">19</span>
+    <span class="sp-kpi__note">mapped threats, each with a named control and test</span>
   </li>
-  <li class="kpi p-4 bg-app-900 border border-app-border rounded min-w-0">
-    <span class="flex items-center justify-between gap-2 text-app-muted text-xs font-mono mb-1"><span>Automated tests</span><span class="text-app-muted font-semibold">dbt</span></span>
-    <span class="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight block break-words">7</span>
-    <span class="text-[11px] font-mono text-app-muted mt-1 block">automated data tests</span>
+  <li class="kpi sp-box sp-kpi cs-kpi">
+    <span class="sp-kpi__label">Automated tests <b class="cs-tag">dbt</b></span>
+    <span class="sp-kpi__value">7</span>
+    <span class="sp-kpi__note">automated data tests</span>
   </li>
-  <li class="kpi p-4 bg-app-900 border border-app-border rounded min-w-0">
-    <span class="flex items-center justify-between gap-2 text-app-muted text-xs font-mono mb-1"><span>US metro scope</span><span class="text-app-amber font-semibold">Census &amp; HUD</span></span>
-    <span class="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight block break-words">393</span>
-    <span class="text-[11px] font-mono text-app-muted mt-1 block">metro areas with HUD Fair Market Rent</span>
+  <li class="kpi sp-box sp-kpi cs-kpi">
+    <span class="sp-kpi__label">US metro scope <b class="cs-tag">Census &amp; HUD</b></span>
+    <span class="sp-kpi__value">393</span>
+    <span class="sp-kpi__note">metro areas with HUD Fair Market Rent</span>
   </li>
 </ul>
 
-<div class="split grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-  <div class="split__main lg:col-span-7 space-y-8 min-w-0">
-    <section class="bg-app-900 border border-app-border rounded p-6" aria-labelledby="flow-h">
-      <h2 id="flow-h" class="font-heading text-lg font-bold text-white mb-2">1. How the data flows</h2>
-      <p class="text-xs text-app-muted leading-relaxed mb-6 font-normal">dbt builds each layer, and tests run at every step before the next layer reads it.</p>
-      <ol class="space-y-3 font-mono text-xs">
-        <li class="p-3 bg-app-950 border border-app-border rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div>
-            <span class="text-app-muted text-[10px] uppercase block">01 · Sources</span>
-            <span class="text-white font-medium">Public rental data</span>
-          </div>
-          <span class="text-xs text-app-muted sm:text-right sm:max-w-[50%]">Zillow rent indexes, HUD Fair Market Rents and Census ACS</span>
-        </li>
-        <li class="flex justify-center text-app-muted text-xs" aria-hidden="true">↓</li>
-        <li class="p-3 bg-app-950 border border-app-border rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div>
-            <span class="text-app-muted text-[10px] uppercase block">02 · Bronze</span>
-            <span class="text-white font-medium">Raw rows in BigQuery</span>
-          </div>
-          <span class="text-xs text-app-muted sm:text-right sm:max-w-[50%]">Loaded as published and counted against the source files</span>
-        </li>
-        <li class="flex justify-center text-app-muted text-xs" aria-hidden="true">↓</li>
-        <li class="p-3 bg-app-950 border border-app-border rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div>
-            <span class="text-app-muted text-[10px] uppercase block">03 · Silver</span>
-            <span class="text-white font-medium">Typed and cleaned</span>
-          </div>
-          <span class="text-xs text-app-muted sm:text-right sm:max-w-[50%]">Zillow metros matched to Census areas by name, plus a seed of overrides</span>
-        </li>
-        <li class="flex justify-center text-app-muted text-xs" aria-hidden="true">↓</li>
-        <li class="p-3 bg-app-950 border border-app-border rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div>
-            <span class="text-app-muted text-[10px] uppercase block">04 · Gold</span>
-            <span class="text-white font-medium">Two facts and two dimensions</span>
-          </div>
-          <span class="text-xs text-app-muted sm:text-right sm:max-w-[50%]">Key and relationship tests on every table</span>
-        </li>
-        <li class="flex justify-center text-app-muted text-xs" aria-hidden="true">↓</li>
-        <li class="p-3 bg-app-950 border border-app-accent/40 rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div>
-            <span class="text-app-accent font-semibold text-[10px] uppercase block">05 · MCP server</span>
-            <span class="text-white font-medium">Questions answered from gold</span>
-          </div>
-          <span class="text-xs text-app-emerald sm:text-right sm:max-w-[50%]">Three tools return a cited source or a refusal</span>
-        </li>
-      </ol>
-    </section>
-    <section class="bg-app-900 border border-app-border rounded p-6">
-      <h2 id="panel-h" class="font-heading text-lg font-bold text-white mb-2">2. Affordability by metro area</h2>
-      <p class="text-xs text-app-muted leading-relaxed mb-4 font-normal">Metro-level affordability figures from the gold tables.</p>
-      <p class="status mb-3 inline-block px-2 py-0.5 rounded bg-app-950 border border-dashed border-app-border text-[11px] font-mono text-white">Data table coming soon</p>
-      <div class="overflow-x-auto" tabindex="0" role="region" aria-labelledby="panel-h">
-        <table class="w-full text-left font-mono text-xs border border-app-border">
-          <thead class="bg-app-950 text-white">
-            <tr><th scope="col" class="p-2.5 border-b border-app-border font-medium">Metro area</th><th scope="col" class="p-2.5 border-b border-app-border font-medium">HUD 2-bedroom Fair Market Rent</th><th scope="col" class="p-2.5 border-b border-app-border font-medium">Median household income</th><th scope="col" class="p-2.5 border-b border-app-border font-medium">Rent-burdened share</th></tr>
-          </thead>
-          <tbody class="divide-y divide-app-border text-app-muted text-[11px]">
-            <tr data-placeholder><td class="p-2.5 text-app-muted"><span aria-hidden="true">—</span></td><td class="p-2.5 text-app-muted"><span aria-hidden="true">—</span></td><td class="p-2.5 text-app-muted"><span aria-hidden="true">—</span></td><td class="p-2.5 text-app-muted"><span aria-hidden="true">—</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-    <section class="bg-app-900 border border-app-border rounded p-6" aria-labelledby="checks-h">
-      <h2 id="checks-h" class="font-heading text-lg font-bold text-white mb-2">3. Data quality checks</h2>
-      <p class="text-xs text-app-muted leading-relaxed mb-4 font-normal">dbt runs these tests on every build; all 48 passed in the last run on 2026-10-13.</p>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-        <li class="p-3 bg-app-950 border border-app-border rounded ">
-          <span class="flex items-start justify-between gap-2">
-            <span class="text-white font-medium block">Unique, non-null keys</span>
-            <span class="pass text-app-emerald text-[11px] font-semibold">Pass</span>
-          </span>
-          <span class="text-app-muted text-[11px] block mt-0.5">Every gold table&#39;s key is tested unique and not null.</span>
-        </li>
-        <li class="p-3 bg-app-950 border border-app-border rounded ">
-          <span class="flex items-start justify-between gap-2">
-            <span class="text-white font-medium block">Relationships</span>
-            <span class="pass text-app-emerald text-[11px] font-semibold">Pass</span>
-          </span>
-          <span class="text-app-muted text-[11px] block mt-0.5">Every monthly fact row must join to a metro and a month in the dimensions.</span>
-        </li>
-        <li class="p-3 bg-app-950 border border-app-border rounded ">
-          <span class="flex items-start justify-between gap-2">
-            <span class="text-white font-medium block">HUD coverage</span>
-            <span class="pass text-app-emerald text-[11px] font-semibold">Pass</span>
-          </span>
-          <span class="text-app-muted text-[11px] block mt-0.5">Every metro area must carry a HUD Fair Market Rent.</span>
-        </li>
-        <li class="p-3 bg-app-950 border border-app-border rounded ">
-          <span class="flex items-start justify-between gap-2">
-            <span class="text-white font-medium block">Match-rate floor</span>
-            <span class="pass text-app-emerald text-[11px] font-semibold">Pass</span>
-          </span>
-          <span class="text-app-muted text-[11px] block mt-0.5">The build fails if fewer than 95% of Zillow metros match a Census area, or if any top-100 metro is unmatched.</span>
-        </li>
-      </ul>
-    </section>
+<div class="cs-sub">
+  <h3 id="panel-h" class="sp-h3">Affordability by metro area</h3>
+  <p class="sp-text">Metro-level affordability figures from the gold tables.</p>
+  <div class="sp-tablewrap" tabindex="0" role="region" aria-labelledby="panel-h">
+    <table class="sp-table">
+      <thead><tr><th scope="col">Metro area</th><th scope="col">HUD 2-bedroom Fair Market Rent</th><th scope="col">Median household income</th><th scope="col">Rent-burdened share</th></tr></thead>
+      <tbody>
+        <tr data-placeholder><th scope="row"><span aria-hidden="true">—</span></th><td><span aria-hidden="true">—</span></td><td><span aria-hidden="true">—</span></td><td><span aria-hidden="true">—</span></td></tr>
+      </tbody>
+    </table>
   </div>
+</div>
 
-  <aside class="split__side lg:col-span-5 space-y-6 min-w-0" aria-label="Evidence">
-    <div class="bg-app-900 border border-app-border rounded p-5 space-y-3">
-      <div class="flex flex-col gap-2">
-        <a href="https://patrick-hancock.github.io/rental-insights/" class="w-full py-2.5 px-4 rounded bg-app-accent hover:bg-sky-400 text-app-950 text-xs font-mono font-bold flex items-center justify-center gap-2 transition-colors">View the live project page</a>
-        <a href="https://github.com/patrick-hancock/rental-insights" class="w-full py-2.5 px-4 rounded bg-app-accent hover:bg-sky-400 text-app-950 text-xs font-mono font-bold flex items-center justify-center gap-2 transition-colors">Read the source code on GitHub</a>
-      </div>
-    </div>
-    <section class="exhibit bg-app-900 border border-app-border rounded p-6 space-y-5" aria-labelledby="exhibit-h">
-      <div class="flex items-center justify-between pb-3 border-b border-app-border font-mono text-xs">
-        <h2 id="exhibit-h" class="text-app-accent font-bold text-xs">Exhibit A: SQL guardrails</h2>
-      </div>
-      <dl class="space-y-2 text-xs font-mono text-app-muted">
-        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
-          <dt>Scan cap:</dt>
-          <dd class="text-white font-medium text-right">1 GB per query</dd>
-        </div>
-        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
-          <dt>Timeout:</dt>
-          <dd class="text-white font-medium text-right">30 seconds</dd>
-        </div>
-        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
-          <dt>Row limit:</dt>
-          <dd class="text-white font-medium text-right">200 rows</dd>
-        </div>
-        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
-          <dt>Tables:</dt>
-          <dd class="text-white font-medium text-right">4 gold tables, read-only</dd>
-        </div>
-        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
-          <dt>Statements:</dt>
-          <dd class="text-white font-medium text-right">One SELECT; no writes, scripts or SELECT *</dd>
-        </div>
-        <div class="p-2.5 bg-app-950 border border-app-border rounded flex flex-wrap justify-between gap-x-3 gap-y-1">
-          <dt>Answers:</dt>
-          <dd class="text-white font-medium text-right">A cited source or a refusal</dd>
-        </div>
-      </dl>
-      <p class="p-3 bg-app-950/60 border border-app-border/80 rounded text-[11px] font-mono text-app-muted leading-relaxed">A second wall sits under the guardrail: the query identity can read gold and nothing else, and a live test denied CREATE TABLE in 5 of 5 attempts.</p>
-      <div id="matrix" class="pt-4 border-t border-app-border">
-        <h3 class="text-xs font-mono font-semibold text-white uppercase tracking-wider mb-2">Evaluation and threat model</h3>
-        <p class="text-xs text-app-muted leading-relaxed mb-3 font-normal">40 questions with expected answers ran blind against the live tools on 2026-10-13.</p>
-        <dl class="p-3 bg-app-950 border border-app-border rounded space-y-2 font-mono text-xs">
-          <div class="flex flex-wrap justify-between gap-x-3 gap-y-1">
-            <dt class="text-app-muted">Answered correctly:</dt>
-            <dd class="text-app-emerald font-bold text-right">33 of 40</dd>
-          </div>
-          <div class="flex flex-wrap justify-between gap-x-3 gap-y-1">
-            <dt class="text-app-muted">Failed:</dt>
-            <dd class="text-white font-bold text-right">7 of 40</dd>
-          </div>
-          <div class="flex flex-wrap justify-between gap-x-3 gap-y-1">
-            <dt class="text-app-muted">Threats mapped:</dt>
-            <dd class="text-white font-bold text-right">19, each with a named control and test</dd>
-          </div>
-        </dl>
-        <p class="mt-3 p-3 bg-app-950/60 border border-app-border/80 rounded text-[11px] font-mono text-app-muted leading-relaxed">Four failures came from a guessed join key that returned an error with no usable reason. The server now returns that error as a retryable hint, tested offline; a fresh blind run is still to come.</p>
-      </div>
-    </section>
-  </aside>
+
+    
+  </section>
+
+  <section class="sp-sec cs-sec" aria-labelledby="cs-limits-h" data-case="limits">
+    <h2 id="cs-limits-h" class="sp-h2">Limitations and lessons</h2>
+
+    <p class="cs-text">The blind run is a single run of 40 questions, and the fix for the join-key error has been tested offline only, so a fresh blind run is still needed to show the score has moved. The count of 33 of 40 came from a short scoring script that is not kept in the repository, so it cannot yet be rerun with one command. The affordability table stays empty until I decide how the Zillow terms allow its figures to be shown. The build used 5.08 times its token forecast, just over the five-times cap I had accepted, and that overrun is recorded as an open item rather than hidden. The clearest lesson came from the failures, where an error with no usable reason left the answerer guessing, so the server now names the unknown column and points to where to check it.</p>
+  </section>
 </div>
 
   </main>
   
 <footer class="site-footer">
-  <div class="container site-footer__row">
-    <span>© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
-    <a href="https://github.com/patrick-hancock">GitHub</a>
-    <a href="https://www.linkedin.com/in/pahancock89/">LinkedIn</a>
+  <div class="container">
+    <div class="site-footer__row">
+      <a href="index.html" class="site-footer__brand">PATRICK HANCOCK</a>
+      <p class="site-footer__tagline">Operations · Data · Applied Intelligence</p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="resume.html">Resume</a>
+        <a href="mailto:phancock.portfolio@gmail.com">Contact</a>
+        <a href="https://www.linkedin.com/in/pahancock89/">LinkedIn</a>
+        <a href="https://github.com/patrick-hancock">GitHub</a>
+      </nav>
+    </div>
+    <p class="site-footer__legal">© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</p>
   </div>
 </footer>
 </body>

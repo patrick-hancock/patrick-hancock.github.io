@@ -6,6 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home | Patrick Hancock</title>
+  <meta name="description" content="Patrick Hancock leads property operations and data, BI and AI work, from commercial towers and residential communities to governed data platforms.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Home | Patrick Hancock">
+  <meta property="og:description" content="Patrick Hancock leads property operations and data, BI and AI work, from commercial towers and residential communities to governed data platforms.">
+  <meta property="og:url" content="https://patrick-hancock.github.io/">
+  <meta property="og:image" content="https://patrick-hancock.github.io/files/home/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="styles/fonts/lora-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles/home.css">
@@ -17,9 +25,8 @@
 
 <header class="site-header">
   <div class="container site-header__bar">
-    <a href="index.html" class="brand">PH.<span class="sr-only"> Patrick Hancock</span></a>
+    <a href="index.html" class="brand" aria-current="page">PATRICK HANCOCK</a>
     <nav class="main-nav" aria-label="Main">
-      <a href="index.html" aria-current="page" class="is-current">Home</a>
       <a href="property-management.html">Property Management</a>
       <a href="work.html">Data / BI / AI</a>
       <a href="resume.html">Resume</a>
@@ -29,50 +36,133 @@
 </header>
   <main class="page container">
     
-<section class="hero section" data-section="hero">
-  <h1 class="page-title home-hero__headline">My career spans the leasing office and the data platform, and I bring both to every decision.</h1>
-  <p class="home-hero__subline">I have managed commercial towers and residential communities, and I now design governed data platforms and the AI workflows built on them.</p>
-</section>
-
-<section class="section" data-section="pathways">
-  <div class="grid-12">
-    <div class="col-6"><a class="pathway" href="property-management.html" data-pathway="pm">
-  <span class="pathway__mark pathway__mark--pm" aria-hidden="true"></span>
-  <span class="pathway__title">Property Management</span>
-  <span class="pathway__line">See the Denver towers and Virginia communities I led, with the results each one produced.</span>
-</a></div>
-    <div class="col-6"><a class="pathway" href="work.html" data-pathway="data">
-  <span class="pathway__mark pathway__mark--data" aria-hidden="true"></span>
-  <span class="pathway__title">Data / BI / AI</span>
-  <span class="pathway__line">Explore the systems I have designed across business intelligence, data platforms and applied AI, each tested before anyone relies on it.</span>
-</a></div>
+<section class="hero home-hero" data-section="hero">
+  <div class="grid-12 home-hero__grid">
+    <div class="home-hero__text">
+      <h1 class="page-title home-hero__headline">My career spans the leasing office and the data platform, and I bring both to every decision.</h1>
+      <p class="home-hero__intro">I lead on both sides of the operation. On the property side, I have managed commercial office space in downtown Denver and residential and student communities across Virginia, carrying budgets, compliance and on-site teams. On the data side, I design governed data platforms and AI-assisted workflows as a Business Intelligence Manager, so leaders see what is happening and act on it sooner. Records and compliance work in the U.S. Air Force shaped both: every system I run is auditable, and decisions that need judgment stay with people.</p>
+      <span class="brass-rule" aria-hidden="true"></span>
+    </div>
+    <div class="home-hero__photo">
+      <picture>
+        <source media="(min-width: 768px)" srcset="files/property-management/hero-555-17th-1536x1024.webp" width="1536" height="1024">
+        <img src="files/property-management/hero-555-17th-800x1000.webp" width="800" height="1000" alt="555 17th Street, a downtown Denver office tower" fetchpriority="high">
+      </picture>
+    </div>
   </div>
 </section>
 
-<section class="section" data-section="intro">
-  <p class="home-intro">I lead on both sides of the operation. On the property side, I have managed commercial office space in downtown Denver and residential and student communities across Virginia, carrying budgets, compliance and on-site teams. On the data side, I design governed data platforms and AI-assisted workflows as a Business Intelligence Manager, so leaders see what is happening and act on it sooner. Records and compliance work in the U.S. Air Force shaped both: every system I run is auditable, and decisions that need judgment stay with people.</p>
+<section class="section home-pathways" data-section="pathways">
+  <div class="grid-12">
+    <div class="col-6">
+      <div class="home-panel home-panel--pm" data-pathway="pm">
+        <img class="home-panel__img" src="files/property-management/hero-555-17th-1536x1024.webp" width="1536" height="1024" alt="" loading="lazy">
+        <div class="home-panel__body">
+          <h2 class="home-panel__title">Property Management</h2>
+          <p class="home-panel__line">See the Denver towers and Virginia communities I led, with the results each one produced.</p>
+          <a class="home-btn home-btn--light" href="property-management.html">Explore Property Management</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="home-panel home-panel--data" data-pathway="data">
+        <img class="home-panel__img" src="files/summit/overview.webp" width="1280" height="800" alt="" loading="lazy">
+        <div class="home-panel__body">
+          <h2 class="home-panel__title">Data / BI / AI</h2>
+          <p class="home-panel__line">Explore the systems I have designed across business intelligence, data platforms and applied AI, each tested before anyone relies on it.</p>
+          <a class="home-btn home-btn--light" href="work.html">Explore Data, BI and AI</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section" data-section="overview">
-  <ul class="home-overview">
-    <li class="home-overview__item"><span class="home-overview__track">Property management</span> <span class="home-overview__years">2016 to 2023</span></li>
-    <li class="home-overview__item"><span class="home-overview__track">Business intelligence, data and AI</span> <span class="home-overview__years">2023 to 2026</span></li>
+<section class="section home-career" data-section="career">
+  <div class="home-career__grid">
+    <div class="home-career__main">
+      <h2 class="section__title">A career built on operations and insight</h2>
+      <p class="home-career__text">I started in the U.S. Air Force, rebuilding a records program so that every office could find and trust its information. Property management followed from 2017 to 2023, in commercial office towers and in residential and student communities, where I carried the budgets and led the teams on site. Data-backed leasing and variance reporting were already part of that work, and in 2024 I was promoted into business intelligence leadership. As a Business Intelligence Manager I built the BI function on a governed data platform that unified seven source systems, and the AI-assisted workflows I designed on top of it handled routine operational work while decisions that need judgment stayed with people.</p>
+    </div>
+    <figure class="home-career__photo">
+      <img src="files/home/landscape-1600.webp" srcset="files/home/landscape-800.webp 800w, files/home/landscape-1600.webp 1600w" sizes="(min-width: 1280px) 480px, 40vw" width="1600" height="900" alt="Snow-capped peaks above a pine forest in Rocky Mountain National Park, Colorado" loading="lazy">
+      <figcaption>Landscape: Rocky Mountain National Park, NPS photo by M. Reed (public domain)</figcaption>
+    </figure>
+    <ol class="home-steps">
+      <li class="home-steps__item"><span class="home-steps__label">USAF records and knowledge management</span> <span class="home-steps__years">2010 to 2014</span></li>
+      <li class="home-steps__item"><span class="home-steps__label">Property management (commercial and residential)</span> <span class="home-steps__years">2017 to 2023</span></li>
+      <li class="home-steps__item"><span class="home-steps__label">BI leadership</span> <span class="home-steps__years">2024 to 2026</span></li>
+      <li class="home-steps__item"><span class="home-steps__label">Building a BI function</span> <span class="home-steps__years">2024 to 2026</span></li>
+      <li class="home-steps__item"><span class="home-steps__label">Data architecture and integration</span> <span class="home-steps__years">2024 to 2026</span></li>
+      <li class="home-steps__item"><span class="home-steps__label">AI-assisted operational systems</span> <span class="home-steps__years">2024 to 2026</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section home-selected" data-section="selected">
+  <h2 class="section__title home-selected__title"><span class="brass-rule brass-rule--inline" aria-hidden="true"></span>Selected Work</h2>
+  <ul class="home-cards">
+    <li class="home-card">
+      <a class="home-card__link" href="work-summit.html">
+        <img class="home-card__img" src="files/summit/overview.webp" width="1280" height="800" alt="Summit Automotive Intelligence group dashboard" loading="lazy">
+        <span class="home-card__body">
+          <span class="home-card__title">Summit Automotive Intelligence</span>
+          <span class="home-card__line">A governed BI system for an eight-store car dealer group, checked figure by figure</span>
+          <span class="home-card__cta">View project<span class="sr-only"> Summit Automotive Intelligence</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="home-card">
+      <a class="home-card__link" href="work-property-ops.html">
+        <img class="home-card__img" src="files/property-ops/card-chart.webp" width="1152" height="648" alt="Kestrel Valley Property Operations claim chart" loading="lazy">
+        <span class="home-card__body">
+          <span class="home-card__title">Kestrel Valley Property Operations</span>
+          <span class="home-card__line">A claim-checked BI system for a property management company, with the misses shown</span>
+          <span class="home-card__cta">View project<span class="sr-only"> Kestrel Valley Property Operations</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="home-card">
+      <a class="home-card__link" href="work-rental-insights.html">
+        <img class="home-card__img" src="files/home/rental-insights.webp" width="1280" height="800" alt="Rental Insights rent trend chart and three key figures" loading="lazy">
+        <span class="home-card__body">
+          <span class="home-card__title">Rental Insights</span>
+          <span class="home-card__line">A governed data and AI system on public US rental data</span>
+          <span class="home-card__cta">View project<span class="sr-only"> Rental Insights</span></span>
+        </span>
+      </a>
+    </li>
   </ul>
 </section>
 
-<section class="section" data-section="contact">
-  <p class="home-contact__line">For a role, a project or a conversation about either discipline, email me or connect on LinkedIn.</p>
-  <p class="home-contact__links"><a href="mailto:phancock.portfolio@gmail.com">Email</a> <a href="https://www.linkedin.com/in/pahancock89/">LinkedIn</a></p>
-  <p class="home-contact__open">Open to leadership roles in property operations, BI, data and AI · Remote, or on-site in the Charlottesville and Shenandoah Valley area</p>
+<section class="home-connect" data-section="connect">
+  <div class="home-connect__inner">
+    <div>
+      <h2 class="home-connect__title">Let&#39;s connect.</h2>
+      <p class="home-connect__line">If you are hiring for leadership in property operations, BI, data or AI, or would like to talk through a project, I would be glad to hear from you.</p>
+    </div>
+    <div class="home-connect__actions">
+      <a class="home-btn home-btn--ghost" href="files/patrick-hancock-resume.pdf">Download resume</a>
+      <a class="home-btn home-btn--link" href="mailto:phancock.portfolio@gmail.com">Contact</a>
+    </div>
+  </div>
 </section>
 
   </main>
   
 <footer class="site-footer">
-  <div class="container site-footer__row">
-    <span>© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</span>
-    <a href="https://github.com/patrick-hancock">GitHub</a>
-    <a href="https://www.linkedin.com/in/pahancock89/">LinkedIn</a>
+  <div class="container">
+    <div class="site-footer__row">
+      <a href="index.html" class="site-footer__brand">PATRICK HANCOCK</a>
+      <p class="site-footer__tagline">Operations · Data · Applied Intelligence</p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="resume.html">Resume</a>
+        <a href="mailto:phancock.portfolio@gmail.com">Contact</a>
+        <a href="https://www.linkedin.com/in/pahancock89/">LinkedIn</a>
+        <a href="https://github.com/patrick-hancock">GitHub</a>
+      </nav>
+    </div>
+    <p class="site-footer__legal">© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</p>
+    <div class="site-footer__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:555_17th_Street,_Denver,_CO_2015-12-08.jpg">Xnatedawgx</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, via Wikimedia Commons</div>
   </div>
 </footer>
 </body>

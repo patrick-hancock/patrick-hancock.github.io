@@ -31,6 +31,15 @@ body.theme-home {
   --ui-focus: #1E5A57;
   --border-subtle: #DDD8CE; /* hairline, decorative only */
 
+  /* Brass rule (48 x 3 px under the hero intro and before Selected Work) and the brass outline of the buttons on the dark
+     grounds, design revision V2.T02. #A07D45 is the share-card brass (assets-revision.md); 3.4:1 on the ivory ground. */
+  --ui-brass: #A07D45;
+
+  /* Dark grounds of the pathway panels and the connect band. Text on them is the ivory page colour (about 13:1 on the
+     navy, 9:1 on the charcoal). Not --bg-* names, so check_contrast does not pair them with --fg-* tokens. */
+  --ground-navy: #14233A;
+  --ground-charcoal: #30332F;
+
   /* Small marks on the two pathway cards, one per target theme, so the cards read differently (proposed). */
   --mark-pm: #735218;
   --mark-data: #0C0D11;
