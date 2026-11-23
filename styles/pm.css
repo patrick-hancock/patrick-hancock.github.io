@@ -1,7 +1,7 @@
 /* Property Management pages (property-management.html and resume-property-management.html). Selectors sit under .theme-pm
    and use tags and data-section / data-roles hooks, so few class names are needed. Theme tokens only.
-   2026-11-23 redesign (spec section 6): text-first hero, maps (map.css), experience, results, Kestrel Valley bridge and
-   resume download. */
+   2026-11-23 redesign (spec section 6) and the same-day follow-ups: text-first hero, maps (map.css), experience,
+   results, resume link in the breadcrumb row, and the sticky property projects panel. */
 .theme-pm main a { color: var(--fg-accent); text-underline-offset: 0.2em; } /* main only: the header Contact button keeps its own colours (axe, R5.T15) */
 .theme-pm main a:hover { color: var(--fg-accent-hover); }
 
@@ -24,24 +24,41 @@
 .theme-pm [data-roles="earlier"] strong { display: block; font-size: var(--text-base); line-height: var(--leading-base); color: var(--fg-default); }
 .theme-pm [data-roles="earlier"] > li > p:first-child { color: var(--fg-muted); }
 
-/* Selected results: four compact blocks, figure first. */
-.theme-pm [data-section="results"] ul { display: grid; gap: var(--space-3); grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 600px) { .theme-pm [data-section="results"] ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1100px) { .theme-pm [data-section="results"] ul { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* Selected results: three compact blocks, figure first. */
+.theme-pm [data-section="results"] ul { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
 .theme-pm [data-section="results"] li { padding: var(--space-3) var(--space-4) var(--space-4); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
 .theme-pm [data-section="results"] h3 span { display: block; }
 .theme-pm [data-section="results"] h3 span:first-child { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); line-height: var(--leading-xl); color: var(--fg-default); }
 .theme-pm [data-section="results"] h3 span:last-child { margin-top: var(--space-1); font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 600; color: var(--fg-default); }
 .theme-pm [data-section="results"] li > p { margin-top: var(--space-1); font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); }
 
-/* Kestrel Valley bridge and resume download. */
-.theme-pm [data-section="next"] > div { padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); }
-.theme-pm [data-section="next"] > div .section__title { font-size: var(--text-xl); line-height: var(--leading-xl); margin-bottom: var(--space-2); }
-.theme-pm [data-section="next"] > div > p:first-of-type { max-width: 68ch; margin-bottom: var(--space-2); }
-.theme-pm [data-section="next"] > div a { font-weight: 600; text-decoration: underline; }
-.theme-pm [data-section="next"] > p { margin-top: var(--space-4); }
-.theme-pm [data-section="next"] > p a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); background: var(--fill-accent); color: var(--fg-on-accent); border-radius: var(--radius); font-weight: 600; text-decoration: none; }
-.theme-pm [data-section="next"] > p a:hover { background: var(--fill-accent-hover); color: var(--fg-on-accent); }
+/* Resume download at the right end of the breadcrumb row (Patrick, 2026-11-23). Below 768 px it sits under the
+   breadcrumbs. The breadcrumb partial is shared, so the link lives in this page and is positioned here. */
+.theme-pm main:has(> [data-resume-top]) { position: relative; }
+.theme-pm [data-resume-top] { margin: var(--space-3) 0 0; }
+.theme-pm [data-resume-top] a { display: inline-flex; align-items: center; min-height: 32px; padding-inline: var(--space-3); background: var(--fill-accent); color: var(--fg-on-accent); border-radius: var(--radius); font-size: var(--text-sm); font-weight: 600; text-decoration: none; }
+.theme-pm [data-resume-top] a:hover { background: var(--fill-accent-hover); color: var(--fg-on-accent); }
+@media (min-width: 768px) {
+  /* top: main's padding (48) + breadcrumb list offset (24) - half the 8 px height difference (button 32, row 24). */
+  .theme-pm [data-resume-top] { position: absolute; top: calc(var(--space-6) + 20px); right: var(--page-margin); margin: 0; }
+  .theme-pm main:has(> [data-resume-top]) .breadcrumbs { padding-right: 13rem; }
+}
+
+/* Layout: content column plus the property projects panel, which stays in view while scrolling on wide screens
+   (Patrick, 2026-11-23). Narrower than 1200 px, the panel follows the content as a normal block. */
+.theme-pm [data-pm-layout] { display: grid; grid-template-columns: minmax(0, 1fr); }
+.theme-pm [data-pm-main] > [data-section="hero"] { padding-top: var(--space-6); } /* first child of the column, so .section:first-child would zero it */
+.theme-pm [data-section="projects"] > div { padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); }
+.theme-pm [data-section="projects"] h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); line-height: var(--leading-lg); margin-bottom: var(--space-3); }
+.theme-pm [data-section="projects"] li { padding-top: var(--space-3); border-top: 1px solid var(--border-subtle); }
+.theme-pm [data-section="projects"] li + li { margin-top: var(--space-3); }
+.theme-pm [data-section="projects"] h3 { font-size: var(--text-base); line-height: var(--leading-base); font-weight: 600; margin-bottom: var(--space-1); }
+.theme-pm [data-section="projects"] h3 a { text-decoration: underline; }
+.theme-pm [data-section="projects"] p { font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); }
+@media (min-width: 1200px) {
+  .theme-pm [data-pm-layout] { grid-template-columns: minmax(0, 1fr) 17rem; gap: var(--space-6); align-items: start; }
+  .theme-pm [data-section="projects"] { position: sticky; top: 88px; margin-top: var(--space-6); padding-top: 0; border-top: 0; } /* starts level with the headline, clear of the resume button */
+}
 
 /* Property management resume page (resume-property-management.html, D-043): heading and Download PDF button on one line
    (they wrap when narrow), then the one-page preview, as on the BI resume page. */

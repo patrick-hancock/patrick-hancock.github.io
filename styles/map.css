@@ -1,17 +1,19 @@
 /* Property portfolio maps (property-management.html only; 2026-11-23 redesign spec section 5). Leaflet's own stylesheet is
    js/vendor/leaflet-1.9.4/leaflet.css; these rules add the page theme on top. Theme tokens only (themes/pm.css).
-   Managed markers are filled navy circles with a solid edge; relief markers are hollow brass diamonds with a dashed edge,
-   so the two kinds differ by shape and fill as well as colour (legend uses the same marks). */
+   Managed markers are navy circles; relief markers are navy diamonds with a dashed brass edge (Patrick, 2026-11-23: same
+   dark centre as the circles), so the two kinds differ by shape and edge as well as colour (legend uses the same marks). */
 .pmm-intro { max-width: 68ch; margin-bottom: var(--space-3); }
 
 .map-key { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-4); font-size: var(--text-sm); color: var(--fg-muted); }
 .map-key li { display: inline-flex; align-items: center; gap: var(--space-2); }
 .map-key__pin, .pmm-pin { display: inline-block; box-sizing: border-box; }
 .map-key__pin, .pmm-marker--managed .pmm-pin { width: 16px; height: 16px; border-radius: 50%; background: var(--ui-managed); border: 2px solid var(--bg-surface); box-shadow: 0 0 0 1.5px var(--ui-managed); }
-.map-key__pin--relief, .pmm-marker--relief .pmm-pin { width: 14px; height: 14px; border-radius: 0; background: var(--bg-surface); border: 2px dashed var(--ui-relief); box-shadow: none; transform: rotate(45deg); }
+.map-key__pin--relief, .pmm-marker--relief .pmm-pin { width: 15px; height: 15px; border-radius: 0; background: var(--ui-managed); border: 2px dashed var(--ui-relief); box-shadow: none; transform: rotate(45deg); }
 
-.pmm-grid { display: grid; gap: var(--space-5); grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 1024px) { .pmm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Two maps side by side only when the content column itself is wide enough (it narrows beside the projects panel). */
+[data-section="portfolio"] { container-type: inline-size; }
+.pmm-grid { display: grid; gap: var(--space-4) var(--space-5); grid-template-columns: minmax(0, 1fr); }
+@container (min-width: 760px) { .pmm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .pmm-panel { min-width: 0; }
 .pmm-cap { font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); line-height: var(--leading-lg); margin-bottom: var(--space-2); }
 
@@ -44,16 +46,29 @@
 .pmm-popup .leaflet-popup-content-wrapper { border-radius: var(--radius); box-shadow: 0 2px 8px rgba(15, 29, 49, 0.2); }
 .pmm-popup .leaflet-popup-content { margin: var(--space-3) var(--space-4) var(--space-3) var(--space-3); font: var(--text-sm) / var(--leading-sm) var(--font-body); color: var(--fg-default); }
 .pmm-pop p { margin: 0; }
+/* Property photo (supplied by Patrick, pm-map.yml photo): shown in the popup; not repeated in the list rows. */
+.pmm-photo { margin: 0; }
+.pmm-item > .pmm-photo { display: none; }
+.pmm-pop .pmm-photo { margin: calc(-1 * var(--space-3)) calc(-1 * var(--space-4)) var(--space-2) calc(-1 * var(--space-3)); }
+.pmm-pop .pmm-photo img { display: block; width: 100%; height: 140px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; }
+.pmm-pop .pmm-photo figcaption { padding: 2px var(--space-3) 0; font-size: 11px; line-height: 16px; color: var(--fg-muted); }
 .pmm-pop .pmm-item__title { font-family: var(--font-display); font-weight: 600; font-size: var(--text-base); line-height: var(--leading-base); margin-bottom: var(--space-1); padding-right: var(--space-3); }
 .pmm-pop .pmm-item__meta { color: var(--fg-muted); }
 .pmm-pop .pmm-item__scope { margin-top: var(--space-2); }
 .pmm-popup .leaflet-popup-close-button { width: 32px; height: 32px; font-size: 20px; line-height: 30px; color: var(--fg-muted); }
 
-/* Property directory under each map: compact rows, readable with or without the map. */
-.pmm-list { margin-top: var(--space-3); border-top: 1px solid var(--border-subtle); }
+/* Property directory under each map: collapsed by default (<details>), compact rows, readable with or without the map. */
+.pmm-details { margin-top: var(--space-2); }
+.pmm-details > summary { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 36px; cursor: pointer; font-size: var(--text-sm); font-weight: 600; color: var(--fg-accent); list-style: none; }
+.pmm-details > summary::-webkit-details-marker { display: none; }
+.pmm-details > summary::before { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform 0.15s; }
+.pmm-details[open] > summary::before { transform: rotate(45deg); }
+.pmm-details > summary:hover { color: var(--fg-accent-hover); }
+.pmm-details > summary:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 2px; }
+.pmm-list { margin-top: var(--space-2); border-top: 1px solid var(--border-subtle); }
 .pmm-item { padding: var(--space-2) 0 var(--space-2) var(--space-4); border-bottom: 1px solid var(--border-subtle); position: relative; font-size: var(--text-sm); line-height: var(--leading-sm); }
 .pmm-item::before { content: ""; position: absolute; left: 2px; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: var(--ui-managed); }
-.pmm-item[data-kind="relief"]::before { left: 3px; width: 9px; height: 9px; border-radius: 0; background: transparent; border: 1.5px dashed var(--ui-relief); transform: rotate(45deg); }
+.pmm-item[data-kind="relief"]::before { left: 3px; width: 9px; height: 9px; border-radius: 0; background: var(--ui-managed); border: 1.5px dashed var(--ui-relief); transform: rotate(45deg); }
 .pmm-item__title { font-weight: 600; font-size: var(--text-base); line-height: var(--leading-base); color: var(--fg-default); }
 .pmm-item__meta { color: var(--fg-muted); }
 .pmm-item__scope { margin-top: var(--space-1); max-width: 68ch; }
@@ -64,5 +79,5 @@
 .pmm-note { margin-top: var(--space-3); font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); max-width: 68ch; }
 
 @media (prefers-reduced-motion: reduce) {
-  .pmm-marker .pmm-pin { transition: none; }
+  .pmm-marker .pmm-pin, .pmm-details > summary::before { transition: none; }
 }

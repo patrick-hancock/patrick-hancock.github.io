@@ -7,7 +7,12 @@
      screens one-finger drag is off so a swipe scrolls the page; pinch still zooms and pans.
    - Markers are keyboard buttons (Leaflet keyboard option) with an aria-label and 44 px hit areas; nearly coincident
      markers are fanned out with a leader line to the true point (declutter) so each stays selectable.
-   - Directory rows get a "show on map" button. One detail popup is open at a time across both maps.
+   - Hover (or focus-free pointer) shows a property's popup as a preview; it closes 300 ms after the pointer leaves both
+     the marker and the popup. Click, tap or Enter pins it open until its close button, Escape or another pin
+     (Patrick, 2026-11-23). Leaflet's own click-to-toggle popup handlers are replaced for this (1.9.4 internals).
+   - Directory rows get a "show on map" button. One detail popup is open at a time across both maps. The popup shows
+     the row's photo when pm-map.yml has one.
+   - The property lists under the maps are <details>, closed by default; a map that cannot load opens its list.
    - If Leaflet is missing, a map fails to start, or no tile loads, the map box shows its fallback note and the directory
      stays as it is. Each map starts on its own, so one failure does not stop the other. */
 (function () {
@@ -32,9 +37,14 @@
   var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
   var maps = [];
 
+  var HOVER_CLOSE = 300; // ms grace after the pointer leaves, so it can travel from marker to popup
+
   function showFallback(box) {
     var note = box.querySelector('[data-map-fallback]');
     if (note) { note.hidden = false; box.classList.add('pmm-map--failed'); }
+    var panel = box.closest('[data-map-panel]');
+    var list = panel && panel.querySelector('[data-map-list]');
+    if (list) list.open = true;
   }
 
   function icon(kind) {
@@ -50,7 +60,7 @@
   function popupContent(row) {
     var div = document.createElement('div');
     div.className = 'pmm-pop';
-    Array.prototype.forEach.call(row.querySelectorAll('p'), function (p) {
+    Array.prototype.forEach.call(row.querySelectorAll(':scope > p, :scope > figure'), function (p) {
       var c = p.cloneNode(true);
       c.querySelectorAll('button').forEach(function (b) { b.replaceWith(document.createTextNode(b.textContent)); });
       div.appendChild(c);
@@ -89,11 +99,6 @@
     });
   }
 
-  function openOnly(entry, p) {
-    maps.forEach(function (e) { if (e !== entry) e.map.closePopup(); });
-    p.marker.openPopup();
-  }
-
   function initMap(box) {
     var key = box.getAttribute('data-map');
     var panel = box.closest('[data-map-panel]');
@@ -108,7 +113,16 @@
       markerZoomAnimation: !reduceMotion
     });
     map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
-    var entry = { key: key, map: map, points: [], leaders: L.layerGroup().addTo(map) };
+    var entry = { key: key, map: map, points: [], leaders: L.layerGroup().addTo(map), pinned: null, switching: false, timer: null };
+    entry.show = function (pt) { clearTimeout(entry.timer); entry.switching = true; pt.marker.openPopup(); entry.switching = false; };
+    entry.leave = function (pt) {
+      clearTimeout(entry.timer);
+      entry.timer = setTimeout(function () {
+        if (entry.pinned === pt) return;
+        if (entry.pinned) entry.show(entry.pinned);
+        else { entry.switching = true; map.closePopup(); entry.switching = false; }
+      }, HOVER_CLOSE);
+    };
 
     var loaded = 0, errors = 0;
     var tiles = L.tileLayer(TILES.url, { attribution: TILES.attribution, maxZoom: TILES.maxZoom });
@@ -130,12 +144,27 @@
       // The icon element exists only once the map has a view, so the name is set in labelMarkers() after fitAll.
       var p = { latlng: latlng, marker: marker, row: row, title: title, label: title + ', ' + roleText + ': show details' };
       entry.points.push(p);
-      marker.on('popupopen', function () {
-        maps.forEach(function (e) { if (e !== entry) e.map.closePopup(); });
+      // Replace Leaflet's click/Enter toggle with hover preview plus click-to-pin.
+      marker.off('click', marker._openPopup, marker);
+      marker.off('keypress', marker._onKeyPress, marker);
+      marker.on('click', function () { entry.pinned = p; entry.show(p); });
+      marker.on('keypress', function (e) { if (e.originalEvent && (e.originalEvent.key === 'Enter' || e.originalEvent.keyCode === 13)) { entry.pinned = p; entry.show(p); } });
+      marker.on('mouseover', function () { entry.show(p); });
+      marker.on('mouseout', function () { entry.leave(p); });
+      marker.on('popupopen', function (e) {
+        maps.forEach(function (o) { if (o !== entry) { o.pinned = null; o.switching = true; o.map.closePopup(); o.switching = false; } });
         row.classList.add('pmm-item--active');
+        var el = e.popup.getElement();
+        if (el && !el.__pmm) {
+          el.__pmm = true;
+          el.addEventListener('mouseenter', function () { clearTimeout(entry.timer); });
+          el.addEventListener('mouseleave', function () { entry.leave(p); });
+        }
       });
       marker.on('popupclose', function () {
         row.classList.remove('pmm-item--active');
+        if (entry.switching) return;
+        if (entry.pinned === p) entry.pinned = null;
         // Closing by its button or Escape leaves focus nowhere (the popup is removed): put it back on the marker.
         setTimeout(function () {
           var a = document.activeElement, me = marker.getElement();
@@ -152,7 +181,8 @@
       btn.addEventListener('click', function () {
         var z = Math.max(map.getZoom(), 15);
         map.setView(latlng, Math.min(z, VIEWS[key].maxZoom + 1), { animate: !reduceMotion });
-        openOnly(entry, p);
+        entry.pinned = p;
+        entry.show(p);
         var r = box.getBoundingClientRect();
         if (r.top < 88 || r.bottom > window.innerHeight) box.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
       });
@@ -172,7 +202,7 @@
         b.textContent = 'Show all';
         b.setAttribute('aria-label', 'Show all properties on this map');
         L.DomEvent.disableClickPropagation(wrap);
-        L.DomEvent.on(b, 'click', function () { map.closePopup(); fitAll(entry, 'all', true); });
+        L.DomEvent.on(b, 'click', function () { entry.pinned = null; map.closePopup(); fitAll(entry, 'all', true); });
         return wrap;
       }
     });
@@ -183,7 +213,7 @@
     box.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       var open = entry.points.find(function (pt) { return pt.marker.isPopupOpen(); });
-      if (open) { e.preventDefault(); map.closePopup(); open.marker.getElement().focus(); }
+      if (open) { e.preventDefault(); entry.pinned = null; map.closePopup(); open.marker.getElement().focus(); }
     });
     fitAll(entry, 'initial', false);
     entry.points.forEach(function (pt) {
@@ -197,6 +227,15 @@
   }
 
   function start() {
+    // List toggles: the summary reads "Show the N properties" closed and "Hide the N properties" open.
+    Array.prototype.forEach.call(document.querySelectorAll('[data-map-list]'), function (d) {
+      var s = d.querySelector('summary');
+      var showText = s.textContent;
+      var hideText = showText.replace(/^Show/, 'Hide');
+      var sync = function () { s.textContent = d.open ? hideText : showText; };
+      d.addEventListener('toggle', sync);
+      sync();
+    });
     var boxes = document.querySelectorAll('[data-map]');
     if (typeof window.L === 'undefined') { Array.prototype.forEach.call(boxes, showFallback); return; }
     Array.prototype.forEach.call(boxes, function (box) {
