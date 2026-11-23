@@ -38,6 +38,8 @@ body.theme-home {
   /* Dark grounds of the pathway panels and the connect band. Text on them is the ivory page colour (about 13:1 on the
      navy, 9:1 on the charcoal). Not --bg-* names, so check_contrast does not pair them with --fg-* tokens. */
   --ground-navy: #14233A;
+  /* Dot colour of the drawn wave on the navy Data panel (D-041); decorative, carries no text. */
+  --ground-navy-glow: #5FB4E8;
   --ground-charcoal: #30332F;
 
   /* Small marks on the two pathway cards, one per target theme, so the cards read differently (proposed). */
