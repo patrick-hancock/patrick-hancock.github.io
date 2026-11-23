@@ -82,8 +82,11 @@
   .pmm-marker .pmm-pin, .pmm-details > summary::before { transition: none; }
 }
 /* Round 10 (2026-11-23): link to the property's own photo gallery, in the list and the popup. */
-.pmm-item__link { margin-top: var(--space-1); }
 .pmm-item__link a, .pmm-pop .pmm-photo figcaption a { color: var(--fg-accent); text-decoration: underline; text-underline-offset: 0.2em; }
 .pmm-item__link a:hover { color: var(--fg-accent-hover); }
 .pmm-item__link a:focus-visible, .pmm-pop .pmm-photo figcaption a:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 2px; }
-.pmm-pop .pmm-item__link { margin-top: var(--space-2); }
+/* Card layout (Patrick, 2026-11-23): one labeled fact per line, label in semibold. */
+.pmm-item__field { color: var(--fg-default); }
+.pmm-item__label { font-weight: 600; }
+.pmm-pop .pmm-item__meta { margin-bottom: var(--space-2); }
+.pmm-item > .pmm-item__meta:not(.pmm-listonly) + .pmm-item__field { margin-top: var(--space-1); }

@@ -60,7 +60,7 @@
   function popupContent(row) {
     var div = document.createElement('div');
     div.className = 'pmm-pop';
-    Array.prototype.forEach.call(row.querySelectorAll(':scope > p, :scope > figure'), function (p) {
+    Array.prototype.forEach.call(row.querySelectorAll(':scope > p:not(.pmm-listonly), :scope > figure'), function (p) {
       var c = p.cloneNode(true);
       c.querySelectorAll('button').forEach(function (b) { b.replaceWith(document.createTextNode(b.textContent)); });
       div.appendChild(c);
