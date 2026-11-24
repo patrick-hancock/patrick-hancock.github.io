@@ -1,0 +1,181 @@
+/* Kestrel Valley case study (work-property-ops.html) and its technical write-up (work-property-ops-technical.html),
+   D-068 (2026-11-24). Matches the Property Management page (pm.css): theme-pm Granite tokens only, Source Serif 4 for
+   headings, hairline rules and few boxes. Every rule sits under .kv, so nothing reaches another page. Loaded after
+   site.css (base.html head_late). Spec section 9: content width from the site container, 8 px rhythm, generous
+   section spacing, readable line lengths, one accent (brass text), tabular numerals for figures. */
+
+.kv { --kv-gap: var(--space-6); color: var(--fg-default); }
+@media (min-width: 1024px) { .kv { --kv-gap: var(--space-8); } }
+.kv main a, .kv a { color: var(--fg-accent); text-underline-offset: 0.2em; }
+.kv a:hover { color: var(--fg-accent-hover); }
+.kv h2, .kv h3, .kv .page-title { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking-display); }
+.kv h2 { font-size: var(--text-2xl); line-height: var(--leading-2xl); max-width: 30ch; text-wrap: balance; margin-bottom: var(--space-3); }
+.kv h3 { font-size: var(--text-lg); line-height: var(--leading-lg); }
+.kv h4 { font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-muted); margin: var(--space-3) 0 var(--space-1); }
+.kv p { max-width: 68ch; }
+.kv-intro { font-size: var(--text-lg); line-height: var(--leading-lg); color: var(--fg-default); margin-bottom: var(--space-5); }
+.kv-body { margin-top: var(--space-3); }
+.kv-h3 { margin: var(--space-5) 0 var(--space-3); }
+.kv-label, .kv-eyebrow, .kv-tag { font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-accent); }
+.kv-eyebrow { margin-bottom: var(--space-2); }
+.kv-focus { font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 600; color: var(--fg-muted); margin-bottom: var(--space-2); }
+.kv-dots { color: var(--fg-muted); }
+.kv-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.kv-tablewrap:focus-visible, .kv summary:focus-visible { outline: var(--focus-width) solid var(--ui-focus); outline-offset: var(--focus-offset); }
+
+/* Sections: hairline rule between them, as on the Property Management page. */
+.kv-sec { padding-block: var(--kv-gap); border-top: 1px solid var(--border-subtle); scroll-margin-top: var(--space-6); }
+
+/* Hero (spec 8.1): copy about 60 percent, the scope panel beside it from 1024 px; the screenshot below. */
+.kv-hero { display: grid; gap: var(--space-5); padding: var(--space-6) 0 var(--kv-gap); grid-template-columns: minmax(0, 1fr); }
+.kv-hero .page-title { margin-bottom: var(--space-3); }
+.kv-lead { font-size: var(--text-lg); line-height: var(--leading-lg); }
+.kv-scopeline { margin-top: var(--space-4); font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-muted); }
+.kv-disclosure { margin-top: var(--space-3); padding: var(--space-2) var(--space-3); border-left: 3px solid var(--fg-accent); background: var(--bg-surface); }
+.kv-disclosure strong { font-weight: 600; }
+.kv-ctas { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+.kv .kv-btn { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); color: var(--fg-default); font-weight: 600; text-decoration: none; }
+.kv .kv-btn:hover { border-color: var(--fg-default); color: var(--fg-default); }
+.kv .kv-btn--primary { background: var(--fill-accent); border-color: var(--fill-accent); color: var(--fg-on-accent); }
+.kv .kv-btn--primary:hover { background: var(--fill-accent-hover); border-color: var(--fill-accent-hover); color: var(--fg-on-accent); }
+.kv-scope { align-self: start; padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); }
+.kv-scope__fig { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); line-height: var(--leading-xl); padding-block: var(--space-2); border-bottom: 1px solid var(--border-subtle); font-variant-numeric: tabular-nums; }
+.kv-scope__levels { padding-top: var(--space-2); color: var(--fg-muted); }
+.kv-shot { margin: 0; }
+.kv-shot img, .kv-chain img { display: block; width: 100%; height: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius); background: #fff; }
+.kv-shot figcaption, .kv-fin figcaption { margin-top: var(--space-2); font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); max-width: 68ch; }
+@media (min-width: 1024px) {
+  .kv-hero { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--space-7); }
+  .kv-hero__shot { grid-column: 1 / -1; max-width: 60rem; } /* spec 8.1: a supporting artifact, not the dominant visual */
+  .kv-hero--tech { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Levels (8.2): four columns on a shared top rule, no boxes. */
+.kv-levels, .kv-lenses, .kv-views, .kv-scenarios, .kv-parts, .kv-kpis { display: grid; gap: var(--space-4); grid-template-columns: minmax(0, 1fr); }
+.kv-levels > li { padding-top: var(--space-3); border-top: 2px solid var(--fg-default); }
+@media (min-width: 640px) { .kv-levels, .kv-parts, .kv-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .kv-levels { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* Bridge (8.3): two columns, then the boundary note. */
+.kv-bridge { display: grid; gap: var(--space-4); grid-template-columns: minmax(0, 1fr); }
+.kv-bridge > div { padding-top: var(--space-3); border-top: 2px solid var(--fg-default); }
+.kv-bridge h3 { margin-bottom: var(--space-2); }
+@media (min-width: 768px) { .kv-bridge { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-6); } }
+.kv-boundary { margin-top: var(--space-4); padding: var(--space-3); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); font-size: var(--text-sm); line-height: var(--leading-sm); }
+
+/* Approach (8.4): five numbered steps, horizontal from 1024 px, stacked below. */
+.kv-steps { display: grid; gap: var(--space-3); grid-template-columns: minmax(0, 1fr); counter-reset: none; }
+.kv-steps > li { position: relative; padding: var(--space-3) 0 0 var(--space-6); border-top: 1px solid var(--ui-border-strong); }
+.kv-steps h3 { font-size: var(--text-base); line-height: var(--leading-base); margin-bottom: var(--space-1); }
+.kv-steps p { font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); }
+.kv-steps__n { position: absolute; left: 0; top: var(--space-3); display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--fill-accent); color: var(--fg-on-accent); font-weight: 600; font-variant-numeric: tabular-nums; }
+@media (min-width: 1024px) {
+  .kv-steps { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .kv-steps > li { padding: var(--space-6) 0 0; }
+  .kv-steps__n { top: var(--space-2); }
+}
+
+/* Perspectives (8.5): same geometry for each lens; two columns from 768 px, four from 1280 px. */
+.kv-lens { padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-top: 3px solid var(--fg-default); border-radius: var(--radius); }
+.kv-lens h3 { margin: var(--space-1) 0 var(--space-2); }
+.kv-lens p, .kv-qs { font-size: var(--text-sm); line-height: var(--leading-sm); }
+.kv-qs { display: grid; gap: var(--space-1); padding-left: var(--space-3); list-style: disc; }
+@media (min-width: 768px) { .kv-lenses { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1280px) { .kv-lenses { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* Featured case (8.6): three linked stages, then the response by level. */
+.kv-chain { display: grid; gap: var(--space-4); grid-template-columns: minmax(0, 1fr); }
+.kv-chain > li { display: grid; gap: var(--space-2); align-content: start; padding-top: var(--space-3); border-top: 2px solid var(--fg-accent); }
+@media (min-width: 1024px) { .kv-chain { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.kv-responses { display: grid; gap: var(--space-3); grid-template-columns: minmax(0, 1fr); }
+.kv-responses > li { padding: var(--space-3); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
+.kv-responses h4 { margin-top: 0; color: var(--fg-default); }
+@media (min-width: 768px) { .kv-responses { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.kv-measures { margin-top: var(--space-4); }
+
+/* Scenarios (8.7): four panels, signal / interpretation / implication as labelled rows. */
+.kv-scenario { padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius); background: var(--bg-surface); }
+.kv-scenario h3 { margin-top: var(--space-1); }
+.kv-scenario dl { display: grid; gap: var(--space-2); margin-top: var(--space-2); }
+.kv-scenario dt { font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 600; color: var(--fg-default); }
+.kv-scenario dd { margin: 0; font-size: var(--text-sm); line-height: var(--leading-sm); }
+@media (min-width: 768px) { .kv-scenarios { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Finance (8.8): one row of figures from 1024 px, two columns below. */
+.kv-fin { margin: 0; }
+.kv-figs { display: grid; gap: var(--space-3); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.kv-figs > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; padding-top: var(--space-2); border-top: 2px solid var(--fg-default); }
+.kv-figs dd { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); line-height: var(--leading-xl); font-variant-numeric: tabular-nums; }
+.kv-figs dt { font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); }
+@media (min-width: 1024px) { .kv-figs { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* Views (8.9): four link cards, same geometry. */
+.kv-views > li { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); }
+.kv-views p { font-size: var(--text-sm); line-height: var(--leading-sm); flex: 1 1 auto; }
+.kv-views a { display: inline-flex; flex-wrap: wrap; align-items: center; min-height: 44px; font-weight: 600; text-decoration: underline; }
+.kv-newtab { font-weight: 400; font-size: var(--text-sm); margin-left: 0.25em; }
+@media (min-width: 640px) { .kv-views { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1280px) { .kv-views { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* Method (8.10) and limits (8.11): plain tables, misses at the same weight as passes. */
+.kv-summary { display: grid; gap: var(--space-2); margin-bottom: var(--space-5); }
+.kv-summary b { font-variant-numeric: tabular-nums; }
+.kv-tablewrap { overflow-x: auto; }
+.kv-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); line-height: var(--leading-sm); }
+.kv-table caption { text-align: left; font-weight: 600; font-size: var(--text-base); line-height: var(--leading-base); padding-bottom: var(--space-2); }
+.kv-table th, .kv-table td { text-align: left; vertical-align: top; padding: var(--space-2) var(--space-3) var(--space-2) 0; border-top: 1px solid var(--border-subtle); }
+.kv-table thead th { border-top: 0; border-bottom: 2px solid var(--fg-default); color: var(--fg-muted); font-weight: 600; }
+.kv-table tbody th { font-weight: 600; width: 34%; font-variant-numeric: tabular-nums; }
+.kv-table--two td { width: 50%; }
+.kv-impl { margin-top: var(--space-4); font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); }
+.kv-techlink { margin-top: var(--space-3); font-weight: 600; }
+.kv-closing { margin-top: var(--space-6); font-family: var(--font-display); font-size: var(--text-lg); line-height: var(--leading-lg); }
+@media (max-width: 639px) {
+  /* Phones: each table row stacks, so no cell is squeezed or scrolled. */
+  .kv-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .kv-table tr, .kv-table th, .kv-table td { display: block; width: auto; }
+  .kv-table tr { padding-block: var(--space-2); border-top: 1px solid var(--border-subtle); }
+  .kv-table th, .kv-table td { border-top: 0; padding: var(--space-1) 0; }
+  .kv-table--two td:first-child::before { content: "It demonstrates: "; font-weight: 600; }
+  .kv-table--two td:last-child::before { content: "It does not establish: "; font-weight: 600; }
+}
+
+/* Technical page. */
+.kv .case-ownership { margin-top: var(--space-3); font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); }
+.kv-skills { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-2); margin-top: var(--space-3); }
+.kv-chip { padding: 2px var(--space-2); border: 1px solid var(--ui-border-strong); border-radius: var(--radius); font-size: var(--text-sm); line-height: var(--leading-sm); }
+.kv-parts > li { padding-top: var(--space-3); border-top: 2px solid var(--fg-default); }
+.kv-parts p { font-size: var(--text-sm); line-height: var(--leading-sm); }
+@media (min-width: 1024px) { .kv-parts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.kv-flow { display: grid; gap: var(--space-3); grid-template-columns: minmax(0, 1fr); }
+.kv-flow > li { padding: var(--space-3); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
+.kv-flow h3 { font-size: var(--text-base); line-height: var(--leading-base); }
+.kv-flow p { font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); }
+@media (min-width: 640px) { .kv-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1280px) { .kv-flow { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.kv-kpis > li { padding: var(--space-4); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
+.kv-kpi__value { font-family: var(--font-display); font-weight: 600; font-size: var(--text-2xl); line-height: var(--leading-2xl); font-variant-numeric: tabular-nums; }
+.kv-kpi__note { font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); }
+.kv-kpis details { margin-top: var(--space-3); font-size: var(--text-sm); line-height: var(--leading-sm); }
+.kv-kpis summary { cursor: pointer; font-weight: 600; color: var(--fg-accent); min-height: 24px; }
+.kv-kpis details > * + * { margin-top: var(--space-2); }
+.kv-kpis details ul { display: grid; gap: var(--space-1); padding-left: var(--space-3); list-style: disc; }
+.kv-src { color: var(--fg-muted); }
+@media (min-width: 1280px) { .kv-kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.kv-score { display: grid; gap: var(--space-3); }
+.kv-score > li { display: grid; gap: var(--space-1) var(--space-3); grid-template-columns: minmax(0, 1fr) auto; padding-top: var(--space-2); border-top: 1px solid var(--border-subtle); }
+.kv-score__label { font-weight: 600; }
+.kv-score__value { font-variant-numeric: tabular-nums; }
+.kv-score__note { grid-column: 1 / -1; font-size: var(--text-sm); line-height: var(--leading-sm); color: var(--fg-muted); max-width: 68ch; }
+.kv-bar { grid-column: 1 / -1; display: flex; gap: 2px; height: 12px; }
+.kv-bar i { flex: 1 1 0; min-width: 0; }
+.kv-bar__ok { background: var(--fill-accent); }
+.kv-bar__miss { background: transparent; border: 1px solid var(--ui-border-strong); }
+.kv-legend { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: var(--space-3); font-size: var(--text-sm); }
+.kv-legend span { display: inline-block; width: 16px; height: 12px; }
+.kv-methods .mb-block { padding-top: var(--space-4); margin-top: var(--space-4); border-top: 1px solid var(--border-subtle); }
+.kv-methods .mb-block:first-child { margin-top: 0; }
+.kv-methods .sp-h3 { font-family: var(--font-display); font-size: var(--text-lg); line-height: var(--leading-lg); margin-bottom: var(--space-2); }
+.kv-methods .mb-list dt { font: 600 var(--text-sm) / var(--leading-sm) var(--font-body); color: var(--fg-muted); }
+.kv-methods .mb-list dd { font-size: var(--text-base); line-height: var(--leading-base); }
+.kv-methods code { font-family: var(--font-mono); font-size: var(--text-sm); overflow-wrap: anywhere; background: var(--bg-surface); padding: 0 var(--space-1); border-radius: 2px; }

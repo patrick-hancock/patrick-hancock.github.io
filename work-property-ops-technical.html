@@ -1,0 +1,280 @@
+
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kestrel Valley Residential: technical write-up | Patrick Hancock</title>
+  <meta name="description" content="How the Kestrel Valley case study is built and tested on synthetic data: data flow, four views, test methods, rerun steps and every recorded limit.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kestrel Valley Residential: technical write-up | Patrick Hancock">
+  <meta property="og:description" content="How the Kestrel Valley case study is built and tested on synthetic data: data flow, four views, test methods, rerun steps and every recorded limit.">
+  <meta property="og:url" content="https://patrick-hancock.github.io/work-property-ops-technical.html">
+  <meta property="og:image" content="https://patrick-hancock.github.io/files/home/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="styles/fonts/source-serif-4-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="styles/site.css">
+  <link rel="stylesheet" href="styles/kestrel.css">
+
+</head>
+<body class="theme-pm">
+  
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="index.html" class="brand">PATRICK HANCOCK</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="property-management.html" class="is-section">Property Management</a>
+      <a href="work.html">Data / BI / AI</a>
+      <a href="resume-property-management.html">Resume</a>
+    </nav>
+    <a class="contact" href="mailto:phancock.portfolio@gmail.com">Contact</a>
+  </div>
+</header>
+  <main class="page container">
+    
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="property-management.html">Property Management</a></li>
+    <li><a href="work-property-ops.html">Kestrel Valley Residential</a></li>
+    <li aria-current="page">Kestrel Valley Residential: technical write-up</li>
+  </ol>
+</nav>
+    
+<div class="kv">
+
+<section class="kv-hero kv-hero--tech" data-section="hero" aria-labelledby="kv-title">
+  <div>
+    <p class="kv-eyebrow">BI and analytics system</p>
+    <h1 id="kv-title" class="page-title">Kestrel Valley Residential: technical write-up</h1>
+    <p class="kv-lead">A claim-checked BI system for a property management company, with the misses shown</p>
+    <p class="kv-body">How the Kestrel Valley case study is built and tested: the data flow, the four views, how each figure was checked, how to rerun the checks, and every limit recorded during the build.</p>
+    <p class="kv-disclosure"><strong>Synthetic data, fictional company</strong></p>
+    <p class="case-ownership">Designed, specified and validated by me; built with AI-assisted development.</p>
+    <p class="kv-body">Kestrel Valley is a fictional property management company built on synthetic data. All 895 numbers on its claim cards were rechecked against the source records, and none of the 3 look-alike decoys was blamed for a problem. The system found 4 of its 7 planted causes and passed 38 of 58 assistant questions, up from 32 on the first run, with every miss listed. I designed the Databricks marts, the claim cards, four views and a grounded assistant.</p>
+    <p class="kv-skills"><span class="kv-label">Skills</span> <span class="kv-chip">Databricks</span> <span class="kv-chip">Dimensional modeling</span> <span class="kv-chip">Data quality checks</span> <span class="kv-chip">Claim-checked analysis</span> <span class="kv-chip">Cited knowledge assistant</span></p>
+    <p class="kv-ctas"><a class="kv-btn" href="work-property-ops.html">Read the case study</a></p>
+  </div>
+</section>
+
+<section class="kv-sec" data-section="system" aria-labelledby="kv-system-h">
+  <h2 id="kv-system-h">The views and the assistant</h2>
+  <p class="kv-intro">Kestrel Valley Residential is a fictional property management company. This system is the reporting and analysis built for it, on realistic made-up records. Seven real causes were hidden in the data on purpose, along with three look-alikes that are not causes, so every finding the system makes can be checked against a known answer.</p>
+  <ul class="kv-parts">
+    <li><h3>Property manager</h3><p>Fifteen pages: all 14 communities in order of need, then one page for each community on its units, leases, repairs and spending against its own plan. Reached from the regional view.</p></li>
+    <li><h3>Regional manager</h3><p>Five pages on market position, repairs and service, staffing, leasing and what residents are saying.</p></li>
+    <li><h3>Asset manager</h3><p>Six pages on occupancy, costs, the plan, capital and debt for one asset.</p></li>
+    <li><h3>Owner</h3><p>Four pages on the assets, capital and debt, in the owner&#39;s terms.</p></li>
+    <li><h3>Grounded assistant</h3><p>Answers from the handbook, a measure or a claim card, and refuses when none of them supports an answer.</p></li>
+  </ul>
+  <h3 class="kv-h3">What the system does</h3>
+  <p class="kv-body">For each community, it compares results with the local market and with the community&#39;s own past, then tests possible explanations against the evidence. It writes a finding card for each, called a claim card. A card either names a cause, rules a suspect out, or says the evidence is not enough.</p>
+  <h3 class="kv-h3">Why it can be trusted</h3>
+  <p class="kv-body">Every card carries the query behind each number, and a card that cannot name a cause says so instead of guessing. The sections below say what was found, what was missed and what the testing did and did not show.</p>
+</section>
+
+<section class="kv-sec" data-section="architecture" aria-labelledby="kv-flow-h">
+  <h2 id="kv-flow-h">How it is built</h2>
+  <p class="kv-intro">Each layer is built by generated SQL or script and checked before the next layer reads it.</p>
+  <ol class="kv-flow">
+    <li><span class="kv-label">Sources</span><h3>Synthetic records</h3><p>Seven planted causes, three decoys</p></li>
+    <li><span class="kv-label">Marts</span><h3>Databricks marts</h3><p>One governed model</p></li>
+    <li><span class="kv-label">Insight</span><h3>Claim cards</h3><p>59 cards, 895 values recomputed</p></li>
+    <li><span class="kv-label">Measures</span><h3>Shared definitions</h3><p>19 measures behind every view</p></li>
+    <li><span class="kv-label">Views</span><h3>Four views</h3><p>30 pages</p></li>
+    <li><span class="kv-label">Assistant</span><h3>Cited answers</h3><p>Card, measure or handbook, or a refusal</p></li>
+  </ol>
+</section>
+
+<section class="kv-sec" data-section="tested" aria-labelledby="kv-tested-h">
+  <h2 id="kv-tested-h">What was tested</h2>
+  <p class="kv-intro">Each figure is a result from the latest full test. Open a figure&#39;s note to see what was tested and what it does not show.</p>
+  <ul class="kv-kpis">
+    <li>
+      <p class="kv-label">Hidden causes found</p>
+      <p class="kv-kpi__value">4 of 7</p>
+      <p class="kv-kpi__note">After one round of fixes, with the answers known</p>
+      <details>
+        <summary>How each figure was tested<span class="kv-sr">: Hidden causes found</span></summary>
+        <p>Seven causes were hidden in the data on purpose. The checker found four after one round of fixes, and the answer key was known while the fixes were made. Before the fixes it found 3 of 7.</p>
+        <ul><li>It missed three. They were not tuned further, and the reasons are written down.</li><li>None of the 3 look-alikes was wrongly blamed.</li><li>Reference numbers: found CH01, CH08, CH09 and CH11; missed CH02, CH04 and CH06.</li></ul>
+        <p class="kv-src">Claim checker, 20 Nov 2026</p>
+      </details>
+    </li>
+    <li>
+      <p class="kv-label">Card numbers rechecked</p>
+      <p class="kv-kpi__value">895 of 895</p>
+      <p class="kv-kpi__note">Every number on a card matches the source records</p>
+      <details>
+        <summary>How each figure was tested<span class="kv-sr">: Card numbers rechecked</span></summary>
+        <p>Every number printed on a claim card was recalculated from the original records, and none was wrong. Values compared with a prior year or with peers are checked as lying inside a recalculated range rather than matched to the exact digit.</p>
+        <ul><li>This shows the numbers are right. It does not show the system picked the right cause; the first figure covers that.</li></ul>
+        <p class="kv-src">Claim checker, 20 Nov 2026</p>
+      </details>
+    </li>
+    <li>
+      <p class="kv-label">Assistant questions passed</p>
+      <p class="kv-kpi__value">38 of 58</p>
+      <p class="kv-kpi__note">After one fix to how business measures are read</p>
+      <details>
+        <summary>How each figure was tested<span class="kv-sr">: Assistant questions passed</span></summary>
+        <p>The assistant answered 60 prepared questions, and 58 count toward the score. A question passes when the answer comes from the right source, or the assistant correctly declines to answer. The first run passed 32 of 58, and six more passed once business measures were read from the shared definitions. 38 of 58 is now the lowest score a later version may have. It is not a target.</p>
+        <ul><li>Questions that should be answered: 25 of 41 passed. Questions that should be declined: 13 of 17 passed.</li><li>By where the answer comes from: handbook 13 of 17, business measures 10 of 11, claim cards 2 of 13.</li><li>Two questions wait on handbook policy numbers and are left out of the 58.</li></ul>
+        <p class="kv-src">Assistant test, 20 Nov 2026</p>
+      </details>
+    </li>
+    <li>
+      <p class="kv-label">Same answer every time</p>
+      <p class="kv-kpi__value">20 of 20</p>
+      <p class="kv-kpi__note">Repeatable, which is not the same as reliable</p>
+      <details>
+        <summary>How each figure was tested<span class="kv-sr">: Same answer every time</span></summary>
+        <p>The 20 hardest questions were each asked 3 times and gave exactly the same answer every time. Most of these 20 are questions the assistant fails, so most of the repeats are the same wrong answer given again.</p>
+        <ul><li>The assistant follows fixed rules and does not use a language model, so identical answers were expected.</li><li>This does not show how it would do with a language model writing the answers, or with new questions.</li></ul>
+        <p class="kv-src">Assistant test, 20 Nov 2026</p>
+      </details>
+    </li>
+  </ul>
+</section>
+
+<section class="kv-sec" data-section="scorecard" aria-labelledby="kv-score-h">
+  <h2 id="kv-score-h">Results at a glance</h2>
+  <p class="kv-intro">Each bar shows what passed as filled segments and what missed as empty ones, so the wins and the misses sit in one view.</p>
+  <ul class="kv-score">
+    <li>
+      <span class="kv-score__label">Hidden causes found</span>
+      <b class="kv-score__value">4 of 7</b>
+      <span class="kv-bar" role="img" aria-label="Hidden causes found: 4 of 7"><i class="kv-bar__ok"></i><i class="kv-bar__ok"></i><i class="kv-bar__ok"></i><i class="kv-bar__ok"></i><i class="kv-bar__miss"></i><i class="kv-bar__miss"></i><i class="kv-bar__miss"></i></span>
+      <span class="kv-score__note">Found after one round of fixes, with the answers known. Three were missed and are written up.</span>
+    </li>
+    <li>
+      <span class="kv-score__label">Look-alikes not blamed</span>
+      <b class="kv-score__value">3 of 3</b>
+      <span class="kv-bar" role="img" aria-label="Look-alikes not blamed: 3 of 3"><i class="kv-bar__ok"></i><i class="kv-bar__ok"></i><i class="kv-bar__ok"></i></span>
+      <span class="kv-score__note">None of the three look-alikes was blamed for a problem. No card has yet ruled one out by name, so this shows restraint rather than detection.</span>
+    </li>
+    <li>
+      <span class="kv-score__label">Card numbers rechecked</span>
+      <b class="kv-score__value">895 of 895</b>
+      <span class="kv-bar" role="img" aria-label="Card numbers rechecked: 895 of 895"><i class="kv-bar__ok" style="flex-grow:895"></i></span>
+      <span class="kv-score__note">Every number on a claim card matches the source records.</span>
+    </li>
+    <li>
+      <span class="kv-score__label">Assistant questions passed</span>
+      <b class="kv-score__value">38 of 58</b>
+      <span class="kv-bar" role="img" aria-label="Assistant questions passed: 38 of 58"><i class="kv-bar__ok" style="flex-grow:38"></i><i class="kv-bar__miss" style="flex-grow:20"></i></span>
+      <span class="kv-score__note">Up from 32 of 58 on the first run, and the lowest score a later version may have. Of the questions that should be answered, 25 of 41 passed; of those that should be declined, 13 of 17 passed.</span>
+    </li>
+  </ul>
+  <p class="kv-legend"><span class="kv-bar__ok" aria-hidden="true"></span> Passed <span class="kv-bar__miss" aria-hidden="true"></span> Missed</p>
+</section>
+
+<section class="kv-sec" data-section="methods" aria-labelledby="kv-methods-h">
+  <h2 id="kv-methods-h">How each figure was tested</h2>
+  <div class="method-blocks kv-methods" data-project="property-ops">
+<section class="mb-block" aria-labelledby="mb-1-h">
+  <h3 id="mb-1-h" class="sp-h3">4 of 7 hidden causes found</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>The 59 claim cards were checked against the seven causes planted in the synthetic data.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>An answer key of seven causes and three look-alikes, which I picked on 18 November 2026, was written before the blind score.</dd></div>
+    <div><dt>What counted as correct</dt><dd>A cause counts as found when a card at that property overlaps the planted period by at least one month, names the mapped cause type in the expected direction, and has a confidence of at least 0.55.</dd></div>
+    <div><dt>What failed</dt><dd>The first blind score found 3 of 7. After the fix pass three causes were still missed, and the checker report gives the reason for each.</dd></div>
+    <div><dt>What changed after</dt><dd>One fix pass followed, with each rule change named after the miss that exposed it. The answer key was known during that pass, and the rules were not tuned further.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>python checks/check_claims.py --answer-key scenarios/answer_key.json</code></dd></div>
+  </dl>
+</section>
+<section class="mb-block" aria-labelledby="mb-2-h">
+  <h3 id="mb-2-h" class="sp-h3">3 of 3 look-alikes not blamed</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>The three planted look-alikes, which resemble causes but are not, were checked against every claim card.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>The same answer key, written before the blind score.</dd></div>
+    <div><dt>What counted as correct</dt><dd>A look-alike counts as wrongly blamed when a card names it as a cause, and the checker requires that none is.</dd></div>
+    <div><dt>What failed</dt><dd>None was blamed. The checker also reports that no card ruled any of the three out by name, which it records but does not gate.</dd></div>
+    <div><dt>What changed after</dt><dd>Nothing is recorded as changed for the look-alikes.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>python checks/check_claims.py --answer-key scenarios/answer_key.json</code></dd></div>
+  </dl>
+</section>
+<section class="mb-block" aria-labelledby="mb-3-h">
+  <h3 id="mb-3-h" class="sp-h3">895 of 895 card numbers rechecked</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>Every gated number on every card was recalculated from the source records without the scorer&#39;s own metric code, covering 444 observed values, 206 baselines, 158 gaps and 87 from-and-to pairs.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>The value recalculated from the source records.</dd></div>
+    <div><dt>What counted as correct</dt><dd>A number matches when it is within 0.01 or 0.5 percent of the recalculated value, whichever is larger.</dd></div>
+    <div><dt>What failed</dt><dd>The first run could recalculate only 35.5 percent of the numbers and found 3 mismatches. The final run has none. A control run with values inflated by about 3 percent produced 478 mismatches, which shows the check can fail.</dd></div>
+    <div><dt>What changed after</dt><dd>The checker was extended to rebuild every kind of metric on the cards.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>python checks/check_claims.py --answer-key scenarios/answer_key.json</code></dd></div>
+  </dl>
+</section>
+<section class="mb-block" aria-labelledby="mb-4-h">
+  <h3 id="mb-4-h" class="sp-h3">38 of 58 assistant questions passed</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>Sixty prepared questions ran through the assistant, and 58 count, because two wait on handbook policy numbers.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>Each question carries an expected status, source and wording checks. Card questions are bound to card ids, and measure questions to the shared measure values with no tolerance.</dd></div>
+    <div><dt>What counted as correct</dt><dd>The answer comes from the right source with the expected citation and wording, or the assistant correctly declines.</dd></div>
+    <div><dt>What failed</dt><dd>Twenty questions failed. Five of them depend on the three causes the checker missed, and across all the failures nine are refusals where an answer was expected and one is a wrong answer.</dd></div>
+    <div><dt>What changed after</dt><dd>The first run passed 32 of 58. Reading business measures from the shared definitions turned six measure questions to pass and none to fail, which gave 38 of 58. That score is a floor for later versions, not a target.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>python assistant/evals/run_evals.py, then python assistant/evals/score.py --report assistant/evals/results.md</code></dd></div>
+  </dl>
+</section>
+<section class="mb-block" aria-labelledby="mb-5-h">
+  <h3 id="mb-5-h" class="sp-h3">20 of 20 gave the same answer every time</h3>
+  <dl class="mb-list">
+    <div><dt>What was tested</dt><dd>The 20 hardest questions, chosen by script from the first run with failures first and then the smallest retrieval margin, were each asked three times.</dd></div>
+    <div><dt>How the expected answers were set</dt><dd>Identical answers were expected, because the assistant follows fixed rules and calls no language model.</dd></div>
+    <div><dt>What counted as correct</dt><dd>The three records for each question are byte-identical.</dd></div>
+    <div><dt>What failed</dt><dd>Before a fix, one question&#39;s evidence came back in a different order between runs. Most of the 20 are questions the assistant fails, so most repeats are the same wrong answer.</dd></div>
+    <div><dt>What changed after</dt><dd>The row order was made stable, and all 20 then repeated exactly.</dd></div>
+    <div><dt>How to rerun it</dt><dd><code>python assistant/evals/run_evals.py, then python checks/check_runs.py</code></dd></div>
+  </dl>
+</section></div>
+</section>
+
+<section class="kv-sec" data-section="limits" aria-labelledby="kv-limits-h">
+  <h2 id="kv-limits-h">Honest limits</h2>
+  <p class="kv-intro">The pages say plainly what the evidence does not yet support.</p>
+  <div class="kv-tablewrap" tabindex="0" role="region" aria-labelledby="kv-limits-h">
+    <table class="kv-table">
+      <thead><tr><th scope="col">Area</th><th scope="col">What it does not show</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Data</th><td>Made up, with no real company&#39;s figures</td></tr>
+        <tr><th scope="row">Hidden causes</th><td>4 of 7 found after one round of fixes with the answers known, and none of the 3 look-alikes wrongly blamed</td></tr>
+        <tr><th scope="row">Known misses</th><td>5 assistant questions depend on the three causes the checker missed, so they fail by design</td></tr>
+        <tr><th scope="row">Repeat runs</th><td>20 of 20 gave the same answer each time, which shows it is repeatable, not that it is reliable</td></tr>
+        <tr><th scope="row">On hold</th><td>2 questions wait on handbook policy numbers and are not counted in the 58</td></tr>
+        <tr><th scope="row">Loan maturity outlook (owner view)</th><td>Shown as debt coverage, debt yield and months until the loan is due, not as a forecast</td></tr>
+        <tr><th scope="row">Market growth (asset view)</th><td>Shows the market&#39;s growth only</td></tr>
+        <tr><th scope="row">Return on capital (asset view)</th><td>There is no claim-card type for capital return, so none is shown</td></tr>
+        <tr><th scope="row">Repair wait times (regional view)</th><td>The typical wait is the lower of the two middle values when the count is even</td></tr>
+        <tr><th scope="row">Loans past their due date</th><td>Show refinanced instead of a negative number of months</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="kv-body">These limits were decided and recorded as the system was built, and each is shown on the page it affects.</p>
+</section>
+
+</div>
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__row">
+      <a href="index.html" class="site-footer__brand">PATRICK HANCOCK</a>
+      <p class="site-footer__tagline">Operations · Data · Applied Intelligence</p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="resume.html">Resume</a>
+        <a href="mailto:phancock.portfolio@gmail.com">Contact</a>
+        <a href="https://www.linkedin.com/in/pahancock89/">LinkedIn</a>
+        <a href="https://github.com/patrick-hancock">GitHub</a>
+      </nav>
+    </div>
+    <p class="site-footer__legal">© 2026 Patrick Hancock • Remote, or on-site in the Charlottesville and Shenandoah Valley area</p>
+  </div>
+</footer>
+</body>
+</html>

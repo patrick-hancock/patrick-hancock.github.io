@@ -5,19 +5,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kestrel Valley Property Operations | Patrick Hancock</title>
-  <meta name="description" content="Claim-checked BI for a fictional property management company on synthetic data, showing the 4 of 7 planted causes it found and the ones it missed.">
+  <title>Kestrel Valley Residential | Portfolio Operations Case Study | Patrick Hancock</title>
+  <meta name="description" content="A simulated multifamily portfolio demonstrating how property-management experience and business intelligence come together across regional operations, asset management, and ownership.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Kestrel Valley Property Operations | Patrick Hancock">
-  <meta property="og:description" content="Claim-checked BI for a fictional property management company on synthetic data, showing the 4 of 7 planted causes it found and the ones it missed.">
+  <meta property="og:title" content="Kestrel Valley Residential | Portfolio Operations Case Study | Patrick Hancock">
+  <meta property="og:description" content="A simulated multifamily portfolio demonstrating how property-management experience and business intelligence come together across regional operations, asset management, and ownership.">
   <meta property="og:url" content="https://patrick-hancock.github.io/work-property-ops.html">
   <meta property="og:image" content="https://patrick-hancock.github.io/files/home/share.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <link rel="preload" href="styles/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="styles/fonts/source-serif-4-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+
   <link rel="stylesheet" href="styles/site.css">
+  <link rel="stylesheet" href="styles/kestrel.css">
+
 </head>
-<body class="theme-data">
+<body class="theme-pm">
   
 
 <header class="site-header">
@@ -37,302 +41,283 @@
   <ol>
     <li><a href="index.html">Home</a></li>
     <li><a href="property-management.html">Property Management</a></li>
-    <li aria-current="page">Kestrel Valley Property Operations</li>
+    <li aria-current="page">Kestrel Valley Residential</li>
   </ol>
 </nav>
     
+<div class="kv">
 
-
-<div class="mb-6">
-  <p class="back"><a href="property-management.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-app-muted hover:text-white transition-colors"><span aria-hidden="true">←</span> Back to Property Management</a></p>
-</div>
-
-<div class="sp">
-  <header class="sp-head">
-    <span class="sp-eyebrow">BI and analytics system</span>
-    <h1 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white">Kestrel Valley Property Operations</h1>
-    <p class="sp-tagline">A claim-checked BI system for a property management company, with the misses shown</p>
-    <p class="case-ownership">Designed, specified and validated by me; built with AI-assisted development.</p>
-    <p class="case-badge"><span class="cs-badge">Synthetic data, fictional company</span></p>
-    <div class="sp-btns">
-      <a href="property-ops/regional/index.html" class="sp-btn sp-btn--primary">Open the regional manager view</a>
-      <a href="property-ops/asset/index.html" class="sp-btn">Open the asset manager view</a>
-      <a href="property-ops/owner/index.html" class="sp-btn">Open the owner view</a>
-      <a href="#score-h" class="sp-btn">Jump to the evaluation</a>
-    </div>
-    <p class="sp-facts">
-      <span>Role <b>Architect &amp; Validator</b></span>
-      <span>Stack <b>Databricks, SQL and Python</b></span>
-      <span>Status <b class="sp-good">Complete. Built on synthetic data.</b></span>
+<section class="kv-hero" data-section="hero" aria-labelledby="kv-title">
+  <div>
+    <p class="kv-eyebrow">Portfolio operations case study</p>
+    <h1 id="kv-title" class="page-title">Kestrel Valley Residential</h1>
+    <p class="kv-lead">A practical view of how I evaluate property performance, identify operating risks, prioritize regional action, and connect on-site execution to asset and ownership objectives.</p>
+    <p class="kv-body">This fictional 14-community portfolio brings together the two disciplines that shape how I approach property management: hands-on understanding of property operations and the analytical discipline I developed through business intelligence.</p>
+    <p class="kv-scopeline">Simulated portfolio · 14 communities · 4 management perspectives</p>
+    <p class="kv-disclosure"><strong>Kestrel Valley is fictional. All operating and financial data are synthetic; the examples demonstrate a management approach, not actual property results.</strong></p>
+    <p class="kv-ctas">
+      <a class="kv-btn kv-btn--primary" href="#views">Explore the portfolio views</a>
+      <a class="kv-btn" href="#approach">See the management approach</a>
     </p>
-  </header>
-
-  <section class="sp-sec cs-sec" aria-labelledby="cs-overview-h" data-case="overview">
-    <h2 id="cs-overview-h" class="sp-h2">Overview</h2>
-<div class="cs-sub">
-  <h3 class="sp-h3">Why a property&#39;s results move, and how to tell what caused it</h3>
-  <p class="sp-lede">Kestrel Valley Residential is a fictional property management company. This system is the reporting and analysis built for it, on realistic made-up records. Seven real causes were hidden in the data on purpose, along with three look-alikes that are not causes, so every finding the system makes can be checked against a known answer.</p>
-</div>
-<figure class="sp-hero">
-  <img src="files/property-ops/hero.webp" alt="The regional manager view, market position page: the answer sentence, four key figures, a next step and this month&#39;s three calls" width="1920" height="1200" loading="eager" decoding="async">
-  <figcaption>The regional manager&#39;s market position page: the answer comes first, then the figures, the next step and the three calls for the month.</figcaption>
-</figure>
-
-    
-  </section>
-
-  <section class="sp-sec cs-sec" aria-labelledby="cs-problem-h" data-case="problem">
-    <h2 id="cs-problem-h" class="sp-h2">Problem</h2>
-
-    <p class="cs-text">When a property&#39;s renewals or income move, several explanations usually arrive at once, and a report that only shows the movement leaves the choice to whoever argues best.</p>
-  </section>
-
-  <section class="sp-sec cs-sec" aria-labelledby="cs-why-h" data-case="why">
-    <h2 id="cs-why-h" class="sp-h2">Why it matters</h2>
-
-    <p class="cs-text">Acting on the wrong cause costs money twice, once on a fix that changes nothing and again on the problem that keeps running. Owners and asset managers need findings that name a cause only when the evidence supports it, and that say so plainly when it does not.</p>
-  </section>
-
-  <section class="sp-sec cs-sec" aria-labelledby="cs-solution-h" data-case="solution">
-    <h2 id="cs-solution-h" class="sp-h2">Solution and architecture</h2>
-    <div class="case-diagram" data-diagram="property-ops"><div class="dg-wrap"><svg class="dg dg--h" xmlns="http://www.w3.org/2000/svg" width="829" height="56" viewBox="0 0 829 56" role="img" aria-labelledby="dg-property-ops-h-t" focusable="false"><title id="dg-property-ops-h-t">Kestrel Valley data flow</title><rect class="dg-box" x="2" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="54.0" y="33.0" text-anchor="middle">Sources</text><line class="dg-edge" x1="110" y1="28" x2="135" y2="28"/><polygon class="dg-head" points="142,28 133,23 133,33"/><rect class="dg-box" x="146" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="198.0" y="33.0" text-anchor="middle">Marts</text><line class="dg-edge" x1="254" y1="28" x2="279" y2="28"/><polygon class="dg-head" points="286,28 277,23 277,33"/><rect class="dg-box" x="290" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="342.0" y="33.0" text-anchor="middle">Insight</text><line class="dg-edge" x1="398" y1="28" x2="423" y2="28"/><polygon class="dg-head" points="430,28 421,23 421,33"/><rect class="dg-box" x="434" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="486.0" y="33.0" text-anchor="middle">Measures</text><line class="dg-edge" x1="542" y1="28" x2="567" y2="28"/><polygon class="dg-head" points="574,28 565,23 565,33"/><rect class="dg-box" x="578" y="2" width="104" height="52" rx="6"/><text class="dg-label" x="630.0" y="33.0" text-anchor="middle">Views</text><line class="dg-edge" x1="686" y1="28" x2="711" y2="28"/><polygon class="dg-head" points="718,28 709,23 709,33"/><rect class="dg-box" x="722" y="2" width="105" height="52" rx="6"/><text class="dg-label" x="774.5" y="33.0" text-anchor="middle">Assistant</text></svg><svg class="dg dg--v" xmlns="http://www.w3.org/2000/svg" width="264" height="430" viewBox="0 0 264 430" role="img" aria-labelledby="dg-property-ops-v-t" focusable="false"><title id="dg-property-ops-v-t">Kestrel Valley data flow</title><rect class="dg-box" x="2" y="2" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="30.0" text-anchor="middle">Sources</text><line class="dg-edge" x1="132" y1="51" x2="132" y2="68"/><polygon class="dg-head" points="132,75 127,66 137,66"/><rect class="dg-box" x="2" y="78" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="106.0" text-anchor="middle">Marts</text><line class="dg-edge" x1="132" y1="127" x2="132" y2="144"/><polygon class="dg-head" points="132,151 127,142 137,142"/><rect class="dg-box" x="2" y="154" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="182.0" text-anchor="middle">Insight</text><line class="dg-edge" x1="132" y1="203" x2="132" y2="220"/><polygon class="dg-head" points="132,227 127,218 137,218"/><rect class="dg-box" x="2" y="230" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="258.0" text-anchor="middle">Measures</text><line class="dg-edge" x1="132" y1="279" x2="132" y2="296"/><polygon class="dg-head" points="132,303 127,294 137,294"/><rect class="dg-box" x="2" y="306" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="334.0" text-anchor="middle">Views</text><line class="dg-edge" x1="132" y1="355" x2="132" y2="372"/><polygon class="dg-head" points="132,379 127,370 137,370"/><rect class="dg-box" x="2" y="382" width="260" height="46" rx="6"/><text class="dg-label" x="132.0" y="410.0" text-anchor="middle">Assistant</text></svg><ol class="dg-steps"><li>Sources</li><li>Marts</li><li>Insight</li><li>Measures</li><li>Views</li><li>Assistant</li></ol></div></div>
-<div class="cs-sub"><h3 class="sp-h3">What the system does</h3><p class="sp-text">For each community, it compares results with the local market and with the community&#39;s own past, then tests possible explanations against the evidence. It writes a finding card for each, called a claim card. A card either names a cause, rules a suspect out, or says the evidence is not enough.</p></div>
-<ul class="sp-grid4">
-  <li class="sp-box"><b>Regional manager</b><span>Five pages on market position, repairs and service, staffing, leasing and what residents are saying.</span></li>
-  <li class="sp-box"><b>Asset manager</b><span>Six pages on occupancy, costs, the plan, capital and debt for one asset.</span></li>
-  <li class="sp-box"><b>Owner</b><span>Four pages on the assets, capital and debt, in the owner&#39;s terms.</span></li>
-  <li class="sp-box"><b>Grounded assistant</b><span>Answers from the handbook, a measure or a claim card, and refuses when none of them supports an answer.</span></li>
-</ul>
-<div class="cs-sub">
-  <h3 id="cards-h" class="sp-h3">What a claim card looks like</h3>
-  <p class="sp-text">Each card is a finding about one community. A card can name a cause, rule a suspect out, or say the evidence is not enough. Of 59 cards, 6 name a cause, 8 rule one out and 45 say the evidence is not enough. Each example below is explained in plain words, with the card&#39;s stored wording underneath.</p>
-  <ul class="sp-grid4" aria-label="Claim card examples">
-    <li class="sp-box"><b>A cause is named</b><span>From September 2025 to June 2026, Sumac Hollow&#39;s residents renewed their leases 6.4 percentage points less often than in its market. The card ties this to maintenance jobs that sat vacant, which slowed repairs from 1.8 days to 6.4 days.</span><span class="sp-kpi__note">As stored: Sumac Hollow renewed 6.4 points below its market from 2025-09 to 2026-06 because maintenance positions sat vacant and repair times rose from 1.8 to 6.4 days.</span><span class="sp-kpi__note">Card CC-000018</span></li>
-    <li class="sp-box"><b>A cause is named</b><span>By October 2026, Kettle Ridge&#39;s occupancy was 5.6 points above its market. The card ties this to buildings with new roofs and new heating and cooling: residents there renewed 15.2 points more often than in buildings still waiting for the work.</span><span class="sp-kpi__note">As stored: Kettle Ridge occupancy ran 5.6 points above its market by 2026-10 because buildings with new roofs and HVAC renewed 15.2 points better than buildings still waiting.</span><span class="sp-kpi__note">Card CC-000041</span></li>
-    <li class="sp-box"><b>A suspect is ruled out</b><span>Repair requests at Harrow Glen jumped between June and July 2024. The card rules this out as a problem: the jump matched the number of people moving in, and resident ratings, survey scores and repair times did not change.</span><span class="sp-kpi__note">As stored: The wo count jump at Harrow Glen from 2024-06 to 2024-07 is move-in volume: per move-in it matches its references, and stars, surveys and repair times are unchanged.</span><span class="sp-kpi__note">Card CC-000006</span></li>
-    <li class="sp-box"><b>The evidence is not enough</b><span>From October 2024 to April 2025, Ridgeback Lofts&#39; operating income ran 7.9 percent below its budget. The card does not name a cause: the closest explanation, higher costs on site, scored 0.33, too low to claim.</span><span class="sp-kpi__note">As stored: Something moved at Ridgeback Lofts from 2024-10 to 2025-04 (noi vs budget pct -7.9) but the evidence does not name a cause, the closest reading, site cost overrun, scored 0.33.</span><span class="sp-kpi__note">Card CC-000001</span></li>
-  </ul>
-</div>
-
-    
-  </section>
-
-  <section class="sp-sec cs-sec" aria-labelledby="cs-implementation-h" data-case="implementation">
-    <h2 id="cs-implementation-h" class="sp-h2">Implementation</h2>
-
-<div class="cs-sub">
-  <h3 id="flow-h" class="sp-h3">How it is built</h3>
-  <p class="sp-text">Each layer is built by generated SQL or script and checked before the next layer reads it.</p>
-  <div class="sp-flow-wrap" tabindex="0" role="region" aria-labelledby="flow-h">
-    <ol class="sp-flow" style="--n: 6">
-      <li class="sp-stage"><span class="sp-stage__step">Sources</span><b>Synthetic records</b><span>Seven planted causes, three decoys</span></li>
-      <li class="sp-stage"><span class="sp-stage__step">Marts</span><b>Databricks marts</b><span>One governed model</span></li>
-      <li class="sp-stage"><span class="sp-stage__step">Insight</span><b>Claim cards</b><span>59 cards, 895 values recomputed</span></li>
-      <li class="sp-stage"><span class="sp-stage__step">Measures</span><b>Shared definitions</b><span>19 measures behind every view</span></li>
-      <li class="sp-stage"><span class="sp-stage__step">Views</span><b>Three views</b><span>15 pages</span></li>
-      <li class="sp-stage"><span class="sp-stage__step">Assistant</span><b>Cited answers</b><span>Card, measure or handbook, or a refusal</span></li>
-    </ol>
   </div>
-</div>
-
-
-    
-  </section>
-
-  <section class="sp-sec cs-sec" aria-labelledby="cs-validation-h" data-case="validation">
-    <h2 id="cs-validation-h" class="sp-h2">Validation</h2>
-<div class="cs-sub"><h3 class="sp-h3">Why it can be trusted</h3><p class="sp-text">Every card carries the query behind each number, and a card that cannot name a cause says so instead of guessing. The sections below say what was found, what was missed and what the testing did and did not show.</p></div>
-<div class="cs-sub">
-  <h3 id="proof-h" class="sp-h3">What was tested</h3>
-  <p class="sp-text">Each figure is a result from the latest full test. Open a figure&#39;s note to see what was tested and what it does not show.</p>
-  <ul class="sp-grid4" aria-label="Key figures">
-    <li class="kpi sp-box sp-kpi">
-      <span class="sp-kpi__label">Hidden causes found</span>
-      <span class="sp-kpi__value">4 of 7</span>
-      <span class="sp-kpi__note">After one round of fixes, with the answers known</span>
-      <details class="sp-note">
-        <summary aria-label="What was tested: Hidden causes found"><span aria-hidden="true">i</span></summary>
-        <div class="sp-note__body">
-          <p>Seven causes were hidden in the data on purpose. The checker found four after one round of fixes, and the answer key was known while the fixes were made. Before the fixes it found 3 of 7.</p>
-          <ul><li>It missed three. They were not tuned further, and the reasons are written down.</li><li>None of the 3 look-alikes was wrongly blamed.</li><li>Reference numbers: found CH01, CH08, CH09 and CH11; missed CH02, CH04 and CH06.</li></ul>
-          <p class="sp-note__src">Claim checker, 20 Nov 2026</p>
-        </div>
-      </details>
-    </li>
-    <li class="kpi sp-box sp-kpi">
-      <span class="sp-kpi__label">Card numbers rechecked</span>
-      <span class="sp-kpi__value">895 of 895</span>
-      <span class="sp-kpi__note">Every number on a card matches the source records</span>
-      <details class="sp-note">
-        <summary aria-label="What was tested: Card numbers rechecked"><span aria-hidden="true">i</span></summary>
-        <div class="sp-note__body">
-          <p>Every number printed on a claim card was recalculated from the original records, and none was wrong. Values compared with a prior year or with peers are checked as lying inside a recalculated range rather than matched to the exact digit.</p>
-          <ul><li>This shows the numbers are right. It does not show the system picked the right cause; the first figure covers that.</li></ul>
-          <p class="sp-note__src">Claim checker, 20 Nov 2026</p>
-        </div>
-      </details>
-    </li>
-    <li class="kpi sp-box sp-kpi">
-      <span class="sp-kpi__label">Assistant questions passed</span>
-      <span class="sp-kpi__value">38 of 58</span>
-      <span class="sp-kpi__note">After one fix to how business measures are read</span>
-      <details class="sp-note">
-        <summary aria-label="What was tested: Assistant questions passed"><span aria-hidden="true">i</span></summary>
-        <div class="sp-note__body">
-          <p>The assistant answered 60 prepared questions, and 58 count toward the score. A question passes when the answer comes from the right source, or the assistant correctly declines to answer. The first run passed 32 of 58, and six more passed once business measures were read from the shared definitions. 38 of 58 is now the lowest score a later version may have. It is not a target.</p>
-          <ul><li>Questions that should be answered: 25 of 41 passed. Questions that should be declined: 13 of 17 passed.</li><li>By where the answer comes from: handbook 13 of 17, business measures 10 of 11, claim cards 2 of 13.</li><li>Two questions wait on handbook policy numbers and are left out of the 58.</li></ul>
-          <p class="sp-note__src">Assistant test, 20 Nov 2026</p>
-        </div>
-      </details>
-    </li>
-    <li class="kpi sp-box sp-kpi">
-      <span class="sp-kpi__label">Same answer every time</span>
-      <span class="sp-kpi__value">20 of 20</span>
-      <span class="sp-kpi__note">Repeatable, which is not the same as reliable</span>
-      <details class="sp-note">
-        <summary aria-label="What was tested: Same answer every time"><span aria-hidden="true">i</span></summary>
-        <div class="sp-note__body">
-          <p>The 20 hardest questions were each asked 3 times and gave exactly the same answer every time. Most of these 20 are questions the assistant fails, so most of the repeats are the same wrong answer given again.</p>
-          <ul><li>The assistant follows fixed rules and does not use a language model, so identical answers were expected.</li><li>This does not show how it would do with a language model writing the answers, or with new questions.</li></ul>
-          <p class="sp-note__src">Assistant test, 20 Nov 2026</p>
-        </div>
-      </details>
-    </li>
-  </ul>
-</div>
-
-    <div class="method-blocks" data-project="property-ops">
-<section class="mb-block" aria-labelledby="mb-1-h">
-  <h3 id="mb-1-h" class="sp-h3">4 of 7 hidden causes found</h3>
-  <dl class="mb-list">
-    <div><dt>What was tested</dt><dd>The 59 claim cards were checked against the seven causes planted in the synthetic data.</dd></div>
-    <div><dt>How the expected answers were set</dt><dd>An answer key of seven causes and three look-alikes, which I picked on 18 November 2026, was written before the blind score.</dd></div>
-    <div><dt>What counted as correct</dt><dd>A cause counts as found when a card at that property overlaps the planted period by at least one month, names the mapped cause type in the expected direction, and has a confidence of at least 0.55.</dd></div>
-    <div><dt>What failed</dt><dd>The first blind score found 3 of 7. After the fix pass three causes were still missed, and the checker report gives the reason for each.</dd></div>
-    <div><dt>What changed after</dt><dd>One fix pass followed, with each rule change named after the miss that exposed it. The answer key was known during that pass, and the rules were not tuned further.</dd></div>
-    <div><dt>How to rerun it</dt><dd><code>python checks/check_claims.py --answer-key scenarios/answer_key.json</code></dd></div>
-  </dl>
+  <aside class="kv-scope" aria-label="Project scope">
+    <p class="kv-label">Project scope</p>
+    <p class="kv-scope__fig">14 communities</p>
+    <p class="kv-scope__fig">4 management perspectives</p>
+    <p class="kv-scope__levels">Property · Regional · Asset · Ownership</p>
+  </aside>
+  <figure class="kv-shot kv-hero__shot">
+    <img src="files/property-ops/hero.webp" alt="The regional manager view, market position page: the answer sentence, four key figures, a next step and this month&#39;s three calls" width="1920" height="1200" decoding="async">
+    <figcaption>The regional manager&#39;s market position page: the answer comes first, then the figures, the next step and the three calls for the month.</figcaption>
+  </figure>
 </section>
-<section class="mb-block" aria-labelledby="mb-2-h">
-  <h3 id="mb-2-h" class="sp-h3">3 of 3 look-alikes not blamed</h3>
-  <dl class="mb-list">
-    <div><dt>What was tested</dt><dd>The three planted look-alikes, which resemble causes but are not, were checked against every claim card.</dd></div>
-    <div><dt>How the expected answers were set</dt><dd>The same answer key, written before the blind score.</dd></div>
-    <div><dt>What counted as correct</dt><dd>A look-alike counts as wrongly blamed when a card names it as a cause, and the checker requires that none is.</dd></div>
-    <div><dt>What failed</dt><dd>None was blamed. The checker also reports that no card ruled any of the three out by name, which it records but does not gate.</dd></div>
-    <div><dt>What changed after</dt><dd>Nothing is recorded as changed for the look-alikes.</dd></div>
-    <div><dt>How to rerun it</dt><dd><code>python checks/check_claims.py --answer-key scenarios/answer_key.json</code></dd></div>
-  </dl>
-</section>
-<section class="mb-block" aria-labelledby="mb-3-h">
-  <h3 id="mb-3-h" class="sp-h3">895 of 895 card numbers rechecked</h3>
-  <dl class="mb-list">
-    <div><dt>What was tested</dt><dd>Every gated number on every card was recalculated from the source records without the scorer&#39;s own metric code, covering 444 observed values, 206 baselines, 158 gaps and 87 from-and-to pairs.</dd></div>
-    <div><dt>How the expected answers were set</dt><dd>The value recalculated from the source records.</dd></div>
-    <div><dt>What counted as correct</dt><dd>A number matches when it is within 0.01 or 0.5 percent of the recalculated value, whichever is larger.</dd></div>
-    <div><dt>What failed</dt><dd>The first run could recalculate only 35.5 percent of the numbers and found 3 mismatches. The final run has none. A control run with values inflated by about 3 percent produced 478 mismatches, which shows the check can fail.</dd></div>
-    <div><dt>What changed after</dt><dd>The checker was extended to rebuild every kind of metric on the cards.</dd></div>
-    <div><dt>How to rerun it</dt><dd><code>python checks/check_claims.py --answer-key scenarios/answer_key.json</code></dd></div>
-  </dl>
-</section>
-<section class="mb-block" aria-labelledby="mb-4-h">
-  <h3 id="mb-4-h" class="sp-h3">38 of 58 assistant questions passed</h3>
-  <dl class="mb-list">
-    <div><dt>What was tested</dt><dd>Sixty prepared questions ran through the assistant, and 58 count, because two wait on handbook policy numbers.</dd></div>
-    <div><dt>How the expected answers were set</dt><dd>Each question carries an expected status, source and wording checks. Card questions are bound to card ids, and measure questions to the shared measure values with no tolerance.</dd></div>
-    <div><dt>What counted as correct</dt><dd>The answer comes from the right source with the expected citation and wording, or the assistant correctly declines.</dd></div>
-    <div><dt>What failed</dt><dd>Twenty questions failed. Five of them depend on the three causes the checker missed, and across all the failures nine are refusals where an answer was expected and one is a wrong answer.</dd></div>
-    <div><dt>What changed after</dt><dd>The first run passed 32 of 58. Reading business measures from the shared definitions turned six measure questions to pass and none to fail, which gave 38 of 58. That score is a floor for later versions, not a target.</dd></div>
-    <div><dt>How to rerun it</dt><dd><code>python assistant/evals/run_evals.py, then python assistant/evals/score.py --report assistant/evals/results.md</code></dd></div>
-  </dl>
-</section>
-<section class="mb-block" aria-labelledby="mb-5-h">
-  <h3 id="mb-5-h" class="sp-h3">20 of 20 gave the same answer every time</h3>
-  <dl class="mb-list">
-    <div><dt>What was tested</dt><dd>The 20 hardest questions, chosen by script from the first run with failures first and then the smallest retrieval margin, were each asked three times.</dd></div>
-    <div><dt>How the expected answers were set</dt><dd>Identical answers were expected, because the assistant follows fixed rules and calls no language model.</dd></div>
-    <div><dt>What counted as correct</dt><dd>The three records for each question are byte-identical.</dd></div>
-    <div><dt>What failed</dt><dd>Before a fix, one question&#39;s evidence came back in a different order between runs. Most of the 20 are questions the assistant fails, so most repeats are the same wrong answer.</dd></div>
-    <div><dt>What changed after</dt><dd>The row order was made stable, and all 20 then repeated exactly.</dd></div>
-    <div><dt>How to rerun it</dt><dd><code>python assistant/evals/run_evals.py, then python checks/check_runs.py</code></dd></div>
-  </dl>
-</section></div>
-    
-  </section>
 
-  <section class="sp-sec cs-sec" aria-labelledby="cs-results-h" data-case="results">
-    <h2 id="cs-results-h" class="sp-h2">Results</h2>
-<div class="cs-sub">
-  <h3 id="finding-h" class="sp-h3">One finding, from the gap to the action</h3>
-  <p class="sp-text">The regional manager&#39;s page for market position raises Sumac Hollow as the second call of the month. The three panels follow that one finding from the gap, to the cause the claim card names, to the action it recommends.</p>
-  <ol class="sp-panels" aria-label="The finding in three steps">
-    <li class="sp-box sp-pane"><span class="sp-stage__step">The gap</span><img src="files/property-ops/finding-gap.webp" alt="Table row for Sumac Hollow: renewal gap to market 6.4 points below, September 2025 to June 2026, verdict cause named" loading="lazy" decoding="async"><span>Sumac Hollow renewed leases 6.4 points below its market from September 2025 to June 2026, and the card names a cause.</span></li>
-    <li class="sp-box sp-pane"><span class="sp-stage__step">The cause</span><img src="files/property-ops/finding-repairs.webp" alt="Claim card wording for Sumac Hollow: renewed 6.4 points below its market because maintenance positions sat vacant and repair times rose from 1.8 to 6.4 days" loading="lazy" decoding="async"><span>Repair times rose from 1.8 to 6.4 days while the maintenance post sat open, and residents renewed less often as repairs slowed.</span></li>
-    <li class="sp-box sp-pane"><span class="sp-stage__step">The action</span><img src="files/property-ops/finding-action.webp" alt="Next step: backfill the maintenance roles, cover with a vendor at a set response time, and call residents with open repair tickets before their renewal date" loading="lazy" decoding="async"><span>The page ends with a single instruction for the regional manager, so the finding leads to something to do.</span></li>
+<section class="kv-sec" data-section="levels" aria-labelledby="kv-levels-h">
+  <h2 id="kv-levels-h">One portfolio. Four levels of accountability.</h2>
+  <p class="kv-intro">The same operating environment looks different depending on the decision being made. Regional leadership is responsible for execution across communities; asset management evaluates property-level financial performance and strategy; ownership weighs portfolio results, capital, cash flow, and risk. Each community&#39;s property manager is responsible for execution on site, and the regional view opens each community&#39;s own page.</p>
+  <ol class="kv-levels">
+    <li><h3>Property management</h3><p class="kv-focus">Community execution</p><p>Units, leases, make-ready turns, work orders, delinquency, and spending against the community&#39;s own plan.</p></li>
+    <li><h3>Regional operations</h3><p class="kv-focus">Property execution</p><p>Leasing, renewals, staffing, maintenance, resident experience, and community-level performance.</p></li>
+    <li><h3>Asset management</h3><p class="kv-focus">Property economics</p><p>Revenue, expenses, NOI, budgets, capital projects, occupancy, and debt considerations.</p></li>
+    <li><h3>Ownership</h3><p class="kv-focus">Portfolio outcomes</p><p>Cash after debt service, capital allocation, risk exposure, and investment-level decisions.</p></li>
   </ol>
-</div>
-<div class="cs-sub">
-  <h3 id="score-h" class="sp-h3">Results at a glance</h3>
-  <p class="sp-text">Each bar shows what passed as filled segments and what missed as empty ones, so the wins and the misses sit in one view.</p>
-  <ul class="sp-score" aria-label="Scorecard">
-    <li class="sp-score__row">
-      <span class="sp-score__label">Hidden causes found</span>
-      <b class="sp-score__value">4 of 7</b>
-      <span class="sp-bar" role="img" aria-label="Hidden causes found: 4 of 7"><i class="sp-bar__ok"></i><i class="sp-bar__ok"></i><i class="sp-bar__ok"></i><i class="sp-bar__ok"></i><i class="sp-bar__miss"></i><i class="sp-bar__miss"></i><i class="sp-bar__miss"></i></span>
-      <span class="sp-score__note">Found after one round of fixes, with the answers known. Three were missed and are written up.</span>
+</section>
+
+<section class="kv-sec" data-section="bridge" aria-labelledby="kv-bridge-h">
+  <h2 id="kv-bridge-h">Property management experience, expanded through business intelligence.</h2>
+  <div class="kv-bridge">
+    <div><h3>Operational foundation</h3><p>My experience in property management established a practical understanding of how communities operate, how teams perform, and how operational decisions affect residents and financial results.</p></div>
+    <div><h3>Analytical expansion</h3><p>My subsequent work in business intelligence expanded that perspective. I developed the ability to structure complex information, establish meaningful performance measures, identify patterns and underlying issues, and translate analytical findings into actionable business intelligence.</p></div>
+  </div>
+  <p class="kv-body">Kestrel Valley brings those capabilities together in a simulated multifamily portfolio. It demonstrates how I evaluate operational performance, assess financial implications, prioritize management attention, and connect property-level execution with broader business objectives. Analysis informs management; it does not manage a property on its own.</p>
+  <p class="kv-boundary">The portfolio and its results are fictional. The management experience described elsewhere on this site is my actual professional background; this project is a constructed demonstration of how I apply analytical thinking to property-management decisions.</p>
+</section>
+
+<section class="kv-sec" id="approach" data-section="approach" aria-labelledby="kv-approach-h">
+  <h2 id="kv-approach-h">How I work through a portfolio issue.</h2>
+  <p class="kv-intro">A variance is a starting point, not a diagnosis. I want to understand what changed, whether the movement is meaningful, what is contributing to it, which level of the organization can influence it, and how the response will be evaluated.</p>
+  <ol class="kv-steps">
+    <li><span class="kv-steps__n" aria-hidden="true">1</span><h3>See the signal</h3><p>Identify a meaningful movement in operating, resident, market, or financial performance.</p></li>
+    <li><span class="kv-steps__n" aria-hidden="true">2</span><h3>Establish context</h3><p>Compare the result with budget, market conditions, prior periods, and relevant property characteristics.</p></li>
+    <li><span class="kv-steps__n" aria-hidden="true">3</span><h3>Test the explanation</h3><p>Separate the visible symptom from the factors that may be driving it; distinguish evidence from assumption.</p></li>
+    <li><span class="kv-steps__n" aria-hidden="true">4</span><h3>Assign the response</h3><p>Match the action to the level that can influence the outcome: site, regional, asset management, or ownership.</p></li>
+    <li><span class="kv-steps__n" aria-hidden="true">5</span><h3>Review the result</h3><p>Set a measurable follow-up so the team can determine whether the intervention changed the outcome.</p></li>
+  </ol>
+  <p class="kv-body">The point is not to produce more reporting. It is to improve the quality, timing, and accountability of management decisions.</p>
+</section>
+
+<section class="kv-sec" data-section="perspectives" aria-labelledby="kv-persp-h">
+  <h2 id="kv-persp-h">Four perspectives. One operating picture.</h2>
+  <p class="kv-intro">Effective portfolio oversight requires moving between levels without losing the connection between them. A site-level issue can become a regional execution priority, an asset-level budget decision, and an ownership-level capital or risk consideration.</p>
+  <div class="kv-lenses">
+    <article class="kv-lens" aria-labelledby="kv-lens-1">
+      <p class="kv-label">Property management</p>
+      <h3 id="kv-lens-1">Execution at one community</h3>
+      <p>The property manager view starts from one community and asks what needs action this month: which vacant units are not ready, which work orders are past target, which leases are ending without a renewal, and where spending is running over plan.</p>
+      <h4>Questions it asks</h4>
+      <ul class="kv-qs"><li>Which of this community&#39;s headline measures are over target this month?</li><li>Which vacant units are not ready to rent, and when will each turn be finished?</li><li>Which work orders are past target, and which residents need a call back?</li><li>Which leases end in the next 60 days with no renewal signed?</li></ul>
+      <h4>Indicators</h4>
+      <p class="kv-dots">Leased · 60-day exposure (forecast) · Vacant units not ready · Work orders past target · Leases ending without renewal · Controllable expenses vs plan</p>
+      <h4>Management output</h4>
+      <p>This month&#39;s three priorities for the community, each with a next step for the site team.</p>
+    </article>
+    <article class="kv-lens" aria-labelledby="kv-lens-2">
+      <p class="kv-label">Regional operations</p>
+      <h3 id="kv-lens-2">Execution across communities</h3>
+      <p>The regional view is about consistency and execution: which communities need attention, where operating standards are slipping, how staffing and service affect leasing and retention, and where the next management intervention will have the greatest impact.</p>
+      <h4>Questions it asks</h4>
+      <ul class="kv-qs"><li>Which communities are diverging from market, budget, or their own recent performance?</li><li>Are leasing, renewal, maintenance, and staffing issues connected?</li><li>Is a problem isolated to one site or appearing across the portfolio?</li><li>What should the regional team ask the property manager to address first?</li></ul>
+      <h4>Indicators</h4>
+      <p class="kv-dots">Occupancy · Leasing pace · Lead response · Renewals · Work-order performance · Staffing · Resident feedback</p>
+      <h4>Management output</h4>
+      <p>A short list of priority communities, a clear operating question for each, an accountable owner, and a follow-up measure.</p>
+    </article>
+    <article class="kv-lens" aria-labelledby="kv-lens-3">
+      <p class="kv-label">Asset management</p>
+      <h3 id="kv-lens-3">Financial performance and property strategy</h3>
+      <p>The asset view connects operating performance to the property&#39;s financial plan. It examines revenue, expenses, NOI, occupancy, capital needs, and debt considerations so that a performance gap can be evaluated in terms of both its operating drivers and its financial implications.</p>
+      <h4>Questions it asks</h4>
+      <ul class="kv-qs"><li>Where is actual performance diverging from budget or underwriting?</li><li>Which operating factors are affecting revenue, expenses, or NOI?</li><li>Is the issue best addressed through execution, revised assumptions, or capital investment?</li><li>Which capital decisions have a defensible operating and financial rationale?</li></ul>
+      <h4>Indicators</h4>
+      <p class="kv-dots">Revenue · Expenses · NOI · Budget variance · Occupancy · Capital priorities · Debt metrics</p>
+      <h4>Management output</h4>
+      <p>A defensible view of performance, the drivers of variance, potential remedies, and the trade-offs that require a decision.</p>
+    </article>
+    <article class="kv-lens" aria-labelledby="kv-lens-4">
+      <p class="kv-label">Ownership</p>
+      <h3 id="kv-lens-4">Portfolio outcomes and capital allocation</h3>
+      <p>The ownership view steps back from the daily operating detail to evaluate portfolio outcomes: cash after debt service, asset-level contribution, capital requirements, debt exposure, and where management attention or investment may be needed.</p>
+      <h4>Questions it asks</h4>
+      <ul class="kv-qs"><li>Which assets are contributing to or weakening portfolio performance?</li><li>What does operating performance mean for cash after debt service?</li><li>Where are capital needs, debt timing, or risk concentrated?</li><li>Which decisions require ownership direction rather than another site-level action?</li></ul>
+      <h4>Indicators</h4>
+      <p class="kv-dots">Portfolio contribution · Cash after debt service · Capital needs · Debt coverage · Debt maturity · Asset risk</p>
+      <h4>Management output</h4>
+      <p>A clear view of portfolio implications, decision points, capital trade-offs, and issues that need escalation.</p>
+    </article>
+  </div>
+</section>
+
+<section class="kv-sec" data-section="sumac" aria-labelledby="kv-sumac-h">
+  <p class="kv-eyebrow">Featured operating scenario · Synthetic data</p>
+  <h2 id="kv-sumac-h">Sumac Hollow: when a service issue becomes a retention issue.</h2>
+  <p class="kv-intro">In the simulated portfolio, Sumac Hollow&#39;s renewals were 6.4 percentage points below its local market between September 2025 and June 2026. During the same period, average repair time increased from 1.8 to 6.4 days while maintenance positions remained vacant. Within this constructed scenario, the analysis identifies the maintenance coverage and service delay as the supported explanation for the renewal gap.</p>
+  <ol class="kv-chain">
+    <li>
+      <h3>The performance gap</h3>
+      <p>Renewals: 6.4 percentage points below the local market.</p>
+      <img src="files/property-ops/finding-gap.webp" width="1136" height="200" alt="Table row for Sumac Hollow: renewal gap to market 6.4 points below, September 2025 to June 2026, verdict cause named" loading="lazy" decoding="async">
     </li>
-    <li class="sp-score__row">
-      <span class="sp-score__label">Look-alikes not blamed</span>
-      <b class="sp-score__value">3 of 3</b>
-      <span class="sp-bar" role="img" aria-label="Look-alikes not blamed: 3 of 3"><i class="sp-bar__ok"></i><i class="sp-bar__ok"></i><i class="sp-bar__ok"></i></span>
-      <span class="sp-score__note">None of the three look-alikes was blamed for a problem. No card has yet ruled one out by name, so this shows restraint rather than detection.</span>
+    <li>
+      <h3>The operating condition</h3>
+      <p>Repair time: 1.8 → 6.4 days, alongside vacant maintenance positions.</p>
+      <img src="files/property-ops/finding-repairs.webp" width="1032" height="138" alt="Finding text for Sumac Hollow: renewals 6.4 points below its market from September 2025 to June 2026, with maintenance positions vacant and repair times up from 1.8 to 6.4 days" loading="lazy" decoding="async">
     </li>
-    <li class="sp-score__row">
-      <span class="sp-score__label">Card numbers rechecked</span>
-      <b class="sp-score__value">895 of 895</b>
-      <span class="sp-bar" role="img" aria-label="Card numbers rechecked: 895 of 895"><i class="sp-bar__ok" style="flex-grow:895"></i></span>
-      <span class="sp-score__note">Every number on a claim card matches the source records.</span>
+    <li>
+      <h3>The management implication</h3>
+      <p>A service-capacity issue may be undermining the resident experience at the point when renewal decisions are being made.</p>
+      <img src="files/property-ops/finding-action.webp" width="1032" height="138" alt="Next step: backfill the maintenance roles, cover with a vendor at a set response time, and call residents with open repair tickets before their renewal date" loading="lazy" decoding="async">
     </li>
-    <li class="sp-score__row">
-      <span class="sp-score__label">Assistant questions passed</span>
-      <b class="sp-score__value">38 of 58</b>
-      <span class="sp-bar" role="img" aria-label="Assistant questions passed: 38 of 58"><i class="sp-bar__ok" style="flex-grow:38"></i><i class="sp-bar__miss" style="flex-grow:20"></i></span>
-      <span class="sp-score__note">Up from 32 of 58 on the first run, and the lowest score a later version may have. Of the questions that should be answered, 25 of 41 passed; of those that should be declined, 13 of 17 passed.</span>
+  </ol>
+  <h3 class="kv-h3">What the management response should address.</h3>
+  <ul class="kv-responses">
+    <li><h4>At the property</h4><p>Restore maintenance coverage, address the oldest open work orders, and communicate with residents who have unresolved service requests before their renewal decisions.</p></li>
+    <li><h4>At the regional level</h4><p>Provide temporary vendor coverage with a defined response expectation, set a short review cadence, and verify that open-ticket age and repair times are improving.</p></li>
+    <li><h4>At the asset / ownership level</h4><p>Evaluate the cost of restoring service capacity against the potential cost of continued resident loss, and ensure the operating plan reflects the resources needed to protect retention.</p></li>
+  </ul>
+  <p class="kv-measures"><b>Follow-up measures</b> <span class="kv-dots">Open work-order age · Repair-time trend · Resident follow-up completion · Renewal conversion · Vendor response performance</span></p>
+  <p class="kv-body">The important step is connecting the operating condition to the resident and financial consequence, then assigning a response at the level that can actually change it.</p>
+</section>
+
+<section class="kv-sec" data-section="scenarios" aria-labelledby="kv-scen-h">
+  <h2 id="kv-scen-h">Other portfolio signals. Different management responses.</h2>
+  <div class="kv-scenarios">
+    <article class="kv-scenario" aria-labelledby="kv-scen-1">
+      <p class="kv-tag">Synthetic data</p>
+      <h3 id="kv-scen-1">Briar Spur Townhomes</h3>
+      <p class="kv-focus">Staffing and lead response</p>
+      <dl>
+        <div><dt>Signal</dt><dd>Leasing staffing was at 39% of plan, while lead response time increased from 2.2 to 22.4 hours.</dd></div>
+        <div><dt>Interpretation</dt><dd>The combination points to a capacity and execution issue that may be affecting the community&#39;s ability to convert interest into leases.</dd></div>
+        <div><dt>Management implication</dt><dd>Review coverage, establish lead-response ownership and service expectations, and monitor response time alongside tour and conversion performance.</dd></div>
+      </dl>
+    </article>
+    <article class="kv-scenario" aria-labelledby="kv-scen-2">
+      <p class="kv-tag">Synthetic data</p>
+      <h3 id="kv-scen-2">Kettle Ridge</h3>
+      <p class="kv-focus">Capital work and resident retention</p>
+      <dl>
+        <div><dt>Signal</dt><dd>By October 2026, occupancy was 5.6 percentage points above the local market. In the synthetic scenario, buildings with roof and HVAC upgrades had renewal rates 15.2 percentage points higher than buildings still awaiting the work.</dd></div>
+        <div><dt>Interpretation</dt><dd>The pattern raises a capital-sequencing question: whether completed improvements are associated with stronger resident retention and where the next phase may provide the most value.</dd></div>
+        <div><dt>Management implication</dt><dd>Evaluate project cost, building condition, resident impact, and the observed renewal difference before prioritizing the next phase. Do not state that the upgrades alone caused the difference.</dd></div>
+      </dl>
+    </article>
+    <article class="kv-scenario" aria-labelledby="kv-scen-3">
+      <p class="kv-tag">Synthetic data</p>
+      <h3 id="kv-scen-3">Harrow Glen</h3>
+      <p class="kv-focus">Distinguish volume from deterioration</p>
+      <dl>
+        <div><dt>Signal</dt><dd>Work-order volume increased from June to July 2024.</dd></div>
+        <div><dt>Interpretation</dt><dd>The increase tracked move-in volume; repair times, resident ratings, and survey scores did not deteriorate in the same period.</dd></div>
+        <div><dt>Management implication</dt><dd>Normalize demand against move-ins and check service outcomes before treating the count increase as an operating failure. This is an example of avoiding a false alarm.</dd></div>
+      </dl>
+    </article>
+    <article class="kv-scenario" aria-labelledby="kv-scen-4">
+      <p class="kv-tag">Synthetic data</p>
+      <h3 id="kv-scen-4">Ridgeback Lofts</h3>
+      <p class="kv-focus">Know when the evidence is insufficient</p>
+      <dl>
+        <div><dt>Signal</dt><dd>NOI was 7.9% below budget between October 2024 and April 2025.</dd></div>
+        <div><dt>Interpretation</dt><dd>The available evidence does not establish a sufficiently supported cause. Higher site costs are a possible explanation, but the evidence does not justify presenting that as the answer.</dd></div>
+        <div><dt>Management implication</dt><dd>Break the variance into revenue, expense, timing, and one-time items; confirm the underlying records; and avoid prescribing a remedy before the drivers are understood.</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section class="kv-sec" data-section="finance" aria-labelledby="kv-fin-h">
+  <h2 id="kv-fin-h">Property-level execution has portfolio-level consequences.</h2>
+  <p class="kv-intro">A regional priority is not complete until its financial significance is understood. The asset and ownership views connect community operating conditions to plan performance, NOI, cash after debt service, capital requirements, and debt considerations.</p>
+  <figure class="kv-fin">
+    <dl class="kv-figs">
+      <div><dt>below NOI plan</dt><dd>12 of 14 communities</dd></div>
+      <div><dt>aggregate NOI shortfall to plan</dt><dd>$830K</dd></div>
+      <div><dt>cash after debt service</dt><dd>$1.48M</dd></div>
+      <div><dt>cash after debt service plan</dt><dd>$1.77M</dd></div>
+    </dl>
+    <figcaption>Illustrative figures from the fictional Kestrel Valley scenario. They are not actual financial results or audited statements.</figcaption>
+  </figure>
+  <p class="kv-body">These views are intended to help move the conversation beyond “which number missed?” to “what is driving the miss, which part is controllable, what decision is required, and what does the decision mean for the property&#39;s and portfolio&#39;s financial position?”</p>
+</section>
+
+<section class="kv-sec" id="views" data-section="views" aria-labelledby="kv-views-h">
+  <h2 id="kv-views-h">Explore the portfolio from each management seat.</h2>
+  <p class="kv-intro">The four views use the same fictional portfolio but organize the information around different responsibilities and decisions.</p>
+  <ul class="kv-views">
+    <li>
+      <h3>Regional Manager</h3>
+      <p>Five views focused on market position, leasing, renewals, staffing, maintenance, and resident experience.</p>
+      <a href="property-ops/regional/index.html" target="_blank" rel="noopener noreferrer">Open Regional Manager View<span class="kv-newtab"> (Opens in a new tab)</span></a>
+    </li>
+    <li>
+      <h3>Asset Manager</h3>
+      <p>Six views focused on property financial performance, occupancy, costs, budget, capital, and debt.</p>
+      <a href="property-ops/asset/index.html" target="_blank" rel="noopener noreferrer">Open Asset Manager View<span class="kv-newtab"> (Opens in a new tab)</span></a>
+    </li>
+    <li>
+      <h3>Owner</h3>
+      <p>Four views focused on portfolio results, cash after debt service, capital, and debt exposure.</p>
+      <a href="property-ops/owner/index.html" target="_blank" rel="noopener noreferrer">Open Owner View<span class="kv-newtab"> (Opens in a new tab)</span></a>
+    </li>
+    <li>
+      <h3>Property Manager</h3>
+      <p>Fifteen views: all 14 communities in order of need, then one page for each community covering its units, leases, repairs, and spending against its own plan.</p>
+      <a href="property-ops/property/index.html" target="_blank" rel="noopener noreferrer">Open Property Manager View<span class="kv-newtab"> (Opens in a new tab)</span></a>
     </li>
   </ul>
-  <p class="sp-legend"><span class="sp-bar__ok"></span>Passed <span class="sp-bar__miss"></span>Missed</p>
-</div>
+</section>
 
-    
-  </section>
-
-  <section class="sp-sec cs-sec" aria-labelledby="cs-limits-h" data-case="limits">
-    <h2 id="cs-limits-h" class="sp-h2">Limitations and lessons</h2>
-<div class="cs-sub">
-  <h3 id="limits-h" class="sp-h3">Honest limits</h3>
-  <p class="sp-text">The pages say plainly what the evidence does not yet support.</p>
-  <div class="sp-tablewrap" tabindex="0" role="region" aria-labelledby="limits-h">
-    <table class="sp-table">
-      <thead><tr><th scope="col">Area</th><th scope="col">What it does not show</th></tr></thead>
+<section class="kv-sec" id="method" data-section="method" aria-labelledby="kv-method-h">
+  <h2 id="kv-method-h">A disciplined analytical method, with the limits made visible.</h2>
+  <p class="kv-intro">The project is structured so that the same measures and source logic support the three views. Findings are checked against the synthetic records, and the page distinguishes a supported explanation from a ruled-out explanation or an unanswered question.</p>
+  <ul class="kv-summary">
+    <li><b>19 shared measures</b> used across the views.</li>
+    <li><b>59 finding cards</b> covering named causes, ruled-out explanations, and insufficient evidence.</li>
+    <li><b>895 of 895 card values</b> recalculated and checked against the underlying synthetic records.</li>
+  </ul>
+  <div class="kv-tablewrap" tabindex="0" role="region" aria-labelledby="kv-results-cap">
+    <table class="kv-table">
+      <caption id="kv-results-cap">Validation results</caption>
+      <thead><tr><th scope="col">Result</th><th scope="col">What it does and does not show</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Data</th><td>Made up, with no real company&#39;s figures</td></tr>
-        <tr><th scope="row">Hidden causes</th><td>4 of 7 found after one round of fixes with the answers known, and none of the 3 look-alikes wrongly blamed</td></tr>
-        <tr><th scope="row">Known misses</th><td>5 assistant questions depend on the three causes the checker missed, so they fail by design</td></tr>
-        <tr><th scope="row">Repeat runs</th><td>20 of 20 gave the same answer each time, which shows it is repeatable, not that it is reliable</td></tr>
-        <tr><th scope="row">On hold</th><td>2 questions wait on handbook policy numbers and are not counted in the 58</td></tr>
-        <tr><th scope="row">Loan maturity outlook (owner view)</th><td>Shown as debt coverage, debt yield and months until the loan is due, not as a forecast</td></tr>
-        <tr><th scope="row">Market growth (asset view)</th><td>Shows the market&#39;s growth only</td></tr>
-        <tr><th scope="row">Return on capital (asset view)</th><td>There is no claim-card type for capital return, so none is shown</td></tr>
-        <tr><th scope="row">Repair wait times (regional view)</th><td>The typical wait is the lower of the two middle values when the count is even</td></tr>
-        <tr><th scope="row">Loans past their due date</th><td>Show refinanced instead of a negative number of months</td></tr>
+        <tr><th scope="row">4 of 7 planted causes found</th><td>after one fix round; the answer key was known during that fix round. Three planted causes remained undetected.</td></tr>
+        <tr><th scope="row">3 of 3 look-alikes not incorrectly blamed.</th><td>This indicates restraint against false attribution; it does not mean all look-alikes were positively identified and ruled out by name.</td></tr>
+        <tr><th scope="row">895 of 895 card values checked</th><td>against source records. This confirms numerical agreement under the test&#39;s rules, not that every interpretation is correct.</td></tr>
+        <tr><th scope="row">38 of 58 assistant questions passed.</th><td>This is a limited result, not a production-readiness claim. The first run passed 32 of 58; six more passed after a measure-reading fix.</td></tr>
+        <tr><th scope="row">20 of 20 repeated consistently.</th><td>The assistant is rule-based and does not use a language model; identical output demonstrates repeatability, not correctness. Most repeated questions were among the failures.</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="sp-text">These limits were decided and recorded as the system was built, and each is shown on the page it affects.</p>
-</div>
+  <p class="kv-impl">Implementation: Databricks · SQL · Python · AI-assisted development.</p>
+  <p class="kv-techlink"><a href="work-property-ops-technical.html">Read the technical write-up: how it is built, how each figure was tested, how to rerun the checks, and every recorded limit.</a></p>
+</section>
 
-    
-  </section>
+<section class="kv-sec" data-section="limits" aria-labelledby="kv-limits-h">
+  <h2 id="kv-limits-h">What this demonstration does—and does not—show.</h2>
+  <div class="kv-tablewrap" tabindex="0" role="region" aria-labelledby="kv-limits-h">
+    <table class="kv-table kv-table--two">
+      <thead><tr><th scope="col">It demonstrates</th><th scope="col">It does not establish</th></tr></thead>
+      <tbody>
+        <tr><td>A structured approach to comparing operating and financial performance across a simulated portfolio.</td><td>Actual results for a real company, owner, or property.</td></tr>
+        <tr><td>A way to test explanations against constructed operating records and disclose uncertainty.</td><td>That every planted cause is detected; three of seven remained undetected.</td></tr>
+        <tr><td>Numerical checks on the values printed on finding cards.</td><td>That a numerically correct value ensures a correct business interpretation.</td></tr>
+        <tr><td>A set of role-oriented views for property, regional, asset, and ownership decisions.</td><td>A complete underwriting model, return-on-capital analysis, or debt-maturity forecast.</td></tr>
+        <tr><td>A rule-based assistant with measured limitations.</td><td>A production-ready AI assistant or broad language-model evaluation.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="kv-closing">The goal is better property decisions: grounded in operational reality, informed by consistent analysis, and connected to the financial and ownership outcomes that matter.</p>
+</section>
+
 </div>
 
   </main>
