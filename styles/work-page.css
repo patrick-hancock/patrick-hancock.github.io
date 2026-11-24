@@ -1,0 +1,307 @@
+/* Work page (work.html) layer, ported from the approved D-064 mockup (docs/review/work-mockup/mockup.css) in D-067.
+   Loaded after site.css; every rule is scoped under body.mk (set only on work.html) so nothing here reaches other pages.
+   Colors, fonts and component treatments come from styles/data.css. */
+
+/* ---- Spacing between major sections (feedback 10) ---- */
+.mk .dx-section { margin-top: var(--space-6); }
+.mk .dx-subnav { margin-bottom: var(--space-4); }
+
+/* ---- In-page nav with the resume button at its right end (feedback 1) ---- */
+.mk .dx-subnav { display: flex; align-items: center; gap: var(--space-3); }
+.mk .dx-subnav ul { flex: 1; min-width: 0; }
+.mk .dx-subnav a.mk-resume { flex: none; min-height: 32px; padding: 0 var(--space-3); background: var(--fill-accent); color: var(--fg-on-accent); border: 0; border-radius: var(--radius); font-family: var(--font-body); font-size: var(--text-sm); font-weight: 600; }
+.mk .dx-subnav a.mk-resume:hover { background: var(--fill-accent-hover); color: var(--fg-on-accent); }
+.mk .dx-subnav a.mk-resume:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
+.mk .mk-resume__short { display: none; }
+@media (max-width: 767px) { .mk .mk-resume__long { display: none; } .mk .mk-resume__short { display: inline; } }
+
+/* ---- Hero: text left, capability flow right, shorter (feedback 3, 4) ---- */
+.mk .mk-hero { padding-bottom: var(--space-5); scroll-margin-top: 64px; }
+@media (min-width: 1024px) { .mk .mk-hero { gap: var(--space-6); } }
+.mk .mk-hero .dx-hero__title { margin-bottom: var(--space-3); }
+.mk .mk-hero .dx-hero__sub { margin-bottom: var(--space-4); }
+.mk .mk-label { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-muted); margin: 0 0 var(--space-3); padding-top: var(--space-4); border-top: 1px solid var(--border-subtle); }
+.mk .mk-label--flush { padding-top: 0; border-top: 0; margin-bottom: var(--space-2); }
+.mk .mk-label--sub { margin-top: var(--space-5); }
+.mk .mk-capflow { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+/* Each capability is a button that opens its case study in the panel area under the hero. */
+.mk .mk-capflow > li { position: relative; }
+.mk .mk-capflow > li + li::before { content: "↓"; position: absolute; left: 1.25rem; top: calc(var(--space-3) * -1); font-size: 0.75rem; line-height: var(--space-3); color: var(--ui-border-strong); }
+.mk .mk-capflow__item { --pc: var(--fg-good); display: grid; grid-template-columns: 2rem 1fr; column-gap: var(--space-2); row-gap: 0.125rem; width: 100%; padding: 0.75rem 1rem; text-align: left; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-left: 3px solid var(--pc); border-radius: var(--radius); color: var(--fg-default); font: inherit; cursor: pointer; transition: border-color 0.15s ease, background-color 0.15s ease; }
+.mk .mk-capflow__item--platform { --pc: var(--fg-warning); }
+.mk .mk-capflow__item--ai { --pc: var(--fg-accent); }
+.mk .mk-capflow__item:hover { border-color: var(--pc); }
+.mk .mk-capflow__item:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
+.mk .mk-capflow__item[aria-expanded="true"] { border-color: var(--pc); background: color-mix(in srgb, var(--pc) 10%, var(--bg-surface)); }
+.mk .mk-capflow__idx { grid-row: span 3; font-family: var(--font-mono); font-size: 0.75rem; color: var(--pc); padding-top: 0.2rem; }
+.mk .mk-capflow__name { font-family: var(--font-display); font-weight: 700; font-size: 1.0625rem; color: var(--fg-default); }
+.mk .mk-capflow__text { font-size: 0.8125rem; line-height: 1.5; color: var(--fg-muted); }
+.mk .mk-capflow__case { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.375rem; margin-top: 0.25rem; font-family: var(--font-mono); font-size: 0.6875rem; color: var(--fg-accent); }
+.mk .mk-capflow__case-label { text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-muted); }
+.mk .mk-capflow__item[aria-expanded="true"] .mk-tile__chev { transform: rotate(45deg); }
+.mk .mk-capflow__hint { font-size: 0.75rem; color: var(--fg-muted); margin: 0 0 var(--space-2); }
+html:not(.js) .mk .mk-capflow__hint { display: none; }
+@media (prefers-reduced-motion: reduce) { .mk .mk-capflow__item { transition: none; } }
+/* Case-study panels sit right under the hero and add no height until one is opened. */
+.mk .mk-casepanel .dx-case { margin-top: var(--space-4); }
+.mk .mk-casepanels { scroll-margin-top: 64px; }
+
+/* ---- Selected Work: one card, three tiles, one expanding panel (feedback 5) ---- */
+.mk .mk-showcase { display: grid; gap: var(--space-3); grid-template-columns: 1fr; padding: var(--space-3); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
+.mk .mk-tiles { display: contents; list-style: none; }
+/* Narrow screens: each panel opens directly under its own tile. */
+.mk .mk-tiles li:nth-child(1) { order: 1; } .mk #panel-summit { order: 2; }
+.mk .mk-tiles li:nth-child(2) { order: 3; } .mk #panel-kestrel { order: 4; }
+/* D-067: two tiles (Summit, Kestrel Valley) while the placeholder slot waits for the next build. */
+@media (min-width: 768px) {
+  .mk .mk-showcase { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mk .mk-showcase--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mk .mk-tiles li { order: 0 !important; }
+  .mk .mk-panel { grid-column: 1 / -1; order: 1 !important; }
+}
+.mk .mk-tile { --pc: var(--fg-good); display: flex; flex-direction: column; align-items: flex-start; gap: 0.375rem; width: 100%; height: 100%; padding: var(--space-4); text-align: left; background: var(--bg-raised); border: 1px solid var(--ui-border-strong); border-top: 3px solid var(--pc); border-radius: var(--radius); color: var(--fg-default); font: inherit; cursor: pointer; transition: border-color 0.15s ease, background-color 0.15s ease; }
+.mk .mk-tile--next { --pc: var(--fg-muted); border-style: dashed; border-top-style: dashed; }
+.mk .mk-tile:hover { border-color: var(--fg-accent); border-top-color: var(--pc); }
+.mk .mk-tile:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
+.mk .mk-tile[aria-expanded="true"] { border-color: var(--pc); background: color-mix(in srgb, var(--pc) 10%, var(--bg-raised)); }
+.mk .mk-tile__cap { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--pc); }
+.mk .mk-tile__cap span { color: var(--fg-muted); margin-right: 0.25rem; }
+.mk .mk-tile__title { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; line-height: 1.2; }
+.mk .mk-tile__line { font-size: 0.8125rem; line-height: 1.5; color: var(--fg-muted); }
+.mk .mk-tile__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.75rem; margin-top: 0.25rem; }
+/* Round 9: status as the same dot line the Additional Projects cards use; context as plain muted text, no pill. */
+.mk .mk-tile__ctx { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-muted); }
+.mk .mk-tile__more { margin-top: auto; padding-top: var(--space-2); display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-accent); }
+.mk .mk-tile__chev { font-size: 1.125rem; line-height: 1; transition: transform 0.15s ease; }
+.mk .mk-tile .dx-when-open, .mk .mk-tile[aria-expanded="true"] .dx-when-closed { display: none; }
+.mk .mk-tile[aria-expanded="true"] .dx-when-open { display: inline; }
+.mk .mk-tile[aria-expanded="true"] .mk-tile__chev { transform: rotate(45deg); }
+html:not(.js) .mk .mk-tile__more { display: none; }
+/* Tile infographics (round 7): built only from figures already in each project's summary. */
+.mk .mk-info { display: block; width: 100%; margin-top: var(--space-2); padding-top: var(--space-3); border-top: 1px solid var(--border-subtle); }
+.mk .mk-pipe { display: flex; align-items: stretch; gap: 0.375rem; }
+.mk .mk-pipe__node { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 0.125rem; padding: 0.5rem; background: var(--bg-page); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
+.mk .mk-pipe__node:nth-of-type(2) { border-color: var(--pc); }
+.mk .mk-pipe__num { font-family: var(--font-display); font-weight: 700; font-size: 1.375rem; line-height: 1; color: var(--pc); }
+.mk .mk-pipe__lbl { font-size: 0.6875rem; line-height: 1.3; color: var(--fg-muted); }
+.mk .mk-pipe__arrow { align-self: center; flex: none; color: var(--ui-border-strong); font-size: 0.875rem; }
+/* Narrow tiles (768 three-up, phones): stack the flow. The tile is the container (a container query cannot style its own container).
+   400px tile width: three across, "applications + Power BI" overflowed in a 213px tile (768) and a 358px tile (390). Tiles measured 213-389px at 390-1440 (2026-11-24), so the flow stacks at every tested width; the row layout is only for tiles over 400px. */
+.mk .mk-tile { container-type: inline-size; }
+@container (max-width: 400px) {
+  .mk .mk-pipe { flex-direction: column; gap: 0.125rem; }
+  .mk .mk-pipe__node { flex-direction: row; align-items: baseline; gap: 0.5rem; padding: 0.375rem 0.5rem; }
+  .mk .mk-pipe__num { font-size: 1.125rem; min-width: 1ch; }
+  .mk .mk-pipe__arrow { transform: rotate(90deg); line-height: 1; }
+}
+.mk .mk-meters { display: grid; gap: 0.5rem; }
+.mk .mk-meter { display: grid; gap: 0.25rem; }
+.mk .mk-meter__head { display: flex; justify-content: space-between; gap: 0.5rem; font-size: 0.6875rem; line-height: 1.3; }
+.mk .mk-meter__lbl { color: var(--fg-muted); }
+.mk .mk-meter__val { font-family: var(--font-mono); color: var(--fg-default); white-space: nowrap; }
+.mk .mk-meter__bar { position: relative; display: block; height: 6px; background: var(--bg-page); border: 1px solid var(--border-subtle); border-radius: 3px; }
+.mk .mk-meter__bar > span { display: block; height: 100%; background: var(--pc); border-radius: 2px; }
+.mk .mk-meter__tick { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--fg-default); }
+.mk .mk-meter__note { font-family: var(--font-mono); font-size: 0.625rem; color: var(--fg-muted); }
+.mk .mk-dots { display: flex; gap: 4px; }
+.mk .mk-dots i { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--ui-border-strong); background: var(--bg-page); }
+.mk .mk-dots i.on { background: var(--pc); border-color: var(--pc); }
+.mk .mk-dots--decoy i { border-style: dashed; }
+/* Panel: screenshot beside the project's existing tagline, summary, skills and link. */
+.mk .mk-proj { display: grid; gap: var(--space-4); grid-template-columns: 1fr; padding: var(--space-4) var(--space-2) var(--space-2); border-top: 1px solid var(--border-subtle); }
+@media (min-width: 900px) { .mk .mk-proj { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); padding: var(--space-5) var(--space-3) var(--space-3); align-items: start; } }
+.mk .mk-proj--empty { grid-template-columns: 1fr; }
+.mk .mk-proj__shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--border-subtle); border-radius: var(--radius); background: var(--bg-page); }
+.mk .mk-proj__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.mk .mk-proj__text { display: flex; flex-direction: column; align-items: flex-start; }
+.mk .mk-proj__tagline { font-family: var(--font-display); font-size: 1.125rem; line-height: 1.35; color: var(--fg-default); margin-bottom: var(--space-2); }
+.mk .mk-proj__summary { font-size: 0.875rem; line-height: 1.65; color: var(--fg-muted); margin-bottom: var(--space-3); max-width: 44rem; }
+@media (prefers-reduced-motion: reduce) { .mk .mk-tile, .mk .mk-tile__chev { transition: none; } }
+
+/* ---- Case sections: three groups ---- */
+@media (min-width: 1100px) { .mk .mk-sections-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.mk .mk-sections-3 .dx-case__section p + p, .mk .mk-sections-3 .dx-case__section p + ul, .mk .mk-sections-3 .dx-case__section ul + p { margin-top: var(--space-2); }
+
+/* ---- Enterprise BI: two primary screenshots, third secondary ---- */
+@media (min-width: 768px) { .mk .mk-gallery-primary { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.mk .mk-shot-secondary { display: grid; gap: var(--space-3); grid-template-columns: 1fr; align-items: center; margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px dashed var(--border-subtle); }
+@media (min-width: 640px) { .mk .mk-shot-secondary { grid-template-columns: 12rem 1fr; } }
+.mk .mk-shot-secondary .dx-shot__cap { margin-top: 0; }
+
+/* ---- Data platform: compact audit sequence, subordinate history table ---- */
+.mk .mk-evidence { display: grid; gap: var(--space-5); grid-template-columns: 1fr; margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--border-subtle); }
+@media (min-width: 1024px) { .mk .mk-evidence { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; } }
+.mk .mk-audit { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); grid-template-columns: 1fr; counter-reset: au; }
+@media (min-width: 640px) { .mk .mk-audit { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); } }
+.mk .mk-audit li { counter-increment: au; position: relative; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--fg-default); }
+.mk .mk-audit li::before { content: counter(au); flex: none; display: grid; place-items: center; width: 1.5rem; height: 1.5rem; border: 1px solid var(--fg-warning); border-radius: 50%; font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 400; color: var(--fg-warning); }
+@media (min-width: 640px) { .mk .mk-audit li:not(:last-child)::after { content: "→"; position: absolute; right: calc(var(--space-4) * -0.8); color: var(--ui-border-strong); font-weight: 400; } }
+.mk .mk-history .dx-table td { font-size: 0.6875rem; }
+.mk .mk-history .dx-figure__label { font-size: 0.6875rem; }
+
+/* ---- Notice workflow: five stages, decision gate with three branches ---- */
+.mk .mk-flow__grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); grid-template-columns: 1fr; }
+.mk .mk-flow__stage { position: relative; display: grid; gap: var(--space-2); align-content: start; }
+.mk .mk-flow__stage + .mk-flow__stage::before { content: "↓"; display: block; text-align: center; color: var(--ui-border-strong); line-height: 1; margin-bottom: calc(var(--space-2) * -1); }
+@media (min-width: 1024px) {
+  .mk .mk-flow__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-5); }
+  .mk .mk-flow__stage + .mk-flow__stage::before { content: ""; position: absolute; left: calc(var(--space-5) * -1); top: 1.6rem; width: var(--space-5); height: 1px; margin: 0; background: var(--ui-border-strong); }
+  .mk .mk-flow__stage + .mk-flow__stage::after { content: ""; position: absolute; left: -7px; top: calc(1.6rem - 4px); border: 4px solid transparent; border-left: 6px solid var(--ui-border-strong); }
+}
+.mk .mk-flow__idx { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--fg-muted); }
+.mk .mk-flow__sub { font-size: 0.75rem; line-height: 1.4; color: var(--fg-muted); }
+/* Default nodes carry short labels only; the longer text moves to the detail panel. Without JS the text stays visible. */
+.js .mk .mk-flow .dx-node__text { display: none; }
+.mk .mk-branches { list-style: none; margin: 0; padding: 0 0 0 var(--space-3); display: grid; gap: var(--space-2); border-left: 1px solid var(--ui-border-strong); }
+.mk .mk-branch { position: relative; display: grid; gap: 0.25rem; }
+.mk .mk-branch::before { content: ""; position: absolute; left: calc(var(--space-3) * -1); top: 1.4rem; width: calc(var(--space-3) - 2px); height: 1px; background: var(--ui-border-strong); }
+.mk .mk-branch__to { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--fg-good); padding-left: 0.25rem; }
+.mk .mk-branch:nth-child(2) .mk-branch__to { color: var(--fg-warning); }
+.mk .mk-branch__to--stop { color: var(--fg-muted); }
+
+/* ---- Additional Projects, round 5: one row of compact cards, status and type labels only ---- */
+.mk .mk-proj-intro { font-size: 0.875rem; line-height: 1.6; color: var(--fg-muted); margin-bottom: var(--space-3); max-width: 48rem; }
+.mk .mk-proj-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); grid-template-columns: 1fr; }
+@media (min-width: 640px) { .mk .mk-proj-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .mk .mk-proj-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1280px) { .mk .mk-proj-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.mk .mk-proj-card article { height: 100%; display: flex; flex-direction: column; gap: 0.375rem; padding: var(--space-3); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
+.mk .mk-proj-card:hover article { border-color: color-mix(in srgb, var(--fg-accent) 60%, var(--border-subtle)); }
+.mk .mk-proj-card__title { font-family: var(--font-display); font-weight: 700; font-size: 1rem; line-height: 1.3; color: var(--fg-default); }
+.mk .mk-proj-card__title a { color: inherit; text-decoration: none; }
+.mk .mk-proj-card__title a:hover { color: var(--fg-accent); }
+.mk .mk-proj-card__title a:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
+.mk .mk-proj-card__desc { font-size: 0.8125rem; line-height: 1.5; color: var(--fg-muted); }
+/* Status: one dot line above the title, same place on every card. */
+.mk .mk-status { display: flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-good); }
+.mk .mk-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.mk .mk-status--concept_only { color: var(--fg-muted); }
+.mk .mk-status--concept_only::before { background: transparent; border: 1px dashed currentColor; }
+.mk .mk-status--development { color: var(--fg-warning); }
+/* Type: a fixed three-cell strip pinned to the card bottom, so it always lines up across the row. */
+.mk .mk-proj-card__foot { margin-top: auto; padding-top: var(--space-2); display: grid; gap: 0.25rem; }
+.mk .mk-proj-card .dx-card__go { margin-top: 0; min-height: 32px; }
+.mk .mk-strip__cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--border-subtle); border-radius: var(--radius); overflow: hidden; }
+.mk .mk-strip__cell { --pc: var(--fg-good); padding: 0.25rem 0; text-align: center; font-family: var(--font-mono); font-size: 0.6875rem; color: var(--fg-muted); border-top: 2px solid transparent; }
+/* D-067: off cells were opacity 0.45 (2.21:1, axe color-contrast); full --fg-muted keeps them readable, and the on cell
+   still stands out by its fill, coloured top border and brighter text. */
+.mk .mk-strip__cell + .mk-strip__cell { border-left: 1px solid var(--border-subtle); }
+.mk .mk-strip__cell--data { --pc: var(--fg-warning); }
+.mk .mk-strip__cell--ai { --pc: var(--fg-accent); }
+.mk .mk-strip__cell.is-on { opacity: 1; color: var(--fg-default); border-top-color: var(--pc); background: color-mix(in srgb, var(--pc) 12%, transparent); }
+
+/* ---- Additional Projects: featured card plus compact six-card grid (feedback 6; superseded, unused) ---- */
+.mk .mk-feature { grid-column: 1 / -1; }
+@media (min-width: 1200px) { .mk .mk-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } .mk .mk-feature { grid-column: 1 / -1; } }
+.mk .mk-feature .dx-card__body { border-left: 3px solid var(--fg-accent); }
+.mk .mk-feature .dx-card__title { font-size: 1.5rem; }
+.mk .mk-feature .mk-card__desc { font-size: 1rem; color: var(--fg-default); opacity: 0.9; }
+.mk .mk-tag { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-accent); margin-bottom: var(--space-2); }
+.mk .mk-card__desc { font-size: 0.875rem; line-height: 1.55; color: var(--fg-muted); margin-bottom: var(--space-2); }
+.mk .mk-meta { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-bottom: var(--space-2); }
+.mk .mk-compact .dx-card__text { padding: var(--space-3) var(--space-4); }
+.mk .mk-compact .dx-card__title { font-size: 1.0625rem; }
+.mk .mk-compact .dx-card__go { min-height: 36px; }
+
+/* ---- How I Build: one card, top stepper (round 8). Each panel: lead sentence, one visual, then links. ---- */
+.mk .mk-tabs { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius); overflow: hidden; }
+.mk .mk-steps__nav { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: var(--bg-page); border-bottom: 1px solid var(--border-subtle); }
+html:not(.js) .mk .mk-steps__nav { display: none; }
+/* Connecting line through the step markers. */
+.mk .mk-steps__nav::before { content: ""; position: absolute; left: 16.67%; right: 16.67%; top: calc(var(--space-4) + 0.875rem); height: 1px; background: var(--ui-border-strong); }
+.mk .mk-step { position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; min-height: 44px; padding: var(--space-4) var(--space-2) var(--space-3); text-align: center; background: transparent; border: 0; border-bottom: 2px solid transparent; color: var(--fg-muted); font: inherit; cursor: pointer; }
+.mk .mk-step:hover { color: var(--fg-default); }
+.mk .mk-step:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: -2px; }
+.mk .mk-step__idx { position: relative; z-index: 1; display: grid; place-items: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: var(--bg-page); border: 1px solid var(--ui-border-strong); font-family: var(--font-mono); font-size: 0.6875rem; color: var(--fg-muted); }
+.mk .mk-step__name { font-family: var(--font-display); font-weight: 700; font-size: 0.875rem; line-height: 1.25; }
+.mk .mk-step__hint { display: none; font-size: 0.75rem; line-height: 1.4; color: var(--fg-muted); }
+@media (min-width: 768px) { .mk .mk-step__name { font-size: 0.9375rem; } .mk .mk-step__hint { display: block; } }
+/* Round 9: no fill on the selected step, so the connecting line runs unbroken through every marker. */
+.mk .mk-step[aria-selected="true"] { color: var(--fg-default); border-bottom-color: var(--fg-accent); }
+.mk .mk-step[aria-selected="true"] .mk-step__idx { background: var(--fg-accent); border-color: var(--fg-accent); color: var(--bg-page); }
+.mk .mk-tabpanel { padding: var(--space-4); }
+@media (min-width: 768px) { .mk .mk-tabpanel { padding: var(--space-5); } }
+.mk .mk-tabpanel:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: -2px; }
+html:not(.js) .mk .mk-tabpanel + .mk-tabpanel { border-top: 1px solid var(--border-subtle); }
+.mk .mk-tabpanel__title { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--fg-default); margin-bottom: var(--space-3); }
+.js .mk .mk-tabpanel__title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mk .mk-step-lead { max-width: 72ch; font-size: 0.875rem; line-height: 1.6; color: var(--fg-muted); margin: 0 0 var(--space-4); }
+.mk .mk-step-lead__name { display: block; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-default); margin-bottom: 0.25rem; }
+
+/* Tab 1: principles row (the why), then the clickable control plane. */
+.mk .mk-principles { list-style: none; margin: 0 0 var(--space-5); padding: 0; display: grid; gap: var(--space-2); grid-template-columns: 1fr; }
+@media (min-width: 900px) { .mk .mk-principles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); } }
+.mk .mk-principles li { display: flex; flex-direction: column; gap: 0.25rem; padding: var(--space-3); background: var(--bg-raised); border: 1px solid var(--border-subtle); border-left: 3px solid var(--fg-accent); border-radius: var(--radius); }
+.mk .mk-principles .dx-principles__text { font-size: 0.8125rem; line-height: 1.5; color: var(--fg-muted); }
+.mk .mk-principles__idx { font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-accent); }
+.mk .mk-cp { margin: 0; }
+.mk .mk-cp__body { display: grid; gap: var(--space-3); }
+.mk .mk-cp__stack { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; }
+.mk .mk-cp__layer { display: flex; align-items: center; gap: var(--space-2); width: 100%; min-height: 44px; padding: 0.5rem var(--space-3); text-align: left; background: var(--bg-raised); border: 1px solid var(--border-subtle); border-radius: var(--radius); color: var(--fg-default); font: inherit; font-family: var(--font-display); font-weight: 700; font-size: 0.9375rem; cursor: pointer; }
+.mk .mk-cp__layer:hover { border-color: var(--fg-accent); }
+.mk .mk-cp__layer:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
+.mk .mk-cp__layer[aria-pressed="true"] { border-color: var(--fg-accent); background: color-mix(in srgb, var(--fg-accent) 12%, var(--bg-raised)); }
+.mk .mk-cp__n { flex: none; width: 1.5rem; font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 400; color: var(--fg-muted); }
+.mk .mk-cp__layer[aria-pressed="true"] .mk-cp__n { color: var(--fg-accent); }
+.mk .mk-cp__detail { padding: var(--space-3); border: 1px solid var(--border-subtle); border-top: 0; border-radius: 0 0 var(--radius) var(--radius); }
+.mk .mk-cp__dname { font-family: var(--font-display); font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.mk .mk-cp__text { font-size: 0.875rem; line-height: 1.55; color: var(--fg-muted); }
+.mk .mk-cp__where { margin-top: var(--space-2); font-size: 0.8125rem; line-height: 1.6; }
+.mk .mk-cp__where .dx-label { margin-right: 0.375rem; }
+.js .mk .mk-cp__detail { display: none; }
+.js .mk .mk-cp__item.is-on .mk-cp__detail { display: block; }
+/* Narrow: the detail opens under its layer, so its name repeats nothing. Wide: the detail sits beside the stack. */
+.mk .mk-cp__dname { display: none; }
+.mk .mk-cp__rail { display: flex; flex-direction: column; gap: 0.25rem; padding: var(--space-3); border: 1px dashed var(--fg-accent); border-radius: var(--radius); background: color-mix(in srgb, var(--fg-accent) 5%, transparent); }
+.mk .mk-cp__rail-name { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-accent); }
+.mk .mk-cp__rail-text { font-size: 0.8125rem; line-height: 1.5; color: var(--fg-muted); }
+@media (min-width: 900px) {
+  .js .mk .mk-cp__body { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: stretch; }
+  .js .mk .mk-cp__stack { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); grid-column: 1 / -1; column-gap: var(--space-4); grid-auto-flow: dense; }
+  .js .mk .mk-cp__item { display: contents; }
+  .js .mk .mk-cp__layer { grid-column: 1; }
+  .js .mk .mk-cp__item.is-on .mk-cp__detail { grid-column: 2; grid-row: 1 / span 5; align-self: stretch; border-top: 1px solid var(--fg-accent); border-radius: var(--radius); background: var(--bg-raised); padding: var(--space-4); }
+  .js .mk .mk-cp__dname { display: block; }
+  .js .mk .mk-cp__rail { grid-column: 1 / -1; }
+}
+
+/* Tab 2: Direction, Delivery, Governance as a loop; domains as chips. */
+.mk .mk-cycle { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: 1fr; position: relative; }
+@media (min-width: 768px) { .mk .mk-cycle { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); } }
+.mk .mk-cycle__node { position: relative; display: flex; flex-direction: column; gap: 0.25rem; padding: var(--space-3) var(--space-4); background: var(--bg-raised); border: 1px solid var(--border-subtle); border-top: 3px solid var(--fg-accent); border-radius: var(--radius); }
+.mk .mk-cycle__idx { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--fg-accent); }
+.mk .mk-cycle__name { font-family: var(--font-display); font-weight: 700; font-size: 1.0625rem; }
+.mk .mk-cycle__text { font-size: 0.875rem; line-height: 1.55; color: var(--fg-muted); }
+/* Forward arrows between nodes: down on phones, right on wider screens. */
+.mk .mk-cycle__node + .mk-cycle__node::before { content: "↓"; position: absolute; left: 50%; top: calc(var(--space-4) * -1); transform: translate(-50%, -15%); line-height: 1; color: var(--ui-border-strong); }
+@media (min-width: 768px) { .mk .mk-cycle__node + .mk-cycle__node::before { content: "→"; left: calc(var(--space-5) * -0.5); top: 50%; transform: translate(-50%, -50%); } }
+/* Return path: Governance back to Direction. Phones: a bracket on the right. Wider: a bracket under the row. */
+.mk .mk-cycle__return { position: relative; height: 0; }
+@media (min-width: 768px) {
+  .mk .mk-cycle__return { height: 1.5rem; margin: 0 16.67%; border: 1px solid var(--ui-border-strong); border-top: 0; border-radius: 0 0 var(--radius) var(--radius); }
+  .mk .mk-cycle__return::before { content: ""; position: absolute; left: -5px; top: -2px; border: 5px solid transparent; border-bottom: 7px solid var(--ui-border-strong); border-top: 0; }
+}
+@media (max-width: 767px) {
+  .mk .mk-cycle { margin-right: 1.25rem; }
+  .mk .mk-cycle__return { position: relative; margin-top: calc(var(--space-4) * -1); }
+  .mk .mk-cycle__return::after { content: "↺"; position: absolute; right: 0; top: 0; font-size: 1rem; line-height: 1; color: var(--ui-border-strong); }
+}
+.mk .mk-domains { margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--border-subtle); }
+.mk .mk-domains__lbl { font-size: 0.8125rem; color: var(--fg-muted); margin-bottom: var(--space-2); }
+.mk .mk-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.375rem; }
+.mk .mk-chips li { padding: 0.25rem 0.5rem; font-size: 0.75rem; line-height: 1.3; color: var(--fg-default); background: var(--bg-raised); border: 1px solid var(--border-subtle); border-radius: 999px; }
+
+/* Tab 3: technology as a chip matrix. Phones: each area becomes a block with column labels. */
+.mk .mk-matrix__table { width: 100%; border-collapse: collapse; }
+.mk .mk-matrix__table th, .mk .mk-matrix__table td { padding: var(--space-3) var(--space-2); text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-subtle); }
+.mk .mk-matrix__table thead th { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-muted); padding-top: 0; }
+.mk .mk-matrix__table tbody th { width: 22%; font-family: var(--font-display); font-weight: 700; font-size: 0.9375rem; color: var(--fg-default); }
+.mk .mk-matrix__table tbody tr:last-child > * { border-bottom: 0; }
+@media (max-width: 767px) {
+  .mk .mk-matrix__table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .mk .mk-matrix__table, .mk .mk-matrix__table tbody, .mk .mk-matrix__table tr, .mk .mk-matrix__table th, .mk .mk-matrix__table td { display: block; width: auto; }
+  .mk .mk-matrix__table tr { padding: var(--space-3) 0; border-bottom: 1px solid var(--border-subtle); }
+  .mk .mk-matrix__table tbody tr:last-child { border-bottom: 0; }
+  .mk .mk-matrix__table th, .mk .mk-matrix__table td { padding: 0 0 var(--space-2); border: 0; }
+  .mk .mk-matrix__table td::before { content: attr(data-label); display: block; margin-bottom: 0.25rem; font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-muted); }
+}
