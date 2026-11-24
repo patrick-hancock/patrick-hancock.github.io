@@ -34,12 +34,14 @@
     nodes.forEach(b => b.addEventListener('click', () => show(b.getAttribute('aria-pressed') === 'true' ? null : b)));
   });
 
-  // 2. Project filter. Cards stay in DOM order; non-matching cards get the hidden attribute. A card with several
-  //    pillars matches each of them (one DOM card, no duplicates).
+  // 2. Project filter. Cards stay in DOM order; non-matching cards get the hidden attribute (removed from the tab order
+  //    and the accessibility tree). A card with several pillars matches each of them (one DOM card, no duplicates).
+  //    The one visible introduction follows the pressed filter; an empty result shows the empty-state line.
   const btns = [...document.querySelectorAll('.dx-filter__btn')];
   const cards = [...document.querySelectorAll('.dx-card')];
   const intros = [...document.querySelectorAll('[data-intro]')];
   const count = document.querySelector('[data-count]');
+  const empty = document.querySelector('[data-empty]');
   const filter = key => {
     btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.filter === key ? 'true' : 'false'));
     let n = 0;
@@ -50,6 +52,7 @@
     });
     intros.forEach(p => { p.hidden = p.dataset.intro !== key; });
     if (count) count.textContent = n;
+    if (empty) empty.hidden = n > 0;
   };
   btns.forEach(b => b.addEventListener('click', () => filter(b.dataset.filter)));
   if (btns.length) filter('all');
