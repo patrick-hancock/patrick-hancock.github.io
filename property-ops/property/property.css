@@ -1,0 +1,22 @@
+/* Property manager pages (U5.T13): small additions to views/ledger.css. Synthetic data only. */
+.ctitle { font-weight: 600; margin: 20px 0 6px; }
+.note { margin: 6px 0 10px; }
+.fn2 { font-size: 13px; color: var(--ink-2); margin: 6px 0 0; }
+.trends { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.trends .tr { min-width: 0; }
+.trends svg.chart { min-width: 0; }
+details.bunit { background: #fff; border: 1px solid var(--rule); border-radius: var(--radius); padding: 8px 12px; margin: 8px 0; }
+details.bunit summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+details.bunit[open] summary { margin-bottom: 6px; }
+table.stack a { color: var(--ink); }
+.tablewrap table.ledger { min-width: 0; }
+
+/* PM-10 unit-list toggle (CSS only, no script, D-054): radio buttons stay in the tab order and keep native arrow-key switching; the hidden list is display:none */
+fieldset.tog { border: 0; margin: 8px 0 0; padding: 0; min-width: 0; }
+fieldset.tog legend { font-size: 13px; color: var(--ink-2); padding: 0; margin-bottom: 4px; }
+.tog input.tg { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.tog input.tg + label { display: inline-block; padding: 6px 14px; border: 1px solid var(--rule); border-radius: var(--radius); background: #fff; color: var(--ink); cursor: pointer; margin: 0 6px 8px 0; font-size: 14px; }
+.tog input.tg:checked + label { background: var(--ink); color: #fff; border-color: var(--ink); font-weight: 600; }
+.tog input.tg:focus-visible + label { outline: 3px solid var(--ok); outline-offset: 2px; }
+.tog .tp { display: none; }
+.tog .tg-a:checked ~ .tp-a, .tog .tg-b:checked ~ .tp-b { display: block; }

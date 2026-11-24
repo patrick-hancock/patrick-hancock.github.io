@@ -10,6 +10,8 @@
   --ok: #0F6E56;
   --flag: #B5532F;
   --note: #8A6D1F;
+  --flag-text: #A34A29;  /* badge text: --flag on --paper-2 is 4.27:1, this is 5.08:1 (OI-388, need 4.5) */
+  --note-text: #7D621B;  /* badge text: --note on --paper-2 is 4.23:1, this is 4.99:1 */
   --radius: 4px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -36,9 +38,9 @@ table.ledger td.num, table.ledger th.num { text-align: right; font-variant-numer
 .card { background: #fff; border: 1px solid var(--rule); border-radius: var(--radius); padding: 12px 14px; margin: 12px 0; min-width: 0; }
 .card .verdict { font-size: 12px; text-transform: none; color: var(--ink-2); }
 .badge { display: inline-block; font-size: 12px; padding: 1px 8px; border: 1px solid var(--rule); border-radius: 999px; background: var(--paper-2); }
-.badge.cause { border-color: var(--flag); color: var(--flag); }
+.badge.cause { border-color: var(--flag); color: var(--flag-text); }
 .badge.not_a_cause { border-color: var(--ok); color: var(--ok); }
-.badge.insufficient_evidence { color: var(--note); border-color: var(--note); }
+.badge.insufficient_evidence { color: var(--note-text); border-color: var(--note); }
 .state { padding: 14px; border: 1px dashed var(--rule); color: var(--ink-2); border-radius: var(--radius); }
 .synthetic { font-size: 12px; color: var(--ink-2); border-top: 1px solid var(--rule); margin-top: 32px; padding-top: 8px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
@@ -86,7 +88,7 @@ table.stack tr.tot td { border-top: 2px solid var(--ink); font-weight: 600; }
 .nm { display: block; }
 .ty { display: block; font-size: 13px; color: var(--ink-2); }
 .lnk { display: inline-block; border: 1px solid var(--ink-2); border-radius: var(--radius); padding: 2px 8px; font-size: 13px; color: var(--ink); text-decoration: none; white-space: nowrap; }
-.lnk:focus-visible, .close:focus-visible, nav a:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
+.lnk:focus-visible, .close:focus-visible, nav a:focus-visible, .tablewrap:focus-visible, .ugrid:focus-visible, .hm:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
 details.more { margin: 8px 0; }
 details.more summary { cursor: pointer; color: var(--ink-2); }
 ul.folded { padding-left: 20px; }
@@ -137,5 +139,47 @@ svg.chart .ref { stroke: var(--ink-2); stroke-dasharray: 3 3; }
   table.stack td[data-label]:not([data-label=""])::before { content: attr(data-label) " "; font-weight: 400; color: var(--ink-2); font-size: 13px; }
   table.stack td[data-label]:first-child::before { content: none; }
   table.stack td.opt, table.stack td:empty { display: none; }
+  /* compact cards (D-079, U4 verify gap 1): the name and its place share a line, short cells flow side by side, a chart cell takes the full width */
+  table.stack tr { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; margin: 0 0 6px; }
+  table.stack td { width: auto; max-width: 100%; flex: 0 1 auto; overflow-wrap: anywhere; }
+  table.stack td:first-child { flex: 1 1 100%; }
+  table.stack td:first-child .nm, table.stack td:first-child .ty { display: inline; }
+  table.stack td:first-child .ty { margin-left: 6px; }
+  table.stack td.viz { flex: 1 1 100%; }
+  /* fold (shell.table fold=): first rows only, a checkbox label shows the rest; no script */
+  .foldwrap { display: flex; flex-direction: column; }
+  .foldwrap .tablewrap { order: 0; }
+  .foldlbl { display: block; order: 1; margin: 0 0 8px; padding: 8px 10px; border: 1px solid var(--ink-2); border-radius: var(--radius); text-align: center; cursor: pointer; color: var(--ink); font-size: 14px; }
+  .foldbox:not(:checked) ~ .tablewrap tr.fold { display: none; }
+  .foldbox:checked + .foldlbl .more-t, .foldbox:not(:checked) + .foldlbl .less-t { display: none; }
+  .foldbox:focus-visible + .foldlbl { outline: 2px solid var(--ok); outline-offset: 2px; }
   aside.drawer { width: 100%; border-left: 0; }
 }
+.foldbox { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+@media (min-width: 641px) { .foldbox, .foldlbl { display: none; } }
+
+/* breadcrumb and unit grid (U5.T13, property manager pages). Cell colours keep 4.5:1 or better: ink on tints, white on rust (6.5:1). The letter is always printed. */
+nav.crumb { font-size: 14px; color: var(--ink-2); margin: 12px 0 0; }
+nav.crumb a { color: var(--ink); }
+nav.crumb [aria-current="page"] { color: var(--ink); font-weight: 600; }
+p.back { margin: 4px 0 0; font-size: 14px; }
+p.back a { color: var(--ink); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+ul.ulegend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 8px; padding: 0; font-size: 14px; }
+ul.ulegend li { display: flex; align-items: center; gap: 6px; }
+.ugrid { overflow-x: auto; max-width: 100%; background: #fff; border: 1px solid var(--rule); border-radius: var(--radius); padding: 10px; }
+.ugrid .blocks { display: flex; flex-wrap: wrap; gap: 16px 24px; }
+.bblock { min-width: 0; }
+.bname { font-weight: 600; margin: 0 0 4px; font-size: 14px; }
+.bcount { font-weight: 400; color: var(--ink-2); font-size: 13px; }
+.frow { display: flex; align-items: center; gap: 6px; margin: 0 0 3px; }
+.flr { width: 52px; flex: none; font-size: 12px; color: var(--ink-2); }
+.cells { display: flex; flex-wrap: wrap; gap: 3px; }
+.cell { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex: none; border: 2px solid var(--ink-2); border-radius: 3px;
+  font: 700 13px/1 var(--font); color: var(--ink); text-decoration: none; position: relative; }
+a.cell:focus-visible { outline: 3px solid var(--ink); outline-offset: 1px; z-index: 1; }
+.cell.s-occupied, .cell.s-O { background: #DCEBE4; border-color: var(--ok); }
+.cell.s-expiring_60, .cell.s-E { background: #F6E7B4; border-color: var(--note); }
+.cell.s-vacant_ready, .cell.s-R { background: #fff; border-color: var(--flag); border-style: dashed; }
+.cell.s-vacant_in_turn, .cell.s-T { background: #9A4524; border-color: #9A4524; color: #fff; }
+@media (max-width: 640px) { .ugrid .blocks { flex-wrap: nowrap; } .bblock { flex: none; } }
