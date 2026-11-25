@@ -6,3 +6,161 @@
 .staffed { margin: 12px 0 0; padding: 10px 12px; border: 1px solid var(--rule); border-radius: var(--radius); background: #fff; }
 svg.chart.diverging-bar { min-width: 420px; }
 @media (max-width: 640px) { svg.chart.diverging-bar { min-width: 0; } }
+/* Regional Operations shell (Kestrel regional rebuild Phase 1, contract v2 section 2). Existing tokens only (D-043 palette, system font). */
+.regional-id { font-size: 13px; font-weight: 600; color: var(--ink-2); margin: 14px 0 0; }
+nav.pages.regional { border-top: 1px solid var(--rule); margin-top: 6px; }
+nav.pages.regional a { padding: 6px 0; }
+.lead .supporting { margin: 0 0 6px; }
+.lead .period { font-size: 14px; color: var(--ink-2); margin: 0 0 12px; }
+footer.fn details.method summary { cursor: pointer; font-weight: 600; padding: 4px 0; }
+footer.fn details.method summary:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
+footer.fn details.method p { margin: 6px 0 0; }
+.lead h1:first-child { margin-top: 14px; }
+/* Regional Overview (Kestrel regional rebuild Phase 3, contract v2 section 4, D1): summary, community matrix with no status color, priorities. */
+.summary { font-size: 17px; margin: 4px 0 16px; max-width: 72ch; }
+.mxwrap { max-width: 100%; }
+.mxwrap:focus-visible, table.mx a.mxc:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
+table.mx { min-width: 600px; }
+table.mx a.mxc { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--ink-2); font-variant-numeric: tabular-nums; }
+table.mx a.mxc:hover { border-bottom-style: solid; }
+table.mx .dir { font-size: 11px; color: var(--ink-2); }
+table.mx .px { font-size: 12px; color: var(--ink-2); margin-left: 2px; }
+dl.legend { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-size: 14px; margin: 10px 0 4px; }
+dl.legend dt { font-weight: 600; }
+dl.legend dd { margin: 0; color: var(--ink-2); }
+ol.prios { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+ol.prios li.prio { border-top: 1px solid var(--rule); padding: 10px 0 0; }
+ol.prios h3 { font-size: 16px; margin: 0 0 4px; }
+ol.prios p { margin: 2px 0; max-width: 80ch; }
+ol.prios .pl { color: var(--ink-2); }
+@media (max-width: 640px) {
+  table.mx { min-width: 0; }
+  dl.legend { grid-template-columns: 1fr; }
+  dl.legend dd { margin: 0 0 6px; }
+}
+/* Overview layout (D-085): DOM order is priorities then matrix (management-priority order; screen readers and phones read priorities first).
+   Wide screens (1100 px and up) place the matrix left and the priorities right so both start on the first screen. */
+.ovgrid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 28px; }
+.ovgrid > #priorities { grid-area: auto; }
+@media (min-width: 1100px) {
+  .ovgrid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); grid-template-areas: "matrix prios"; align-items: start; }
+  .ovgrid > #matrix { grid-area: matrix; }
+  .ovgrid > #priorities { grid-area: prios; }
+  .ovgrid table.mx { min-width: 0; }
+  .ovgrid #matrix h2, .ovgrid #priorities h2 { margin-top: 0; }
+}
+/* Market Position (Kestrel regional rebuild Phase 4, contract v2 section 5). No script: selection is a link to a detail item (:target). */
+.mpsel { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px 24px; }
+@media (min-width: 900px) { .mpsel { grid-template-columns: minmax(0, 5fr) minmax(0, 2fr); align-items: start; } }
+svg.chart.select { max-width: 100%; }
+svg.chart.select .grid { stroke: var(--ink-2); }
+svg.chart.select .zero { stroke: var(--ink); stroke-width: 1.5; }
+svg.chart.select .ml.out { font-weight: 600; }
+svg.chart circle.mk.hollow, svg.chart rect.mk.hollow { fill: #fff; stroke: var(--ink-2); stroke-width: 1.75; }
+.mpside .ctitle { margin-top: 0; }
+ul.mpch { list-style: none; padding: 0; margin: 0 0 10px; display: flex; flex-wrap: wrap; gap: 4px 6px; font-size: 14px; }
+ul.mpch a { display: inline-block; min-height: 24px; padding: 3px 8px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); text-decoration: none; background: #fff; }
+ul.mpch a:focus-visible, .mpd a:focus-visible, details.hist summary:focus-visible, details.full summary:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
+.mpd { border-top: 1px solid var(--rule); padding-top: 8px; }
+.mpd .mpdef { color: var(--ink-2); margin: 0; }
+ul.mpdl { list-style: none; padding: 0; margin: 0; }
+ul.mpdl li.mpdi { display: none; }
+ul.mpdl li.mpdi:target { display: block; }
+.mpd:has(li.mpdi:target) .mpdef { display: none; }
+ul.mpdl h3 { font-size: 16px; margin: 0 0 4px; }
+ul.mpdl p { margin: 3px 0; }
+.mpd .pl, .histl .hl { color: var(--ink-2); }
+.caveat { font-size: 14px; margin: 8px 0; max-width: 80ch; }
+ul.quad { margin: 6px 0 0; padding-left: 18px; font-size: 14px; max-width: 80ch; }
+.mpbars { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px 24px; }
+@media (min-width: 1100px) { .mpbars { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .mpbars svg.chart.diverging-bar { min-width: 0; } }
+details.hist summary, details.full summary { cursor: pointer; font-weight: 600; padding: 4px 0; }
+ul.histl { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 12px; }
+ul.histl li { border-top: 1px solid var(--rule); padding-top: 8px; }
+ul.histl h3 { font-size: 16px; margin: 0 0 4px; }
+ul.histl p { margin: 3px 0; max-width: 80ch; }
+.histl .hl { font-size: 13px; font-weight: 600; margin: 0; }
+@media (max-width: 640px) { svg.chart.select { min-width: 0; } }
+.mpsel:has(li.mpdi:nth-child(1):target) g.pts > g:nth-child(1) .mk, .mpsel:has(li.mpdi:nth-child(1):target) ul.mpch > li:nth-child(1) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(2):target) g.pts > g:nth-child(2) .mk, .mpsel:has(li.mpdi:nth-child(2):target) ul.mpch > li:nth-child(2) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(3):target) g.pts > g:nth-child(3) .mk, .mpsel:has(li.mpdi:nth-child(3):target) ul.mpch > li:nth-child(3) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(4):target) g.pts > g:nth-child(4) .mk, .mpsel:has(li.mpdi:nth-child(4):target) ul.mpch > li:nth-child(4) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(5):target) g.pts > g:nth-child(5) .mk, .mpsel:has(li.mpdi:nth-child(5):target) ul.mpch > li:nth-child(5) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(6):target) g.pts > g:nth-child(6) .mk, .mpsel:has(li.mpdi:nth-child(6):target) ul.mpch > li:nth-child(6) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(7):target) g.pts > g:nth-child(7) .mk, .mpsel:has(li.mpdi:nth-child(7):target) ul.mpch > li:nth-child(7) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(8):target) g.pts > g:nth-child(8) .mk, .mpsel:has(li.mpdi:nth-child(8):target) ul.mpch > li:nth-child(8) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(9):target) g.pts > g:nth-child(9) .mk, .mpsel:has(li.mpdi:nth-child(9):target) ul.mpch > li:nth-child(9) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(10):target) g.pts > g:nth-child(10) .mk, .mpsel:has(li.mpdi:nth-child(10):target) ul.mpch > li:nth-child(10) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(11):target) g.pts > g:nth-child(11) .mk, .mpsel:has(li.mpdi:nth-child(11):target) ul.mpch > li:nth-child(11) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(12):target) g.pts > g:nth-child(12) .mk, .mpsel:has(li.mpdi:nth-child(12):target) ul.mpch > li:nth-child(12) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(13):target) g.pts > g:nth-child(13) .mk, .mpsel:has(li.mpdi:nth-child(13):target) ul.mpch > li:nth-child(13) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(14):target) g.pts > g:nth-child(14) .mk, .mpsel:has(li.mpdi:nth-child(14):target) ul.mpch > li:nth-child(14) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(15):target) g.pts > g:nth-child(15) .mk, .mpsel:has(li.mpdi:nth-child(15):target) ul.mpch > li:nth-child(15) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.mpsel:has(li.mpdi:nth-child(16):target) g.pts > g:nth-child(16) .mk, .mpsel:has(li.mpdi:nth-child(16):target) ul.mpch > li:nth-child(16) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+/* Repairs & Service and Staffing (Kestrel regional rebuild Phase 5, contract v2 sections 6 and 7). */
+svg.chart.diverging-bar.rsbars { min-width: 0; max-width: 560px; }
+.rshm .hm svg.chart { min-width: 1710px; }  /* full category labels (RS-7) need 140 px columns; the box scrolls sideways */
+.rsprio .hl, #signals > .hl { font-size: 13px; font-weight: 600; color: var(--ink-2); margin: 0 0 4px; }
+.rsprio p, #open p, #signals p { max-width: 80ch; }
+.resp { margin: 8px 0; }
+ul.sigc { list-style: none; padding: 0; margin: 6px 0 8px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+ul.sigc b { font-size: 20px; font-variant-numeric: tabular-nums; margin-right: 4px; }
+ul.sigl { list-style: none; padding: 0; margin: 8px 0 0; }
+ul.sigl li { border-top: 1px solid var(--rule); }
+details.sig summary { cursor: pointer; padding: 6px 0; }
+details.sig summary:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
+details.sig p { margin: 3px 0 3px 14px; }
+details.sig:target summary { font-weight: 600; }
+ul.exc { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 10px; }
+ul.exc li { border-top: 1px solid var(--rule); padding-top: 8px; }
+ul.exc h3 { font-size: 16px; margin: 0 0 4px; }
+ul.exc p { margin: 2px 0; max-width: 80ch; }
+ul.exc .pl { color: var(--ink-2); }
+/* Leasing and Resident Experience (Kestrel regional rebuild Phase 6, contract v2 sections 8 and 9). No script: selection is a link to a detail item (:target). */
+ol.funnel { list-style: none; padding: 0; margin: 6px 0 4px; max-width: 640px; }
+ol.funnel li.fstep { display: grid; grid-template-columns: 9.5em 5em minmax(0, 1fr); align-items: center; gap: 8px; padding: 3px 0; }
+ol.funnel .fl { font-weight: 600; }
+ol.funnel .fv { font-variant-numeric: tabular-nums; text-align: right; }
+ol.funnel .fbar { display: block; height: 18px; background: var(--track); border-radius: 2px; }
+ol.funnel .fbar > span { display: block; height: 100%; background: var(--ink-2); border-radius: 2px; }
+ol.funnel li.frate { color: var(--ink-2); font-size: 14px; padding: 1px 0 1px 1.2em; }
+ol.funnel li.frate::before { content: "↓ "; }
+.fout, .lsresp { margin: 6px 0; max-width: 80ch; }
+.lsresp { padding: 8px 10px; border: 1px solid var(--rule); border-radius: var(--radius); background: #fff; }
+.hc { display: inline-block; padding: 2px 6px; border-radius: 2px; text-align: right; }
+.hc .rel { display: block; font-size: 11px; color: var(--ink-2); }
+.hc.lo1 { background: color-mix(in srgb, var(--flag) 10%, transparent); } .hc.lo2 { background: color-mix(in srgb, var(--flag) 22%, transparent); } .hc.lo3 { background: color-mix(in srgb, var(--flag) 36%, transparent); }
+.hc.hi1 { background: color-mix(in srgb, var(--ok) 8%, transparent); } .hc.hi2 { background: color-mix(in srgb, var(--ok) 16%, transparent); } .hc.hi3 { background: color-mix(in srgb, var(--ok) 26%, transparent); }
+.hc.lo3 .rel, .hc.hi3 .rel { color: var(--ink); }
+ul.lsfl { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 10px; }
+ul.lsfl li { border-top: 1px solid var(--rule); padding-top: 8px; }
+ul.lsfl h3 { font-size: 16px; margin: 0 0 4px; }
+ul.lsfl p { margin: 3px 0; max-width: 80ch; }
+ul.lsfl .hl { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+svg.chart.diverging-bar.rebars { min-width: 0; max-width: 420px; }
+.resel { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px 28px; }
+@media (min-width: 900px) { .resel { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: start; } }
+.red { border-top: 1px solid var(--rule); padding-top: 8px; }
+.red .redef { color: var(--ink-2); margin: 0; }
+ul.redl { list-style: none; padding: 0; margin: 0; }
+ul.redl li.redi { display: none; }
+ul.redl li.redi:target { display: block; }
+.red:has(li.redi:target) .redef { display: none; }
+ul.redl h3 { font-size: 16px; margin: 0 0 4px; }
+ul.redl p { margin: 3px 0; }
+ul.redl .pl { color: var(--ink-2); }
+.resel:has(li.redi:nth-child(1):target) g.rows > g:nth-child(1) .mk, .resel:has(li.redi:nth-child(1):target) ul.rech > li:nth-child(1) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(2):target) g.rows > g:nth-child(2) .mk, .resel:has(li.redi:nth-child(2):target) ul.rech > li:nth-child(2) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(3):target) g.rows > g:nth-child(3) .mk, .resel:has(li.redi:nth-child(3):target) ul.rech > li:nth-child(3) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(4):target) g.rows > g:nth-child(4) .mk, .resel:has(li.redi:nth-child(4):target) ul.rech > li:nth-child(4) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(5):target) g.rows > g:nth-child(5) .mk, .resel:has(li.redi:nth-child(5):target) ul.rech > li:nth-child(5) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(6):target) g.rows > g:nth-child(6) .mk, .resel:has(li.redi:nth-child(6):target) ul.rech > li:nth-child(6) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(7):target) g.rows > g:nth-child(7) .mk, .resel:has(li.redi:nth-child(7):target) ul.rech > li:nth-child(7) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(8):target) g.rows > g:nth-child(8) .mk, .resel:has(li.redi:nth-child(8):target) ul.rech > li:nth-child(8) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(9):target) g.rows > g:nth-child(9) .mk, .resel:has(li.redi:nth-child(9):target) ul.rech > li:nth-child(9) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(10):target) g.rows > g:nth-child(10) .mk, .resel:has(li.redi:nth-child(10):target) ul.rech > li:nth-child(10) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(11):target) g.rows > g:nth-child(11) .mk, .resel:has(li.redi:nth-child(11):target) ul.rech > li:nth-child(11) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(12):target) g.rows > g:nth-child(12) .mk, .resel:has(li.redi:nth-child(12):target) ul.rech > li:nth-child(12) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(13):target) g.rows > g:nth-child(13) .mk, .resel:has(li.redi:nth-child(13):target) ul.rech > li:nth-child(13) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.resel:has(li.redi:nth-child(14):target) g.rows > g:nth-child(14) .mk, .resel:has(li.redi:nth-child(14):target) ul.rech > li:nth-child(14) a { stroke: var(--ink); stroke-width: 3; border-color: var(--ink); font-weight: 600; }
+.hc b.flag { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }  /* weakest stage: bold and underlined, not colour alone (contract section 2) */
